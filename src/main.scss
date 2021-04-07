@@ -1,4 +1,16 @@
 /*Utilities*/
-@import './scss/mixings.scss';
 @import './scss/reset.scss';
+@import './scss/mixings.scss';
 @import './scss/variables.scss';
+
+
+/*Components and main views*/
+
+@import './App.scss';
+@import './components/Home/Home.scss';
+@import './components/Modal/Modal.scss';
+@import './components/Credentials/Credentials.scss';
+
+/*Fonts and another urls*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
