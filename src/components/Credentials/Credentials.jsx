@@ -2,8 +2,8 @@ import React from 'react'
 
 const Credentials = () => {
     return (
-        <div>
-            
+        <div className="credentialsComponent">
+            hola
         </div>
     )
 }
