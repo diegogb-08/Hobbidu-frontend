@@ -306,6 +306,14 @@ template {
 [hidden] {
   display: none; }
 
+.spacerH {
+  height: 1rem; }
+
+.spacerW {
+  width: 1rem; }
+
+/*Margin*/
+/*Padding*/
 /*Components and main views*/
 .App {
   font-family: 'Rajdhani', sans-serif; }

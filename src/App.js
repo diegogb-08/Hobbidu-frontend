@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Credentials from "./components/Credentials/Credentials";
 import Home from "./components/Home/Home";
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
       
       <Switch>
 
-        <Route path="/" exact component={Home}/>
+        <Route path="/" exact component={Credentials} />
+        <Route path="/Home" exact component={Home}/>
 
       </Switch>
       
