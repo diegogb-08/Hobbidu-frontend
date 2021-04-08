@@ -1,4 +1,4 @@
-.loginComponent {
+.registerComponent{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +23,13 @@
     }
 }
 
-.loginContainer {
+.registerTitle{
+    margin-top: $m2;
+    margin-bottom: $m2;
+}
+
+
+.registerContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -32,15 +38,15 @@
     font-family: $fontCasual;
 }
 
-.loginInput {
+.registerInput {
     width: 70%;
     height: 2.5rem;
     display: flex;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .buttonLogin{
+    margin-top: $p2;
     margin-left: 0.5rem;
     font-weight: bold;
     p{

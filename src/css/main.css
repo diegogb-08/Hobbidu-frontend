@@ -373,6 +373,22 @@ template {
 .landingRight {
   width: 40%; }
 
+.registerLanding {
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 10%;
+  margin-top: 0.5rem; }
+  .registerLanding .register {
+    margin-left: 1rem;
+    font-weight: bold;
+    color: #f05356;
+    cursor: pointer; }
+
 .headerComponent {
   box-sizing: border-box;
   height: 4rem;
@@ -390,21 +406,20 @@ template {
   height: 80%; }
 
 .inputComponent {
-  height: 2.5rem;
   width: 100%;
   margin-right: 2rem; }
   .inputComponent .error {
     color: red;
     position: relative;
     bottom: 5rem;
-    font-size: 12px;
+    font-size: 11px;
     font-style: italic;
     transition: 0.2s ease all; }
 
 input:focus ~ .floating-label,
 input:not(:focus):valid ~ .floating-label {
   left: 15px;
-  bottom: 57px;
+  bottom: 45px;
   font-size: 11px;
   opacity: 1;
   color: #7c7578; }
@@ -413,16 +428,16 @@ input:not(:focus):valid ~ .floating-label {
   font-size: 16px;
   width: 100%;
   padding: 12px 20px;
-  height: 2rem;
   display: inline-block;
   border-radius: 0.3em;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+  background-color: #fafafa; }
 
 .floating-label {
   position: relative;
   pointer-events: none;
   left: 20px;
-  bottom: 39px;
+  bottom: 30px;
   transition: 0.2s ease all;
   color: #7c7578; }
 
@@ -433,45 +448,52 @@ input:not(:focus):valid ~ .floating-label {
   width: 4rem;
   height: 3.8rem;
   position: relative;
-  bottom: 4.9rem;
+  bottom: 70px;
   border-radius: 0.3em;
   left: 90%; }
 
 .loginComponent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
+  width: 85%;
+  height: 70%;
   font-family: "Caveat", cursive;
-  color: #333333; }
-  .loginComponent h1 {
-    width: 17.5rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb; }
+  .loginComponent h2 {
+    width: 15rem;
     text-align: center;
-    border-bottom: 2px solid #333333;
+    border-bottom: 1.5px solid #333333;
     line-height: 0.1em;
-    margin: 10px 0 20px; }
-    .loginComponent h1 span {
-      background-color: #fafafa;
+    margin: 10px 0 20px;
+    font-size: 2.5rem; }
+    .loginComponent h2 span {
+      background-color: #ffffff;
       padding: 0 10px; }
 
 .loginContainer {
   width: 100%;
-  height: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   font-family: "Rajdhani", sans-serif; }
 
 .loginInput {
-  width: 50%;
+  width: 70%;
   height: 2.5rem;
-  display: flex; }
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
 
 .buttonLogin {
-  margin-left: 0.5rem; }
+  margin-left: 0.5rem;
+  font-weight: bold; }
+  .buttonLogin p {
+    color: white; }
 
 .buttonComponent {
   background-color: #f05356;
@@ -484,5 +506,52 @@ input:not(:focus):valid ~ .floating-label {
   align-items: center;
   font-size: 18px;
   cursor: pointer; }
+
+.registerComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 70%;
+  font-family: "Caveat", cursive;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb; }
+  .registerComponent h2 {
+    width: 15rem;
+    text-align: center;
+    border-bottom: 1.5px solid #333333;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    font-size: 2.5rem; }
+    .registerComponent h2 span {
+      background-color: #ffffff;
+      padding: 0 10px; }
+
+.registerTitle {
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
+.registerContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rajdhani", sans-serif; }
+
+.registerInput {
+  width: 70%;
+  height: 2.5rem;
+  display: flex;
+  margin-bottom: 1.5rem; }
+
+.buttonLogin {
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  font-weight: bold; }
+  .buttonLogin p {
+    color: white; }
 
 /*Fonts and another urls*/

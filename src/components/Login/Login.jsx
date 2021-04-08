@@ -77,7 +77,7 @@ const Login = (props) => {
     return (
         <div className="loginComponent">
             <div className="loginTitle">
-                <h1><span>LOGIN</span></h1>
+                <h2><span>SIGN IN!</span></h2>
             </div>
             <div className="loginContainer">
                 <div className="loginInput">
@@ -87,7 +87,6 @@ const Login = (props) => {
                         onChange={handleState}
                         title="Email"
                         error={errors.email?.help ? errors.email.help : message}
-                        value={credentials.email}
                     />
                 </div>
                 <div className="loginInput">
@@ -103,7 +102,7 @@ const Login = (props) => {
                 </div>
                 <div className="loginInput buttonLogin">
                     <Button onClick={()=>toggle()}>
-                        Enjoy!
+                       <p>Enjoy!</p> 
                     </Button>
                 </div>
             </div>
