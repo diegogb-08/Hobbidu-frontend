@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Credentials from "./components/Credentials/Credentials";
+
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import Landing from "./components/Landing/Landing";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Header/>
       <Switch>
 
-        <Route path="/" exact component={Credentials} />
+        <Route path="/" exact component={Landing} />
         <Route path="/Home" exact component={Home}/>
 
       </Switch>
