@@ -51,3 +51,9 @@ input:not(:focus):valid ~ .floating-label{
   border-radius: $br;
   left: 90%;
 }
+
+.inputComponent[error] .inputText {
+  border-color: #c92432;
+  color: #c92432;
+  background: #fffafa;
+}

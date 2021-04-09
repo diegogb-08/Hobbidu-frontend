@@ -71,3 +71,18 @@
         cursor: pointer;
     }
 }
+
+// Mobile version
+
+@media screen and (max-width: 800px) {
+
+    .landingsComponent{
+        flex-direction: column;
+    }
+    .landingLeft{
+        width: 100%;
+    }
+    .landingRight {
+        width: 100%;
+    }
+}

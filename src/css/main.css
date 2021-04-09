@@ -389,6 +389,14 @@ template {
     color: #f05356;
     cursor: pointer; }
 
+@media screen and (max-width: 800px) {
+  .landingsComponent {
+    flex-direction: column; }
+  .landingLeft {
+    width: 100%; }
+  .landingRight {
+    width: 100%; } }
+
 .headerComponent {
   box-sizing: border-box;
   height: 4rem;
@@ -451,6 +459,11 @@ input:not(:focus):valid ~ .floating-label {
   bottom: 70px;
   border-radius: 0.3em;
   left: 90%; }
+
+.inputComponent[error] .inputText {
+  border-color: #c92432;
+  color: #c92432;
+  background: #fffafa; }
 
 .loginComponent {
   display: flex;

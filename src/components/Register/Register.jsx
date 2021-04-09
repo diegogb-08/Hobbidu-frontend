@@ -32,6 +32,20 @@ const Register = (props) => {
     const [errors, setErrors] = useState({});
     const [message, setMessage] = useState([]);
 
+    // Style variable error
+
+    const styles = {
+        error: {
+            borderColor: '#c92432',
+            color: '#c92432',
+            background: '#fffafa',
+        }
+    }
+    console.log(styles.error)
+
+
+
+
     // HANDLERS
 
     const handleState = (e) => {
@@ -39,6 +53,9 @@ const Register = (props) => {
         if (Object.keys(errors).length > 0) 
         setErrors(validate({ ...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));
     }
+
+
+
     // FUNCTIONS
 
     const showPassord = () => {
@@ -100,6 +117,7 @@ const Register = (props) => {
                         onChange={handleState}
                         title="Full Name"
                         error={errors.full_name?.help ? errors.full_name.help : message}
+                        style={errors.full_name?.status ?  styles.error : ''}
                     />
                 </div>
                 <div className="registerInput">
@@ -109,6 +127,7 @@ const Register = (props) => {
                         onChange={handleState}
                         title="User Name"
                         error={errors.user_name?.help ? errors.user_name.help : message}
+                        style={errors.user_name?.status ?  styles.error : ''}
                     />
                 </div>
                 <div className="registerInput">
@@ -118,6 +137,7 @@ const Register = (props) => {
                         onChange={handleState}
                         title="Email"
                         error={errors.email?.help ? errors.email.help : message}
+                        style={errors.email?.status ?  styles.error : ''}
                     />
                 </div>
                 <div className="registerInput">
@@ -127,6 +147,7 @@ const Register = (props) => {
                         onChange={handleState}
                         title="Password"
                         error={errors.password?.help ? errors.password.help : message}
+                        style={errors.password?.status ?  styles.error : ''}
                         showHide={password.showHide} 
                         onClick={() => showPassord()}
                     />
@@ -139,6 +160,8 @@ const Register = (props) => {
             </div>
         </div>
     )
+
+
 }
 
 export default connect()(Register)
