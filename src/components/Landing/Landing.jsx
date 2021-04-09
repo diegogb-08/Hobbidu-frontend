@@ -6,8 +6,7 @@ import Register from '../Register/Register'
 const Landing = () => {
 
     const [active, setActive] = useState(true)
-
-
+    
     const register = () => {
         setTimeout(()=>{
             setActive(!active)
