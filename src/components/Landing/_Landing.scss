@@ -26,8 +26,8 @@
 }
 
 .slogan{
-    height: 5rem;
-    width: 12.5rem;
+    height: 7rem;
+    width: 17rem;
     background-color: $transparentWhite;
     position: relative;
     border-radius: $br;
@@ -38,16 +38,16 @@
     align-items: center;
     text-align: center;
     p {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 
 .top{
-    bottom: 7rem;
+    bottom: 15%;
 }
 
 .bottom{
-    top: 13rem;
+    top: 30%;
 }
 
 .landingRight{
