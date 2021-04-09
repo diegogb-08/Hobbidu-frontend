@@ -117,7 +117,7 @@ const Register = (props) => {
                         onChange={handleState}
                         title="Full Name"
                         error={errors.full_name?.help ? errors.full_name.help : message}
-                        style={errors.full_name?.status ?  styles.error : ''}
+                        style={errors.full_name?.status ?  styles.error}
                     />
                 </div>
                 <div className="registerInput">
@@ -127,7 +127,7 @@ const Register = (props) => {
                         onChange={handleState}
                         title="User Name"
                         error={errors.user_name?.help ? errors.user_name.help : message}
-                        style={errors.user_name?.status ?  styles.error : ''}
+                        style={errors.user_name?.status ?  styles.error }
                     />
                 </div>
                 <div className="registerInput">
@@ -137,7 +137,7 @@ const Register = (props) => {
                         onChange={handleState}
                         title="Email"
                         error={errors.email?.help ? errors.email.help : message}
-                        style={errors.email?.status ?  styles.error : ''}
+                        style={errors.email?.status ?  styles.error }
                     />
                 </div>
                 <div className="registerInput">
@@ -147,7 +147,7 @@ const Register = (props) => {
                         onChange={handleState}
                         title="Password"
                         error={errors.password?.help ? errors.password.help : message}
-                        style={errors.password?.status ?  styles.error : ''}
+                        style={errors.password?.status ?  styles.error}
                         showHide={password.showHide} 
                         onClick={() => showPassord()}
                     />
