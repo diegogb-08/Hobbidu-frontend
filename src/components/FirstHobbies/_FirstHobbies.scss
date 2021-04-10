@@ -26,21 +26,53 @@
             grid-template-columns: repeat(5,1fr);
             grid-gap: 0.5rem;
             .hobby{
-                border: 0.5px solid $logoColor;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 border-radius: $br;
                 cursor: pointer;
-                background-color: $lable5;
-                color: $logoColor;
+                color: white;
+                height: 2.5rem;
                 p {
                     text-align: center;
                     margin: 0;
-                    padding: 0;
-                    font-size: 12px;
+                    padding: 0.2rem;
+                    font-weight: bold;
                 }
             }
+        }
+    }
+}
+
+@for $i from 1 through $repeat {
+    .hobby:nth-child(#{length($colorTags)}n+#{$i}){
+        background-color: nth($colorTags, random(length($colorTags)));    }
+}
+
+.selectedHobbies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    height: 2.5rem;
+    width: 90%;
+    margin-bottom: 2rem;
+    font-family: $fontCasual;
+    .selected{
+        border-radius: $br;
+        margin: 0.2rem;
+        height: 2.5rem;
+        width: auto;
+        background-color: $logoColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            text-align: center;
+            margin: 0;
+            padding: 0.2rem;
+            font-weight: bold;
         }
     }
 }

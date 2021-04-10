@@ -593,18 +593,51 @@ input:not(:focus):valid ~ .floating-label {
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 0.5rem; }
       .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby {
-        border: 0.5px solid #f05356;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 0.3em;
         cursor: pointer;
-        background-color: #f1dede;
-        color: #f05356; }
+        color: white;
+        height: 2.5rem; }
         .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby p {
           text-align: center;
           margin: 0;
-          padding: 0;
-          font-size: 12px; }
+          padding: 0.2rem;
+          font-weight: bold; }
+
+.hobby:nth-child(3n+1) {
+  background-color: #0f7fe8; }
+
+.hobby:nth-child(3n+2) {
+  background-color: #3e9931; }
+
+.hobby:nth-child(3n+3) {
+  background-color: #0f7fe8; }
+
+.selectedHobbies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  height: 2.5rem;
+  width: 90%;
+  margin-bottom: 2rem;
+  font-family: "Rajdhani", sans-serif; }
+  .selectedHobbies .selected {
+    border-radius: 0.3em;
+    margin: 0.2rem;
+    height: 2.5rem;
+    width: auto;
+    background-color: #f05356;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .selectedHobbies .selected p {
+      text-align: center;
+      margin: 0;
+      padding: 0.2rem;
+      font-weight: bold; }
 
 /*Fonts and another urls*/
