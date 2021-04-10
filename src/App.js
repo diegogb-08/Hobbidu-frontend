@@ -15,6 +15,7 @@ function App() {
         <Route path="/" exact component={Landing} />
         <Route path="/Home" exact component={Home}/>
 
+
       </Switch>
       
       </BrowserRouter>

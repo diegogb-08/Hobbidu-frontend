@@ -33,6 +33,7 @@ const Login = (props) => {
 
     const handleState = (e) => {
         setCredentials({...credentials, [e.target.name]: e.target.value, [e.target.name]: e.target.value});
+        setMessage('')
         if (Object.keys(errors).length > 0) 
         setErrors(validate({ ...credentials, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));
     } 
@@ -56,15 +57,14 @@ const Login = (props) => {
         if (Object.keys(errs).length === 0) {
             try{
                 let result = await axios.post(port+customer+login, credentials)
+                console.log(result.data)
                 if(result) {
                     props.dispatch({type: LOGIN, payload: result.data});
-                    if(result.data.user.email === 'fakeflix@fakeflix.com'){
-                        history.push('/admin')
-                    }else{
-                    history.push('/user')
-                    }
-                }else {
-                    setMessage('Email or password not found')
+                    // if(result.data.user.email === 'fakeflix@fakeflix.com'){
+                    //     history.push('/admin')
+                    // }else{
+                    // history.push('/user')
+                    // }
                 }
             }catch(err){
                 setMessage('Email or password not found')
@@ -86,7 +86,7 @@ const Login = (props) => {
                         name="email"
                         onChange={handleState}
                         title="Email"
-                        error={errors.email?.help ? errors.email.help : message}
+                        error={errors.email?.help}
                     />
                 </div>
                 <div className="loginInput">
@@ -95,10 +95,13 @@ const Login = (props) => {
                         name="password"
                         onChange={handleState}
                         title="Password"
-                        error={errors.password?.help ? errors.password.help : message}
+                        error={errors.password?.help}
                         showHide={password.showHide} 
                         onClick={() => showPassord()}
                     />
+                </div>
+                <div className="errorMessage">
+                    <p>{message}</p>
                 </div>
                 <div className="loginInput buttonLogin">
                     <Button onClick={()=>toggle()}>
