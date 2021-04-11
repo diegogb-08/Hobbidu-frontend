@@ -328,9 +328,6 @@ template {
   align-items: center;
   flex-direction: column; }
 
-.configComponent {
-  display: flex; }
-
 .landingsComponent {
   width: 100%;
   height: 100%;
@@ -634,13 +631,13 @@ input:not(:focus):valid ~ .floating-label {
     grid-template-columns: repeat(3, 1fr); } }
 
 .hobby:nth-child(3n+1) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+2) {
   background-color: #3e9931; }
 
+.hobby:nth-child(3n+2) {
+  background-color: #e87d33; }
+
 .hobby:nth-child(3n+3) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+4) {
   background-color: #0f7fe8; }
@@ -652,22 +649,22 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+11) {
   background-color: #0f7fe8; }
 
-.hobby:nth-child(3n+12) {
+.hobby:nth-child(3n+10) {
   background-color: #e87d33; }
+
+.hobby:nth-child(3n+11) {
+  background-color: #e87d33; }
+
+.hobby:nth-child(3n+12) {
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+13) {
   background-color: #3e9931; }
@@ -676,19 +673,19 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+15) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+17) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+20) {
   background-color: #3e9931; }
@@ -840,7 +837,8 @@ input:not(:focus):valid ~ .floating-label {
           flex-direction: column;
           align-items: center; }
           .userComponent .userContainer .userDetails .userDetailsTop .userName {
-            margin: 0.5rem; }
+            margin: 0.5rem;
+            font-size: 1.5rem; }
           .userComponent .userContainer .userDetails .userDetailsTop .editProfile {
             margin: 0.5rem; }
           .userComponent .userContainer .userDetails .userDetailsTop .iconBtn {
@@ -866,6 +864,8 @@ input:not(:focus):valid ~ .floating-label {
         width: 100%; }
         .userComponent .userContainer .userDetails .userDetailsBottom .name {
           font-weight: bold; }
+          .userComponent .userContainer .userDetails .userDetailsBottom .name p {
+            font-size: 20px; }
         .userComponent .userContainer .userDetails .userDetailsBottom .hobbies {
           display: flex;
           flex-direction: row;
@@ -904,7 +904,30 @@ input:not(:focus):valid ~ .floating-label {
       width: 100%; }
       .userComponent .userContainer .userDetails .userDetailsBottom {
         width: 85%; }
-        .userComponent .userContainer .userDetails .userDetailsBottom .userName {
-          font-size: 1.5rem; } }
+        .userComponent .userContainer .userDetails .userDetailsBottom .name {
+          display: flex;
+          justify-content: center; } }
+
+.settingContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Rajdhani", sans-serif; }
+  .settingContainer .settingMenu {
+    width: 95%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    border-radius: 0.3em;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-size: 22px; }
+  .settingContainer .settingMenu:hover {
+    background-color: #acacacc4; }
 
 /*Fonts and another urls*/

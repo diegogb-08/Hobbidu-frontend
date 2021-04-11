@@ -3,6 +3,7 @@ import Footer from '../Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
+import Setting from '../Setting/Setting';
 
 const User = (props) => {
 
@@ -25,7 +26,9 @@ const User = (props) => {
                         <p className="userName">{props.user?.user_name}</p>
                         <div className="editProfile">
                             <p>Edit profile</p>
-                            <FontAwesomeIcon icon={faUserCog} className="iconBtn" />
+                            <Setting>
+                                <FontAwesomeIcon icon={faUserCog} className="iconBtn" />
+                            </Setting>
                         </div>
                     </div>
                     <div className="userDetailsMiddle">

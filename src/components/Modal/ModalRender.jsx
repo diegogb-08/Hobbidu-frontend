@@ -2,9 +2,6 @@ import React from 'react'
 import Modal from './Modal';
 import {useState} from 'react';
 
-import FilmSelected from '../../components/FilmSelected/FilmSelected';
-
-
 function ModalRender(props) {
 
     // Modal Hook
@@ -21,6 +18,7 @@ function ModalRender(props) {
         <div>
             <div className="configComponent" onClick={toggle}>{props.children}</div>
                 <Modal active={active} toggle={toggle}>
+
 
                 </Modal>
         </div>

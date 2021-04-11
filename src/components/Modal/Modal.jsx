@@ -44,8 +44,9 @@ const styles = {
         borderRadius: 5,
         boxShadow: '2px 2px 10px rgba(0,0,0,0.2)',
         zIndex: 1000,
-        minWidth: 420,
-        minHeight: 100
+        minWidth: 250,
+        minHeight: 100,
+        backgroundColor: 'white'
     },
     closeBtn: {
         position: 'absolute',

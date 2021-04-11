@@ -75,6 +75,7 @@
                     align-items: center;
                     .userName {
                         margin: 0.5rem;
+                        font-size: 1.5rem;
                     }
                     .editProfile{
                         margin: 0.5rem;
@@ -109,6 +110,9 @@
                 width: 100%;
                 .name{
                     font-weight: bold;
+                    p{
+                        font-size: 20px;
+                    }
                 }
                 .hobbies{
                     display: flex;
@@ -158,8 +162,9 @@
                 width: 100%;
                 .userDetailsBottom {
                     width: 85%;
-                    .userName {
-                        font-size: 1.5rem;
+                    .name{
+                        display: flex;
+                        justify-content: center;
                     }
                 }
             }
