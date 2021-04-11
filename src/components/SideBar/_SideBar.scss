@@ -1,0 +1,32 @@
+.sideBarComponent{
+    width: 100%;
+    .ulSideBarContinent{
+        width: 100%;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        .navItem{
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            .active{
+                border-left: 2px solid $logoColor;
+                height: 3rem;
+                position: relative;
+                font-weight: bold;
+            }
+            p{
+                cursor: pointer;
+                margin-left: 3rem;
+            }
+            @media screen and (max-width: 900px) {
+                p{
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}

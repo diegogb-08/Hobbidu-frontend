@@ -4,10 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import Setting from '../Setting/Setting';
+import { useHistory } from 'react-router';
 
 const User = (props) => {
 
-    
+    let history = useHistory()
+
+    const editProfile = () => {
+        setTimeout(()=>{ history.push('/account/edit')})
+    }
 
     return (
         <div className="userComponent">
@@ -25,7 +30,7 @@ const User = (props) => {
                     <div className="userDetailsTop">
                         <p className="userName">{props.user?.user_name}</p>
                         <div className="editProfile">
-                            <p>Edit profile</p>
+                            <p onClick={()=>editProfile()}>Edit profile</p>
                             <Setting>
                                 <FontAwesomeIcon icon={faUserCog} className="iconBtn" />
                             </Setting>

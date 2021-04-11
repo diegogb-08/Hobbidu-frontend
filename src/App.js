@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import EditAccount from "./components/EditAccount/EditAccount";
 
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -20,6 +21,7 @@ function App(props) {
         <Route path="/" exact component={Landing} />
         <Route path="/home" exact component={Home}/>
         <Route path={`/${userPath}`} exact component={User} />
+        <Route path="/account/edit" exact component={EditAccount}/>
 
       </Switch>
       
