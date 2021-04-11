@@ -634,64 +634,64 @@ input:not(:focus):valid ~ .floating-label {
     grid-template-columns: repeat(3, 1fr); } }
 
 .hobby:nth-child(3n+1) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+9) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+12) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+17) {
   background-color: #0f7fe8; }
 
-.hobby:nth-child(3n+18) {
+.hobby:nth-child(3n+17) {
   background-color: #3e9931; }
+
+.hobby:nth-child(3n+18) {
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -800,11 +800,6 @@ input:not(:focus):valid ~ .floating-label {
       font-size: 15rem;
       color: #fafafa;
       background-color: #f05356; }
-    @media screen and (max-width: 700px) {
-      .userComponent .userContainer .profilePic {
-        width: 10rem;
-        height: 10rem;
-        font-size: 10rem; } }
     .userComponent .userContainer .userDetails {
       width: 50%;
       height: 100%;
@@ -858,15 +853,58 @@ input:not(:focus):valid ~ .floating-label {
         width: 100%; }
         .userComponent .userContainer .userDetails .userDetailsMiddle .sections {
           display: flex;
-          flex-direction: row; }
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center; }
           .userComponent .userContainer .userDetails .userDetailsMiddle .sections .number {
             font-weight: bold;
-            margin-right: 0.5rem; }
+            margin: 0 0.5rem 0 0.5rem; }
+      .userComponent .userContainer .userDetails .userDetailsBottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%; }
+        .userComponent .userContainer .userDetails .userDetailsBottom .name {
+          font-weight: bold; }
+        .userComponent .userContainer .userDetails .userDetailsBottom .hobbies {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          text-align: center; }
+          .userComponent .userContainer .userDetails .userDetailsBottom .hobbies .hobby {
+            border-radius: 0.3em;
+            margin: 0.2rem;
+            height: 2.5rem;
+            width: auto;
+            background-color: #f05356;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            .userComponent .userContainer .userDetails .userDetailsBottom .hobbies .hobby p {
+              text-align: center;
+              margin: 0;
+              padding: 0.2rem;
+              font-weight: bold;
+              color: #ffffff; }
+        .userComponent .userContainer .userDetails .userDetailsBottom .descritpion {
+          width: 100%; }
 
 @media screen and (max-width: 900px) {
-  .userComponent {
-    width: 100%; }
-    .userComponent .userContainer {
-      width: 100%; } }
+  .userComponent .userContainer {
+    padding-top: 2rem;
+    height: 35rem;
+    width: 100%;
+    flex-direction: column; }
+    .userComponent .userContainer .profilePic {
+      width: 10rem;
+      height: 10rem;
+      font-size: 10rem; }
+    .userComponent .userContainer .userDetails {
+      width: 100%; }
+      .userComponent .userContainer .userDetails .userDetailsBottom {
+        width: 85%; }
+        .userComponent .userContainer .userDetails .userDetailsBottom .userName {
+          font-size: 1.5rem; } }
 
 /*Fonts and another urls*/

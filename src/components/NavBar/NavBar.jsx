@@ -14,7 +14,7 @@ const NavBar = (props) => {
     const toggle = (path) => {
         if (path === 'home')
             return setTimeout(()=> {history.push(`/${path}`)},500) 
-        if (path === 'calendar')
+        if (path === 'events')
             return setTimeout(()=> {history.push(`/${path}`)},500) 
         if (path === 'messages')
             return setTimeout(()=> {history.push(`/${path}`)},500) 
@@ -25,7 +25,7 @@ const NavBar = (props) => {
     return (
         <div className="navBarComponent">
             <FontAwesomeIcon icon={faHouseUser} className="iconBtn" onClick={()=>toggle('home')}/>
-            <FontAwesomeIcon icon={faCalendarCheck} className="iconBtn" onClick={()=>toggle('calendar')}/>
+            <FontAwesomeIcon icon={faCalendarCheck} className="iconBtn" onClick={()=>toggle('events')}/>
             <FontAwesomeIcon icon={faEnvelope} className="iconBtn" onClick={()=>toggle('messages')}/>
             <FontAwesomeIcon icon={faUserCircle} className="iconBtn" onClick={()=>toggle(userPath)}/>
         </div>

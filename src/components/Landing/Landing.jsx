@@ -7,7 +7,7 @@ import Register from '../Register/Register'
 const Landing = (props) => {
 
     const [active, setActive] = useState(true)
-    const [hobbies, setHobbies] = useState(false)
+
     
     const register = () => {
         setTimeout(()=>{
@@ -15,13 +15,7 @@ const Landing = (props) => {
         },500)
     }
 
-    // Functions
-
-    const toggle = () => {
-        setTimeout(()=>{
-            setHobbies(!hobbies) 
-        },500)
-    }
+ 
 
     return (
         <div className="landingsComponent">
@@ -41,7 +35,7 @@ const Landing = (props) => {
                     active ? 
                     <>
                         {
-                            hobbies ?
+                            props.showHobbies ?
                             <>
                                 <FirstHobbies/>
                             </>
@@ -59,13 +53,13 @@ const Landing = (props) => {
                     : 
                     <>
                         {
-                            hobbies ?
+                            props.showHobbies ?
                             <>
                                 <FirstHobbies/>
                             </>
                             :
                             <>
-                                <Register onClick={toggle}/>
+                                <Register />
                                 <div className="registerLanding">
                                     <p>Do you have an account?</p>
                                     <p className="register" onClick={register}>Sign In</p>
@@ -82,7 +76,8 @@ const Landing = (props) => {
 
 const mapStateToProps = state => {
     return {
-        user : state.userReducer.user
+        user : state.userReducer.user,
+        showHobbies: state.hobbyReducer.showHobbies
     }
 }
 

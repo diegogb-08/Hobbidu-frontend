@@ -6,6 +6,7 @@ import {LOGIN} from '../../redux/types/userType'
 import axios from 'axios'
 import {port,customer,login} from '../../tools/apiPaths';
 import Button from '../Button/Button';
+import { SHOWHOBBIES } from '../../redux/types/hobbyType';
 
 
 
@@ -102,6 +103,7 @@ const Register = (props) => {
 
                 if (resultLogin) {          
                     props.dispatch({type: LOGIN, payload: resultLogin.data});
+                    props.dispatch({type: SHOWHOBBIES})
                 }
             } 
         } catch (error) {
@@ -160,7 +162,7 @@ const Register = (props) => {
                 <div className="errorMessage">
                     <p>{message}</p>
                 </div>
-                <div className="registerInput buttonLogin" onClick={props.onClick}>
+                <div className="registerInput buttonLogin">
                     <Button onClick={()=>toggle()}>
                        <p>Continue</p> 
                     </Button>

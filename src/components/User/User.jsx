@@ -1,10 +1,13 @@
-import React from 'react'
+import React  from 'react'
 import Footer from '../Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 
 const User = (props) => {
+
+    
+
     return (
         <div className="userComponent">
             <div className="spacer"></div>
@@ -43,6 +46,25 @@ const User = (props) => {
                             <p>followers</p>
                         </div>
                     </div>
+                    <div className="userDetailsBottom">
+                        <div className="name">
+                            <p>{props.user.name}</p> 
+                        </div>
+                        <div className="hobbies">
+                            {
+                                props.user.hobbies.map(hobby => {
+                                    return(
+                                        <div className="hobby" key={hobby._id}>
+                                            <p>{hobby.hobby_name}</p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div className="descritpion">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum mollitia quo corrupti labore qui</p> 
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer/>
@@ -53,6 +75,7 @@ const User = (props) => {
 const mapStateToProps = state => {
     return {
         user : state.userReducer.user,
+        hobby : state.hobbyReducer.hobby
     }
 }
 

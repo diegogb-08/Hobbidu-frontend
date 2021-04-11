@@ -1,7 +1,8 @@
-import { ADD, REMOVE, CLEAN } from '../types/hobbyType';
+import { ADD, REMOVE, CLEAN, SHOWHOBBIES } from '../types/hobbyType';
 
 const initialState = {
-    hobby: []
+    hobby: [],
+    showHobbies: false
 };
 
 const hobbyReducer = (state = initialState, action) => {
@@ -19,6 +20,12 @@ const hobbyReducer = (state = initialState, action) => {
                     ...state.hobby.slice(0, numIndex),
                     ...state.hobby.slice(numIndex + 1)
                 ]
+            }
+
+        case SHOWHOBBIES:
+            return {
+                ...state,
+                showHobbies : true
             }
 
         case CLEAN:

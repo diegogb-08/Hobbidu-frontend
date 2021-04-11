@@ -4,7 +4,7 @@ import { customer, hobby, port } from '../../tools/apiPaths'
 import InputForm from '../InputForm/InputForm'
 import {connect} from 'react-redux';
 import Button from '../Button/Button';
-import { LOGIN, SETACTIVE } from '../../redux/types/userType';
+import { SETACTIVE, UPDATE } from '../../redux/types/userType';
 import { useHistory } from 'react-router';
 import { ADD } from '../../redux/types/hobbyType';
 
@@ -89,13 +89,13 @@ const FirstHobbies = (props) => {
 
     const toggle = async () => {
 
-        let hobbiesIds = isSelected.map(hobby => hobby._id)
         let body = {
-            hobbies: hobbiesIds
+            hobbies: isSelected
         }
         if(isSelected[0]){
             let result = await axios.put(port+customer+'/'+props.user._id, body, auth)
-            props.dispatch({type: LOGIN, payload: result.data});
+            console.log(result)
+            props.dispatch({type: UPDATE, payload: result.data});
             setTimeout(()=>{
                 props.dispatch({type: SETACTIVE})
                 history.push('/home')
