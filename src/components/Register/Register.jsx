@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import InputForm from '../InputForm/InputForm'
-import {useHistory} from 'react-router-dom';
 import validate from "../../tools/validate";
 import {connect} from 'react-redux';
 import {LOGIN} from '../../redux/types/userType'
@@ -11,8 +10,6 @@ import Button from '../Button/Button';
 
 
 const Register = (props) => {
-
-    let history = useHistory();
 
     // HOOKS
     const [user, setUser] = useState({
@@ -51,6 +48,21 @@ const Register = (props) => {
     }
 
 
+    // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
+    useEffect(() => {
+        const listener = event => {
+            if (event.code === "Enter" || event.code === "NumpadEnter") {
+                toggle()
+            }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+        document.removeEventListener("keydown", listener);
+        };
+        // eslint-disable-next-line
+    },[]);
+
+
 
     // FUNCTIONS
 
@@ -80,21 +92,16 @@ const Register = (props) => {
         try {
             let result = await axios.post(port+customer, body)
             if (result) {
+
                 let dataLogin = {
                     email : result.data.email,
                     password : user.password,
                 }
 
-        
                 let resultLogin = await axios.post(port+customer+login, dataLogin)
-                console.log(resultLogin)
+
                 if (resultLogin) {          
                     props.dispatch({type: LOGIN, payload: resultLogin.data});
-                    setTimeout(()=>{history.push('/home')},500)
-                    // if (typeof resultLogin.data.user.hobby !== 'undefined' && resultLogin.data.user.hobby.length > 0) {
-                        
-                    // }
-                    
                 }
             } 
         } catch (error) {
@@ -153,7 +160,7 @@ const Register = (props) => {
                 <div className="errorMessage">
                     <p>{message}</p>
                 </div>
-                <div className="registerInput buttonLogin">
+                <div className="registerInput buttonLogin" onClick={props.onClick}>
                     <Button onClick={()=>toggle()}>
                        <p>Continue</p> 
                     </Button>

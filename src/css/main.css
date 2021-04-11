@@ -322,6 +322,12 @@ template {
   font-family: "Rajdhani", sans-serif;
   width: 100%; }
 
+.homeComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
 .configComponent {
   display: flex; }
 
@@ -413,6 +419,19 @@ template {
 .logo {
   height: 80%; }
 
+.navbar {
+  position: absolute;
+  left: 70%;
+  width: 20rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+
+@media screen and (max-width: 950px) {
+  .navbar {
+    display: none; } }
+
 .inputComponent {
   width: 100%;
   margin-right: 2rem; }
@@ -466,7 +485,7 @@ input:not(:focus):valid ~ .floating-label {
   align-items: center;
   justify-content: center;
   width: 85%;
-  height: 70%;
+  height: 65%;
   font-family: "Caveat", cursive;
   color: #333333;
   background-color: #ffffff;
@@ -521,7 +540,7 @@ input:not(:focus):valid ~ .floating-label {
   align-items: center;
   justify-content: center;
   width: 85%;
-  height: 70%;
+  height: 65%;
   font-family: "Caveat", cursive;
   color: #333333;
   background-color: #ffffff;
@@ -560,7 +579,8 @@ input:not(:focus):valid ~ .floating-label {
   margin-left: 0.5rem;
   font-weight: bold; }
   .buttonLogin p {
-    color: white; }
+    color: white;
+    padding: 0 3rem 0 3rem; }
 
 .errorMessage {
   color: red;
@@ -608,11 +628,16 @@ input:not(:focus):valid ~ .floating-label {
           padding: 0.2rem;
           font-weight: bold; }
 
+@media only screen and (max-width: 1030px) {
+  .hobbyGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); } }
+
 .hobby:nth-child(3n+1) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+3) {
   background-color: #e87d33; }
@@ -621,25 +646,25 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+6) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
   background-color: #e87d33; }
@@ -648,7 +673,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
@@ -657,16 +682,16 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+18) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .selectedHobbies {
   display: flex;
@@ -717,9 +742,131 @@ input:not(:focus):valid ~ .floating-label {
     font-weight: bold;
     font-size: 18px; }
 
-@media (max-width: 1130px) {
-  .hobbyGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); } }
+.footerComponent {
+  box-sizing: border-box;
+  height: 4rem;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  background-color: white; }
+
+@media screen and (max-width: 950px) {
+  .footerComponent {
+    display: flex; } }
+
+.navBarComponent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  .navBarComponent .iconBtn {
+    font-size: 2rem;
+    color: #7c7578;
+    cursor: pointer; }
+  .navBarComponent .iconBtn:hover {
+    color: #333333; }
+
+.userComponent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fafafa; }
+  .userComponent .userContainer {
+    width: 60rem;
+    height: 30rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box; }
+    .userComponent .userContainer .profilePic {
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15rem;
+      color: #fafafa;
+      background-color: #f05356; }
+    @media screen and (max-width: 700px) {
+      .userComponent .userContainer .profilePic {
+        width: 10rem;
+        height: 10rem;
+        font-size: 10rem; } }
+    .userComponent .userContainer .userDetails {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      .userComponent .userContainer .userDetails .userDetailsTop {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        width: 100%; }
+        .userComponent .userContainer .userDetails .userDetailsTop .userName {
+          font-size: 2.5rem;
+          padding: 0;
+          margin: 0; }
+        .userComponent .userContainer .userDetails .userDetailsTop .editProfile {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-direction: row;
+          width: 100%; }
+          .userComponent .userContainer .userDetails .userDetailsTop .editProfile p {
+            border: 1px solid #dbdbdb;
+            padding: 0.5rem;
+            border-radius: 0.3em;
+            font-weight: bold;
+            cursor: pointer; }
+          .userComponent .userContainer .userDetails .userDetailsTop .editProfile .iconBtn {
+            font-size: 1.5rem;
+            color: #7c7578;
+            cursor: pointer; }
+          .userComponent .userContainer .userDetails .userDetailsTop .editProfile .iconBtn:hover {
+            color: #333333; }
+      @media screen and (max-width: 700px) {
+        .userComponent .userContainer .userDetails .userDetailsTop {
+          flex-direction: column;
+          align-items: center; }
+          .userComponent .userContainer .userDetails .userDetailsTop .userName {
+            margin: 0.5rem; }
+          .userComponent .userContainer .userDetails .userDetailsTop .editProfile {
+            margin: 0.5rem; }
+          .userComponent .userContainer .userDetails .userDetailsTop .iconBtn {
+            margin: 0.5rem; } }
+      .userComponent .userContainer .userDetails .userDetailsMiddle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%; }
+        .userComponent .userContainer .userDetails .userDetailsMiddle .sections {
+          display: flex;
+          flex-direction: row; }
+          .userComponent .userContainer .userDetails .userDetailsMiddle .sections .number {
+            font-weight: bold;
+            margin-right: 0.5rem; }
+
+@media screen and (max-width: 900px) {
+  .userComponent {
+    width: 100%; }
+    .userComponent .userContainer {
+      width: 100%; } }
 
 /*Fonts and another urls*/

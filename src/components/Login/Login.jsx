@@ -1,8 +1,8 @@
-import React, {useState}  from 'react'
+import React, {useEffect, useState}  from 'react'
 import {useHistory} from 'react-router-dom'; 
 import InputForm from '../InputForm/InputForm';
 import axios from 'axios';
-import {LOGIN} from '../../redux/types/userType';
+import {LOGIN, SETACTIVE} from '../../redux/types/userType';
 import {connect} from 'react-redux';
 import validate from "../../tools/validate";
 import {port,customer,login} from '../../tools/apiPaths';
@@ -38,6 +38,22 @@ const Login = (props) => {
         setErrors(validate({ ...credentials, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));
     } 
 
+
+    // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
+    useEffect(() => {
+        const listener = event => {
+            if (event.code === "Enter" || event.code === "NumpadEnter") {
+                toggle()
+            }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+        document.removeEventListener("keydown", listener);
+        };
+        // eslint-disable-next-line
+    },[]);
+
+
     // FUNCTIONS
 
     const showPassord = () => {
@@ -60,12 +76,10 @@ const Login = (props) => {
                 console.log(result.data)
                 if(result) {
                     props.dispatch({type: LOGIN, payload: result.data});
-                    setTimeout(()=>{history.push('/home')},500)
-                    // if(result.data.user.email === 'fakeflix@fakeflix.com'){
-                    //     history.push('/admin')
-                    // }else{
-                    // history.push('/user')
-                    // }
+                    setTimeout(()=>{
+                        props.dispatch({type: SETACTIVE})
+                        history.push('/home')
+                    },500)
                 }
             }catch(err){
                 setMessage('Email or password not found')

@@ -1,18 +1,27 @@
-import { LOGIN, LOGOUT, UPDATE } from '../types/userType';
+import { LOGIN, LOGOUT, UPDATE, SETACTIVE } from '../types/userType';
 
 const initialState = {
     user: {},
-    token: ''
+    token: '',
+    active: false
 
 };
 
 const userReducer = (state = initialState, action) => {
+
     switch(action.type){
         case LOGIN :
             return {
                 ...state,
                 user : action.payload.user,
                 token : action.payload.token,
+                
+            }
+
+        case SETACTIVE : 
+            return {
+                ...state,
+                active : true
             }
 
         case LOGOUT :

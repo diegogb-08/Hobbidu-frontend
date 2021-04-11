@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import FirstHobbies from '../FirstHobbies/FirstHobbies'
 import Login from '../Login/Login'
@@ -15,15 +15,13 @@ const Landing = (props) => {
         },500)
     }
 
+    // Functions
 
-    useEffect(()=>{
-        if(props.user?.hobbies[0] === undefined) {
-            setTimeout(()=>{
-                setHobbies(!hobbies) 
-            },500)
-        }
-        // eslint-disable-next-line
-    },[active])
+    const toggle = () => {
+        setTimeout(()=>{
+            setHobbies(!hobbies) 
+        },500)
+    }
 
     return (
         <div className="landingsComponent">
@@ -61,13 +59,13 @@ const Landing = (props) => {
                     : 
                     <>
                         {
-                            !hobbies ?
+                            hobbies ?
                             <>
                                 <FirstHobbies/>
                             </>
                             :
                             <>
-                                <Register/>
+                                <Register onClick={toggle}/>
                                 <div className="registerLanding">
                                     <p>Do you have an account?</p>
                                     <p className="register" onClick={register}>Sign In</p>
