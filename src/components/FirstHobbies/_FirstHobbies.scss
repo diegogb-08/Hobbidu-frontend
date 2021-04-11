@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 85%;
-    height: 70%;
+    width: 95%;
+    height: 85%;
     font-family: $fontStyle;
     color: $fontcolor1;
     background-color: $white1;
@@ -12,6 +12,8 @@
     h2 {
         text-align: center; 
         font-size: 2.5rem;
+        margin: 0;
+        padding: 0;
     }
     .hobbiesContainer {
         width: 100%;
@@ -23,7 +25,7 @@
         .hobbyGrid{
             width: 90%;
             display: grid;
-            grid-template-columns: repeat(5,1fr);
+            grid-template-columns: repeat(4,1fr);
             grid-gap: 0.5rem;
             .hobby{
                 display: flex;
@@ -57,7 +59,7 @@
     color: white;
     height: 2.5rem;
     width: 90%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-family: $fontCasual;
     .selected{
         border-radius: $br;
@@ -74,5 +76,43 @@
             padding: 0.2rem;
             font-weight: bold;
         }
+    }
+}
+
+.searchNewHobby{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 70%;
+    margin-top: 4rem;
+    font-family: $fontCasual;
+    p{
+        font-weight: bold;
+    }
+}
+
+.hobbyButton{
+    width: 70%;
+    height: 2.5rem;
+    display: flex;
+    margin-bottom: 1.5rem;
+    font-family: $fontCasual;
+    p{
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+}
+
+// Media queries
+
+@media (max-width: 1130px) {
+
+    .hobbyGrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
     }
 }

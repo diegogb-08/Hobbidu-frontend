@@ -17,7 +17,7 @@ const Landing = (props) => {
 
 
     useEffect(()=>{
-        if(props.user.hobbies[0] === undefined) {
+        if(props.user?.hobbies[0] === undefined) {
             setTimeout(()=>{
                 setHobbies(!hobbies) 
             },500)

@@ -90,6 +90,7 @@ const Register = (props) => {
                 console.log(resultLogin)
                 if (resultLogin) {          
                     props.dispatch({type: LOGIN, payload: resultLogin.data});
+                    setTimeout(()=>{history.push('/home')},500)
                     // if (typeof resultLogin.data.user.hobby !== 'undefined' && resultLogin.data.user.hobby.length > 0) {
                         
                     // }

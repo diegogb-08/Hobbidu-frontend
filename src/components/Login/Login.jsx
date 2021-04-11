@@ -60,6 +60,7 @@ const Login = (props) => {
                 console.log(result.data)
                 if(result) {
                     props.dispatch({type: LOGIN, payload: result.data});
+                    setTimeout(()=>{history.push('/home')},500)
                     // if(result.data.user.email === 'fakeflix@fakeflix.com'){
                     //     history.push('/admin')
                     // }else{
