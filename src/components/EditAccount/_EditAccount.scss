@@ -1,6 +1,6 @@
 .editAccountComponent {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,10 +29,10 @@
             width: 100%;
             height: 70%;
             .sideBarLeft{
-                width: 30%
+                width: 35%
             }
             .tabRight {
-                width: 70%
+                width: 65%
             }
         }
     }

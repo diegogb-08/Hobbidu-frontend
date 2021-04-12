@@ -22,6 +22,10 @@ const EditAccount = (props) => {
         <div className="editAccountComponent">
             <div className="spacer"></div>
             <div className="spacer"></div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
             <div className="editAccountContainer">
                 <div className="sideBarLeft">
                     <SideBar className="sideBarLeft" tabs={['Edit profile', 'Change picture', 'Change hobbies']} selected={tab.selected} setSelected={setSelected}/>

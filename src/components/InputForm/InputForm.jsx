@@ -7,10 +7,9 @@ function InputForm(props) {
                 className="inputText"
                 type={props.type}
                 name={props.name}
-                maxLength={props.lenght}
+                maxLength={props.length}
                 onChange={props.onChange}
                 onKeyDown={props.onKeyDown}
-                tabIndex={props.tabIndex}
                 value={props.value}
                 style={props.style}
                 required

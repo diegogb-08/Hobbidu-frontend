@@ -67,7 +67,7 @@ const FirstHobbies = (props) => {
     // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
     useEffect(() => {
         const listener = event => {
-            if (event.code === "Enter" || event.code === "NumpadEnter") {
+            if (event.code === "Enter" || event.keyCode === "13") {
                 addNewHobby()
             }
         };

@@ -5,7 +5,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem;
     .editInfoContainer{
         height: 100%;
         width: 100%;
@@ -14,19 +14,51 @@
         align-items: center;
         flex-direction: column;
         .editSections{
-            width: 80%;
-            margin-left: 10rem;
-            height: 15%;
+            width: 100%;
+            height: auto;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            margin-top: 1rem;
             .title{
+                width: 20%;
                 font-weight: bold;
             }
-            .inputContainer {
-                width: 50%;
-                height: 1.5rem;
-                margin-bottom: 0.5rem;
+            .inputAndDescription{
+                width: 80%;
+                .inputContainer {
+                    width: 60%;
+                    height: 1.5rem;
+                }
+                p{
+                    padding-top: 1rem;
+                    width: 80%;
+                }
+            }
+        }
+        @media screen and (max-width: 900px) {
+            .editSections{
+                flex-direction: column;
+                padding-left: 2rem;
+                .title{
+                    width: 100%;
+                }
+                .inputAndDescription{
+                    width: 90%;
+                    .inputContainer {
+                        width: 80%;
+                    }
+
+                }
+            }
+        }
+        .buttonEdit{
+            width: 7rem;
+            height: 2.5rem;
+            p{
+                color: white;
+                font-weight: bold;
+                font-size: 1.3rem;
             }
         }
     }
