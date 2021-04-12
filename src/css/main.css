@@ -609,7 +609,7 @@ input:not(:focus):valid ~ .floating-label {
     .firstHobbiesComponent .hobbiesContainer .hobbyGrid {
       width: 90%;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       grid-gap: 0.5rem; }
       .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby {
         display: flex;
@@ -625,34 +625,29 @@ input:not(:focus):valid ~ .floating-label {
           padding: 0.2rem;
           font-weight: bold; }
 
-@media only screen and (max-width: 1030px) {
-  .hobbyGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); } }
-
 .hobby:nth-child(3n+1) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+2) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+3) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+4) {
   background-color: #3e9931; }
 
-.hobby:nth-child(3n+5) {
+.hobby:nth-child(3n+2) {
   background-color: #0f7fe8; }
+
+.hobby:nth-child(3n+3) {
+  background-color: #e87d33; }
+
+.hobby:nth-child(3n+4) {
+  background-color: #0f7fe8; }
+
+.hobby:nth-child(3n+5) {
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
   background-color: #3e9931; }
@@ -661,34 +656,34 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+13) {
   background-color: #3e9931; }
 
-.hobby:nth-child(3n+14) {
+.hobby:nth-child(3n+13) {
   background-color: #e87d33; }
+
+.hobby:nth-child(3n+14) {
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+17) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+19) {
   background-color: #3e9931; }
 
+.hobby:nth-child(3n+19) {
+  background-color: #0f7fe8; }
+
 .hobby:nth-child(3n+20) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -738,6 +733,35 @@ input:not(:focus):valid ~ .floating-label {
     color: white;
     font-weight: bold;
     font-size: 18px; }
+
+.message {
+  height: 2rem;
+  font-family: "Rajdhani", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .message p {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    color: #3e9931;
+    font-weight: bold;
+    text-align: center; }
+
+@media only screen and (max-width: 1030px) {
+  .firstHobbiesComponent {
+    width: 100%;
+    height: 100%; }
+    .firstHobbiesComponent h2 {
+      font-size: 1.5rem;
+      padding: 0.5rem; }
+    .firstHobbiesComponent .hobbiesContainer .hobbyGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); }
+      .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby {
+        height: 2rem; }
+        .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby p {
+          font-size: 12px; } }
 
 .footerComponent {
   box-sizing: border-box;
@@ -995,5 +1019,34 @@ input:not(:focus):valid ~ .floating-label {
   align-items: center;
   border: 1px solid #dbdbdb;
   box-sizing: border-box; }
+
+.editInfoComponent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem; }
+  .editInfoComponent .editInfoContainer {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .editInfoComponent .editInfoContainer .editSections {
+      width: 80%;
+      margin-left: 10rem;
+      height: 15%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly; }
+      .editInfoComponent .editInfoContainer .editSections .title {
+        font-weight: bold; }
+      .editInfoComponent .editInfoContainer .editSections .inputContainer {
+        width: 50%;
+        height: 1.5rem;
+        margin-bottom: 0.5rem; }
 
 /*Fonts and another urls*/

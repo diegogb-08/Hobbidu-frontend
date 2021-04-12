@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { useHistory } from 'react-router'
 import FirstHobbies from '../FirstHobbies/FirstHobbies'
 import Login from '../Login/Login'
 import Register from '../Register/Register'
 
 const Landing = (props) => {
+
+    let history = useHistory()
 
     const [active, setActive] = useState(true)
 
@@ -16,6 +19,9 @@ const Landing = (props) => {
     }
 
  
+    if(props.user?.hobbies?.length > 0){
+        history.push('/home')
+    }
 
     return (
         <div className="landingsComponent">
@@ -44,7 +50,7 @@ const Landing = (props) => {
                                 <Login/> 
                                 <div className="registerLanding">
                                     <p>Don't have an account?</p>
-                                    <p className="register" onClick={register}>Register</p>
+                                    <p className="register" onClick={()=>register()}>Register</p>
                                 </div>
                             </>
                             
@@ -62,7 +68,7 @@ const Landing = (props) => {
                                 <Register />
                                 <div className="registerLanding">
                                     <p>Do you have an account?</p>
-                                    <p className="register" onClick={register}>Sign In</p>
+                                    <p className="register" onClick={()=>register()}>Sign In</p>
                                 </div>
                             </>
                         }

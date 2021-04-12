@@ -1,0 +1,33 @@
+.editInfoComponent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    .editInfoContainer{
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .editSections{
+            width: 80%;
+            margin-left: 10rem;
+            height: 15%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            .title{
+                font-weight: bold;
+            }
+            .inputContainer {
+                width: 50%;
+                height: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}

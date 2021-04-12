@@ -24,6 +24,7 @@ const FirstHobbies = (props) => {
     const [hobbies, setHobbies] = useState([])
     const [isSelected, setIsSelected] = useState([])
     const [newHobby, setNewHobby] = useState('')
+    const [message, setMessage] = useState('')
 
     const getHobbies = async () => {
         let result = await axios.get(port+hobby)
@@ -44,12 +45,22 @@ const FirstHobbies = (props) => {
             user_id: props.user._id
         }
 
-        let result = await axios.post(port+hobby,body)
-        setIsSelected([...isSelected, result.data])
+        if(isSelected.length < 3){
+            let result = await axios.post(port+hobby,body)
+            setIsSelected([...isSelected, result.data])
+        }else{
+            setMessage('Max 3 hobbies reached')
+        }
+
     }
 
     useEffect(()=> {
         getHobbies()
+        // eslint-disable-next-line
+    },[])
+
+    useEffect(()=> {
+        getProps()
         // eslint-disable-next-line
     },[])
 
@@ -69,22 +80,31 @@ const FirstHobbies = (props) => {
 
     // FUNCTIONS
 
+    const getProps = () => {
+
+        if(props.user?.hobbies) {
+            setIsSelected(props.user?.hobbies)
+        }
+    }
+
+
     const selectTag = (hobby) => {
 
-        
-            if(isSelected[0]){
-                let itemId = isSelected.map(item => item._id)
-                if(itemId.find(element => element === hobby._id) === undefined){
-                    if(isSelected.length < 3){
-                        setIsSelected([...isSelected, hobby])
-                    }
-                }else{
-                    setIsSelected(isSelected.filter(element => element._id !== hobby._id))
+        if(isSelected[0]){
+            let itemId = isSelected.map(item => item._id)
+            if(itemId.find(element => element === hobby._id) === undefined){
+                if(isSelected.length < 3){
+                    setIsSelected([...isSelected, hobby])
+                    setMessage('')
                 }
             }else{
-                setIsSelected([...isSelected, hobby])
+                setIsSelected(isSelected.filter(element => element._id !== hobby._id))
+                setMessage('')
             }
-        
+        }else{
+            setIsSelected([...isSelected, hobby])
+            setMessage('')
+        }
     }
 
     const toggle = async () => {
@@ -94,12 +114,15 @@ const FirstHobbies = (props) => {
         }
         if(isSelected[0]){
             let result = await axios.put(port+customer+'/'+props.user._id, body, auth)
-            console.log(result)
             props.dispatch({type: UPDATE, payload: result.data});
-            setTimeout(()=>{
-                props.dispatch({type: SETACTIVE})
-                history.push('/home')
-            },500)
+            if(props.user?.hobbies){
+                return setMessage('Hobbies succesfully updated!')
+            }else{
+                setTimeout(()=>{
+                    props.dispatch({type: SETACTIVE})
+                    history.push('/home')
+                },500)
+            }
         }
 
     }
@@ -111,6 +134,7 @@ const FirstHobbies = (props) => {
                 <h2>SELECT YOUR HOBBIES</h2>
             </div>
             <div className="selectedHobbies">
+                
                 {
                     isSelected?.map(hobby => {
                         return(
@@ -137,12 +161,15 @@ const FirstHobbies = (props) => {
             </div>
             <div className="searchNewHobby">
                 <p>You can't find your Hobby?</p>
-                <InputForm type="text" name="newHobby" onChange={handleState} title="Add your hobby... Press Enter"/>
+                <InputForm type="text" name="newHobby" onChange={handleState} title="Add hobby & PRESS ENTER"/>
             </div>
             <div className="hobbyButton">
                 <Button onClick={()=>toggle()}>
                     <p>Enjoy!</p> 
                 </Button>
+            </div>
+            <div className="message">
+                <p>{message}</p>
             </div>
         </div>
     )
@@ -152,7 +179,8 @@ const FirstHobbies = (props) => {
 const mapStateToProps = state => {
     return {
         user : state.userReducer.user,
-        token : state.userReducer.token
+        token : state.userReducer.token,
+        allHobbies: state.hobbyReducer.allHobbies
     }
 }
 

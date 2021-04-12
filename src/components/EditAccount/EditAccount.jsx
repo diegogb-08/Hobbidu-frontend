@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import EditInfo from '../EditInfo/EditInfo';
+import FirstHobbies from '../FirstHobbies/FirstHobbies';
 import Footer from '../Footer/Footer';
 import SideBar from '../SideBar/SideBar';
 import Tab from '../Tab/Tab';
@@ -11,8 +13,6 @@ const EditAccount = (props) => {
         selected: 'Edit Profile',
     })
 
-    console.log(tab)
-
     // FUNCTIONS
     const setSelected = (tab) => {
         setTab({selected: tab});
@@ -24,14 +24,17 @@ const EditAccount = (props) => {
             <div className="spacer"></div>
             <div className="editAccountContainer">
                 <div className="sideBarLeft">
-                    <SideBar className="sideBarLeft" tabs={['Edit profile', 'Change picture']} selected={tab.selected} setSelected={setSelected}/>
+                    <SideBar className="sideBarLeft" tabs={['Edit profile', 'Change picture', 'Change hobbies']} selected={tab.selected} setSelected={setSelected}/>
                 </div>
                 <div className="tabRight">
                     <Tab isSelected={tab.selected === 'Edit profile'}>
-                        Esto es Edit Profile
+                        <EditInfo/>
                     </Tab>
                     <Tab isSelected={tab.selected === 'Change picture'}>
                         Esto change picture
+                    </Tab>
+                    <Tab isSelected={tab.selected === 'Change hobbies'}>
+                        <FirstHobbies/>
                     </Tab>
                 </div>
             </div>
