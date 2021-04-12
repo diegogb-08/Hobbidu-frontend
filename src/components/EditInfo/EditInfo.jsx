@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import Button from '../Button/Button'
 import InputForm from '../InputForm/InputForm'
-import validate from "../../tools/validate";
+//import validate from "../../tools/validate";
+import GeoLocation from '../GeoLocation/GeoLocation';
 
 const EditInfo = (props) => {
 
@@ -79,7 +80,8 @@ const EditInfo = (props) => {
                     <p className="title">Location</p>
                     <div className="inputAndDescription">
                         <div className="inputContainer">
-                            <InputForm type="text" name="location" lenght="16" onChange={handleState} value={user.location}/>
+                            <GeoLocation></GeoLocation>
+                            {/* <InputForm type="text" name="location" lenght="16" onChange={handleState} value={user.location}/> */}
                         </div>
                     </div>
                 </div>
