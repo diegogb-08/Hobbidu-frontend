@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle, faEnvelope, faCalendarCheck } from '@fortawesome/free-regular-svg-icons'
@@ -11,23 +11,24 @@ const NavBar = (props) => {
 
     let userPath = props.user?.user_name
 
+    // const [ isSelected, setIsSelected ] = useState({
+    //     selected: 'home'
+    // })
+
+    // const active = (isSelected.elected ? 'selected' : '');
+
+
     const toggle = (path) => {
-        if (path === 'home')
-            return setTimeout(()=> {history.push(`/${path}`)},500) 
-        if (path === 'events')
-            return setTimeout(()=> {history.push(`/${path}`)},500) 
-        if (path === 'messages')
-            return setTimeout(()=> {history.push(`/${path}`)},500) 
-        if (path === userPath)
-            return setTimeout(()=> {history.push(`/${userPath}`)},500) 
+        // setIsSelected({selected: path})
+        return setTimeout(()=> {history.push(`/${path}`)},500) 
     }
 
     return (
         <div className="navBarComponent">
-            <FontAwesomeIcon icon={faHouseUser} className="iconBtn" onClick={()=>toggle('home')}/>
-            <FontAwesomeIcon icon={faCalendarCheck} className="iconBtn" onClick={()=>toggle('events')}/>
-            <FontAwesomeIcon icon={faEnvelope} className="iconBtn" onClick={()=>toggle('messages')}/>
-            <FontAwesomeIcon icon={faUserCircle} className="iconBtn" onClick={()=>toggle(userPath)}/>
+            <FontAwesomeIcon icon={faHouseUser} className={'iconBtn'} onClick={()=>toggle('home')}/>
+            <FontAwesomeIcon icon={faCalendarCheck} className={'iconBtn'}  onClick={()=>toggle('events')}/>
+            <FontAwesomeIcon icon={faEnvelope} className={'iconBtn'}  onClick={()=>toggle('messages')}/>
+            <FontAwesomeIcon icon={faUserCircle} className={'iconBtn'}  onClick={()=>toggle(userPath)}/>
         </div>
     )
 }

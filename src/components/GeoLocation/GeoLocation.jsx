@@ -3,7 +3,7 @@ import PlacesAutocomplete from 'react-places-autocomplete';
 import scriptLoader from 'react-async-script-loader'
 
 
-const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed}) => {
+const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
     const [address, setAddress] = useState("");
 
     const handleChange = (value) => {
@@ -61,4 +61,4 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed}) => {
     }
     
 }
-export default scriptLoader([`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_API}&libraries=places`])(GeoLocation);
+export default scriptLoader([`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_API}&libraries=places`,])(GeoLocation);
