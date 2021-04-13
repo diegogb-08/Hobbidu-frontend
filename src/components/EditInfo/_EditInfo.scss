@@ -55,6 +55,10 @@
                 }
             }
         }
+        .message{
+            color: $logoColor;
+            font-size: 14px;
+        }
         .buttonEditContainer{
             width: 100%;height: 100%;
             display: flex;
@@ -63,6 +67,7 @@
             .buttonEdit{
                 width: 7rem;
                 height: 2.5rem;
+                margin-right: 1.5rem;
                 p{
                     color: white;
                     font-weight: bold;

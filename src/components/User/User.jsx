@@ -55,8 +55,9 @@ const User = (props) => {
                         </div>
                     </div>
                     <div className="userDetailsBottom">
-                        <div className="name">
-                            <p>{props.user.name}</p> 
+                        <div className="nameAndLocation">
+                            <p className="name">{props.user.name}</p>
+                            <p className="location">{props.user?.location || 'Valencia, Spain'}</p>
                         </div>
                         <div className="hobbies">
                             {
@@ -70,7 +71,7 @@ const User = (props) => {
                             }
                         </div>
                         <div className="descritpion">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum mollitia quo corrupti labore qui</p> 
+                            <p>{props.user.bio}</p> 
                         </div>
                     </div>
                 </div>

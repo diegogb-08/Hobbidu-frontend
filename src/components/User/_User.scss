@@ -108,11 +108,14 @@
                 flex-direction: column;
                 justify-content: center;
                 width: 100%;
-                .name{
-                    font-weight: bold;
-                    p{
+                .nameAndLocation{
+                    display: flex;
+                    justify-content: space-between;
+                    .name{
                         font-size: 20px;
+                        font-weight: bold;
                     }
+            
                 }
                 .hobbies{
                     display: flex;

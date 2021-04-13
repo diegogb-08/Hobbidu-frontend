@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
+
     const [address, setAddress] = useState("");
 
     const handleChange = (value) => {
@@ -14,7 +15,7 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
     const handleSelect = (value) => {
       setAddress(value)
     }
-  
+
     if (isScriptLoaded && isScriptLoadSucceed) {
 
       return (
@@ -34,7 +35,8 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
                     <input
                     {...getInputProps({
                         placeholder: "Enter Address...",
-                        className: "inputText"
+                        className: "inputText",
+                        name: props.name
                     })}
                     />
                     <div className="autocompleteDropdownContainer">

@@ -1,4 +1,4 @@
-import validateSpanishID from './validate-spanish-id';
+
 
 export default function validate(fields, context = 'register') {
     let errors = {};
@@ -32,32 +32,15 @@ export default function validate(fields, context = 'register') {
                 if(! /^(?=.{6,16}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/.test(fields[key]))
                     errors[key] = {status: 'error', help: 'The user name must contain between 6 to 16 characters and special characters like "_" or ".".'};
             break;
-            case 'address':
-                if(fields[key] === '')
-                errors[key] = {status: 'error', help: 'Please provide your address.'};
-            break;
             case 'phoneNumber' :
                 if(! /^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}/.test(fields[key])
                     && ! /^(\+34|0034|34)?[ -]*(8|9)[ -]*([0-9][ -]*){8}/.test(fields[key]))
                     errors[key] = {status: 'error', help: 'Please provide a valid landline or mobile phone.'};
             break;
-            case 'birth_date' :
-                if(! /^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$/.test(fields[key])
-                    /*&& ! /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/.test(fields[key])*/)
-                    errors[key] = {status: 'error', help: 'Please enter a date like dd-mm-yyyy.'};
-            break;
-            case 'nif' :
-                if(!validateSpanishID(fields[key])?.valid)
-                    errors[key] = {status: 'error', help: 'Please provide a valid NIF, NIE or CIF.'};
-            break;
             case 'password' :
                 // eslint-disable-next-line
                 if(! /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\_.*])(?=.{8,})/.test(fields[key]))
                     errors[key] = {status: 'error', help: 'The password must contain at least 8 characters, uppercase, lowercase, a number and some special character.'};
-            break;
-            case 'passwordValidation' :
-                if(fields[key] === '' || fields[key] !== fields.password)
-                    errors[key] = {status: 'error', help: 'The password does not match the original.'};
             break;
 
             default:

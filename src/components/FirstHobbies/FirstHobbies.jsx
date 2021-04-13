@@ -171,6 +171,7 @@ const FirstHobbies = (props) => {
             <div className="spacer"></div>
             <div className="spacer"></div>
             <div className="spacer"></div>
+            <div className="spacer"></div>
             <div className="hobbyButton">
                 <Button onClick={()=>toggle()}>
                     <p>Enjoy!</p> 
