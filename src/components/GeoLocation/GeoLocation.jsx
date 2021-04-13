@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import scriptLoader from 'react-async-script-loader'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
     const [address, setAddress] = useState("");
@@ -17,7 +18,7 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
     if (isScriptLoaded && isScriptLoadSucceed) {
 
       return (
-        <div>
+        <div className="canvas">
             <PlacesAutocomplete
                 value={address}
                 onChange={handleChange}
@@ -31,22 +32,25 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
             }) => (
                 <div>
                     <input
-                    className="inputText"
                     {...getInputProps({
                         placeholder: "Enter Address...",
+                        className: "inputText"
                     })}
                     />
-                    <div>
+                    <div className="autocompleteDropdownContainer">
                     {loading && <div>Loading ...</div>}
                     {suggestions.map((suggestion) => {
-                        console.log(suggestions)
                         const style = suggestion.active
                         ? { backgroundColor: "#f05356", cursor: "pointer" }
                         : { backgroundColor: "#ffffff", cursor: "pointer" };
     
                         return (
-                        <div {...getSuggestionItemProps(suggestion, { style })}>
-                            {suggestion.description}
+                        <div className="suggestion" {...getSuggestionItemProps(suggestion, { 
+                          style 
+                        })} 
+                          key={suggestion.description}
+                          >
+                           <FontAwesomeIcon icon={faMapMarkerAlt} className="iconSuggestion"/> {suggestion.description}
                         </div>
                         );
                     })}

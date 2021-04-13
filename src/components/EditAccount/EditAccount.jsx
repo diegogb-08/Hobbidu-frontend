@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import EditInfo from '../EditInfo/EditInfo';
 import FirstHobbies from '../FirstHobbies/FirstHobbies';
 import Footer from '../Footer/Footer';
@@ -17,6 +17,10 @@ const EditAccount = (props) => {
     const setSelected = (tab) => {
         setTab({selected: tab});
     }
+
+    useEffect(()=>{
+        setSelected('Edit profile')
+    },[])
 
     return (
         <div className="editAccountComponent">

@@ -52,7 +52,7 @@ const Register = (props) => {
     // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
     useEffect(() => {
         const listener = event => {
-            if (event.code === "Enter" || event.code === "NumpadEnter") {
+            if (event.code === "Enter" || event.code === "NumpadEnter" || event.keyCode === 13) {
                 toggle()
             }
         };
@@ -61,7 +61,7 @@ const Register = (props) => {
         document.removeEventListener("keydown", listener);
         };
         // eslint-disable-next-line
-    },[]);
+    },[user]);
 
 
 

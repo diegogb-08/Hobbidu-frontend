@@ -28,7 +28,7 @@ const EditInfo = (props) => {
         location: props.user?.location ? props.user?.location : '',
         bio: props.user?.bio ? props.user?.bio : '',
     })
-    console.log(user)
+
 
     const handleState = (e) => {
         setUser({...user, [e.target.name]: e.target.type === "number" ? + e.target.value : e.target.value});
@@ -77,15 +77,6 @@ const EditInfo = (props) => {
                     </div>
                 </div>
                 <div className="editSections">
-                    <p className="title">Location</p>
-                    <div className="inputAndDescription">
-                        <div className="inputContainer">
-                            <GeoLocation></GeoLocation>
-                            {/* <InputForm type="text" name="location" lenght="16" onChange={handleState} value={user.location}/> */}
-                        </div>
-                    </div>
-                </div>
-                <div className="editSections">
                     <p className="title">Biography</p>
                     <div className="inputAndDescription">
                         <div className="inputContainer">
@@ -97,10 +88,20 @@ const EditInfo = (props) => {
                         <p>Provide your personal information, even if the account is used for a business. This information will not be included in your public profile. </p>
                     </div>
                 </div>
-                <div className="buttonEdit">
-                    <Button onClick={()=>toggle()}>
-                        <p>Save</p>
-                    </Button>
+                <div className="editSections">
+                    <p className="title">Location</p>
+                    <div className="inputAndDescription">
+                        <div className="inputContainer geolocation">
+                            <GeoLocation></GeoLocation>
+                        </div>
+                    </div>
+                </div>
+                <div className="buttonEditContainer">
+                    <div className="buttonEdit">
+                        <Button onClick={()=>toggle()}>
+                            <p>Save</p>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>

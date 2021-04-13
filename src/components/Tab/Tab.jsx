@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Tab = (props) => {
-    
     if(props.isSelected){
         return (
            <div className="tabInfo">

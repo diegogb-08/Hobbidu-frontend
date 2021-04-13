@@ -1,0 +1,22 @@
+.canvas {
+    z-index: 100;
+}
+
+.autocompleteDropdownContainer{
+    z-index: 100;
+
+}
+
+.suggestion{
+    z-index: 100;
+    height: 3.5rem;
+    background-color: white;
+    border-bottom: 1px black dotted;
+    display: flex;
+    align-items: center;
+    color: black;
+    .iconSuggestion{
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}

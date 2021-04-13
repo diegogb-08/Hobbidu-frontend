@@ -67,7 +67,7 @@ const FirstHobbies = (props) => {
     // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
     useEffect(() => {
         const listener = event => {
-            if (event.code === "Enter" || event.keyCode === "13") {
+            if (event.code === "Enter" || event.code === "NumpadEnter" || event.keyCode === 13) {
                 addNewHobby()
             }
         };
@@ -76,7 +76,7 @@ const FirstHobbies = (props) => {
         document.removeEventListener("keydown", listener);
         };
         // eslint-disable-next-line
-    },[]);
+    },[newHobby]);
 
     // FUNCTIONS
 
@@ -130,9 +130,13 @@ const FirstHobbies = (props) => {
 
     return (
         <div className="firstHobbiesComponent">
+            <div className="spacer"></div>
+            <div className="spacer"></div>
             <div className="hobbiesTitle">
                 <h2>SELECT YOUR HOBBIES</h2>
             </div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
             <div className="selectedHobbies">
                 
                 {
@@ -163,6 +167,10 @@ const FirstHobbies = (props) => {
                 <p>You can't find your Hobby?</p>
                 <InputForm type="text" name="newHobby" onChange={handleState} title="Add hobby & PRESS ENTER"/>
             </div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
             <div className="hobbyButton">
                 <Button onClick={()=>toggle()}>
                     <p>Enjoy!</p> 
