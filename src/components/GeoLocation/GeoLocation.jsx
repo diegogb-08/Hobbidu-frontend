@@ -3,17 +3,21 @@ import PlacesAutocomplete from 'react-places-autocomplete';
 import scriptLoader from 'react-async-script-loader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import { ADDLOCATION } from '../../redux/types/userType';
 
-const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
+const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed, dispatch}) => {
 
     const [address, setAddress] = useState("");
 
     const handleChange = (value) => {
       setAddress(value)
+      dispatch({type: ADDLOCATION, payload: value})
     }
   
     const handleSelect = (value) => {
       setAddress(value)
+      dispatch({type: ADDLOCATION, payload: value})
     }
 
     if (isScriptLoaded && isScriptLoadSucceed) {
@@ -31,12 +35,11 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
                 getSuggestionItemProps,
                 loading,
             }) => (
-                <div>
+                <div className="inputDiv">
                     <input
                     {...getInputProps({
                         placeholder: "Enter Address...",
-                        className: "inputText",
-                        name: props.name
+                        className: "inputText"
                     })}
                     />
                     <div className="autocompleteDropdownContainer">
@@ -67,4 +70,4 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed},props) => {
     }
     
 }
-export default scriptLoader([`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_API}&libraries=places`,])(GeoLocation);
+export default scriptLoader([`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_API}&libraries=places`,])(connect()(GeoLocation));

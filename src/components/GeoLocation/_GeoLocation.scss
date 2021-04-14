@@ -3,14 +3,19 @@
     background-color: white;
 }
 
+
 .autocompleteDropdownContainer{
     z-index: 100;
     background-color: white;
+    position: relative;
+    width: 20em;
+    border: $border1
 }
 
 .suggestion{
     z-index: 100;
-    height: 3.5rem;
+    height: 4rem;
+    width: 100%;
     background-color: white;
     border-bottom: 1px black dotted;
     display: flex;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ChangeProfilePic from '../ChangeProfilePic/ChangeProfilePic';
 import EditInfo from '../EditInfo/EditInfo';
 import FirstHobbies from '../FirstHobbies/FirstHobbies';
 import Footer from '../Footer/Footer';
@@ -38,7 +39,7 @@ const EditAccount = (props) => {
                         <EditInfo/>
                     </Tab>
                     <Tab isSelected={tab.selected === 'Change picture'}>
-                        Esto change picture
+                        <ChangeProfilePic/>
                     </Tab>
                     <Tab isSelected={tab.selected === 'Change hobbies'}>
                         <FirstHobbies/>

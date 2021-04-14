@@ -57,7 +57,7 @@ const User = (props) => {
                     <div className="userDetailsBottom">
                         <div className="nameAndLocation">
                             <p className="name">{props.user.name}</p>
-                            <p className="location">{props.user?.location || 'Valencia, Spain'}</p>
+                            <p className="location">{props.user?.location}</p>
                         </div>
                         <div className="hobbies">
                             {
