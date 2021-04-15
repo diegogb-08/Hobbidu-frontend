@@ -626,64 +626,64 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+2) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+4) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+5) {
   background-color: #e87d33; }
 
+.hobby:nth-child(3n+4) {
+  background-color: #e87d33; }
+
+.hobby:nth-child(3n+5) {
+  background-color: #0f7fe8; }
+
 .hobby:nth-child(3n+6) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+7) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+10) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+14) {
   background-color: #3e9931; }
 
+.hobby:nth-child(3n+14) {
+  background-color: #e87d33; }
+
 .hobby:nth-child(3n+15) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+16) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+18) {
   background-color: #3e9931; }
 
-.hobby:nth-child(3n+19) {
+.hobby:nth-child(3n+18) {
   background-color: #0f7fe8; }
 
+.hobby:nth-child(3n+19) {
+  background-color: #3e9931; }
+
 .hobby:nth-child(3n+20) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -1115,6 +1115,72 @@ input:not(:focus):valid ~ .floating-label {
   flex-direction: column;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin: 1rem; }
+  .changeProfilePicComponent .pictureContainer {
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15rem; }
+  .changeProfilePicComponent .inputChangePicture {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .changeProfilePicComponent .inputChangePicture .inputFileContainer {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .changeProfilePicComponent .inputChangePicture .buttonFile {
+      height: 3rem;
+      border: 2px solid #f05356;
+      border-radius: 0.3em;
+      color: #f05356;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 0.5rem 0 0.5rem;
+      cursor: pointer; }
+    .changeProfilePicComponent .inputChangePicture .buttonFile:hover {
+      background-color: #f1dede; }
+  @media screen and (max-width: 900px) {
+    .changeProfilePicComponent .inputChangePicture {
+      flex-direction: column;
+      justify-content: center; }
+      .changeProfilePicComponent .inputChangePicture .inputFileContainer {
+        width: 70%;
+        margin: 1rem; } }
+
+.inputFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.iconPic {
+  font-size: 4rem;
+  color: #f05356; }
+
+.avatarComponent {
+  width: 100%;
+  height: 100%; }
+  .avatarComponent .profilePic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fafafa;
+    background-color: #f05356; }
+    .avatarComponent .profilePic .profileImg {
+      width: 100%; }
 
 /*Fonts and another urls*/

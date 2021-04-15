@@ -115,7 +115,7 @@ const FirstHobbies = (props) => {
         if(isSelected[0]){
             let result = await axios.put(port+customer+'/'+props.user._id, body, auth)
             props.dispatch({type: UPDATE, payload: result.data});
-            if(props.user?.hobbies){
+            if(props.user?.hobbies && props.active){
                 return setMessage('Hobbies succesfully updated!')
             }else{
                 setTimeout(()=>{
@@ -133,7 +133,7 @@ const FirstHobbies = (props) => {
             <div className="spacer"></div>
             <div className="spacer"></div>
             <div className="hobbiesTitle">
-                <h2>SELECT YOUR HOBBIES</h2>
+                <h2>SELECT YOUR 3 HOBBIES</h2>
             </div>
             <div className="spacer"></div>
             <div className="spacer"></div>
@@ -189,6 +189,7 @@ const mapStateToProps = state => {
     return {
         user : state.userReducer.user,
         token : state.userReducer.token,
+        active : state.userReducer.active,
         allHobbies: state.hobbyReducer.allHobbies
     }
 }

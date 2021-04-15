@@ -1,0 +1,19 @@
+.avatarComponent{
+    width: 100%;
+    height: 100%;
+    .profilePic {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $backgroundWhite;
+        background-color: $logoColor;
+        .profileImg{
+            border-radius: 50%;
+            width: 100%;
+        }
+    }
+
+}

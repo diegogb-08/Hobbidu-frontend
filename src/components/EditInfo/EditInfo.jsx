@@ -65,7 +65,7 @@ const EditInfo = (props) => {
             user_name: user.user_name,
             birth_date: user.birth_date,
             phone_number: user.phone_number,
-            location: user.location,
+            location: props.location,
             bio: user.bio
         }
 
@@ -172,7 +172,8 @@ const EditInfo = (props) => {
 const mapStateToProps = state => {
     return {
         user : state.userReducer.user,
-        token : state.userReducer.token
+        token : state.userReducer.token,
+        location : state.userReducer.location
     }
 }
 
