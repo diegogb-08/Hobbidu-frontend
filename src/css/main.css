@@ -476,6 +476,9 @@ input:not(:focus):valid ~ .floating-label {
   border-radius: 0.3em;
   left: 90%; }
 
+.spacerCorrector {
+  height: 3.8rem; }
+
 .loginComponent {
   display: flex;
   flex-direction: column;
@@ -537,7 +540,7 @@ input:not(:focus):valid ~ .floating-label {
   align-items: center;
   justify-content: center;
   width: 85%;
-  height: 65%;
+  height: 70%;
   font-family: "Caveat", cursive;
   color: #333333;
   background-color: #ffffff;
@@ -569,7 +572,7 @@ input:not(:focus):valid ~ .floating-label {
   width: 70%;
   height: 2.5rem;
   display: flex;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 2.5rem; }
 
 .buttonLogin {
   margin-top: 2rem;
@@ -626,19 +629,19 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
   background-color: #0f7fe8; }
@@ -650,13 +653,13 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
   background-color: #e87d33; }
@@ -671,19 +674,19 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .selectedHobbies {
   display: flex;
@@ -792,6 +795,9 @@ input:not(:focus):valid ~ .floating-label {
     cursor: pointer; }
   .navBarComponent .iconBtn:hover {
     color: #333333; }
+  .navBarComponent .iconBtnAvatar {
+    width: 2.5rem;
+    height: 2.5rem; }
 
 .userComponent {
   width: 100%;
@@ -1174,13 +1180,118 @@ input:not(:focus):valid ~ .floating-label {
   .avatarComponent .profilePic {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
+    border-radius: 50%;
     align-items: center;
     color: #fafafa;
     background-color: #f05356; }
-    .avatarComponent .profilePic .profileImg {
-      width: 100%; }
+  .avatarComponent .imageCropper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; }
+    .avatarComponent .imageCropper .profileImg {
+      display: inline;
+      margin: 0 auto;
+      margin-left: 0;
+      height: auto;
+      width: 100%;
+      cursor: pointer; }
+
+.changePasswordComponent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fafafa; }
+  .changePasswordComponent .changePasswordContainer {
+    width: 50%;
+    height: 70%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box; }
+    .changePasswordComponent .changePasswordContainer .inputPassword {
+      width: 50%;
+      height: 10%;
+      margin: 1rem; }
+    .changePasswordComponent .changePasswordContainer .buttonPassword {
+      width: 10rem;
+      height: 2.5rem;
+      margin-left: 2rem; }
+      .changePasswordComponent .changePasswordContainer .buttonPassword p {
+        color: white;
+        font-weight: bold; }
+  @media screen and (max-width: 900px) {
+    .changePasswordComponent .changePasswordContainer {
+      width: 80%;
+      height: 70%;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #dbdbdb;
+      box-sizing: border-box; }
+      .changePasswordComponent .changePasswordContainer .inputPassword {
+        width: 70%;
+        height: 15%;
+        margin: 1rem 3.5rem 1rem 1rem; }
+      .changePasswordComponent .changePasswordContainer .buttonPassword {
+        margin: 0; } }
+
+.changeEmailComponent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fafafa; }
+  .changeEmailComponent .changeEmailContainer {
+    width: 50%;
+    height: 70%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box; }
+    .changeEmailComponent .changeEmailContainer .inputEmail {
+      width: 50%;
+      height: 10%;
+      margin: 1rem; }
+    .changeEmailComponent .changeEmailContainer .buttonEmail {
+      width: 10rem;
+      height: 2.5rem;
+      margin-left: 2rem; }
+      .changeEmailComponent .changeEmailContainer .buttonEmail p {
+        color: white;
+        font-weight: bold; }
+  @media screen and (max-width: 900px) {
+    .changeEmailComponent .changeEmailContainer {
+      width: 80%;
+      height: 70%;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #dbdbdb;
+      box-sizing: border-box; }
+      .changeEmailComponent .changeEmailContainer .inputEmail {
+        width: 70%;
+        height: 15%;
+        margin: 1rem 3.5rem 1rem 1rem; }
+      .changeEmailComponent .changeEmailContainer .buttonEmail {
+        margin: 0; } }
 
 /*Fonts and another urls*/

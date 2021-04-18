@@ -1,0 +1,131 @@
+import React, { useEffect, useState } from 'react'
+import Footer from '../Footer/Footer';
+import axios from 'axios'
+import { connect } from 'react-redux'
+import validate from '../../tools/validate'
+import Button from '../Button/Button'
+import InputForm from '../InputForm/InputForm'
+import { customer, port } from '../../tools/apiPaths'
+import { UPDATE } from '../../redux/types/userType';
+
+const ChangePassword = (props) => {
+
+    //AUTHORIZATION
+
+    let token = props.token
+    let auth = {
+        headers: {
+            'Authorization': `Bearer ${token}` 
+        }};
+
+    //HOOKS
+    const [password, setPassword] = useState({
+        oldPassword: '',
+        password: '',
+        repeatPassword: ''
+    })
+    const [errors, setErrors] = useState({});
+    const [message, setMessage] = useState([]);
+
+    //HANDLERS
+    const handleChange = (e) => {
+        setPassword({...password, [e.target.name]: e.target.value, [e.target.name]: e.target.value})
+        setMessage('')
+        if (Object.keys(errors).length > 0) 
+        setErrors(validate({ ...password, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));
+    }
+
+     // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
+     useEffect(() => {
+        const listener = event => {
+            if (event.code === "Enter" || event.code === "NumpadEnter" || event.keyCode === 13) {
+                toggle()
+            }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+        document.removeEventListener("keydown", listener);
+        };
+        // eslint-disable-next-line
+    },[password]);
+
+
+    //FUNCTIONS
+    const toggle = async () => {
+
+        const errs = validate(password, "register");
+        setErrors(errs);
+
+        if (Object.keys(errs).length > 0) return;
+        
+        let body = {
+            oldPassword: password.oldPassword,
+            newPassword: password.password,
+        }
+        
+        try{
+
+            let result = await axios.put(port+customer+'/change_password/'+props.user._id, body, auth)
+            if(result){
+                props.dispatch({type: UPDATE, payload: result.data})
+
+            }else{
+                setMessage('Incorrect Password')
+            }
+        }catch(error){
+            setMessage('Incorrect Password')
+        }
+    }
+
+    return (
+        <div className="changePasswordComponent">
+            <div className="changePasswordContainer">
+                <h2>Change Password</h2>
+                <div className="inputPassword">
+                    <InputForm 
+                        type="password" 
+                        name="oldPassword" 
+                        length="16" 
+                        onChange={handleChange}
+                        title="Introduce your password"
+                        error={message}
+                    />
+                </div>
+                <div className="inputPassword">
+                    <InputForm 
+                        type="password" 
+                        name="password" 
+                        length="16" 
+                        onChange={handleChange}
+                        title="Introduce your new password"
+                        error={errors.password?.help}
+                    />
+                </div>
+                <div className="inputPassword">
+                    <InputForm 
+                        type="password" 
+                        name="repeatPassword" 
+                        length="16" 
+                        onChange={handleChange}
+                        title="Repeat your new password"
+                        error={errors.repeatPassword?.help}
+                 /></div>
+                 <div className="buttonPassword">
+                     <Button onClick={()=>toggle()}>
+                         <p>Change Password</p>
+                     </Button>
+                 </div>
+            </div>
+            <Footer/>
+        </div>
+    )
+}
+
+const mapStateToProps = state => {
+    return {
+        user : state.userReducer.user,
+        token: state.userReducer.token,
+    }
+}
+
+export default connect(mapStateToProps)(ChangePassword); 

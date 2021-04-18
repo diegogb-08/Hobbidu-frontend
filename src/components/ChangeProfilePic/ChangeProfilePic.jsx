@@ -35,10 +35,15 @@ const ChangeProfilePic = (props) => {
             selectedFile,
             selectedFile.name
         )
+
+        const config = {
+            onUploadProgress: progressEvent => {
+                console.log('Upload Progress: ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')
+            }
+        }
   
         try{
-            let result = await axios.put(port+customer+'/'+ props.user._id, formData, auth)
-            console.log(result)
+            let result = await axios.put(port+customer+'/update_picture/'+ props.user._id, formData, auth, config)
             if(result){
                 setMessage('Your picture was uploaded succesfully!')
                 props.dispatch({type: UPDATE, payload: result.data})

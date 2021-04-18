@@ -42,6 +42,10 @@ export default function validate(fields, context = 'register') {
                 if(! /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\_.*])(?=.{8,})/.test(fields[key]))
                     errors[key] = {status: 'error', help: 'The password must contain at least 8 characters, uppercase, lowercase, a number and some special character.'};
             break;
+            case 'repeatPassword' :
+                if(fields['repeatPassword'] !== fields['password'])
+                    errors[key] = {status: 'error', help: 'The password must be the same in both fields'};
+            break;
 
             default:
         }

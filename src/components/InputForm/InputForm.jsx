@@ -18,6 +18,9 @@ function InputForm(props) {
             {props.showHide && 
                 <div className="iconInput" onClick={props.onClick}>{props.showHide}</div>
             }
+            {!props.showHide && 
+                <div className="spacerCorrector" ></div>
+            }
             <span className="error">{props.error}</span>
         </div>
     )

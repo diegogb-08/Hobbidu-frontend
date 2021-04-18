@@ -5,6 +5,7 @@ import { faUserCircle, faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import Setting from '../Setting/Setting';
 import { useHistory } from 'react-router';
+import Avatar from '../Avatar/Avatar';
 
 const User = (props) => {
 
@@ -24,7 +25,12 @@ const User = (props) => {
             <div className="spacer"></div>
             <div className="userContainer">
                 <div className="profilePic">
-                    <FontAwesomeIcon icon={faUserCircle} className="iconBtn" />
+                    {
+                        props.user?.profile_img ?
+                        <Avatar/>
+                        :
+                        <FontAwesomeIcon icon={faUserCircle} className="iconBtn" />
+                    }
                 </div>
                 <div className="userDetails">
                     <div className="userDetailsTop">

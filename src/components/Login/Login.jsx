@@ -36,7 +36,7 @@ const Login = (props) => {
         setCredentials({...credentials, [e.target.name]: e.target.value, [e.target.name]: e.target.value});
         setMessage('')
         if (Object.keys(errors).length > 0) 
-        setErrors(validate({ ...credentials, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));
+        setErrors(validate({ ...credentials, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "login"));
     } 
 
 

@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ChangeEmail from "./components/ChangeEmail/ChangeEmail";
+import ChangePassword from "./components/ChangePassword/ChangePassword";
 import EditAccount from "./components/EditAccount/EditAccount";
 
 import Header from "./components/Header/Header";
@@ -22,7 +24,9 @@ function App(props) {
         <Route path="/home" exact component={Home}/>
         <Route path={`/${userPath}`} exact component={User} />
         <Route path="/account/edit" exact component={EditAccount}/>
-
+        <Route path="/change_password" exact component={ChangePassword}/>
+        <Route path="/change_email" exact component={ChangeEmail}/>
+        
       </Switch>
       
       </BrowserRouter>

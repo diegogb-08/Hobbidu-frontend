@@ -4,6 +4,7 @@ import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle, faCommentDots, faCalendarCheck } from '@fortawesome/free-regular-svg-icons'
 import { useHistory } from 'react-router';
 import { connect } from 'react-redux';
+import Avatar from '../Avatar/Avatar';
 
 const NavBar = (props) => {
 
@@ -28,7 +29,15 @@ const NavBar = (props) => {
             <FontAwesomeIcon icon={faHouseUser} className={'iconBtn'} onClick={()=>toggle('home')}/>
             <FontAwesomeIcon icon={faCalendarCheck} className={'iconBtn'}  onClick={()=>toggle('events')}/>
             <FontAwesomeIcon icon={faCommentDots} className={'iconBtn'}  onClick={()=>toggle('messages')}/>
-            <FontAwesomeIcon icon={faUserCircle} className={'iconBtn'}  onClick={()=>toggle(userPath)}/>
+            {
+                 props.user?.profile_img ?
+                 <div className="iconBtnAvatar">
+                     <Avatar onClick={()=>toggle(userPath)}/>
+                 </div>
+                 :
+                 <FontAwesomeIcon icon={faUserCircle} className={'iconBtn'}  onClick={()=>toggle(userPath)}/>
+                 
+            }
         </div>
     )
 }

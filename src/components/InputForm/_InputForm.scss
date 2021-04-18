@@ -51,3 +51,7 @@ input:not(:focus):valid ~ .floating-label{
   border-radius: $br;
   left: 90%;
 }
+
+.spacerCorrector{
+  height: 3.8rem;
+}

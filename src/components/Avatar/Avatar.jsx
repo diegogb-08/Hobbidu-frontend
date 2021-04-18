@@ -7,21 +7,22 @@ import { port } from '../../tools/apiPaths';
 const Avatar = (props) => {
 
 
-    console.log(props.user?.profile_img)
     return (
-        <div className="avatarComponent">
-            <div className="profilePic">
+        <div className="avatarComponent" onClick={props.onClick}>
                 {
                     props.user?.profile_img ? 
                     <>
-                        <img className="profileImg" src={port+'/'+props.user?.profile_img} alt="Avatar"/>
+                        <div className="imageCropper">
+                            <img className="profileImg" src={port+'/'+props.user?.profile_img} alt="Avatar"/>
+                        </div>
                     </>
                     :
                     <>
-                        <FontAwesomeIcon icon={faUserCircle} className="iconBtn" />
+                        <div className="profilePic">
+                            <FontAwesomeIcon icon={faUserCircle} className="iconBtn" />
+                        </div>
                     </>
                 }
-            </div>
 
         </div>
     )

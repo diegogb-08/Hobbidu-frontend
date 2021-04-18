@@ -29,6 +29,10 @@ function Setting(props) {
         },500)
     }
 
+    const sendMeTo = (path) => {
+        setTimeout(()=>{history.push(path)},500)
+    }
+
     
 
     return (
@@ -36,11 +40,11 @@ function Setting(props) {
             <div onClick={toggle}>{props.children}</div>
                 <Modal active={active} toggle={toggle}>
                     <div className="settingContainer">
-                        <div className="settingMenu">
+                        <div className="settingMenu" onClick={()=>sendMeTo('/change_email')}>
                             <FontAwesomeIcon icon={faAt} />
                             <p>Change Email</p>
                         </div>
-                        <div className="settingMenu">
+                        <div className="settingMenu" onClick={()=>sendMeTo('/change_password')}>
                             <FontAwesomeIcon icon={faUnlockAlt} />
                             <p>Change Password</p>
                         </div>
