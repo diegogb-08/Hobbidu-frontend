@@ -629,16 +629,16 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+5) {
   background-color: #3e9931; }
@@ -650,40 +650,40 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+15) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+18) {
   background-color: #e87d33; }
 
-.hobby:nth-child(3n+19) {
+.hobby:nth-child(3n+18) {
   background-color: #3e9931; }
+
+.hobby:nth-child(3n+19) {
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
   background-color: #0f7fe8; }
@@ -1218,6 +1218,16 @@ input:not(:focus):valid ~ .floating-label {
     align-items: center;
     border: 1px solid #dbdbdb;
     box-sizing: border-box; }
+    .changePasswordComponent .changePasswordContainer .check {
+      position: absolute;
+      width: 15rem;
+      height: 15rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15rem;
+      color: #82c91e;
+      transition: 0.5 ease all; }
     .changePasswordComponent .changePasswordContainer .inputPassword {
       width: 50%;
       height: 10%;
@@ -1265,6 +1275,16 @@ input:not(:focus):valid ~ .floating-label {
     align-items: center;
     border: 1px solid #dbdbdb;
     box-sizing: border-box; }
+    .changeEmailComponent .changeEmailContainer .check {
+      position: absolute;
+      width: 15rem;
+      height: 15rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15rem;
+      color: #82c91e;
+      transition: 0.5 ease all; }
     .changeEmailComponent .changeEmailContainer .inputEmail {
       width: 50%;
       height: 10%;

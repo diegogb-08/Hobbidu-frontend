@@ -16,6 +16,17 @@
         align-items: center;
         border: $border1;
         box-sizing: border-box;
+        .check{
+            position: absolute;
+            width: 15rem;
+            height: 15rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15rem;
+            color: $greenCheck;
+            transition: 0.5 ease all;
+        }
         .inputEmail{
             width: 50%;
             height: 10%;

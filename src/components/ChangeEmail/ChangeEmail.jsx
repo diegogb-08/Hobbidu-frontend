@@ -7,6 +7,8 @@ import validate from '../../tools/validate';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
 import InputForm from '../InputForm/InputForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 
 const ChangeEmail = (props) => {
     //AUTHORIZATION
@@ -29,6 +31,7 @@ const ChangeEmail = (props) => {
         hideShow: 'password',
         showHide: 'SHOW'
     })
+    const [active, setActive] = useState(false);
 
     //HANDLERS
     const handleChange = (e) => {
@@ -74,6 +77,8 @@ const ChangeEmail = (props) => {
             console.log(result.data)
             if(result){
                 props.dispatch({type: UPDATE, payload: result.data})
+                setTimeout(()=>{setActive(true)},500)
+                setTimeout(()=>{setActive(false)},2500)
             }else{
                 setMessage('The email you are trying to add already exist')
             }
@@ -95,6 +100,12 @@ const ChangeEmail = (props) => {
     return (
         <div className="changeEmailComponent">
             <div className="changeEmailContainer">
+                {
+                    active && 
+                    <div className="check">
+                        <FontAwesomeIcon icon={faCheckCircle} />
+                    </div>
+                }
                 <h2>Change Email</h2>
                 <div className="inputEmail">
                     <InputForm 
