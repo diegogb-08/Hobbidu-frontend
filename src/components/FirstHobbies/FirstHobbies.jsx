@@ -133,7 +133,7 @@ const FirstHobbies = (props) => {
             <div className="spacer"></div>
             <div className="spacer"></div>
             <div className="hobbiesTitle">
-                <h2>SELECT YOUR 3 HOBBIES</h2>
+                <h2>SELECT UP TO 3 HOBBIES</h2>
             </div>
             <div className="spacer"></div>
             <div className="spacer"></div>

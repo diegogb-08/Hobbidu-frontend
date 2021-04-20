@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ChangeEmail from "./components/ChangeEmail/ChangeEmail";
 import ChangePassword from "./components/ChangePassword/ChangePassword";
 import EditAccount from "./components/EditAccount/EditAccount";
+import EventView from "./components/EventView/EventView";
 
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -26,6 +27,7 @@ function App(props) {
         <Route path="/account/edit" exact component={EditAccount}/>
         <Route path="/change_password" exact component={ChangePassword}/>
         <Route path="/change_email" exact component={ChangeEmail}/>
+        <Route path="/events" exact component={EventView} />
         
       </Switch>
       
