@@ -3,12 +3,47 @@
     height: 4rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    .controlPanelContainers{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .controlPanelLeft{
+        input{
+            font-size: 16px;
+            width: 100%;
+            padding: 12px 20px;
+            display: inline-block;
+            border-radius: $br;
+            border: 1px solid #ccc;
+            background-color: $backgroundWhite;
+        }
+    }
+    .controlPanelRight{
+        color: $logoColor;
+        font-size: 2.5rem;
+        justify-content: space-evenly;
+        .panelBtn{
+            cursor: pointer;
+        }
+    }
 }
 @media screen and (max-width: 900px) {
     .controlPanelComponent{
         width: 100%;
+        .controlPanelLeft{
+            width: 70%;
+            padding-left: 0.5rem;
+        }
+        .controlPanelRight{
+            width: 30%;
+            
+        }
     }
 }

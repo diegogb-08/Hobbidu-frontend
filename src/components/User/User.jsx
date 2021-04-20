@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Setting from '../Setting/Setting';
 import { useHistory } from 'react-router';
 import Avatar from '../Avatar/Avatar';
+import ControlPanel from '../ControlPanel/ControlPanel';
 
 const User = (props) => {
 
@@ -21,8 +22,7 @@ const User = (props) => {
             <div className="spacer"></div>
             <div className="spacer"></div>
             <div className="spacer"></div>
-            <div className="spacer"></div>
-            <div className="spacer"></div>
+            <ControlPanel />
             <div className="userContainer">
                 <div className="profilePic">
                     {
