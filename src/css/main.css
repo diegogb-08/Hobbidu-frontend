@@ -635,40 +635,40 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+5) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+9) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+12) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
@@ -677,10 +677,10 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
   background-color: #3e9931; }
@@ -1365,7 +1365,7 @@ input:not(:focus):valid ~ .floating-label {
     background-color: #fafafa; }
   .controlPanelComponent .controlPanelRight {
     color: #f05356;
-    font-size: 2.5rem;
+    font-size: 2rem;
     justify-content: space-evenly; }
     .controlPanelComponent .controlPanelRight .panelBtn {
       cursor: pointer; }
@@ -1381,14 +1381,93 @@ input:not(:focus):valid ~ .floating-label {
 
 .AddEventContainer {
   width: 60rem;
-  font-family: "Rajdhani", sans-serif;
+  height: 90vh;
   padding: 1rem;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; }
+  font-family: "Rajdhani", sans-serif;
+  flex-direction: column;
+  position: relative;
+  overflow-y: scroll;
+  scroll-behavior: smooth; }
+  .AddEventContainer h1 {
+    font-family: "Caveat", cursive;
+    width: 100%;
+    text-align: center; }
   .AddEventContainer .addEventInfo {
     width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column; }
+    flex-direction: row;
+    justify-content: center; }
+    .AddEventContainer .addEventInfo .addEventSections {
+      width: 50%;
+      height: 100%;
+      padding: 1rem; }
+      .AddEventContainer .addEventInfo .addEventSections .inputEvent {
+        width: 90%;
+        margin-bottom: 5rem; }
+        .AddEventContainer .addEventInfo .addEventSections .inputEvent .titles {
+          font-weight: bold; }
+        .AddEventContainer .addEventInfo .addEventSections .inputEvent input {
+          font-size: 16px;
+          width: 100%;
+          padding: 12px 20px;
+          display: inline-block;
+          border-radius: 0.3em;
+          border: 1px solid #ccc;
+          background-color: #fafafa; }
+        .AddEventContainer .addEventInfo .addEventSections .inputEvent textarea {
+          font-size: 16px;
+          width: 100%;
+          padding: 12px 20px;
+          display: inline-block;
+          border-radius: 0.3em;
+          border: 1px solid #ccc;
+          background-color: #fafafa; }
+      .AddEventContainer .addEventInfo .addEventSections .inputHobbies {
+        width: 100%; }
+        .AddEventContainer .addEventInfo .addEventSections .inputHobbies .hobbies {
+          height: 3rem;
+          width: 100%;
+          display: flex;
+          justify-content: space-between; }
+          .AddEventContainer .addEventInfo .addEventSections .inputHobbies .hobbies .hobby {
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.3em;
+            border: 2px solid #f05356;
+            background-color: white;
+            color: #f05356;
+            font-weight: bold;
+            cursor: pointer; }
+          .AddEventContainer .addEventInfo .addEventSections .inputHobbies .hobbies .hobby:hover {
+            background-color: #e9e3e3; }
+      .AddEventContainer .addEventInfo .addEventSections .inputButton {
+        width: 100%;
+        height: 7rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; }
+        .AddEventContainer .addEventInfo .addEventSections .inputButton .eventButton {
+          height: 3rem;
+          width: 50%; }
+          .AddEventContainer .addEventInfo .addEventSections .inputButton .eventButton p {
+            font-weight: bold;
+            color: white; }
+
+@media screen and (max-width: 900px) {
+  .AddEventContainer {
+    width: 100%; }
+    .AddEventContainer .addEventInfo {
+      align-items: center;
+      justify-content: end;
+      flex-direction: column; }
+      .AddEventContainer .addEventInfo .addEventSections {
+        width: 90%; }
+        .AddEventContainer .addEventInfo .addEventSections .inputEvent {
+          margin-bottom: 2rem; } }
 
 /*Fonts and another urls*/
