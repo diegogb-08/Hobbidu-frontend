@@ -1,8 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusSquare, faCalendarPlus } from '@fortawesome/free-regular-svg-icons'
+import { faCalendarPlus } from '@fortawesome/free-regular-svg-icons'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-import ModalRender from '../Modal/ModalRender';
 import AddEvent from '../AddEvent/AddEvent';
 import AddPost from '../AddPost/AddPost';
 

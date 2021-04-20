@@ -1,0 +1,13 @@
+.AddEventContainer{
+    width: 60rem;
+    font-family: $fontCasual;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    .addEventInfo{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
