@@ -629,16 +629,16 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+5) {
   background-color: #3e9931; }
@@ -647,13 +647,13 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
   background-color: #0f7fe8; }
@@ -662,28 +662,28 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+15) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+17) {
   background-color: #3e9931; }
 
+.hobby:nth-child(3n+17) {
+  background-color: #0f7fe8; }
+
 .hobby:nth-child(3n+18) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
   background-color: #0f7fe8; }
@@ -1429,7 +1429,7 @@ input:not(:focus):valid ~ .floating-label {
           z-index: 100;
           background-color: white;
           position: relative;
-          width: 26em;
+          width: 26rem;
           border: 1px solid #dbdbdb;
           position: absolute; }
           .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer .suggestion {
@@ -1447,13 +1447,59 @@ input:not(:focus):valid ~ .floating-label {
               margin-left: 1rem; }
           .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer .suggestion:hover {
             background-color: #f05356; }
-        .AddEventContainer .addEventInfo .addEventSections .inputEvent .selector {
-          height: 3rem;
+      .AddEventContainer .addEventInfo .addEventSections .smallInputs {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-evenly;
+        /* Rounded sliders */ }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs .selector {
+          height: 2.5rem;
           width: 2.5rem;
           font-size: 1.5rem;
           display: flex;
           justify-content: center;
           align-items: center; }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px; }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0; }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s; }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s; }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs input:checked + .slider {
+          background-color: #2196F3; }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs input:focus + .slider {
+          box-shadow: 0 0 1px #2196F3; }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px); }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs .slider.round {
+          border-radius: 34px; }
+        .AddEventContainer .addEventInfo .addEventSections .smallInputs .slider.round:before {
+          border-radius: 50%; }
       .AddEventContainer .addEventInfo .addEventSections .grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr); }
@@ -1484,6 +1530,11 @@ input:not(:focus):valid ~ .floating-label {
             cursor: pointer; }
           .AddEventContainer .addEventInfo .addEventSections .inputHobbies .hobbies .hobby:hover {
             background-color: #e9e3e3; }
+        .AddEventContainer .addEventInfo .addEventSections .inputHobbies .message {
+          color: red;
+          font-weight: bold;
+          margin: 0;
+          padding: 0; }
       .AddEventContainer .addEventInfo .addEventSections .inputButton {
         width: 100%;
         display: flex;
@@ -1506,6 +1557,8 @@ input:not(:focus):valid ~ .floating-label {
       .AddEventContainer .addEventInfo .addEventSections {
         width: 90%; }
         .AddEventContainer .addEventInfo .addEventSections .inputEvent {
-          margin-bottom: 2rem; } }
+          margin-bottom: 2rem; }
+          .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer {
+            width: 20rem; } }
 
 /*Fonts and another urls*/

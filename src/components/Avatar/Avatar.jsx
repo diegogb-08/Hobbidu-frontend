@@ -6,6 +6,7 @@ import { port } from '../../tools/apiPaths';
 
 const Avatar = (props) => {
 
+    const profilePic = props.profilePic;
 
     return (
         <div className="avatarComponent" onClick={props.onClick}>
@@ -13,7 +14,7 @@ const Avatar = (props) => {
                     props.user?.profile_img ? 
                     <>
                         <div className="imageCropper">
-                            <img className="profileImg" src={port+'/'+props.user?.profile_img} alt="Avatar"/>
+                            <img className="profileImg" src={profilePic ? port+'/'+profilePic : port+'/'+props.user?.profile_img} alt="Avatar"/>
                         </div>
                     </>
                     :
