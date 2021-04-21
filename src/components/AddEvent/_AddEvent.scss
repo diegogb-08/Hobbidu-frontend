@@ -26,7 +26,7 @@
             padding: 1rem;
             .inputEvent{
                 width: 90%;
-                margin-bottom: 5rem;
+                margin-bottom: 4rem;
                 .titles{
                     font-weight: bold;
                 }
@@ -48,8 +48,57 @@
                     border: 1px solid #ccc;
                     background-color: $backgroundWhite;
                 }
+                .autocompleteDropdownContainer{
+                    z-index: 100;
+                    background-color: white;
+                    position: relative;
+                    width: 26em;
+                    border: $border1;
+                    position: absolute;
+                    .suggestion{
+                        z-index: 100;
+                        height: 2rem;
+                        width: 100%;
+                        background-color: white;
+                        border-bottom: 1px black dotted;
+                        display: flex;
+                        align-items: center;
+                        color: black;
+                        cursor: pointer;
+                        .iconSuggestion{
+                            margin-right: 1rem;
+                            margin-left: 1rem;
+                        }
+                    }
+                    .suggestion:hover {
+                        background-color: $logoColor;
+                    }
+                }
+                .selector{
+                    height: 3rem;
+                    width: 2.5rem;
+                    font-size: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                }
                 
             }
+            .grid{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                .friend{
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    .iconFriend{
+                        color: gray;
+                        cursor: pointer;
+                    }
+                }
+            }
+          
             .inputHobbies{
                 width: 100%;
                 .hobbies{
@@ -76,7 +125,6 @@
             }
             .inputButton{
                 width: 100%;
-                height: 7rem;
                 display: flex;
                 justify-content: center;
                 align-items: flex-end;
