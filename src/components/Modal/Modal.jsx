@@ -63,6 +63,7 @@ const styles = {
         marginTop: '0.3rem',
         color: 'white',
         backgroundColor: '#777777c2',
+        zIndex: 99
     },
 
     background: {

@@ -11,16 +11,13 @@ const AddEvent = (props) => {
         setActive(!active)
     } 
 
-    const [selected, setSelected] = useState({
-            backgroundColor: '',
-            color: ''
-    })
+    const [selected, setSelected] = useState({});
 
     // Functions
 
     const selectHobby = (hobby_id) => {
 
-        setSelected({...selected, backgroundColor: '#f05356', color: 'white'})
+        setSelected({[hobby_id]:{backgroundColor: '#f05356', color: 'white'}})
         console.log(hobby_id)
     }
 
@@ -42,7 +39,7 @@ const AddEvent = (props) => {
                                         {
                                             props.user.hobbies.map(hobby => {
                                                 return(
-                                                    <div className="hobby" style={selected} key={hobby._id} onClick={()=>selectHobby(hobby._id)}>
+                                                    <div className="hobby" style={selected[hobby._id]} key={hobby._id} onClick={()=>selectHobby(hobby._id)}>
                                                         <p>{hobby.hobby_name}</p>
                                                     </div>
                                                 )
