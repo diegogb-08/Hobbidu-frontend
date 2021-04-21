@@ -13,6 +13,22 @@ const AddEvent = (props) => {
 
     const [selected, setSelected] = useState({});
 
+    const [event, setEvent] = useState({
+        title: '',
+        user_id: '',
+        hobby_id: '',
+        event_date: '',
+        joiners: [],
+        maxJoiners: 0,
+        description: '',
+        location: props.location,
+
+    })
+
+    const handleChange = () => {
+
+    }
+
     // Functions
 
     const selectHobby = (hobby_id) => {
@@ -31,7 +47,7 @@ const AddEvent = (props) => {
                             <div className="addEventSections">
                                 <div className="inputEvent">
                                     <p className="titles" >Title</p>
-                                    <input type="text"/>
+                                    <input type="text" name="title" maxLength="20" onChange={handleChange} />
                                 </div>
                                 <div className="inputEvent inputHobbies">
                                     <p className="titles">Select 1 of your hobbies</p>
@@ -49,7 +65,7 @@ const AddEvent = (props) => {
                                 </div>
                                 <div className="inputEvent">
                                     <p className="titles">Date and time</p>
-                                    <input type="text"/>
+                                    <input type="datetime-local" name="date" maxLength="20" onChange={handleChange} />
                                 </div>
                                 <div className="inputEvent">
                                     <p className="titles">Location</p>
@@ -59,11 +75,11 @@ const AddEvent = (props) => {
                             <div className="addEventSections">
                                 <div className="inputEvent">
                                     <p className="titles">Add a friend</p>
-                                    <input type="text"/>
+                                    <input type="text" name="joiner" maxLength="20" onChange={handleChange} />
                                 </div>
                                 <div className="inputEvent">
                                     <p className="titles">Description</p>
-                                    <textarea  cols="30" rows="8"/>
+                                    <textarea className="text"  cols="30" rows="8" name="description" maxLength="3000" onChange={handleChange}/>
                                 </div>
                                 <div className="inputButton">
                                     <div className="eventButton">
@@ -81,6 +97,7 @@ const AddEvent = (props) => {
 const mapStateToProps = state => {
     return {
         user : state.userReducer.user,
+        location: state.userReducer.location
     }
 }
 
