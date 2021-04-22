@@ -1,8 +1,7 @@
 .eventViewComponent {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: $backgroundWhite;
@@ -11,14 +10,13 @@
     .eventViewContainer{
         width: 60rem;
         height: 100%;
-        background-color: $white1;
+        //background-color: $white1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: $border1;
+        //border: $border1;
         border-radius: $br;
         box-sizing: border-box;
-        overflow-y: scroll;
         .filterEvents{
             width: 100%;
             height: 5rem;
@@ -26,19 +24,22 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            flex-direction: row;
             border-radius: $br;
-            z-index: 1;
+
             .filterDistance{
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
                 width: 40rem;
-                z-index: 1;
+
                 p{
                     color: white;
                     font-weight: bold;
                     font-size: 1.5rem;
+                }
+                .geolocationEventContainer{
+                    height: 2.5rem;
+                    width: 15rem;
                 }
                 .selector{
                     height: 2.5rem;
@@ -54,6 +55,61 @@
         }
         .renderEventsContainer{
             height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .event{
+                width: 100%;
+                height: 10rem;
+                margin-top: 2rem;
+                background-color: $white1;
+                border: $border1;
+                border-radius: $br;
+                display: flex;
+                flex-direction: row;
+                .date{
+                    height: 100%;
+                    width: 7rem;
+                    background-color: $logoColor;
+                    border-radius: $br 0 0 $br;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                        text-align: center;
+                        font-weight: bold;
+                        color: white;
+                        font-size: 1.5rem;
+
+                    }
+                }
+                .eventContent{
+                    width: 80%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 0 0 1rem 2rem;
+                    .eventContentLeft{
+                        width: 60%;
+                        h2{
+                            cursor: pointer;
+                        }
+                        .joinersSpotsLeft{
+                            display: flex;
+                            width: 10rem;
+                            justify-content: space-between;
+                            .spotsLeft{
+                                color: red;
+                            }
+                        }
+                    }
+                    .eventContentRight{
+                        width: 40%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
         }
     }
 }

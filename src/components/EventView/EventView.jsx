@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
+import { meeting, port } from '../../tools/apiPaths';
 import ControlPanel from '../ControlPanel/ControlPanel';
-
+import moment from 'moment';
 import Footer from '../Footer/Footer'
 import GeoLocation from '../GeoLocation/GeoLocation';
 
@@ -9,12 +11,47 @@ const EventView = (props) => {
 
     // Hooks
 
-    const [distance, setDistance] = useState(5)
+    const [distance, setDistance] = useState(25000)
+    const [events, setEvents] = useState([])
+    const [message, setMessage] = useState('')
 
     // Handlers
 
-    const handleChange = () => {
-        
+    const handleChange = (e) => {
+        setDistance(parseInt(e.target.value))
+    }
+
+    useEffect(()=>{
+        filterEventsCall()
+        // eslint-disable-next-line 
+    },[distance,props.location.coordinates])
+
+    // Functions
+
+    const filterEventsCall = async () => {
+
+        let body = {
+            distance: distance,
+            coords: props.location.coordinates
+        }
+
+        try{
+
+            let result = await axios.post(port+meeting+'/distance', body);
+            
+            if (result)
+                return setEvents(result.data);
+            else
+                return setMessage('Not events found. Try to set up other params or start posting your events.')
+            
+        }catch (err){
+            throw new Error()
+        }
+
+    }
+
+    const openEvent = () => {
+
     }
 
 
@@ -24,26 +61,63 @@ const EventView = (props) => {
             <div className="spacer"></div>
             <div className="spacer"></div>
             <div className="spacer"></div>
-            <div className="halfSpacer"></div>
             <ControlPanel/>
             <div className="eventViewContainer">
                 <div className="filterEvents">
                     <div className="filterDistance">
                         <p>Within</p>
                         <select className="selector" name="distance" onChange={handleChange}>
-                            <option value={5}    > 5 km </option>
-                            <option value={10}   > 10 km </option>
-                            <option value={25}   > 25 km </option>
-                            <option value={50}   > 50 km </option>
-                            <option value={100}  > 100 km </option>
-                            <option value={1000} > any dinstance </option>
+                            <option value={5000}   > 5 km </option>
+                            <option value={10000}   > 10 km </option>
+                            <option value={25000}  defaultChecked > 25 km </option>
+                            <option value={50000}   > 50 km </option>
+                            <option value={100000}  > 100 km </option>
+                            <option value={1000000} > any dinstance </option>
                         </select>
                         <p>of</p>
-                        <GeoLocation/>   
+                        <div className="geolocationEventContainer">
+                            <GeoLocation/>
+                        </div>
                     </div>
                 </div>
                 <div className="renderEventsContainer">
-
+                    {
+                        events.map(event => {
+                            let leftSpots = event.maxJoiners - event.joiners?.length
+                            if (new Date(event.event_date) >= new Date)
+                                return (
+                                    <div className="event" key={event._id}>
+                                        <div className="date">
+                                            <p>{moment(event.event_date).format('ddd, Do MMM YYYY')}</p>
+                                        </div>
+                                        <div className="eventContent">
+                                            <div className="eventContentLeft">
+                                                <h2 onClick={()=>openEvent()}>{event.title}</h2>
+                                                <p>{event.location.name}</p>
+                                                <div className="joinersSpotsLeft">
+                                                    <p>{event.joiners?.length} joiner</p>
+                                                    <p className="spotsLeft"> {leftSpots} spots left!</p>
+                                                </div>
+                                            </div>
+                                            <div className="eventContentRight">
+                                                <p><b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}</p>
+                                                {
+                                                    event.vehicle ?
+                                                    <>
+                                                        <p>{event.seats} seats left</p>
+                                                    </>
+                                                    :
+                                                    <>
+                                                    </>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                        })
+                    }
+                    <div className="spacer"></div>
+                    <div className="spacer"></div>
                 </div>
             </div>
             <Footer/>
