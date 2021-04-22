@@ -45,17 +45,26 @@ const AddEvent = (props) => {
 
     const handleJoiners = async (e) => {
 
-        let result = await axios.get(port+customer+search+query+e.target.value)
-        setSuggestion(result.data)
+        try{
+
+            let result = await axios.get(port+customer+search+query+e.target.value)
+            setSuggestion(result.data)
+
+        }catch(err){
+
+            throw new Error(404)
+
+        }
     }
 
-    const handleSelected = (user) => {
+    const handleSelected = async (user) => {
         let maxJoiners = parseInt(event.maxJoiners)
         let joinerIdFound = event.joiners.find(id => id === user._id )
         if (maxJoiners !== event.joiners.length && joinerIdFound === undefined){
             setEvent({...event, joiners: [...event.joiners, user._id]});
             setFriends([...friends, user])
-            
+            let result = await axios.get(port+customer+search+query)
+            setSuggestion(result.data)
         }
     }
 
