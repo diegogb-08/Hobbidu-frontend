@@ -1,15 +1,22 @@
 .canvas {
     z-index: 100;
     background-color: white;
+    border-radius: $br;
+    .placesAutocomplete{
+        width: 100%;
+        .inputDiv{
+            width: 100%;
+        }
+    }
 }
-
 
 .autocompleteDropdownContainer{
     z-index: 100;
     background-color: white;
     position: relative;
-    width: 20em;
-    border: $border1
+    width: 110%;
+    border: $border1;
+    border-radius: $br;
 }
 
 .suggestion{
@@ -21,6 +28,7 @@
     display: flex;
     align-items: center;
     color: black;
+    
     .iconSuggestion{
         margin-right: 1rem;
         margin-left: 1rem;

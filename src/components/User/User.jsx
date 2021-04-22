@@ -63,7 +63,7 @@ const User = (props) => {
                     <div className="userDetailsBottom">
                         <div className="nameAndLocation">
                             <p className="name">{props.user.name}</p>
-                            <p className="location">{props.user?.location}</p>
+                            <p className="location">{props.user?.location.name}</p>
                         </div>
                         <div className="hobbies">
                             {

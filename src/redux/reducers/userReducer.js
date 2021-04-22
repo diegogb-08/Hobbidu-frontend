@@ -4,7 +4,7 @@ const initialState = {
     user: {},
     token: '',
     active: false,
-    location: '',
+    location: {},
 
 };
 

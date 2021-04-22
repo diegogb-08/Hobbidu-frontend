@@ -1,21 +1,60 @@
 .eventViewComponent {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: $backgroundWhite;
+    font-family: $fontCasual;
+    overflow: hidden;
     .eventViewContainer{
         width: 60rem;
-        min-height: 30rem;
+        height: 100%;
         background-color: $white1;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
         align-items: center;
         border: $border1;
+        border-radius: $br;
         box-sizing: border-box;
+        overflow-y: scroll;
+        .filterEvents{
+            width: 100%;
+            height: 5rem;
+            background-color: $logoColor;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+            border-radius: $br;
+            z-index: 1;
+            .filterDistance{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 40rem;
+                z-index: 1;
+                p{
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                }
+                .selector{
+                    height: 2.5rem;
+                    width: 8.5rem;
+                    font-size: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.2rem;
+                }
+            }
+
+        }
+        .renderEventsContainer{
+            height: 100%;
+        }
     }
 }
 @media screen and (max-width: 900px) {

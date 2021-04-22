@@ -310,6 +310,9 @@ template {
   height: 1rem;
   width: 1rem; }
 
+.halfSpacer {
+  height: 0.5rem; }
+
 .switch {
   position: relative;
   display: inline-block;
@@ -680,37 +683,37 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+3) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+5) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+8) {
   background-color: #e87d33; }
 
-.hobby:nth-child(3n+9) {
+.hobby:nth-child(3n+8) {
   background-color: #3e9931; }
+
+.hobby:nth-child(3n+9) {
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
   background-color: #3e9931; }
@@ -722,13 +725,13 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+15) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+16) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+18) {
   background-color: #3e9931; }
@@ -1144,14 +1147,20 @@ input:not(:focus):valid ~ .floating-label {
 
 .canvas {
   z-index: 100;
-  background-color: white; }
+  background-color: white;
+  border-radius: 0.3em; }
+  .canvas .placesAutocomplete {
+    width: 100%; }
+    .canvas .placesAutocomplete .inputDiv {
+      width: 100%; }
 
 .autocompleteDropdownContainer {
   z-index: 100;
   background-color: white;
   position: relative;
-  width: 20em;
-  border: 1px solid #dbdbdb; }
+  width: 110%;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.3em; }
 
 .suggestion {
   z-index: 100;
@@ -1367,22 +1376,55 @@ input:not(:focus):valid ~ .floating-label {
 
 .eventViewComponent {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  font-family: "Rajdhani", sans-serif;
+  overflow: hidden; }
   .eventViewComponent .eventViewContainer {
     width: 60rem;
-    min-height: 30rem;
+    height: 100%;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     border: 1px solid #dbdbdb;
-    box-sizing: border-box; }
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    overflow-y: scroll; }
+    .eventViewComponent .eventViewContainer .filterEvents {
+      width: 100%;
+      height: 5rem;
+      background-color: #f05356;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+      border-radius: 0.3em;
+      z-index: 1; }
+      .eventViewComponent .eventViewContainer .filterEvents .filterDistance {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 40rem;
+        z-index: 1; }
+        .eventViewComponent .eventViewContainer .filterEvents .filterDistance p {
+          color: white;
+          font-weight: bold;
+          font-size: 1.5rem; }
+        .eventViewComponent .eventViewContainer .filterEvents .filterDistance .selector {
+          height: 2.5rem;
+          width: 8.5rem;
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.2rem; }
+    .eventViewComponent .eventViewContainer .renderEventsContainer {
+      height: 100%; }
 
 @media screen and (max-width: 900px) {
   .eventViewComponent .controlPanel {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PlacesAutocomplete from 'react-places-autocomplete';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import scriptLoader from 'react-async-script-loader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
@@ -10,14 +10,24 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed, dispatch}) => {
 
     const [address, setAddress] = useState("");
 
-    const handleChange = (value) => {
-      setAddress(value)
-      dispatch({type: ADDLOCATION, payload: value})
+    const handleChange = async (value) => {
+        setAddress(value)
+        dispatchGeoLocation(value)
     }
   
     const handleSelect = (value) => {
-      setAddress(value)
-      dispatch({type: ADDLOCATION, payload: value})
+        setAddress(value)
+        dispatchGeoLocation(value)
+    }
+
+    const dispatchGeoLocation = async (value) => {
+      let result = await geocodeByAddress(value)
+      let coords = await getLatLng(result[0])
+      let location = {
+        name: value,
+        coordinates: [coords.lng, coords.lat]
+      }
+      return await dispatch({type: ADDLOCATION, payload: location})
     }
 
     if (isScriptLoaded && isScriptLoadSucceed) {
@@ -28,12 +38,14 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed, dispatch}) => {
                 value={address}
                 onChange={handleChange}
                 onSelect={handleSelect}
+                className="placesAutocomplete"
             >
             {({
                 getInputProps,
                 suggestions,
                 getSuggestionItemProps,
                 loading,
+
             }) => (
                 <div className="inputDiv">
                     <input
@@ -48,7 +60,7 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed, dispatch}) => {
                         const style = suggestion.active
                         ? { backgroundColor: "#f05356", cursor: "pointer" }
                         : { backgroundColor: "#ffffff", cursor: "pointer" };
-    
+
                         return (
                         <div className="suggestion" {...getSuggestionItemProps(suggestion, { 
                           style 

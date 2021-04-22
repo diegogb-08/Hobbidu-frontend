@@ -37,6 +37,8 @@ const AddEvent = (props) => {
 
     const [message, setMessage] = useState('')
 
+
+
     //Handlers
 
     const handleChange = (e) => {
@@ -100,7 +102,7 @@ const AddEvent = (props) => {
         // Calling the api to create the Event
         if(event.hobby_id !== ''){
             try{
-                let result = axios.post(port+meeting, body)
+                let result = await axios.post(port+meeting, body)
                 if(result.data){
                     setTimeout(()=>{toggle()},500)
                     setDisabled('disabled')
