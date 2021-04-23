@@ -45,7 +45,7 @@ const EventView = (props) => {
                 return setMessage('Not events found. Try to set up other params or start posting your events.')
             
         }catch (err){
-            throw new Error()
+            setMessage('Not events found. Try to set up other params or start posting your events.')
         }
 
     }
@@ -82,39 +82,87 @@ const EventView = (props) => {
                 </div>
                 <div className="renderEventsContainer">
                     {
-                        events.map(event => {
-                            let leftSpots = event.maxJoiners - event.joiners?.length
-                            if (new Date(event.event_date) >= new Date)
-                                return (
-                                    <div className="event" key={event._id}>
-                                        <div className="date">
-                                            <p>{moment(event.event_date).format('ddd, Do MMM YYYY')}</p>
-                                        </div>
-                                        <div className="eventContent">
-                                            <div className="eventContentLeft">
-                                                <h2 onClick={()=>openEvent()}>{event.title}</h2>
-                                                <p>{event.location.name}</p>
-                                                <div className="joinersSpotsLeft">
-                                                    <p>{event.joiners?.length} joiner</p>
-                                                    <p className="spotsLeft"> {leftSpots} spots left!</p>
+                        events?.length === 0 ?
+                        <>
+                            <div className="event">
+                                <div className="notEvents">
+                                    <h2>{message}</h2>
+                                </div>
+                            </div>
+                        </>
+                        :
+                        <>
+                            
+                            {
+                                events.map(event => {
+                                    let leftSpots = event.maxJoiners - event.joiners?.length
+                                    if (new Date(event.event_date) >= new Date())
+                                        if(props.user?.hobbies.find(element => element === event.hobby_id))
+                                            return (
+                                                <div className="event" key={event._id}>
+                                                    <div className="date">
+                                                        <p>{moment(event.event_date).format('ddd, Do MMM YYYY')}</p>
+                                                    </div>
+                                                    <div className="eventContent">
+                                                        <div className="eventContentLeft">
+                                                            <h2 onClick={()=>openEvent()}>{event.title}</h2>
+                                                            <p>{event.location.name}</p>
+                                                            <div className="joinersSpotsLeft">
+                                                                <p>{event.joiners?.length} joiner</p>
+                                                                <p className="spotsLeft"> {leftSpots} spots left!</p>
+                                                            </div>
+                                                        </div>
+                                                        <div className="eventContentRight">
+                                                            <p><b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}</p>
+                                                            {
+                                                                event.vehicle ?
+                                                                <>
+                                                                    <p>{event.seats} seats left</p>
+                                                                </>
+                                                                :
+                                                                <>
+                                                                </>
+                                                            }
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="eventContentRight">
-                                                <p><b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}</p>
-                                                {
-                                                    event.vehicle ?
-                                                    <>
-                                                        <p>{event.seats} seats left</p>
-                                                    </>
-                                                    :
-                                                    <>
-                                                    </>
-                                                }
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                        })
+                                            )
+                                        else
+                                            return (
+                                                <div className="event" key={event._id}>
+                                                    <div className="date">
+                                                        <p>{moment(event.event_date).format('ddd, Do MMM YYYY')}</p>
+                                                    </div>
+                                                    <div className="eventContent">
+                                                        <div className="eventContentLeft">
+                                                            <h2 onClick={()=>openEvent()}>{event.title}</h2>
+                                                            <p>{event.location.name}</p>
+                                                            <div className="joinersSpotsLeft">
+                                                                <p>{event.joiners?.length} joiner</p>
+                                                                <p className="spotsLeft"> {leftSpots} spots left!</p>
+                                                            </div>
+                                                        </div>
+                                                        <div className="eventContentRight">
+                                                            <p><b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}</p>
+                                                            {
+                                                                event.vehicle ?
+                                                                <>
+                                                                    <p>{event.seats} seats left</p>
+                                                                </>
+                                                                :
+                                                                <>
+                                                                </>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        // eslint-disable-next-line
+                                    return;
+                                })
+                            }
+
+                        </>
                     }
                     <div className="spacer"></div>
                     <div className="spacer"></div>

@@ -683,55 +683,55 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+8) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+14) {
   background-color: #e87d33; }
 
+.hobby:nth-child(3n+14) {
+  background-color: #3e9931; }
+
 .hobby:nth-child(3n+15) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+16) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+18) {
   background-color: #3e9931; }
@@ -740,7 +740,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -1446,6 +1446,12 @@ input:not(:focus):valid ~ .floating-label {
             font-weight: bold;
             color: white;
             font-size: 1.5rem; }
+        .eventViewComponent .eventViewContainer .renderEventsContainer .event .notEvents {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
         .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent {
           width: 80%;
           height: 100%;
