@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import ControlPanel from '../ControlPanel/ControlPanel'
 import Footer from '../Footer/Footer'
 
 const Event = (props) => {
@@ -9,13 +10,11 @@ const Event = (props) => {
             <div className="spacer"></div>
             <div className="spacer"></div>
             <div className="spacer"></div>
-            <div className="spacer"></div>
-            <div className="spacer"></div>
-            <div className="spacer"></div>
-            <div className="spacer"></div>
-            <div className="spacer"></div>
-            <div className="spacer"></div>
-            Estamos en eventos
+            <ControlPanel/>
+            <div className="eventCointainer">
+                    
+            </div>
+
             <Footer/>
         </div>
     )
