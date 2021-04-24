@@ -683,10 +683,10 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
   background-color: #e87d33; }
@@ -698,49 +698,49 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+8) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+12) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+15) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+16) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .selectedHobbies {
   display: flex;
@@ -1424,6 +1424,9 @@ input:not(:focus):valid ~ .floating-label {
       width: 100%;
       display: flex;
       flex-direction: column; }
+      .eventViewComponent .eventViewContainer .renderEventsContainer .title {
+        margin: 0;
+        padding: 0; }
       .eventViewComponent .eventViewContainer .renderEventsContainer .event {
         width: 100%;
         height: 10rem;
@@ -1451,15 +1454,16 @@ input:not(:focus):valid ~ .floating-label {
           height: 100%;
           display: flex;
           justify-content: center;
-          align-items: center; }
+          align-items: center;
+          color: red; }
         .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent {
           width: 80%;
           height: 100%;
           display: flex;
           flex-direction: row;
-          padding: 0 0 1rem 2rem; }
+          padding: 0 0 1rem 1rem; }
           .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft {
-            width: 60%; }
+            width: 50%; }
             .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft h2 {
               cursor: pointer; }
             .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft .joinersSpotsLeft {
@@ -1469,18 +1473,18 @@ input:not(:focus):valid ~ .floating-label {
               .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft .joinersSpotsLeft .spotsLeft {
                 color: red; }
           .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentCenter {
-            width: 20%;
+            width: 25%;
             display: flex;
             flex-direction: column; }
           .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight {
-            width: 20%;
+            width: 25%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly; }
             .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .hobbyTag {
-              width: 60%;
+              width: 50%;
               height: 3rem;
               background-color: #f05356;
               border-radius: 0.3em;
@@ -1492,7 +1496,7 @@ input:not(:focus):valid ~ .floating-label {
                 font-weight: bold;
                 text-align: center; }
             .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp {
-              width: 60%;
+              width: 50%;
               height: 2rem;
               border: 1px solid #dbdbdb;
               border-radius: 0.3em;
@@ -1512,11 +1516,62 @@ input:not(:focus):valid ~ .floating-label {
               background-color: #ebe1e1; }
 
 @media screen and (max-width: 900px) {
-  .eventViewComponent .controlPanel {
-    width: 100%; }
   .eventViewComponent .eventViewContainer {
-    height: 35rem;
-    width: 100%; } }
+    width: 100%; }
+    .eventViewComponent .eventViewContainer .filterEvents {
+      width: 100%; }
+      .eventViewComponent .eventViewContainer .filterEvents .filterDistance {
+        margin-right: 2rem;
+        width: 100%; }
+        .eventViewComponent .eventViewContainer .filterEvents .filterDistance p {
+          font-size: 1.2rem; }
+        .eventViewComponent .eventViewContainer .filterEvents .filterDistance .geolocationEventContainer {
+          height: 2.5rem;
+          width: 6rem; }
+          .eventViewComponent .eventViewContainer .filterEvents .filterDistance .geolocationEventContainer .autocompleteDropdownContainer {
+            width: 8rem; }
+        .eventViewComponent .eventViewContainer .filterEvents .filterDistance .selector {
+          width: 6.5rem;
+          font-size: 1rem; }
+    .eventViewComponent .eventViewContainer .renderEventsContainer .title {
+      text-align: center; }
+    .eventViewComponent .eventViewContainer .renderEventsContainer .event {
+      width: 100%; }
+      .eventViewComponent .eventViewContainer .renderEventsContainer .event .date {
+        width: 15%; }
+        .eventViewComponent .eventViewContainer .renderEventsContainer .event .date p {
+          font-size: 1rem; }
+      .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent {
+        width: 85%; }
+        .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          width: 50%; }
+          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0; }
+          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft p {
+            font-size: 14px;
+            margin: 0;
+            padding: 0; }
+        .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentCenter {
+          width: 15%; }
+          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentCenter p {
+            font-size: 14px;
+            text-align: center; }
+        .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight {
+          width: 35%; }
+          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .hobbyTag {
+            width: 85%; }
+          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp {
+            justify-content: center; }
+            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp p {
+              display: none; }
+        .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .notEvents {
+          box-sizing: border-box;
+          padding: 2rem; } }
 
 .controlPanelComponent {
   width: 60rem;

@@ -10,11 +10,9 @@
     .eventViewContainer{
         width: 60rem;
         height: 100%;
-        //background-color: $white1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        //border: $border1;
         border-radius: $br;
         box-sizing: border-box;
         .filterEvents{
@@ -58,6 +56,10 @@
             width: 100%;
             display: flex;
             flex-direction: column;
+            .title{
+                margin: 0;
+                padding: 0;
+            }
             .event{
                 width: 100%;
                 height: 10rem;
@@ -89,15 +91,16 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    color: red;
                 }
                 .eventContent{
                     width: 80%;
                     height: 100%;
                     display: flex;
                     flex-direction: row;
-                    padding: 0 0 1rem 2rem;
+                    padding: 0 0 1rem 1rem;
                     .eventContentLeft{
-                        width: 60%;
+                        width: 50%;
                         h2{
                             cursor: pointer;
                         }
@@ -111,19 +114,19 @@
                         }
                     }
                     .eventContentCenter{
-                        width: 20%;
+                        width: 25%;
                         display: flex;
                         flex-direction: column;
                     }
                     .eventContentRight{
-                        width: 20%;
+                        width: 25%;
                         height: 100%;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: space-evenly;
                         .hobbyTag{
-                            width: 60%;
+                            width: 50%;
                             height: 3rem;
                             background-color: $logoColor;
                             border-radius: $br;
@@ -137,7 +140,7 @@
                             }
                         }
                         .signUp{
-                            width: 60%;
+                            width: 50%;
                             height: 2rem;
                             border: $border1;
                             border-radius: $br;
@@ -167,12 +170,85 @@
 }
 @media screen and (max-width: 900px) {
     .eventViewComponent{
-        .controlPanel{
-            width: 100%;
-        }
         .eventViewContainer{
-            height: 35rem;
-            width: 100%;    
+            width: 100%;
+            .filterEvents{
+                width: 100%;
+                .filterDistance{
+                    margin-right: 2rem;
+                    width: 100%;
+                    p{
+                        font-size: 1.2rem;
+                    }
+                    .geolocationEventContainer{
+                        height: 2.5rem;
+                        width: 6rem;
+                        .autocompleteDropdownContainer{
+                            width: 8rem;
+                        }
+                    }
+                    .selector{
+                        width: 6.5rem;
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .renderEventsContainer{
+                .title{
+                    text-align: center;                   
+                }
+                .event{
+                    width: 100%;
+                    .date{
+                        width: 15%;
+                        p{
+                            font-size: 1rem;
+                        }
+                    }
+                    .eventContent{
+                        width: 85%;
+                        .eventContentLeft{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            width: 50%;
+                            h2{
+                                font-size: 1.2rem;
+                                margin: 0;
+                                padding: 0;
+                            }
+                            p{
+                                font-size: 14px;
+                                margin: 0;
+                                padding: 0;
+                            }
+                        }
+                        .eventContentCenter{
+                            width: 15%;
+                            p{
+                                font-size: 14px;
+                                text-align: center;
+                            }
+                        }
+                        .eventContentRight{
+                            width: 35%;
+                            .hobbyTag{
+                                width: 85%;
+                            }
+                            .signUp{
+                                justify-content: center;
+                                p{
+                                    display: none;
+                                }
+                            }
+                        }
+                        .notEvents{
+                            box-sizing: border-box;
+                            padding: 2rem;
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -20,7 +20,6 @@ const EventView = (props) => {
     const [hobbies, setHobbies] = useState([])
     //const [icon, setIcon] = useState(faUserPlus)
 
-    //console.log(myEvents)
     // Handlers
 
     const handleChange = (e) => {
@@ -121,8 +120,8 @@ const EventView = (props) => {
     }
 
 
-    const openEvent = () => {
-
+    const openEvent = (event) => {
+        console.log(event)
     }
 
     return (
@@ -152,7 +151,7 @@ const EventView = (props) => {
                 </div>
                 <div className="renderEventsContainer">
                     <div className="spacer"></div>
-                    <h2>Events related to your hobbies</h2>
+                    <h2 className="title">Events related to your hobbies</h2>
                     {
                         myEvents.length > 0 ?
                         <>
@@ -170,7 +169,7 @@ const EventView = (props) => {
                                                     </div>
                                                     <div className="eventContent">
                                                         <div className="eventContentLeft">
-                                                            <h2 onClick={()=>openEvent()}>{event.title}</h2>
+                                                            <h2 onClick={()=>openEvent(event)}>{event.title}</h2>
                                                             <p>{event.location.name}</p>
                                                             <div className="joinersSpotsLeft">
                                                                 <p>{event.joiners?.length} joiner</p>
@@ -234,7 +233,7 @@ const EventView = (props) => {
                                                     </div>
                                                     <div className="eventContent">
                                                         <div className="eventContentLeft">
-                                                            <h2 onClick={()=>openEvent()}>{event.title}</h2>
+                                                            <h2 onClick={()=>openEvent(event)}>{event.title}</h2>
                                                             <p>{event.location.name}</p>
                                                             <div className="joinersSpotsLeft">
                                                                 <p>{event.joiners?.length} joiner</p>
@@ -280,6 +279,9 @@ const EventView = (props) => {
                             </div>
                         </>
                     }
+                    <div className="spacer"></div>
+                    <div className="spacer"></div>
+                    <div className="spacer"></div>
                     <div className="spacer"></div>
                     <div className="spacer"></div>
                 </div>
