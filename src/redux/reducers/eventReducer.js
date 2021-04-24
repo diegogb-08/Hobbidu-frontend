@@ -8,15 +8,15 @@ const eventReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADDEVENT:
             return {
-                allEvents: action.payload,
+                event: action.payload,
             };
 
         case REMOVEEVENT:
             const numIndex = parseInt(action.payload)
             return {
-                allEvents: [
-                    ...state.allEvents.slice(0, numIndex),
-                    ...state.allEvents.slice(numIndex + 1)
+                event: [
+                    ...state.event.slice(0, numIndex),
+                    ...state.event.slice(numIndex + 1)
                 ]
             }
 

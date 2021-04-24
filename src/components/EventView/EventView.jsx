@@ -9,8 +9,12 @@ import GeoLocation from '../GeoLocation/GeoLocation';
 import { ADD } from '../../redux/types/hobbyType';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { ADDEVENT } from '../../redux/types/eventType';
+import { useHistory } from 'react-router';
 
 const EventView = (props) => {
+
+    let history = useHistory()
 
     // Hooks
 
@@ -122,6 +126,10 @@ const EventView = (props) => {
 
     const openEvent = (event) => {
         console.log(event)
+        props.dispatch({type: ADDEVENT, payload: event})
+        setTimeout(()=>{
+            history.push(`/event/${event._id}`)
+        })
     }
 
     return (
@@ -294,7 +302,8 @@ const EventView = (props) => {
 const mapStateToProps = state => {
     return {
         user : state.userReducer.user,
-        location: state.userReducer.location
+        location: state.userReducer.location,
+        event : state.eventReducer
     }
 }
 
