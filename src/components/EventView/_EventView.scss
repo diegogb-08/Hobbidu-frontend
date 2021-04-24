@@ -110,10 +110,55 @@
                             }
                         }
                     }
-                    .eventContentRight{
-                        width: 40%;
+                    .eventContentCenter{
+                        width: 20%;
                         display: flex;
                         flex-direction: column;
+                    }
+                    .eventContentRight{
+                        width: 20%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        .hobbyTag{
+                            width: 60%;
+                            height: 3rem;
+                            background-color: $logoColor;
+                            border-radius: $br;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            p {
+                                color: white;
+                                font-weight: bold;
+                                text-align: center;
+                            }
+                        }
+                        .signUp{
+                            width: 60%;
+                            height: 2rem;
+                            border: $border1;
+                            border-radius: $br;
+                            display: flex;
+                            padding: 0.5rem;
+                            box-sizing: border-box;
+                            flex-direction: row;
+                            align-items: center;
+                            cursor: pointer;
+                            .joinUserIcon{
+                                color: $logoColor;
+                                font-size: 1.2rem;
+                            }
+                            p{
+                                margin-left: 1rem;
+                                font-size: 1.2rem;
+                            }
+                        }
+                        .signUp:hover {
+                            background-color: rgb(235, 225, 225);
+                        }
                     }
                 }
             }
