@@ -18,7 +18,7 @@ const EventView = (props) => {
     const [myEvents, setMyEvents] = useState([])
     const [mySuggestions, setMySuggestions] = useState([])
     const [hobbies, setHobbies] = useState([])
-    const [icon, setIcon] = useState(faUserPlus)
+    //const [icon, setIcon] = useState(faUserPlus)
 
     //console.log(myEvents)
     // Handlers
@@ -85,11 +85,14 @@ const EventView = (props) => {
         return {filter,filterSuggestion}
     } 
 
+    // This function add the hobby name in each event as a tag
+
     const filterHobbyTag = (data) => {
         let filter = hobbies.filter(element => element._id === data)
         return filter[0]?.hobby_name;
     }
 
+    // This function set up the FontAwesome icon for each event taking into consideration if the user is a joiner or not
     const getJoiners = (joiners) => {
 
         if(joiners.find(element => element === props.user._id) !== undefined)
@@ -99,9 +102,21 @@ const EventView = (props) => {
         
     }
 
-    const joinUser = (event) => {
-        setIcon({[event]: faCheck})
-        console.log(event)
+    const joinUser = async (event) => {
+
+        let body = {
+            user_id : props.user._id
+        }
+
+        try{
+
+            let result = await axios.put(port+meeting+'/join/'+event._id, body)
+            if(result)
+                return filterEventsCall()
+
+        }catch (err){
+
+        }
 
     }
 
