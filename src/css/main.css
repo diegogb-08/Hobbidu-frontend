@@ -683,19 +683,19 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+4) {
   background-color: #0f7fe8; }
 
+.hobby:nth-child(3n+4) {
+  background-color: #e87d33; }
+
 .hobby:nth-child(3n+5) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
   background-color: #e87d33; }
@@ -704,10 +704,10 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
   background-color: #0f7fe8; }
@@ -716,31 +716,31 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+15) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+18) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .selectedHobbies {
   display: flex;
@@ -1764,10 +1764,68 @@ input:not(:focus):valid ~ .floating-label {
     height: 85%;
     background-color: #ffffff;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     border: 1px solid #dbdbdb;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    border-radius: 0.3em; }
+    .eventComponent .eventCointainer .title {
+      font-size: 2rem;
+      margin: 0;
+      padding-top: 1rem; }
+    .eventComponent .eventCointainer .eventInfoContainer {
+      height: 100%;
+      width: 100%; }
+      .eventComponent .eventCointainer .eventInfoContainer .eventInfo {
+        height: 70%;
+        width: 100%;
+        display: flex; }
+        .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft {
+          width: 70%;
+          height: 100%;
+          flex-direction: column;
+          box-sizing: border-box;
+          padding: 1rem; }
+          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .location {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: center; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .location .icon {
+              color: #f05356;
+              margin-right: 1rem; }
+          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft h3 {
+            margin: 0; }
+          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy {
+            height: 5rem;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtnAvatar {
+              width: 2.5rem;
+              height: 2.5rem; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtn {
+              font-size: 2rem;
+              color: #f05356;
+              cursor: pointer; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy p {
+              margin-left: 1rem;
+              font-size: 1.5rem;
+              font-weight: bold; }
+        .eventComponent .eventCointainer .eventInfoContainer .eventInfo .evenInfoRight {
+          width: 30%;
+          height: 100%;
+          background-color: #58e658;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column; }
+      .eventComponent .eventCointainer .eventInfoContainer .comments {
+        height: 30%;
+        width: 100%;
+        background-color: #d6c8c8;
+        border-radius: 0 0 0.3em 0.3em; }
 
 /*Fonts and another urls*/
