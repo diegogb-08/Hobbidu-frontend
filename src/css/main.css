@@ -686,61 +686,61 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+3) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+4) {
   background-color: #e87d33; }
 
-.hobby:nth-child(3n+5) {
+.hobby:nth-child(3n+3) {
+  background-color: #e87d33; }
+
+.hobby:nth-child(3n+4) {
   background-color: #3e9931; }
+
+.hobby:nth-child(3n+5) {
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+8) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+13) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+15) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+16) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .selectedHobbies {
   display: flex;
@@ -1239,7 +1239,10 @@ input:not(:focus):valid ~ .floating-label {
 
 .avatarComponent {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   .avatarComponent .profilePic {
     width: 100%;
     height: 100%;
@@ -1249,6 +1252,10 @@ input:not(:focus):valid ~ .floating-label {
     align-items: center;
     color: #fafafa;
     background-color: #f05356; }
+    .avatarComponent .profilePic .iconBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
   .avatarComponent .imageCropper {
     width: 100%;
     height: 100%;
@@ -1781,7 +1788,7 @@ input:not(:focus):valid ~ .floating-label {
       height: 100%;
       width: 100%; }
       .eventComponent .eventCointainer .eventInfoContainer .eventInfo {
-        height: 70%;
+        height: 80%;
         width: 100%;
         display: flex; }
         .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft {
@@ -1808,34 +1815,71 @@ input:not(:focus):valid ~ .floating-label {
             align-items: center; }
             .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtnAvatar {
               width: 2.5rem;
-              height: 2.5rem; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .profilePic {
-              width: 100%;
-              height: 100%;
+              height: 2.5rem;
               display: flex;
               justify-content: center;
-              border-radius: 50%;
-              align-items: center;
-              color: #fafafa;
-              background-color: #f05356; }
-              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .profilePic .iconBtn {
-                font-size: 2.4rem; }
+              align-items: center; }
+              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtnAvatar .iconBtn {
+                font-size: 2.3rem;
+                display: flex;
+                justify-self: center; }
             .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy p {
               margin-left: 1rem;
               font-size: 1.5rem;
               font-weight: bold; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              width: 100%;
+              height: 100%; }
+              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag {
+                display: flex;
+                min-height: 3rem;
+                width: 10rem;
+                background-color: #f05356;
+                border-radius: 0.3em;
+                right: 40%; }
+                .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag p {
+                  color: white;
+                  font-weight: bold; }
+          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .description {
+            height: 75%;
+            width: 100%;
+            display: flex;
+            align-items: center; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .description p {
+              text-align: justify; }
         .eventComponent .eventCointainer .eventInfoContainer .eventInfo .evenInfoRight {
           width: 30%;
           height: 100%;
-          background-color: #58e658;
           display: flex;
           justify-content: center;
           align-items: center;
-          flex-direction: column; }
+          flex-direction: column;
+          box-sizing: border-box;
+          padding: 1rem; }
+          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .evenInfoRight .evenInfoRightContainer {
+            border: 1px solid #dbdbdb;
+            background-color: #fafafa;
+            height: 100%;
+            width: 100%;
+            border-radius: 0.3em; }
       .eventComponent .eventCointainer .eventInfoContainer .comments {
-        height: 30%;
+        height: 20%;
         width: 100%;
         background-color: #d6c8c8;
         border-radius: 0 0 0.3em 0.3em; }
+
+.filterHobbyTagComponent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .filterHobbyTagComponent p {
+    color: white;
+    font-weight: bold;
+    text-align: center; }
 
 /*Fonts and another urls*/

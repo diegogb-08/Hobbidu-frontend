@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { ADDEVENT } from '../../redux/types/eventType';
 import { useHistory } from 'react-router';
+import FilterHobbyTag from '../FilterHobbyTag/FilterHobbyTag';
 
 const EventView = (props) => {
 
@@ -21,8 +22,6 @@ const EventView = (props) => {
     const [distance, setDistance] = useState(100000)
     const [myEvents, setMyEvents] = useState([])
     const [mySuggestions, setMySuggestions] = useState([])
-    const [hobbies, setHobbies] = useState([])
-    //const [icon, setIcon] = useState(faUserPlus)
 
     // Handlers
 
@@ -34,19 +33,6 @@ const EventView = (props) => {
         filterEventsCall()
         // eslint-disable-next-line 
     },[distance,props.location.coordinates])
-
-    useEffect(()=> {
-        getHobbies()
-        // eslint-disable-next-line
-    },[])
-
-    // Functions
-
-    const getHobbies = async () => {
-        let result = await axios.get(port+hobby+'/all')
-        setHobbies(result.data)
-        props.dispatch({type: ADD, payload: result.data})
-    }
 
     const filterEventsCall = async () => {
 
@@ -88,13 +74,6 @@ const EventView = (props) => {
         return {filter,filterSuggestion}
     } 
 
-    // This function add the hobby name in each event as a tag
-
-    const filterHobbyTag = (data) => {
-        let filter = hobbies.filter(element => element._id === data)
-        return filter[0]?.hobby_name;
-    }
-
     // This function set up the FontAwesome icon for each event taking into consideration if the user is a joiner or not
     const getJoiners = (joiners) => {
 
@@ -125,7 +104,6 @@ const EventView = (props) => {
 
 
     const openEvent = (event) => {
-        console.log(event)
         props.dispatch({type: ADDEVENT, payload: event})
         setTimeout(()=>{
             history.push(`/event/${event._id}`)
@@ -198,7 +176,7 @@ const EventView = (props) => {
                                                         </div>
                                                         <div className="eventContentRight">
                                                             <div className="hobbyTag">
-                                                                <p>{filterHobbyTag(event.hobby_id)}</p>
+                                                                <FilterHobbyTag hobby_id={event.hobby_id}/>
                                                             </div>
                                                             <div className="signUp" onClick={()=>joinUser(event)}>
                                                                 <FontAwesomeIcon icon={getJoiners(event?.joiners)} className="joinUserIcon"/>
@@ -262,7 +240,7 @@ const EventView = (props) => {
                                                         </div>
                                                         <div className="eventContentRight">
                                                             <div className="hobbyTag">
-                                                                <p>{filterHobbyTag(event.hobby_id)}</p>
+                                                                <FilterHobbyTag hobby_id={event.hobby_id}/>
                                                             </div>
                                                             <div className="signUp" onClick={()=>joinUser(event)}>
                                                                 <FontAwesomeIcon icon={getJoiners(event?.joiners)} className="joinUserIcon"/>
