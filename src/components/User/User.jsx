@@ -1,12 +1,13 @@
 import React  from 'react'
 import Footer from '../Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle, faUserCog } from '@fortawesome/free-solid-svg-icons';
+import { faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import Setting from '../Setting/Setting';
 import { useHistory } from 'react-router';
 import Avatar from '../Avatar/Avatar';
 import ControlPanel from '../ControlPanel/ControlPanel';
+import { port } from '../../tools/apiPaths';
 
 const User = (props) => {
 
@@ -15,6 +16,7 @@ const User = (props) => {
     const editProfile = () => {
         setTimeout(()=>{ history.push('/account/edit')})
     }
+
 
     return (
         <div className="userComponent">
@@ -25,12 +27,7 @@ const User = (props) => {
             <ControlPanel />
             <div className="userContainer">
                 <div className="profilePic">
-                    {
-                        props.user?.profile_img ?
-                        <Avatar/>
-                        :
-                        <FontAwesomeIcon icon={faUserCircle} className="iconBtn" />
-                    }
+                    <Avatar src={port+'/'+props.user?.profile_img}/>
                 </div>
                 <div className="userDetails">
                     <div className="userDetailsTop">

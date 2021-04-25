@@ -8,14 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
 import Avatar from '../Avatar/Avatar'
-import { faUserCircle } from '@fortawesome/free-regular-svg-icons'
 
 const Event = (props) => {
 
     const [event, setEvent] = useState({})
     const [creator, setCreator] = useState({})
 
-    console.log(event)
+    //console.log(event)
     console.log(creator)
 
     useEffect(()=>{
@@ -25,7 +24,9 @@ const Event = (props) => {
 
     useEffect(()=>{
         getUser()
+        // eslint-disable-next-line
     },[event])
+
 
     // Functions
 
@@ -69,15 +70,9 @@ const Event = (props) => {
                                 </div>
                                 <h3>{moment(event?.event_date).format('Do MMMM YYYY, h:mm a')}</h3>
                                 <div className="createdBy">
-                                    {
-                                        !creator.profile_img ?
                                         <div className="iconBtnAvatar">
-                                            <Avatar profilePic={creator.profile_img}/>
+                                            <Avatar src={port+'/'+creator.profile_img}/>
                                         </div>
-                                        :
-                                        <FontAwesomeIcon icon={faUserCircle} className={'iconBtn'}/>
-                                        
-                                    }
                                     <p>{creator.user_name}</p>
                                 </div>
                             </div>

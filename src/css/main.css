@@ -683,46 +683,46 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #0f7fe8; }
-
-.hobby:nth-child(3n+2) {
   background-color: #3e9931; }
 
-.hobby:nth-child(3n+3) {
+.hobby:nth-child(3n+2) {
   background-color: #0f7fe8; }
+
+.hobby:nth-child(3n+3) {
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+4) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+8) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+9) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+10) {
   background-color: #0f7fe8; }
 
-.hobby:nth-child(3n+11) {
+.hobby:nth-child(3n+8) {
   background-color: #3e9931; }
+
+.hobby:nth-child(3n+9) {
+  background-color: #e87d33; }
+
+.hobby:nth-child(3n+10) {
+  background-color: #e87d33; }
+
+.hobby:nth-child(3n+11) {
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+15) {
   background-color: #e87d33; }
@@ -731,16 +731,16 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .selectedHobbies {
   display: flex;
@@ -852,6 +852,9 @@ input:not(:focus):valid ~ .floating-label {
   .navBarComponent .iconBtnAvatar {
     width: 2.5rem;
     height: 2.5rem; }
+    .navBarComponent .iconBtnAvatar .iconBtn {
+      color: white;
+      font-size: 2.4rem; }
 
 .userComponent {
   width: 100%;
@@ -1806,10 +1809,17 @@ input:not(:focus):valid ~ .floating-label {
             .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtnAvatar {
               width: 2.5rem;
               height: 2.5rem; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtn {
-              font-size: 2rem;
-              color: #f05356;
-              cursor: pointer; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .profilePic {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              border-radius: 50%;
+              align-items: center;
+              color: #fafafa;
+              background-color: #f05356; }
+              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .profilePic .iconBtn {
+                font-size: 2.4rem; }
             .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy p {
               margin-left: 1rem;
               font-size: 1.5rem;
