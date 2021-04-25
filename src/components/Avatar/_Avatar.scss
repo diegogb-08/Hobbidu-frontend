@@ -12,7 +12,6 @@
         border-radius: 50%;
         align-items: center;
         color: $backgroundWhite;
-        background-color: $logoColor;
         .iconBtn{
             display: flex;
             justify-content: center;
@@ -32,6 +31,7 @@
             height: auto;
             width: 100%;
             cursor: pointer;
+            border-radius: 0%;
         }
     }
 

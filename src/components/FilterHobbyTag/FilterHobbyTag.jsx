@@ -17,9 +17,15 @@ const FilterHobbyTag = (props) => {
     // Functions
 
     const getHobbies = async () => {
-        let result = await axios.get(port+hobby+'/all')
-        setHobbies(result.data)
-        props.dispatch({type: ADD, payload: result.data})
+
+        try{
+
+            let result = await axios.get(port+hobby+'/all')
+            setHobbies(result.data)
+            props.dispatch({type: ADD, payload: result.data})
+        }catch(err){
+            
+        }
     }
 
 

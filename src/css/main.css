@@ -683,7 +683,7 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+2) {
   background-color: #e87d33; }
@@ -692,7 +692,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+5) {
   background-color: #e87d33; }
@@ -704,28 +704,28 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+9) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+15) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+16) {
   background-color: #0f7fe8; }
@@ -737,7 +737,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+20) {
   background-color: #0f7fe8; }
@@ -853,8 +853,10 @@ input:not(:focus):valid ~ .floating-label {
     width: 2.5rem;
     height: 2.5rem; }
     .navBarComponent .iconBtnAvatar .iconBtn {
+      border-radius: 50%;
       color: white;
-      font-size: 2.4rem; }
+      font-size: 2.5rem;
+      background-color: gray; }
 
 .userComponent {
   width: 100%;
@@ -1250,8 +1252,7 @@ input:not(:focus):valid ~ .floating-label {
     justify-content: center;
     border-radius: 50%;
     align-items: center;
-    color: #fafafa;
-    background-color: #f05356; }
+    color: #fafafa; }
     .avatarComponent .profilePic .iconBtn {
       display: flex;
       justify-content: center;
@@ -1268,7 +1269,8 @@ input:not(:focus):valid ~ .floating-label {
       margin-left: 0;
       height: auto;
       width: 100%;
-      cursor: pointer; }
+      cursor: pointer;
+      border-radius: 0%; }
 
 .changePasswordComponent {
   width: 100%;
@@ -1815,14 +1817,12 @@ input:not(:focus):valid ~ .floating-label {
             align-items: center; }
             .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtnAvatar {
               width: 2.5rem;
-              height: 2.5rem;
-              display: flex;
-              justify-content: center;
-              align-items: center; }
+              height: 2.5rem; }
               .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtnAvatar .iconBtn {
-                font-size: 2.3rem;
-                display: flex;
-                justify-self: center; }
+                border-radius: 50%;
+                color: white;
+                font-size: 2.5rem;
+                background-color: #f05356; }
             .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy p {
               margin-left: 1rem;
               font-size: 1.5rem;
@@ -1831,7 +1831,7 @@ input:not(:focus):valid ~ .floating-label {
               display: flex;
               justify-content: flex-end;
               align-items: center;
-              width: 100%;
+              width: 50%;
               height: 100%; }
               .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag {
                 display: flex;

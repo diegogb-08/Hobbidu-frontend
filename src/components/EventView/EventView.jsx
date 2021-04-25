@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
-import { hobby, meeting, port } from '../../tools/apiPaths';
+import { meeting, port } from '../../tools/apiPaths';
 import ControlPanel from '../ControlPanel/ControlPanel';
 import moment from 'moment';
 import Footer from '../Footer/Footer'
 import GeoLocation from '../GeoLocation/GeoLocation';
-import { ADD } from '../../redux/types/hobbyType';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { ADDEVENT } from '../../redux/types/eventType';

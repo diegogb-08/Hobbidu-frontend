@@ -8,13 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
 import Avatar from '../Avatar/Avatar'
+import FilterHobbyTag from '../FilterHobbyTag/FilterHobbyTag'
 
 
 const Event = (props) => {
 
     const [event, setEvent] = useState({});
     const [creator, setCreator] = useState({});
-    console.log(event.hobby_id)
 
     useEffect(()=>{
         getEvent()
@@ -49,20 +49,8 @@ const Event = (props) => {
             
         }
     }
-
-    // const getHobbies = async () => {
-    //     let result = await axios.get(port+hobby+'/all')
-    //     setHobbies(result.data)
-    //     props.dispatch({type: ADD, payload: result.data})
-    // }
-
-    // // // This function add the hobby name in each event as a tag
-
-    // const filterHobbyTag = (data) => {
-    //     let filter = hobbies.filter(element => element._id === data)
-    //     return filter[0]?.hobby_name;
-    // }
-
+    
+    
     return (
         <div className="eventComponent">
             <div className="spacer"></div>
@@ -87,7 +75,7 @@ const Event = (props) => {
                                     <p>{creator.user_name}</p>
                                     <div className="hobbyTagContainer">
                                         <div className="hobbyTag">
-                                            {/* <p>{filterHobbyTag(event.hobby_id)}</p> */}
+                                            <FilterHobbyTag hobby_id={props.event.hobby_id}/>
                                         </div>
                                     </div>
                                 </div>
