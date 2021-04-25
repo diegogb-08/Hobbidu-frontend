@@ -79,7 +79,7 @@ const EditInfo = (props) => {
             }
             
         }catch(err){
-
+            console.log(err)
         }
     }
 

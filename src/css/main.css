@@ -689,7 +689,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+4) {
   background-color: #0f7fe8; }
@@ -698,37 +698,37 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+9) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+12) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+15) {
   background-color: #3e9931; }
 
-.hobby:nth-child(3n+16) {
+.hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
+
+.hobby:nth-child(3n+16) {
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+17) {
   background-color: #3e9931; }
@@ -737,10 +737,10 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -1838,8 +1838,7 @@ input:not(:focus):valid ~ .floating-label {
                 min-height: 3rem;
                 width: 10rem;
                 background-color: #f05356;
-                border-radius: 0.3em;
-                right: 40%; }
+                border-radius: 0.3em; }
                 .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag p {
                   color: white;
                   font-weight: bold; }
@@ -1850,7 +1849,7 @@ input:not(:focus):valid ~ .floating-label {
             align-items: center; }
             .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .description p {
               text-align: justify; }
-        .eventComponent .eventCointainer .eventInfoContainer .eventInfo .evenInfoRight {
+        .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight {
           width: 30%;
           height: 100%;
           display: flex;
@@ -1859,12 +1858,79 @@ input:not(:focus):valid ~ .floating-label {
           flex-direction: column;
           box-sizing: border-box;
           padding: 1rem; }
-          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .evenInfoRight .evenInfoRightContainer {
+          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer {
             border: 1px solid #dbdbdb;
             background-color: #fafafa;
             height: 100%;
             width: 100%;
             border-radius: 0.3em; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .joiners {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-evenly; }
+              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .joiners .spotsLeft {
+                color: red;
+                font-weight: bold; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .vehicleContainer {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-evenly; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .addJoiner {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center; }
+              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .addJoiner .signUp {
+                width: 6rem;
+                height: 2rem;
+                border: 1px solid #dbdbdb;
+                border-radius: 0.3em;
+                display: flex;
+                padding: 0.5rem;
+                box-sizing: border-box;
+                flex-direction: row;
+                align-items: center;
+                cursor: pointer; }
+                .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .addJoiner .signUp .joinUserIcon {
+                  color: #f05356;
+                  font-size: 1.2rem; }
+                .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .addJoiner .signUp p {
+                  margin-left: 1rem;
+                  font-size: 1.2rem; }
+            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners {
+              width: 100%;
+              height: 70%;
+              padding: 1rem;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              flex-direction: column; }
+              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners .joiner {
+                width: 90%;
+                height: 3rem;
+                border: 1px solid #dbdbdb;
+                background-color: white;
+                border-radius: 0.3em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                box-sizing: border-box;
+                margin-bottom: 0.5rem; }
+                .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners .joiner .iconBtnAvatar {
+                  width: 2.5rem;
+                  height: 2.5rem; }
+                  .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners .joiner .iconBtnAvatar .iconBtn {
+                    border-radius: 50%;
+                    color: white;
+                    font-size: 2.5rem;
+                    background-color: #f05356; }
       .eventComponent .eventCointainer .eventInfoContainer .comments {
         height: 20%;
         width: 100%;

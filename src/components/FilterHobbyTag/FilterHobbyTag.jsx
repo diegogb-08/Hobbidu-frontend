@@ -7,26 +7,37 @@ import { hobby, port } from '../../tools/apiPaths'
 const FilterHobbyTag = (props) => {
 
 
-    const [hobbies, setHobbies] = useState([])
+    const [hobbies, setHobbies] = useState([]);
 
     useEffect(()=> {
-        getHobbies()
-        // eslint-disable-next-line
-    },[])
+
+        const CancelToken = axios.CancelToken;
+        const source = CancelToken.source();
+
+        const getHobbies = async () => {
+    
+            try{
+    
+                let result = await axios.get(port+hobby+'/all', { cancelToken: source.token });
+                setHobbies(result.data);
+                props.dispatch({type: ADD, payload: result.data});
+            }catch(error){
+                if (axios.isCancel(error)) {
+                    console.log("cancelled");
+                  } else {
+                    throw error;
+                  }
+            }
+        };
+
+        getHobbies();
+        return () => {
+            source.cancel();
+        };
+    },[props])
 
     // Functions
 
-    const getHobbies = async () => {
-
-        try{
-
-            let result = await axios.get(port+hobby+'/all')
-            setHobbies(result.data)
-            props.dispatch({type: ADD, payload: result.data})
-        }catch(err){
-            
-        }
-    }
 
 
      // This function add the hobby name in each event as a tag

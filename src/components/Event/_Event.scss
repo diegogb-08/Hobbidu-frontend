@@ -82,7 +82,6 @@
                                 width: 10rem;
                                 background-color: $logoColor;
                                 border-radius: $br;
-                                right: 40%;
                                 p{
                                     color: white;
                                     font-weight: bold;
@@ -100,7 +99,7 @@
                         }
                     }
                 }
-                .evenInfoRight{
+                .eventInfoRight{
                     width: 30%;
                     height: 100%;
                     display: flex;
@@ -109,12 +108,90 @@
                     flex-direction: column;
                     box-sizing: border-box;
                     padding: 1rem;
-                    .evenInfoRightContainer{
+                    .eventInfoRightContainer{
                         border: $border1;
                         background-color: $backgroundWhite;
                         height: 100%;
                         width: 100%;
                         border-radius: $br;
+                        .joiners{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-evenly;
+                            .spotsLeft{
+                                color: red;
+                                font-weight: bold;
+                            }
+                        }
+                        .vehicleContainer{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-evenly;
+                        }
+                        .addJoiner{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            .signUp{
+                                width: 6rem;
+                                height: 2rem;
+                                border: $border1;
+                                border-radius: $br;
+                                display: flex;
+                                padding: 0.5rem;
+                                box-sizing: border-box;
+                                flex-direction: row;
+                                align-items: center;
+                                cursor: pointer;
+                                .joinUserIcon{
+                                    color: $logoColor;
+                                    font-size: 1.2rem;
+                                }
+                                p{
+                                    margin-left: 1rem;
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                        .renderJoiners{
+                            width: 100%;
+                            height: 70%;
+                            padding: 1rem;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            .joiner{
+                                width: 90%;
+                                height: 3rem;
+                                border: $border1;
+                                background-color: white;
+                                border-radius: $br;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding-left: 1rem;
+                                padding-right: 1rem;
+                                box-sizing: border-box;
+                                margin-bottom: 0.5rem;
+                                .iconBtnAvatar{
+                                    width: 2.5rem;
+                                    height: 2.5rem;
+                                    .iconBtn{
+                                        border-radius: 50%;
+                                        color: white;
+                                        font-size: 2.5rem;
+                                        background-color: $logoColor;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

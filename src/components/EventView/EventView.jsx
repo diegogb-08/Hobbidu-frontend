@@ -157,7 +157,7 @@ const EventView = (props) => {
                                                             <h2 onClick={()=>openEvent(event)}>{event.title}</h2>
                                                             <p>{event.location.name}</p>
                                                             <div className="joinersSpotsLeft">
-                                                                <p>{event.joiners?.length} joiner</p>
+                                                                <p>{event.joiners?.length} joiner/s</p>
                                                                 <p className="spotsLeft"> {leftSpots} spots left!</p>
                                                             </div>
                                                         </div>
