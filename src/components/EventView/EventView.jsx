@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { ADDEVENT } from '../../redux/types/eventType';
 import { useHistory } from 'react-router';
-import FilterHobbyTag from '../FilterHobbyTag/FilterHobbyTag';
 
 const EventView = (props) => {
 
@@ -21,6 +20,7 @@ const EventView = (props) => {
     const [distance, setDistance] = useState(100000)
     const [myEvents, setMyEvents] = useState([])
     const [mySuggestions, setMySuggestions] = useState([])
+
 
     // Handlers
 
@@ -61,14 +61,14 @@ const EventView = (props) => {
     const filter = (data) => {
 
         // Filtering own hobbies
-        let filter = data.filter(element => element.hobby_id === props.user.hobbies[0]._id 
-            || element.hobby_id === props.user.hobbies[1]._id 
-            || element.hobby_id === props.user.hobbies[2]._id);
+        let filter = data.filter(element => element.hobby_id._id === props.user.hobbies[0]._id 
+            || element.hobby_id._id  === props.user.hobbies[1]._id 
+            || element.hobby_id._id  === props.user.hobbies[2]._id);
 
         // Filtering NO own hobbies
-        let filterSuggestion = data.filter(element => element.hobby_id !== props.user.hobbies[0]._id 
-            && element.hobby_id !== props.user.hobbies[1]._id 
-            && element.hobby_id !== props.user.hobbies[2]._id); 
+        let filterSuggestion = data.filter(element => element.hobby_id._id  !== props.user.hobbies[0]._id 
+            && element.hobby_id._id  !== props.user.hobbies[1]._id 
+            && element.hobby_id._id  !== props.user.hobbies[2]._id); 
         
         return {filter,filterSuggestion}
     } 
@@ -175,7 +175,7 @@ const EventView = (props) => {
                                                         </div>
                                                         <div className="eventContentRight">
                                                             <div className="hobbyTag">
-                                                                <FilterHobbyTag hobby_id={event.hobby_id}/>
+                                                                <p>{event.hobby_id.hobby_name}</p>
                                                             </div>
                                                             <div className="signUp" onClick={()=>joinUser(event)}>
                                                                 <FontAwesomeIcon icon={getJoiners(event?.joiners)} className="joinUserIcon"/>
@@ -239,7 +239,8 @@ const EventView = (props) => {
                                                         </div>
                                                         <div className="eventContentRight">
                                                             <div className="hobbyTag">
-                                                                <FilterHobbyTag hobby_id={event.hobby_id}/>
+                                                                <p>{event.hobby_id.hobby_name}</p>
+                                                                {/* <FilterHobbyTag hobby_id={event.hobby_id}/> */}
                                                             </div>
                                                             <div className="signUp" onClick={()=>joinUser(event)}>
                                                                 <FontAwesomeIcon icon={getJoiners(event?.joiners)} className="joinUserIcon"/>
