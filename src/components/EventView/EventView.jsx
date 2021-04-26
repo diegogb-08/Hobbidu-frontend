@@ -76,7 +76,7 @@ const EventView = (props) => {
     // This function set up the FontAwesome icon for each event taking into consideration if the user is a joiner or not
     const getJoiners = (joiners) => {
 
-        if(joiners.find(element => element === props.user._id) !== undefined)
+        if(joiners.find(element => element._id === props.user._id) !== undefined)
             return faCheck;
         else
             return faUserPlus;
