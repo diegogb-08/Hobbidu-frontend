@@ -18,7 +18,7 @@ const Event = (props) => {
     const [creator, setCreator] = useState({});
     const [joiner, setJoiner] = useState([])
 
-    
+    console.log('JOINER',joiner)
     let leftSpots = event.maxJoiners - event.joiners?.length;
 
     useEffect(()=>{
@@ -89,6 +89,8 @@ const Event = (props) => {
     // Get joiner names
     
     const getJoinersName = async () => {
+
+        let joinerArray = []
         
         event?.joiners?.map(async user_id => {
             
@@ -96,10 +98,11 @@ const Event = (props) => {
                 let result = await axios.get(port+customer+'/'+user_id)
                 if(result.data){
                     if(joiner.find(element => element._id === result.data._id) !== undefined){
-                        let remove = joiner.filter(element => element._id === result.data._id)
+                        let remove = joiner.filter(element => element._id !== result.data._id)
                         console.log(remove)
                         return setJoiner(remove)
                     }else{
+                        
                         return setJoiner(joiner => [...joiner, result.data])
                     }
                 }
@@ -107,7 +110,6 @@ const Event = (props) => {
                 console.log(err)
             }
         })
-
 
     }
     
@@ -120,77 +122,82 @@ const Event = (props) => {
             <div className="spacer"></div>
             <ControlPanel/>
             <div className="eventCointainer">
-                    <h2 className="title">{props.event.title}</h2>
-                    <div className="eventInfoContainer">
-                        <div className="eventInfo">
-                            <div className="eventInfoLeft">
-                                <div className="location">
-                                    <FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>
-                                    <p>{event.location?.name}</p>
+                <h2 className="title">{props.event.title}</h2>
+                <div className="eventInfoContainer">
+                    <div className="eventInfo">
+                        <div className="eventInfoLeft">
+                            <div className="location">
+                                <FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>
+                                <p>{event.location?.name}</p>
+                            </div>
+                            <h3>{moment(event?.event_date).format('Do MMMM YYYY, h:mm a')}</h3>
+                            <div className="createdBy">
+                                <div className="iconBtnAvatar">
+                                    <Avatar src={port+'/'+creator.profile_img}/>
                                 </div>
-                                <h3>{moment(event?.event_date).format('Do MMMM YYYY, h:mm a')}</h3>
-                                <div className="createdBy">
-                                    <div className="iconBtnAvatar">
-                                        <Avatar src={port+'/'+creator.profile_img}/>
+                                <p>{creator.user_name}</p>
+                                <div className="hobbyTagContainer">
+                                    <div className="hobbyTag">
+                                        {/* <FilterHobbyTag hobby_id={props.event.hobby_id}/> */}
                                     </div>
-                                    <p>{creator.user_name}</p>
-                                    <div className="hobbyTagContainer">
-                                        <div className="hobbyTag">
-                                            {/* <FilterHobbyTag hobby_id={props.event.hobby_id}/> */}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="description">
-                                    <p>{event.description}</p>
                                 </div>
                             </div>
-                            <div className="eventInfoRight">
-                                <div className="eventInfoRightContainer">
-                                    <div className="joiners">
-                                        <p>{event.joiners?.length} joiner/s</p>
-                                        <p className="spotsLeft"> {leftSpots} spots left!</p>
-                                    </div>
-                                    <div className="vehicleContainer">
-                                        <p><b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}</p>
-                                        {
-                                            event.vehicle ?
-                                            <>
-                                                <p>{event.seats} seat/s left</p>
-                                            </>
-                                            :
-                                            <>
-                                            </>
-                                        }
-                                    </div>
-                                    <div className="addJoiner">
-                                        <div className="signUp" onClick={()=>joinUser(event)}>
-                                            <FontAwesomeIcon icon={getJoiners(event?.joiners)} className="joinUserIcon"/>
-                                            <p>Join</p>
-                                        </div>
-                                    </div>
-                                    <div className="renderJoiners">
-                                        {
-                                            joiner?.map(joiner => {
-                                                
-                                                return (
-                                                    <div className="joiner" key={joiner._id}>
-                                                        <div className="iconBtnAvatar">
-                                                            <Avatar src={port+'/'+joiner.profile_img}/>
-                                                        </div>
-                                                        <p>{joiner.name}</p>
-                                                    </div>
-                                                )
-                                            })
-                                        }
-                                    </div>
-                                </div>
+                            <div className="spacer"></div>
+                            <div className="spacer"></div>
+                            <div className="spacer"></div>
+                            <div className="description">
+                                <p>{event.description}</p>
                             </div>
                         </div>
-                        <div className="comments">
-
+                        <div className="eventInfoRight">
+                            <div className="eventInfoRightContainer">
+                                <div className="joiners">
+                                    <p>{event.joiners?.length} joiner/s</p>
+                                    <p className="spotsLeft"> {leftSpots} spots left!</p>
+                                </div>
+                                <div className="vehicleContainer">
+                                    <p><b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}</p>
+                                    {
+                                        event.vehicle ?
+                                        <>
+                                            <p>{event.seats} seat/s left</p>
+                                        </>
+                                        :
+                                        <>
+                                        </>
+                                    }
+                                </div>
+                                <div className="addJoiner">
+                                    <div className="signUp" onClick={()=>joinUser(event)}>
+                                        <FontAwesomeIcon icon={getJoiners(event?.joiners)} className="joinUserIcon"/>
+                                        <p>Join</p>
+                                    </div>
+                                </div>
+                                <div className="renderJoiners">
+                                    {
+                                        joiner?.map(joiner => {
+                                            
+                                            return (
+                                                <div className="joiner" key={joiner._id}>
+                                                    <div className="iconBtnAvatar">
+                                                        <Avatar src={port+'/'+joiner.profile_img}/>
+                                                    </div>
+                                                    <p>{joiner.name}</p>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div className="comments">
+
+                    </div>
+                </div>
             </div>
+            <div className="spacer"></div>
+            <div className="sapcer"></div>
             <Footer/>
         </div>
     )
