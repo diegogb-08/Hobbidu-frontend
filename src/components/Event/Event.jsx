@@ -14,11 +14,11 @@ import Avatar from '../Avatar/Avatar'
 const Event = (props) => {
 
     
+    
     const [event, setEvent] = useState({});
     const [creator, setCreator] = useState({});
     const [joiner, setJoiner] = useState([])
 
-    console.log('JOINER',joiner)
     let leftSpots = event.maxJoiners - event.joiners?.length;
 
     useEffect(()=>{
@@ -82,7 +82,7 @@ const Event = (props) => {
             if(result.data)
                 return setCreator(result.data)
         }catch(err){
-            console.log(err)
+            
         }
     }
 
@@ -91,26 +91,33 @@ const Event = (props) => {
     const getJoinersName = async () => {
 
         let joinerArray = []
-        
+   
         event?.joiners?.map(async user_id => {
             
             try{
                 let result = await axios.get(port+customer+'/'+user_id)
                 if(result.data){
                     if(joiner.find(element => element._id === result.data._id) !== undefined){
-                        let remove = joiner.filter(element => element._id !== result.data._id)
-                        console.log(remove)
-                        return setJoiner(remove)
+                        
+                        //let remove = joiner.filter(element => element._id !== result.data._id)
+                        //console.log(remove)
+                        joinerArray.push(result.data)
+                        console.log('ESTAMOS AQUI',joinerArray) 
+                        return setJoiner(joinerArray)
+                        //return setJoiner(remove)
                     }else{
                         
                         return setJoiner(joiner => [...joiner, result.data])
                     }
                 }
+                
             }catch(err){
                 console.log(err)
             }
         })
 
+
+          
     }
     
     

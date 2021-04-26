@@ -202,3 +202,30 @@
         }
     }
 }
+@media screen and (max-width: 900px) {
+    .eventComponent{
+        .eventCointainer{
+            width: 100%;
+            .eventInfoContainer{
+                .eventInfo{
+                    flex-direction: column;
+                    .eventInfoLeft{
+                        width: 100%;
+                        .createdBy{
+
+                            .hobbyTagContainer{
+                                
+                                .hobbyTag{
+                                    width: 7rem;
+                                }
+                            }
+                        }
+                    }
+                    .eventInfoRight{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
