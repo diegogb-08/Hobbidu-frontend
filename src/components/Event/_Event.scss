@@ -1,14 +1,12 @@
 .eventComponent{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-
     align-items: center;
     flex-direction: column;
     background-color: $backgroundWhite;
     .eventCointainer{
         width: 60rem;
-        height: 85%;
         background-color: $white1;
         display: flex;
         flex-direction: column;
@@ -90,7 +88,7 @@
                         }
                     }
                     .description{
-                        height: 75%;
+                        height: 100%;
                         width: 100%;
                         display: flex;
                         align-items: center;
@@ -196,10 +194,37 @@
                 }
             }
             .comments{
-                height: 20%;
+                min-height: 10rem;
                 width: 100%;
                 background-color: rgb(214, 200, 200);
                 border-radius: 0 0 $br $br;
+            }
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    .eventComponent{
+        .eventCointainer{
+            width: 100%;
+            .eventInfoContainer{
+                .eventInfo{
+                    flex-direction: column;
+                    .eventInfoLeft{
+                        width: 100%;
+                        .createdBy{
+
+                            .hobbyTagContainer{
+                                
+                                .hobbyTag{
+                                    width: 7rem;
+                                }
+                            }
+                        }
+                    }
+                    .eventInfoRight{
+                        width: 100%;
+                    }
+                }
             }
         }
     }
