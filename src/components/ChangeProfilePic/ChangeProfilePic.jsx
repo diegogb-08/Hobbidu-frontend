@@ -52,7 +52,6 @@ const ChangeProfilePic = (props) => {
             }
 
         }catch(err){
-            console.log(err.message)
             setMessage('Something went wrong!')
         }
     }
@@ -60,7 +59,7 @@ const ChangeProfilePic = (props) => {
     return (
         <div className="changeProfilePicComponent">
             <div className="pictureContainer">
-                    <Avatar/>
+                    <Avatar src={port+'/'+props.user.profile_img}/>
             </div>
             <div className="inputChangePicture">
                 <div className="inputFileContainer">

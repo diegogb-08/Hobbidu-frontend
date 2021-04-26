@@ -15,5 +15,11 @@
     .iconBtnAvatar{
         width: 2.5rem;
         height: 2.5rem;
+        .iconBtn{
+            border-radius: 50%;
+            color: white;
+            font-size: 2.5rem;
+            background-color: gray;
+        }
     }
 }

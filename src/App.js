@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ChangeEmail from "./components/ChangeEmail/ChangeEmail";
 import ChangePassword from "./components/ChangePassword/ChangePassword";
 import EditAccount from "./components/EditAccount/EditAccount";
+import Event from "./components/Event/Event";
 import EventView from "./components/EventView/EventView";
 
 import Header from "./components/Header/Header";
@@ -13,7 +14,6 @@ import User from "./components/User/User";
 function App(props) {
 
   let userPath = props.user?.user_name
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,6 +28,7 @@ function App(props) {
         <Route path="/change_password" exact component={ChangePassword}/>
         <Route path="/change_email" exact component={ChangeEmail}/>
         <Route path="/events" exact component={EventView} />
+        <Route path={`/event/${props.event?._id}`} exact component={Event} />
         
       </Switch>
       
@@ -40,6 +41,7 @@ function App(props) {
 const mapStateToProps = state => {
   return {
       user : state.userReducer.user,
+      event: state.eventReducer.event
   }
 }
 
