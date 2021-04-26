@@ -1,9 +1,206 @@
 .eventComponent{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+
     align-items: center;
     flex-direction: column;
     background-color: $backgroundWhite;
+    .eventCointainer{
+        width: 60rem;
+        height: 85%;
+        background-color: $white1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border: $border1;
+        box-sizing: border-box;
+        border-radius: $br;
+        .title{
+            font-size: 2rem;
+            margin: 0;
+            padding-top: 1rem;
+        }
+        .eventInfoContainer{
+            height: 100%;
+            width: 100%;
+            .eventInfo{
+                height: 80%;
+                width: 100%;
+                display: flex;
+
+                .eventInfoLeft{
+                    width: 70%;
+                    height: 100%;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    padding: 1rem;
+                    .location{
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        align-items: center;
+                        .icon{
+                            color: $logoColor;
+                            margin-right: 1rem;
+                        }
+                    }
+                    h3{
+                        margin: 0;
+                    }
+                    .createdBy{
+                        height: 5rem;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        .iconBtnAvatar{
+                            width: 2.5rem;
+                            height: 2.5rem;
+                            .iconBtn{
+                                border-radius: 50%;
+                                color: white;
+                                font-size: 2.5rem;
+                                background-color: $logoColor;
+                            }
+                        }
+                        p{
+                            margin-left: 1rem;
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                        }
+                        .hobbyTagContainer{
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            width: 50%;
+                            height: 100%;
+                            .hobbyTag{
+                                display: flex;
+                                min-height: 3rem;
+                                width: 10rem;
+                                background-color: $logoColor;
+                                border-radius: $br;
+                                p{
+                                    color: white;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                    .description{
+                        height: 75%;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        p{
+                            text-align: justify;
+                        }
+                    }
+                }
+                .eventInfoRight{
+                    width: 30%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    padding: 1rem;
+                    .eventInfoRightContainer{
+                        border: $border1;
+                        background-color: $backgroundWhite;
+                        height: 100%;
+                        width: 100%;
+                        border-radius: $br;
+                        .joiners{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-evenly;
+                            .spotsLeft{
+                                color: red;
+                                font-weight: bold;
+                            }
+                        }
+                        .vehicleContainer{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-evenly;
+                        }
+                        .addJoiner{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            .signUp{
+                                width: 6rem;
+                                height: 2rem;
+                                border: $border1;
+                                border-radius: $br;
+                                display: flex;
+                                padding: 0.5rem;
+                                box-sizing: border-box;
+                                flex-direction: row;
+                                align-items: center;
+                                cursor: pointer;
+                                .joinUserIcon{
+                                    color: $logoColor;
+                                    font-size: 1.2rem;
+                                }
+                                p{
+                                    margin-left: 1rem;
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                        .renderJoiners{
+                            width: 100%;
+                            height: 70%;
+                            padding: 1rem;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            .joiner{
+                                width: 90%;
+                                height: 3rem;
+                                border: $border1;
+                                background-color: white;
+                                border-radius: $br;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding-left: 1rem;
+                                padding-right: 1rem;
+                                box-sizing: border-box;
+                                margin-bottom: 0.5rem;
+                                .iconBtnAvatar{
+                                    width: 2.5rem;
+                                    height: 2.5rem;
+                                    .iconBtn{
+                                        border-radius: 50%;
+                                        color: white;
+                                        font-size: 2.5rem;
+                                        background-color: $logoColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .comments{
+                height: 20%;
+                width: 100%;
+                background-color: rgb(214, 200, 200);
+                border-radius: 0 0 $br $br;
+            }
+        }
+    }
 }
