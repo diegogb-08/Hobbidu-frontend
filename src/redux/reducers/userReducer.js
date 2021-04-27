@@ -1,10 +1,11 @@
-import { LOGIN, LOGOUT, UPDATE, SETACTIVE, ADDLOCATION } from '../types/userType';
+import { LOGIN, LOGOUT, UPDATE, SETACTIVE, ADDLOCATION, CHECKUSER } from '../types/userType';
 
 const initialState = {
     user: {},
     token: '',
     active: false,
     location: {},
+    checkUser: {}
 
 };
 
@@ -40,6 +41,13 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 user : action.payload
             }
+
+        case CHECKUSER : 
+            return {
+                ...state,
+                checkUser: action.payload
+            }
+
         default :
             return state
     }

@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Landing from "./components/Landing/Landing";
 import User from "./components/User/User";
+import CheckUser from './components/User/UserCheck'
 
 function App(props) {
 
@@ -29,6 +30,7 @@ function App(props) {
         <Route path="/change_email" exact component={ChangeEmail}/>
         <Route path="/events" exact component={EventView} />
         <Route path={`/event/${props.event?._id}`} exact component={Event} />
+        <Route path={`/${props.checkUser?.user_name}`} exact component={CheckUser} />
         
       </Switch>
       
@@ -41,7 +43,8 @@ function App(props) {
 const mapStateToProps = state => {
   return {
       user : state.userReducer.user,
-      event: state.eventReducer.event
+      event: state.eventReducer.event,
+      checkUser: state.userReducer.checkUser
   }
 }
 

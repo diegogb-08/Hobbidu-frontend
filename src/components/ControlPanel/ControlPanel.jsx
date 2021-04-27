@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarPlus } from '@fortawesome/free-regular-svg-icons'
 import { faPlusCircle, faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -8,8 +8,12 @@ import axios from 'axios';
 import { customer, port, query, search } from '../../tools/apiPaths';
 import Avatar from '../Avatar/Avatar';
 import { connect } from 'react-redux';
+import { CHECKUSER } from '../../redux/types/userType';
+import { useHistory } from 'react-router';
 
 const ControlPanel = (props) => {
+
+    let history = useHistory()
 
     const [suggestion, setsuggestion] = useState([])
 
@@ -29,7 +33,8 @@ const ControlPanel = (props) => {
     // Functions
 
     const checkUserProfile = (user) => {
-        console.log(user)
+        props.dispatch({type: CHECKUSER, payload: user})
+        setTimeout(()=>{history.push(`/${user.user_name}`)})
     }
 
     return (
@@ -55,6 +60,7 @@ const ControlPanel = (props) => {
                 {
                     suggestion?.map(user => {
                         if(user?._id === props.user?._id)
+                            // eslint-disable-next-line
                             return;
                         else
                             return (
