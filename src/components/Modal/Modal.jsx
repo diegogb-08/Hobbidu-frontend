@@ -37,7 +37,7 @@ const styles = {
         alignItems: 'center',
         width: '100%',
         height:'100vh',
-        zIndex: 100,
+        zIndex: 1000,
     },
     window: {
         position: 'relative',

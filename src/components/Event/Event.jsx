@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { meeting, port } from '../../tools/apiPaths'
+import { meeting, port, comment } from '../../tools/apiPaths'
 import ControlPanel from '../ControlPanel/ControlPanel'
 import Footer from '../Footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,17 +10,32 @@ import { faEdit } from '@fortawesome/free-regular-svg-icons'
 import moment from 'moment'
 import Avatar from '../Avatar/Avatar'
 import EditEvent from '../AddEvent/EditEvent'
+import { CHECKUSER } from '../../redux/types/userType'
+import { useHistory } from 'react-router'
 
 const Event = (props) => {
 
+    let history = useHistory()
+
     const [event, setEvent] = useState({});
+    const [comments, setComments] = useState([]);
+    const [content, setContent] = useState('')
 
     let leftSpots = event.maxJoiners - event.joiners?.length;
 
     useEffect(()=>{
         getEvent()
+        getPosts()
         // eslint-disable-next-line
     },[])
+
+
+    // handlestate
+
+    const handleChange = (e) => {
+        //console.log(e.target.value)
+        setContent(e.target.value)
+    }
   
     // Functions
 
@@ -63,8 +78,54 @@ const Event = (props) => {
         
     }
 
-    const edit = () => {
+    const setJoinGoin = (joiners) => {
 
+        if(joiners?.find(element => element._id === props.user._id) !== undefined)
+            return 'Going';
+        else
+            return 'Join';
+        
+    }
+
+    // Get all posts from the backend once it mount
+
+    const getPosts = async () => {
+        
+        try{
+            let result = await axios.get(port+comment+meeting+'/'+props.event._id);
+            if(result.data)
+                setComments(result.data)
+
+        }catch (err) {
+
+        }
+    }
+
+    // post new comments and brings all new comments
+
+    const post = async () => {
+
+        let body = {
+            event_id: props.event._id,
+            user_id: props.user._id,
+            content: content
+        }
+        
+        try{
+            let result = await axios.post(port+comment, body);
+            if(result.data)
+                setComments(result.data)
+                setContent('')
+
+        }catch (err) {
+
+        }
+    }
+
+    const checkUserProfile = (user) => {
+
+        props.dispatch({type: CHECKUSER, payload: user})
+        setTimeout(()=>{history.push(`/${user.user_name}`)})
     }
 
 
@@ -82,7 +143,7 @@ const Event = (props) => {
                     <>
                         <div className="edit">
                             <EditEvent event={event} >
-                                <FontAwesomeIcon icon={faEdit} onClick={()=>edit()}/>
+                                <FontAwesomeIcon icon={faEdit} />
                             </EditEvent>
                         </div>
                     </>
@@ -137,7 +198,7 @@ const Event = (props) => {
                                 <div className="addJoiner">
                                     <div className="signUp" onClick={()=>joinUser(event)}>
                                         <FontAwesomeIcon icon={getJoiners(event?.joiners)} className="joinUserIcon"/>
-                                        <p>Join</p>
+                                        <p>{setJoinGoin(event?.joiners)}</p>
                                     </div>
                                 </div>
                                 <div className="renderJoiners">
@@ -145,7 +206,7 @@ const Event = (props) => {
                                         event.joiners?.map(joiner => {
                                             
                                             return (
-                                                <div className="joiner" key={joiner._id}>
+                                                <div className="joiner" key={joiner._id} onClick={()=>checkUserProfile(joiner)}>
                                                     <div className="iconBtnAvatar">
                                                         <Avatar src={port+'/'+joiner.profile_img}/>
                                                     </div>
@@ -159,18 +220,30 @@ const Event = (props) => {
                         </div>
                     </div>
                     <div className="commentContainer">
-                        <div className="comments">
-
+                        <div className="commentCollection">
+                            {
+                                comments.map(comment => {
+                                    return(
+                                        <div className="comment" key={comment._id}>
+                                            <p className="userName" onClick={()=>checkUserProfile(comment.user_id)}>{comment.user_id.user_name}</p>
+                                            <p>{comment.content}</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                         <div className="postComment">
-                            <input type="text" name="comment" placeholder="Add a comment"/>
-                            <p>Post</p>
+                            <input type="text" name="content" placeholder="Add a comment" onChange={handleChange}/>
+                            <p onClick={()=>post()}>Post</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="spacer"></div>
             <div className="sapcer"></div>
+            <div className="sapcer"></div>
+            <div className="sapcer"></div>
+
             <Footer/>
         </div>
     )

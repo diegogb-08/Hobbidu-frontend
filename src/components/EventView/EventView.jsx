@@ -21,7 +21,6 @@ const EventView = (props) => {
     const [myEvents, setMyEvents] = useState([])
     const [mySuggestions, setMySuggestions] = useState([])
 
-
     // Handlers
 
     const handleChange = (e) => {
@@ -80,6 +79,15 @@ const EventView = (props) => {
             return faCheck;
         else
             return faUserPlus;
+        
+    }
+
+    const setJoinGoin = (joiners) => {
+
+        if(joiners.find(element => element._id === props.user._id) !== undefined)
+            return 'Going';
+        else
+            return 'Join';
         
     }
 
@@ -179,7 +187,7 @@ const EventView = (props) => {
                                                             </div>
                                                             <div className="signUp" onClick={()=>joinUser(event)}>
                                                                 <FontAwesomeIcon icon={getJoiners(event?.joiners)} className="joinUserIcon"/>
-                                                                <p>Join</p>
+                                                                <p>{setJoinGoin(event?.joiners)}</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -202,7 +210,7 @@ const EventView = (props) => {
                         </>
                     }
                     <div className="spacer"></div>
-                    <h2>Other events you might find interesting!</h2>
+                    <h2 className="title">Other events you might find interesting!</h2>
                     {
                         mySuggestions.length > 0 ?
                         <>

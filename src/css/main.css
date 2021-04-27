@@ -464,7 +464,7 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 200;
   position: fixed;
   top: 0;
   background-color: white; }
@@ -688,28 +688,28 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
   background-color: #3e9931; }
@@ -718,28 +718,28 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+13) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
 
+.hobby:nth-child(3n+15) {
+  background-color: #e87d33; }
+
 .hobby:nth-child(3n+16) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+20) {
   background-color: #0f7fe8; }
@@ -1466,7 +1466,9 @@ input:not(:focus):valid ~ .floating-label {
           display: flex;
           justify-content: center;
           align-items: center;
-          color: red; }
+          color: red;
+          box-sizing: border-box;
+          padding: 2rem; }
         .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent {
           width: 80%;
           height: 100%;
@@ -1972,7 +1974,8 @@ input:not(:focus):valid ~ .floating-label {
                 padding-left: 1rem;
                 padding-right: 1rem;
                 box-sizing: border-box;
-                margin-bottom: 0.5rem; }
+                margin-bottom: 0.5rem;
+                cursor: pointer; }
                 .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners .joiner .iconBtnAvatar {
                   width: 2.5rem;
                   height: 2.5rem; }
@@ -1982,29 +1985,43 @@ input:not(:focus):valid ~ .floating-label {
                     font-size: 2.5rem;
                     background-color: #f05356; }
       .eventComponent .eventCointainer .eventInfoContainer .commentContainer {
-        min-height: 10rem;
         width: 100%;
+        min-height: 3.5rem;
         border-radius: 0 0 0.3em 0.3em;
         display: flex;
         flex-direction: column; }
-        .eventComponent .eventCointainer .eventInfoContainer .commentContainer .comments {
-          min-height: 6.5rem;
+        .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection {
           width: 100%;
           display: flex;
           box-sizing: border-box;
-          padding: 1rem;
           flex-direction: column;
-          border: 1px solid #dbdbdb; }
+          border-bottom: 1px solid #dbdbdb;
+          border-top: 1px solid #dbdbdb;
+          justify-content: center;
+          align-items: center; }
+          .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection .comment {
+            display: flex;
+            width: 90%;
+            flex-direction: row;
+            justify-content: left;
+            box-sizing: border-box; }
+            .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection .comment p {
+              margin: 0.5rem 0 0.5rem 0;
+              padding: 0; }
+            .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection .comment .userName {
+              font-weight: bold;
+              cursor: pointer;
+              margin-right: 1rem; }
+            .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection .comment .userName:hover {
+              text-decoration: underline; }
         .eventComponent .eventCointainer .eventInfoContainer .commentContainer .postComment {
           height: 3.5rem;
           width: 100%;
           display: flex;
           box-sizing: border-box;
-          padding: 1rem;
           flex-direction: row;
           align-items: center;
-          justify-content: space-around;
-          border: 1px solid #dbdbdb; }
+          justify-content: center; }
           .eventComponent .eventCointainer .eventInfoContainer .commentContainer .postComment input {
             font-size: 16px;
             width: 65%;
@@ -2014,6 +2031,7 @@ input:not(:focus):valid ~ .floating-label {
             border: 1px solid #ccc;
             background-color: #fafafa; }
           .eventComponent .eventCointainer .eventInfoContainer .commentContainer .postComment p {
+            margin-left: 2rem;
             color: #35abec;
             font-weight: bold;
             font-size: 1.1rem;
