@@ -5,9 +5,11 @@ import { meeting, port } from '../../tools/apiPaths'
 import ControlPanel from '../ControlPanel/ControlPanel'
 import Footer from '../Footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt, faUserPlus, faCheck  } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt, faUserPlus, faCheck  } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-regular-svg-icons'
 import moment from 'moment'
 import Avatar from '../Avatar/Avatar'
+import EditEvent from '../AddEvent/EditEvent'
 
 const Event = (props) => {
 
@@ -61,6 +63,10 @@ const Event = (props) => {
         
     }
 
+    const edit = () => {
+
+    }
+
 
     return (
         <div className="eventComponent">
@@ -71,6 +77,19 @@ const Event = (props) => {
             <ControlPanel/>
             <div className="eventCointainer">
                 <h2 className="title">{props.event.title}</h2>
+                {
+                    event?.user_id?._id === props.user?._id ?
+                    <>
+                        <div className="edit">
+                            <EditEvent event={event} >
+                                <FontAwesomeIcon icon={faEdit} onClick={()=>edit()}/>
+                            </EditEvent>
+                        </div>
+                    </>
+                    :
+                    <>
+                    </>
+                }
                 <div className="eventInfoContainer">
                     <div className="eventInfo">
                         <div className="eventInfoLeft">

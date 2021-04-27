@@ -17,7 +17,7 @@ const EventView = (props) => {
 
     // Hooks
 
-    const [distance, setDistance] = useState(100000)
+    const [distance, setDistance] = useState(25000)
     const [myEvents, setMyEvents] = useState([])
     const [mySuggestions, setMySuggestions] = useState([])
 
@@ -120,12 +120,12 @@ const EventView = (props) => {
                 <div className="filterEvents">
                     <div className="filterDistance">
                         <p>Within</p>
-                        <select className="selector" name="distance" onChange={handleChange}>
+                        <select className="selector" name="distance" onChange={handleChange} defaultValue={25000}>
                             <option value={5000}   > 5 km </option>
                             <option value={10000}   > 10 km </option>
                             <option value={25000}  > 25 km </option>
                             <option value={50000}   > 50 km </option>
-                            <option value={100000}  defaultChecked > 100 km </option>
+                            <option value={100000}  > 100 km </option>
                             <option value={1000000} > any dinstance </option>
                         </select>
                         <p>of</p>

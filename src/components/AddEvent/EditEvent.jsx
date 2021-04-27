@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from '../Modal/Modal';
 import GeoLocation from '../GeoLocation/GeoLocation';
 import { connect } from 'react-redux';
@@ -7,26 +7,28 @@ import axios from 'axios';
 import {port,customer, search, query, meeting} from '../../tools/apiPaths';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faUserTimes } from '@fortawesome/free-solid-svg-icons';
-// import Avatar from '../Avatar/Avatar';
 
-const AddEvent = (props) => {
+
+const EditEvent = (props) => {
     // Modal Hook
     const [active, setActive] = useState(false);
     const toggle = () => {
         setActive(!active)
     } 
 
+    const editEvent = props.event;
+
     const [selected, setSelected] = useState({});
 
     const [event, setEvent] = useState({
-        title: '',
-        hobby_id: '',
-        event_date: '',
-        maxJoiners: 0,
-        vehicle: false,
-        seats: '',
-        joiners: [],
-        description: '',
+        title: editEvent.title,
+        hobby_id: editEvent.hobby_id._id,
+        event_date: editEvent.event_date,
+        maxJoiners: editEvent.maxJoiners,
+        vehicle: editEvent.vehicle,
+        seats: editEvent.seats,
+        joiners: editEvent.joiners,
+        description: editEvent.description,
     })
 
     const [suggestion, setSuggestion] = useState([])
@@ -36,7 +38,6 @@ const AddEvent = (props) => {
     const [disabled, setDisabled] = useState('disabled')
 
     const [message, setMessage] = useState('')
-
 
 
     //Handlers
@@ -82,11 +83,17 @@ const AddEvent = (props) => {
         
     }
 
+    useEffect(()=>{
+        setProps()
+        // eslint-disable-next-line
+    },[])
+
     // Functions
 
     const toggleEvent = async () => {
 
         let body = {
+            _id : editEvent._id,
             title: event.title,
             user_id : props.user._id,
             hobby_id : event.hobby_id,
@@ -99,10 +106,13 @@ const AddEvent = (props) => {
             event_date: event.event_date,
         }
 
+        console.log(body)
+
         // Calling the api to create the Event
         if(event.hobby_id !== ''){
             try{
-                let result = await axios.post(port+meeting, body)
+                let result = await axios.put(port+meeting+'/'+props.user._id, body)
+                console.log(result)
                 if(result.data){
                     setTimeout(()=>{toggle()},500)
                     setDisabled('disabled')
@@ -118,7 +128,7 @@ const AddEvent = (props) => {
                     })
                 }
             }catch (err){
-                throw new Error(404);
+                setMessage('Something went wrong')
             }
         }else{
             setMessage('Please, select your hobby!')
@@ -137,6 +147,13 @@ const AddEvent = (props) => {
         setFriends(friends.filter(element => element._id !== user._id))
     }
 
+    const setProps = () => {
+        setFriends(editEvent.joiners)
+        selectHobby(editEvent.hobby_id?._id)
+        if(editEvent.vehicle === true)
+            setDisabled('')
+    }
+
     return (
         <div>
             <div className="configComponent" onClick={()=>toggle()}>{props.children}</div>
@@ -147,7 +164,7 @@ const AddEvent = (props) => {
                         <div className="addEventSections">
                             <div className="inputEvent">
                                 <p className="titles" >Title</p>
-                                <input type="text" name="title" maxLength="50" onChange={handleChange} required/>
+                                <input type="text" name="title" maxLength="50" onChange={handleChange} defaultValue={editEvent.title} required/>
                             </div>
                             <div className="inputEvent inputHobbies">
                                 <p className="titles">Select 1 of your hobbies</p>
@@ -166,7 +183,7 @@ const AddEvent = (props) => {
                             </div>
                             <div className="inputEvent">
                                 <p className="titles">Date and time</p>
-                                <input type="datetime-local" name="event_date" maxLength="20" onChange={handleChange} required/>
+                                <input type="datetime-local" name="event_date" maxLength="20" onChange={handleChange} defaultValue={editEvent.event_date} required/>
                             </div>
                             <div className="inputEvent">
                                 <p className="titles">Location</p>
@@ -177,7 +194,7 @@ const AddEvent = (props) => {
                             <div className="inputEvent smallInputs">
                                 <div>
                                     <p className="titles">Max. joiners</p>
-                                    <select className="selector" name="maxJoiners" onChange={handleChange} defaultValue={0}>
+                                    <select className="selector" name="maxJoiners" onChange={handleChange} defaultValue={editEvent.maxJoiners}>
                                         <option value={0}  >0</option>
                                         <option value={1}  >1</option>
                                         <option value={2}  >2</option>
@@ -194,14 +211,14 @@ const AddEvent = (props) => {
                                 <div>
                                     <p className="titles">Own vehicle</p>
                                     <label className="switch">
-                                        <input type="checkbox" name="vehicle" onChange={handleCheckBox}/>
+                                        <input type="checkbox" name="vehicle" onChange={handleCheckBox} defaultChecked={editEvent.vehicle}/>
                                         <span className="slider round"></span>
                                     </label>
                                 </div>
                                 <div>
                                     <p className="titles">Seats</p>
-                                    <select className="selector" name="seats" onChange={handleChange} disabled={disabled} defaultValue={0}>
-                                        <option value={0}  >0</option>
+                                    <select className="selector" name="seats" onChange={handleChange} disabled={disabled} defaultValue={editEvent.seats}>
+                                        <option value={0} defaultValue>0</option>
                                         <option value={1}  >1</option>
                                         <option value={2}  >2</option>
                                         <option value={3}  >3</option>
@@ -231,7 +248,6 @@ const AddEvent = (props) => {
                                             return (
                                                 <div className="suggestion" key={user._id} onClick={()=>handleSelected(user)}>
                                                     <FontAwesomeIcon icon={faUserPlus} className="iconSuggestion" />
-                                                    {/* <Avatar /> */}
                                                     <p>{user.name}</p>
                                                 </div>
                                             )
@@ -243,12 +259,12 @@ const AddEvent = (props) => {
                             <div className="inputEvent">
                                 <p className="titles">Description</p>
                                 <p>Try to give as much information as you can so the joiners can get full info!</p>
-                                <textarea className="text"  cols="30" rows="8" name="description" maxLength="3000" onChange={handleChange}/>
+                                <textarea className="text"  cols="30" rows="8" name="description" maxLength="3000" onChange={handleChange} defaultValue={event.description}/>
                             </div>
                             <div className="inputButton">
                                 <div className="eventButton">
                                     <Button onClick={()=>toggleEvent()}>
-                                        <p>Create Event</p>
+                                        <p>Edit Event</p>
                                     </Button>
                                 </div>
                             </div>
@@ -267,4 +283,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(AddEvent);
+export default connect(mapStateToProps)(EditEvent);
