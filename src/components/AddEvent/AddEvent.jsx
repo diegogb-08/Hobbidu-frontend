@@ -54,8 +54,6 @@ const AddEvent = (props) => {
 
         }catch(err){
 
-            throw new Error(404)
-
         }
     }
 
