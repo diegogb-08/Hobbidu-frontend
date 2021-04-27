@@ -36,7 +36,7 @@
     .autocompleteDropdownContainer{
         position: absolute;
         width: 60rem;
-        top: 129px;
+        top: 128px;
         transition: 0.5s ease all;
         .suggestion{
             display: flex;
@@ -91,6 +91,11 @@
         }
         .autocompleteDropdownContainer{
             width: 100%;
+            .suggestion{
+                p{
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }

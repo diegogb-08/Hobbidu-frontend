@@ -69,6 +69,7 @@ const ControlPanel = (props) => {
                                         <Avatar src={port+'/'+ user?.profile_img}/>
                                     </div>
                                     <p>{user.name}</p>
+                                    <p>@{user.user_name}</p>
                                     <FontAwesomeIcon icon={faSearch} className="lens"/>
                                 </div>
                             )

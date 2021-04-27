@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, { useEffect, useState }  from 'react'
 import Footer from '../Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCog } from '@fortawesome/free-solid-svg-icons';
@@ -7,16 +7,54 @@ import Setting from '../Setting/Setting';
 import { useHistory } from 'react-router';
 import Avatar from '../Avatar/Avatar';
 import ControlPanel from '../ControlPanel/ControlPanel';
-import { port } from '../../tools/apiPaths';
+import { customer, follow, port, meeting } from '../../tools/apiPaths';
+import axios from 'axios';
 
 const User = (props) => {
 
     let history = useHistory()
 
+    const [followers, setFollowers] = useState([]);
+    const [following, setFollowing] = useState([]);
+    const [events, setEvents] = useState([])
+    const [posts, setPosts] = useState([])
+
+    useEffect(()=>{
+        getFollows()
+        getEvents()
+        setPosts([])
+        // eslint-disable-next-line
+    },[]);
+
+    // Functions
+
     const editProfile = () => {
         setTimeout(()=>{ history.push('/account/edit')})
     }
 
+    const getFollows = async () => {
+
+        try{
+
+            let result = await axios.get(port+follow+customer+'/'+props.user._id)
+            setFollowers(result.data.followers)
+            setFollowing(result.data.following)
+        }catch (err) {
+
+        }
+    }
+
+    const getEvents = async () => {
+
+        try{
+
+            let result = await axios.get(port+meeting+customer+'/'+props.user._id)
+            if(result.data)
+                setEvents(result.data)
+        }catch (err) {
+
+        }
+    }
 
     return (
         <div className="userComponent">
@@ -41,19 +79,19 @@ const User = (props) => {
                     </div>
                     <div className="userDetailsMiddle">
                         <div className="events sections">
-                            <p className="number">#</p>
+                            <p className="number">{events.length}</p>
                             <p>events</p>
                         </div>
                         <div className="posts sections">
-                            <p className="number">#</p>
+                            <p className="number">{posts.length}</p>
                             <p>posts</p>
                         </div>
                         <div className="following sections">
-                            <p className="number">#</p>
+                            <p className="number">{following.length}</p>
                             <p>following</p>
                         </div>
                         <div className="followers sections">
-                            <p className="number">#</p>
+                            <p className="number">{followers.length}</p>
                             <p>followers</p>
                         </div>
                     </div>

@@ -1,16 +1,94 @@
-import React  from 'react'
+import React, { useEffect, useState }  from 'react'
 import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router';
 import Avatar from '../Avatar/Avatar';
 import ControlPanel from '../ControlPanel/ControlPanel';
-import { port } from '../../tools/apiPaths';
+import { port, follow, customer, meeting } from '../../tools/apiPaths';
+import axios from 'axios';
 
 const CheckUser = (props) => {
-    let history = useHistory()
 
-    const editProfile = () => {
-        setTimeout(()=>{ history.push('/account/edit')})
+    const [followers, setFollowers] = useState([]);
+    const [following, setFollowing] = useState([]);
+    const [followBtn, setFollowBtn] = useState('')
+    const [events, setEvents] = useState([])
+    const [posts, setPosts] = useState([])
+
+    useEffect(()=>{
+        getFollows()
+        getEvents()
+        setPosts([])
+        // eslint-disable-next-line
+    },[])
+
+    useEffect(()=>{
+        
+        if(followers.find(element => element?.follower_id === props.user._id) === undefined){
+            setFollowBtn('Follow')
+        }else{
+            setFollowBtn('Following')
+        }
+        // eslint-disable-next-line
+    },[followers])
+    
+
+
+    // Functions
+
+    const getFollows = async () => {
+
+        try{
+
+            let result = await axios.get(port+follow+customer+'/'+props.checkUser._id)
+            setFollowers(result.data.followers)
+            setFollowing(result.data.following)
+        }catch (err) {
+
+        }
+    }
+
+    const getEvents = async () => {
+
+        try{
+
+            let result = await axios.get(port+meeting+customer+'/'+props.checkUser._id)
+            if(result.data)
+                setEvents(result.data)
+        }catch (err) {
+
+        }
+    }
+
+    const followUser = async (state) => {
+        
+        if(state === 'Following'){
+
+            try{
+                
+                let element = followers.find(element => element?.follower_id === props.user._id)
+                let result = await axios.delete(port+follow+'/'+element._id)
+                if(result.data)
+                    getFollows()
+            }catch (err) {
+
+            }
+
+        }else{
+
+            try{
+    
+                let body = {
+                    user_id : props.checkUser._id,
+                    follower_id : props.user._id
+                }
+    
+                let result = await axios.post(port+follow, body)
+                if(result.data)
+                    getFollows()
+            }catch (err) {
+    
+            }
+        }
     }
 
 
@@ -29,24 +107,24 @@ const CheckUser = (props) => {
                     <div className="userDetailsTop">
                         <p className="userName">{props.checkUser?.user_name}</p>
                         <div className="editProfile">
-                            <p onClick={()=>editProfile()}>Follow</p>
+                            <p onClick={()=>followUser(followBtn)}>{followBtn}</p>
                         </div>
                     </div>
                     <div className="userDetailsMiddle">
                         <div className="events sections">
-                            <p className="number">#</p>
+                            <p className="number">{events.length}</p>
                             <p>events</p>
                         </div>
                         <div className="posts sections">
-                            <p className="number">#</p>
+                            <p className="number">{posts.length}</p>
                             <p>posts</p>
                         </div>
                         <div className="following sections">
-                            <p className="number">#</p>
+                            <p className="number">{following.length}</p>
                             <p>following</p>
                         </div>
                         <div className="followers sections">
-                            <p className="number">#</p>
+                            <p className="number">{followers.length}</p>
                             <p>followers</p>
                         </div>
                     </div>
