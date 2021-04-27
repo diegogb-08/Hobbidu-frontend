@@ -158,8 +158,14 @@ const Event = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="comments">
+                    <div className="commentContainer">
+                        <div className="comments">
 
+                        </div>
+                        <div className="postComment">
+                            <input type="text" name="comment" placeholder="Add a comment"/>
+                            <p>Post</p>
+                        </div>
                     </div>
                 </div>
             </div>
