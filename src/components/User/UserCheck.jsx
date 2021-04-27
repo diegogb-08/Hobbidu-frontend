@@ -1,21 +1,16 @@
 import React, { useEffect, useState }  from 'react'
 import Footer from '../Footer/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-import Setting from '../Setting/Setting';
-import { useHistory } from 'react-router';
 import Avatar from '../Avatar/Avatar';
 import ControlPanel from '../ControlPanel/ControlPanel';
-import { customer, follow, port, meeting } from '../../tools/apiPaths';
+import { port, follow, customer, meeting } from '../../tools/apiPaths';
 import axios from 'axios';
 
-const User = (props) => {
-
-    let history = useHistory()
+const CheckUser = (props) => {
 
     const [followers, setFollowers] = useState([]);
     const [following, setFollowing] = useState([]);
+    const [followBtn, setFollowBtn] = useState('')
     const [events, setEvents] = useState([])
     const [posts, setPosts] = useState([])
 
@@ -24,19 +19,27 @@ const User = (props) => {
         getEvents()
         setPosts([])
         // eslint-disable-next-line
-    },[]);
+    },[])
+
+    useEffect(()=>{
+        
+        if(followers.find(element => element?.follower_id === props.user._id) === undefined){
+            setFollowBtn('Follow')
+        }else{
+            setFollowBtn('Following')
+        }
+        // eslint-disable-next-line
+    },[followers])
+    
+
 
     // Functions
-
-    const editProfile = () => {
-        setTimeout(()=>{ history.push('/account/edit')})
-    }
 
     const getFollows = async () => {
 
         try{
 
-            let result = await axios.get(port+follow+customer+'/'+props.user._id)
+            let result = await axios.get(port+follow+customer+'/'+props.checkUser._id)
             setFollowers(result.data.followers)
             setFollowing(result.data.following)
         }catch (err) {
@@ -48,13 +51,46 @@ const User = (props) => {
 
         try{
 
-            let result = await axios.get(port+meeting+customer+'/'+props.user._id)
+            let result = await axios.get(port+meeting+customer+'/'+props.checkUser._id)
             if(result.data)
                 setEvents(result.data)
         }catch (err) {
 
         }
     }
+
+    const followUser = async (state) => {
+        
+        if(state === 'Following'){
+
+            try{
+                
+                let element = followers.find(element => element?.follower_id === props.user._id)
+                let result = await axios.delete(port+follow+'/'+element._id)
+                if(result.data)
+                    getFollows()
+            }catch (err) {
+
+            }
+
+        }else{
+
+            try{
+    
+                let body = {
+                    user_id : props.checkUser._id,
+                    follower_id : props.user._id
+                }
+    
+                let result = await axios.post(port+follow, body)
+                if(result.data)
+                    getFollows()
+            }catch (err) {
+    
+            }
+        }
+    }
+
 
     return (
         <div className="userComponent">
@@ -65,16 +101,13 @@ const User = (props) => {
             <ControlPanel />
             <div className="userContainer">
                 <div className="profilePic">
-                    <Avatar src={port+'/'+props.user?.profile_img}/>
+                    <Avatar src={port+'/'+props.checkUser?.profile_img}/>
                 </div>
                 <div className="userDetails">
                     <div className="userDetailsTop">
-                        <p className="userName">{props.user?.user_name}</p>
+                        <p className="userName">{props.checkUser?.user_name}</p>
                         <div className="editProfile">
-                            <p onClick={()=>editProfile()}>Edit profile</p>
-                            <Setting>
-                                <FontAwesomeIcon icon={faUserCog} className="iconBtn" />
-                            </Setting>
+                            <p onClick={()=>followUser(followBtn)}>{followBtn}</p>
                         </div>
                     </div>
                     <div className="userDetailsMiddle">
@@ -97,22 +130,22 @@ const User = (props) => {
                     </div>
                     <div className="userDetailsBottom">
                         <div className="nameAndLocation">
-                            <p className="name">{props.user.name}</p>
-                            <p className="location">{props.user?.location?.name}</p>
+                            <p className="name">{props.checkUser?.name}</p>
+                            <p className="location">{props.checkUser?.location?.name}</p>
                         </div>
                         <div className="hobbies">
                             {
-                                props.user.hobbies.map(hobby => {
+                                props.checkUser?.hobbies.map(hobby => {
                                     return(
-                                        <div className="hobby" key={hobby._id}>
-                                            <p>{hobby.hobby_name}</p>
+                                        <div className="hobby" key={hobby?._id}>
+                                            <p>{hobby?.hobby_name}</p>
                                         </div>
                                     )
                                 })
                             }
                         </div>
                         <div className="descritpion">
-                            <p>{props.user.bio}</p> 
+                            <p>{props.checkUser?.bio}</p> 
                         </div>
                     </div>
                 </div>
@@ -124,9 +157,9 @@ const User = (props) => {
 
 const mapStateToProps = state => {
     return {
-        user : state.userReducer.user,
-        hobby : state.hobbyReducer.hobby
+        checkUser : state.userReducer.checkUser,
+        hobby : state.hobbyReducer.hobby,
+        user : state.userReducer.user
     }
 }
-
-export default connect(mapStateToProps)(User);
+export default connect(mapStateToProps)(CheckUser) 

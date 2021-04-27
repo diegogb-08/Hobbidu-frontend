@@ -685,49 +685,49 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+2) {
   background-color: #0f7fe8; }
 
-.hobby:nth-child(3n+3) {
+.hobby:nth-child(3n+2) {
   background-color: #3e9931; }
+
+.hobby:nth-child(3n+3) {
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+11) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+12) {
   background-color: #3e9931; }
 
-.hobby:nth-child(3n+13) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+14) {
+.hobby:nth-child(3n+11) {
   background-color: #0f7fe8; }
 
-.hobby:nth-child(3n+15) {
+.hobby:nth-child(3n+12) {
   background-color: #e87d33; }
+
+.hobby:nth-child(3n+13) {
+  background-color: #3e9931; }
+
+.hobby:nth-child(3n+14) {
+  background-color: #3e9931; }
+
+.hobby:nth-child(3n+15) {
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+16) {
   background-color: #0f7fe8; }
@@ -742,7 +742,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -1613,6 +1613,39 @@ input:not(:focus):valid ~ .floating-label {
     justify-content: space-evenly; }
     .controlPanelComponent .controlPanelRight .panelBtn {
       cursor: pointer; }
+  .controlPanelComponent .autocompleteDropdownContainer {
+    position: absolute;
+    width: 60rem;
+    top: 128px;
+    transition: 0.5s ease all; }
+    .controlPanelComponent .autocompleteDropdownContainer .suggestion {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      box-sizing: border-box;
+      cursor: pointer; }
+      .controlPanelComponent .autocompleteDropdownContainer .suggestion p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #7c7578; }
+      .controlPanelComponent .autocompleteDropdownContainer .suggestion .iconBtnAvatar {
+        width: 2.5rem;
+        height: 2.5rem; }
+        .controlPanelComponent .autocompleteDropdownContainer .suggestion .iconBtnAvatar .iconBtn {
+          border-radius: 50%;
+          color: white;
+          font-size: 2.5rem;
+          background-color: #f05356; }
+      .controlPanelComponent .autocompleteDropdownContainer .suggestion .lens {
+        font-size: 2rem;
+        color: #7c7578; }
+    .controlPanelComponent .autocompleteDropdownContainer .suggestion:hover {
+      background-color: #f05356; }
+      .controlPanelComponent .autocompleteDropdownContainer .suggestion:hover p {
+        color: white; }
 
 @media screen and (max-width: 900px) {
   .controlPanelComponent {
@@ -1621,7 +1654,11 @@ input:not(:focus):valid ~ .floating-label {
       width: 70%;
       padding-left: 0.5rem; }
     .controlPanelComponent .controlPanelRight {
-      width: 30%; } }
+      width: 30%; }
+    .controlPanelComponent .autocompleteDropdownContainer {
+      width: 100%; }
+      .controlPanelComponent .autocompleteDropdownContainer .suggestion p {
+        font-size: 1rem; } }
 
 .AddEventContainer {
   width: 60rem;
@@ -1783,7 +1820,17 @@ input:not(:focus):valid ~ .floating-label {
     .eventComponent .eventCointainer .title {
       font-size: 2rem;
       margin: 0;
-      padding-top: 1rem; }
+      padding-top: 1rem;
+      text-align: center; }
+    .eventComponent .eventCointainer .edit {
+      position: relative;
+      color: gray;
+      font-size: 1.5rem;
+      top: 16%;
+      left: 45%;
+      cursor: pointer; }
+    .eventComponent .eventCointainer .edit:hover {
+      color: #f05356; }
     .eventComponent .eventCointainer .eventInfoContainer {
       height: 100%;
       width: 100%; }
@@ -1834,12 +1881,17 @@ input:not(:focus):valid ~ .floating-label {
               .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag {
                 display: flex;
                 min-height: 3rem;
-                width: 10rem;
+                width: 7rem;
                 background-color: #f05356;
-                border-radius: 0.3em; }
+                border-radius: 0.3em;
+                justify-content: center;
+                align-items: center; }
                 .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag p {
                   color: white;
-                  font-weight: bold; }
+                  font-weight: bold;
+                  margin: 0;
+                  padding: 0;
+                  font-size: 1rem; }
           .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .description {
             height: 100%;
             width: 100%;
@@ -1938,6 +1990,8 @@ input:not(:focus):valid ~ .floating-label {
 @media screen and (max-width: 900px) {
   .eventComponent .eventCointainer {
     width: 100%; }
+    .eventComponent .eventCointainer .edit {
+      left: 40%; }
     .eventComponent .eventCointainer .eventInfoContainer .eventInfo {
       flex-direction: column; }
       .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft {
@@ -1946,16 +2000,5 @@ input:not(:focus):valid ~ .floating-label {
           width: 7rem; }
       .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight {
         width: 100%; } }
-
-.filterHobbyTagComponent {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .filterHobbyTagComponent p {
-    color: white;
-    font-weight: bold;
-    text-align: center; }
 
 /*Fonts and another urls*/

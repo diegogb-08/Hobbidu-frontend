@@ -33,6 +33,50 @@
             cursor: pointer;
         }
     }
+    .autocompleteDropdownContainer{
+        position: absolute;
+        width: 60rem;
+        top: 128px;
+        transition: 0.5s ease all;
+        .suggestion{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            box-sizing: border-box;
+            cursor: pointer;
+            p{
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: $fontcolor3 ;
+            }
+            .iconBtnAvatar{
+                width: 2.5rem;
+                height: 2.5rem;
+                .iconBtn{
+                    border-radius: 50%;
+                    color: white;
+                    font-size: 2.5rem;
+                    background-color: $logoColor;
+                }
+            }
+            .lens{
+                font-size: 2rem;
+                color: $fontcolor3;
+            }
+            
+            
+        }
+        .suggestion:hover{
+            background-color: $logoColor;
+            p{
+                color: white;
+            }
+          
+        }
+    }
 }
 @media screen and (max-width: 900px) {
     .controlPanelComponent{
@@ -44,6 +88,14 @@
         .controlPanelRight{
             width: 30%;
             
+        }
+        .autocompleteDropdownContainer{
+            width: 100%;
+            .suggestion{
+                p{
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }

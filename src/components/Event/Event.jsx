@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { customer, meeting, port } from '../../tools/apiPaths'
+import { meeting, port } from '../../tools/apiPaths'
 import ControlPanel from '../ControlPanel/ControlPanel'
 import Footer from '../Footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt, faUserPlus, faCheck  } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt, faUserPlus, faCheck  } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-regular-svg-icons'
 import moment from 'moment'
 import Avatar from '../Avatar/Avatar'
-//import FilterHobbyTag from '../FilterHobbyTag/FilterHobbyTag'
-
+import EditEvent from '../AddEvent/EditEvent'
 
 const Event = (props) => {
 
-    
-    
     const [event, setEvent] = useState({});
-    const [creator, setCreator] = useState({});
-    const [joiner, setJoiner] = useState([])
 
     let leftSpots = event.maxJoiners - event.joiners?.length;
 
@@ -25,13 +21,7 @@ const Event = (props) => {
         getEvent()
         // eslint-disable-next-line
     },[])
-    
-    useEffect(()=>{
-        getCreator()
-        getJoinersName()
-        // eslint-disable-next-line
-    },[event])
-
+  
     // Functions
 
     const joinUser = async (event) => {
@@ -44,7 +34,7 @@ const Event = (props) => {
 
             let result = await axios.put(port+meeting+'/join/'+event._id, body)
             if(result)
-                return getEvent()
+                setEvent(result.data)
 
         }catch (err){
 
@@ -66,61 +56,18 @@ const Event = (props) => {
     // This function set up the FontAwesome icon for each event taking into consideration if the user is a joiner or not
     const getJoiners = (joiners) => {
 
-        if(joiners?.find(element => element === props.user._id) !== undefined)
+        if(joiners?.find(element => element._id === props.user._id) !== undefined)
             return faCheck;
         else
             return faUserPlus;
         
     }
 
-    // get Event creator information
+    const edit = () => {
 
-    const getCreator = async () => {
-
-        try{
-            let result = await axios.get(port+customer+'/'+event.user_id)
-            if(result.data)
-                return setCreator(result.data)
-        }catch(err){
-            
-        }
     }
 
-    // Get joiner names
-    
-    const getJoinersName = async () => {
 
-        let joinerArray = []
-   
-        event?.joiners?.map(async user_id => {
-            
-            try{
-                let result = await axios.get(port+customer+'/'+user_id)
-                if(result.data){
-                    if(joiner.find(element => element._id === result.data._id) !== undefined){
-                        
-                        //let remove = joiner.filter(element => element._id !== result.data._id)
-                        //console.log(remove)
-                        joinerArray.push(result.data)
-                        console.log('ESTAMOS AQUI',joinerArray) 
-                        return setJoiner(joinerArray)
-                        //return setJoiner(remove)
-                    }else{
-                        
-                        return setJoiner(joiner => [...joiner, result.data])
-                    }
-                }
-                
-            }catch(err){
-                console.log(err)
-            }
-        })
-
-
-          
-    }
-    
-    
     return (
         <div className="eventComponent">
             <div className="spacer"></div>
@@ -130,6 +77,19 @@ const Event = (props) => {
             <ControlPanel/>
             <div className="eventCointainer">
                 <h2 className="title">{props.event.title}</h2>
+                {
+                    event?.user_id?._id === props.user?._id ?
+                    <>
+                        <div className="edit">
+                            <EditEvent event={event} >
+                                <FontAwesomeIcon icon={faEdit} onClick={()=>edit()}/>
+                            </EditEvent>
+                        </div>
+                    </>
+                    :
+                    <>
+                    </>
+                }
                 <div className="eventInfoContainer">
                     <div className="eventInfo">
                         <div className="eventInfoLeft">
@@ -140,12 +100,12 @@ const Event = (props) => {
                             <h3>{moment(event?.event_date).format('Do MMMM YYYY, h:mm a')}</h3>
                             <div className="createdBy">
                                 <div className="iconBtnAvatar">
-                                    <Avatar src={port+'/'+creator.profile_img}/>
+                                    <Avatar src={port+'/'+ event?.user_id?.profile_img}/>
                                 </div>
-                                <p>{creator.user_name}</p>
+                                <p>{event?.user_id?.user_name}</p>
                                 <div className="hobbyTagContainer">
                                     <div className="hobbyTag">
-                                        {/* <FilterHobbyTag hobby_id={props.event.hobby_id}/> */}
+                                        <p>{event?.hobby_id?.hobby_name}</p>
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +142,7 @@ const Event = (props) => {
                                 </div>
                                 <div className="renderJoiners">
                                     {
-                                        joiner?.map(joiner => {
+                                        event.joiners?.map(joiner => {
                                             
                                             return (
                                                 <div className="joiner" key={joiner._id}>

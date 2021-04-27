@@ -19,6 +19,18 @@
             font-size: 2rem;
             margin: 0;
             padding-top: 1rem;
+            text-align: center;
+        }
+        .edit{
+            position: relative;
+            color: gray;
+            font-size: 1.5rem;
+            top: 16%;
+            left: 45%;
+            cursor: pointer;
+        }
+        .edit:hover{
+            color: $logoColor;
         }
         .eventInfoContainer{
             height: 100%;
@@ -77,12 +89,17 @@
                             .hobbyTag{
                                 display: flex;
                                 min-height: 3rem;
-                                width: 10rem;
+                                width: 7rem;
                                 background-color: $logoColor;
                                 border-radius: $br;
+                                justify-content: center;
+                                align-items: center;
                                 p{
                                     color: white;
                                     font-weight: bold;
+                                    margin: 0;
+                                    padding: 0;
+                                    font-size: 1rem;
                                 }
                             }
                         }
@@ -206,6 +223,9 @@
     .eventComponent{
         .eventCointainer{
             width: 100%;
+            .edit{
+                left: 40%;
+            }
             .eventInfoContainer{
                 .eventInfo{
                     flex-direction: column;
