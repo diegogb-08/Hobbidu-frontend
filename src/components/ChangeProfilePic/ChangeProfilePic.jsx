@@ -1,59 +1,50 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import Avatar from '../Avatar/Avatar'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImages } from '@fortawesome/free-regular-svg-icons';
 import axios from 'axios'
 import { customer, port } from '../../tools/apiPaths';
 import { UPDATE } from '../../redux/types/userType';
+import ImageCropper from '../ImageCropper/ImageCropper';
 
 const ChangeProfilePic = (props) => {
 
     //AUTHORIZATION
 
     let token = props.token
+
     let auth = {
         headers: {
         'Authorization': `Bearer ${token}` 
         }};
 
-    const [selectedFile, setSelectedFile] = useState(null)
     const [message, setMessage] = useState('');
+    const [formData, setformData] = useState({})
 
-    const fileSelectedHandler = (e) => {
-        setSelectedFile(e.target.files[0])
-        setMessage('Press save to upload your picture')
+    const handleChange = (value) => {
+        setformData(value)
+       
     }
 
+    useEffect(()=>{
+        fileUploadhandler()
+    },[formData])
+    
     const fileUploadhandler = async () => {
 
-        // Create an object of formData
-        const formData = new FormData()
-        // Update the formData object
-        formData.append(
-            'profile_img',
-            selectedFile,
-            selectedFile.name
-        )
+            console.log()
+            try{
+                let result = await axios.put(port+customer+'/update_picture/'+ props.user._id, formData, auth)
+                console.log(result)
+                if(result){
+                    setMessage('Your picture was uploaded succesfully!')
+                    props.dispatch({type: UPDATE, payload: result.data})
+                }else{
+                    setMessage('Something went wrong!')
+                }
 
-        const config = {
-            onUploadProgress: progressEvent => {
-                console.log('Upload Progress: ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')
-            }
-        }
-  
-        try{
-            let result = await axios.put(port+customer+'/update_picture/'+ props.user._id, formData, auth, config)
-            if(result){
-                setMessage('Your picture was uploaded succesfully!')
-                props.dispatch({type: UPDATE, payload: result.data})
-            }else{
+            }catch(err){
                 setMessage('Something went wrong!')
             }
-
-        }catch(err){
-            setMessage('Something went wrong!')
-        }
     }
 
     return (
@@ -61,14 +52,10 @@ const ChangeProfilePic = (props) => {
             <div className="pictureContainer">
                     <Avatar src={port+'/'+props.user.profile_img}/>
             </div>
+            {/* <p>{message}</p> */}
             <div className="inputChangePicture">
-                <div className="inputFileContainer">
-                    <input className="inputFile" type="file" name="file" id="file" onChange={fileSelectedHandler}/>
-                    <label htmlFor="file"><FontAwesomeIcon icon={faImages} className="iconPic" /></label>
-                </div>
-               <div className="buttonFile" onClick={()=>fileUploadhandler()}>Save Picture</div>
+                <ImageCropper onChange={handleChange}/>
             </div>
-            <p>{message}</p>
         </div>
     )
 }

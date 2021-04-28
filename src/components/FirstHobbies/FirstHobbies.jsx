@@ -47,7 +47,9 @@ const FirstHobbies = (props) => {
 
         if(isSelected.length < 3){
             let result = await axios.post(port+hobby,body)
-            setIsSelected([...isSelected, result.data])
+            console.log(result)
+            if(result.data)
+                setIsSelected([...isSelected, result.data])
         }else{
             setMessage('Max 3 hobbies reached')
         }
@@ -91,7 +93,7 @@ const FirstHobbies = (props) => {
     const selectTag = (hobby) => {
 
         if(isSelected[0]){
-            let itemId = isSelected.map(item => item._id)
+            let itemId = isSelected?.map(item => item?._id)
             if(itemId.find(element => element === hobby._id) === undefined){
                 if(isSelected.length < 3){
                     setIsSelected([...isSelected, hobby])
@@ -142,8 +144,8 @@ const FirstHobbies = (props) => {
                 {
                     isSelected?.map(hobby => {
                         return(
-                            <div className="selected" key={hobby._id} onClick={()=>selectTag(hobby)}>
-                                <p>{hobby.hobby_name}</p>
+                            <div className="selected" key={hobby?._id} onClick={()=>selectTag(hobby)}>
+                                <p>{hobby?.hobby_name}</p>
                             </div>
                         )
                     })
