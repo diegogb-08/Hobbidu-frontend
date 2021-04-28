@@ -46,6 +46,8 @@ const EditAccount = (props) => {
                     </Tab>
                 </div>
             </div>
+            <div className="spacer">
+                </div><div className="spacer"></div>
             <Footer/>
         </div>
     )

@@ -29,7 +29,20 @@ const Event = (props) => {
         // eslint-disable-next-line
     },[])
 
-
+    // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
+    useEffect(() => {
+        const listener = event => {
+            if (event.code === "Enter" || event.code === "NumpadEnter" || event.keyCode === 13) {
+                post()
+            }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+        document.removeEventListener("keydown", listener);
+        };
+        // eslint-disable-next-line
+    },[content]);
+    
     // handlestate
 
     const handleChange = (e) => {
@@ -116,7 +129,9 @@ const Event = (props) => {
             if(result.data)
                 setComments(result.data)
                 setContent('')
-
+                Array.from(document.querySelectorAll('input')).forEach(
+                    input => (input.value = "")
+                );
         }catch (err) {
 
         }
@@ -137,7 +152,7 @@ const Event = (props) => {
             <div className="spacer"></div>
             <ControlPanel/>
             <div className="eventCointainer">
-                <h2 className="title">{props.event.title}</h2>
+                <h2 className="title">{event.title}</h2>
                 {
                     event?.user_id?._id === props.user?._id ?
                     <>
