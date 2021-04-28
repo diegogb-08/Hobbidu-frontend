@@ -3,6 +3,11 @@ import ControlPanel from '../ControlPanel/ControlPanel'
 import Footer from '../Footer/Footer'
 
 const Home = () => {
+
+
+
+
+    
     return (
         <div className="homeComponent">
             <div className="spacer"></div>

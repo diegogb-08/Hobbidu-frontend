@@ -29,7 +29,6 @@ const ControlPanel = (props) => {
         }
     }
 
-
     // Functions
 
     const checkUserProfile = (user) => {
@@ -45,7 +44,7 @@ const ControlPanel = (props) => {
                     name="search"
                     onChange={handleChange}
                     style={props.style}
-                    placeholder="Search people...    Enter"
+                    placeholder="Search for people..."
                 />
             </div>
             <div className="controlPanelRight controlPanelContainers">
