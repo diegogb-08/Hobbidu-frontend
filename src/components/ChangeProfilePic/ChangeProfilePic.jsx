@@ -17,7 +17,6 @@ const ChangeProfilePic = (props) => {
         'Authorization': `Bearer ${token}` 
         }};
 
-    const [message, setMessage] = useState('');
     const [formData, setformData] = useState({})
 
     const handleChange = (value) => {
@@ -27,6 +26,7 @@ const ChangeProfilePic = (props) => {
 
     useEffect(()=>{
         fileUploadhandler()
+        // eslint-disable-next-line 
     },[formData])
     
     const fileUploadhandler = async () => {
@@ -36,14 +36,11 @@ const ChangeProfilePic = (props) => {
                 let result = await axios.put(port+customer+'/update_picture/'+ props.user._id, formData, auth)
                 console.log(result)
                 if(result){
-                    setMessage('Your picture was uploaded succesfully!')
                     props.dispatch({type: UPDATE, payload: result.data})
-                }else{
-                    setMessage('Something went wrong!')
                 }
 
             }catch(err){
-                setMessage('Something went wrong!')
+
             }
     }
 
@@ -52,7 +49,7 @@ const ChangeProfilePic = (props) => {
             <div className="pictureContainer">
                     <Avatar src={port+'/'+props.user.profile_img}/>
             </div>
-            {/* <p>{message}</p> */}
+
             <div className="inputChangePicture">
                 <ImageCropper onChange={handleChange}/>
             </div>
