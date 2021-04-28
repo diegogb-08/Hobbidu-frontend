@@ -11,8 +11,6 @@ const ImageCropper = (props) => {
 
     const inputRef = useRef();
 
-    
-
     const triggerFileSelectPopup = () => inputRef.current.click();
 
     const [image, setImage] = useState(null);
@@ -47,12 +45,8 @@ const ImageCropper = (props) => {
             const formData = new FormData();
 
             formData.append('croppedImage', convertedUrlToFile)
-
+          
             props.onChange(formData)
-            for (let value of formData.values()) {
-                console.log(value);
-            }
-     
         }
 	};
 

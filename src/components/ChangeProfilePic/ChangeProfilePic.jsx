@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import Avatar from '../Avatar/Avatar'
 import axios from 'axios'
@@ -11,6 +11,7 @@ const ChangeProfilePic = (props) => {
     //AUTHORIZATION
 
     let token = props.token
+
     let auth = {
         headers: {
         'Authorization': `Bearer ${token}` 
@@ -21,11 +22,16 @@ const ChangeProfilePic = (props) => {
 
     const handleChange = (value) => {
         setformData(value)
-        fileUploadhandler()
+       
     }
+
+    useEffect(()=>{
+        fileUploadhandler()
+    },[formData])
     
     const fileUploadhandler = async () => {
 
+            console.log()
             try{
                 let result = await axios.put(port+customer+'/update_picture/'+ props.user._id, formData, auth)
                 console.log(result)
@@ -39,7 +45,6 @@ const ChangeProfilePic = (props) => {
             }catch(err){
                 setMessage('Something went wrong!')
             }
-        // }
     }
 
     return (
@@ -47,7 +52,7 @@ const ChangeProfilePic = (props) => {
             <div className="pictureContainer">
                     <Avatar src={port+'/'+props.user.profile_img}/>
             </div>
-            <p>{message}</p>
+            {/* <p>{message}</p> */}
             <div className="inputChangePicture">
                 <ImageCropper onChange={handleChange}/>
             </div>
