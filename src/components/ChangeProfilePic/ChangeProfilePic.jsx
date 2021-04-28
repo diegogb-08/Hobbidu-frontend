@@ -51,7 +51,9 @@ const ChangeProfilePic = (props) => {
             </div>
 
             <div className="inputChangePicture">
-                <ImageCropper onChange={handleChange}/>
+                <ImageCropper onChange={handleChange}>
+                    Upload
+                </ImageCropper>
             </div>
         </div>
     )

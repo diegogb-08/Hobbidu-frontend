@@ -114,7 +114,7 @@ const ImageCropper = (props) => {
                     color="secondary"
                     onClick={()=>onUpload()}
                 >
-                    Upload
+                    {props.children}
                 </Button>
             </div>
         </div>
