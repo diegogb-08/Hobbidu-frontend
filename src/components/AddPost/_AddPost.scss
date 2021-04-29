@@ -20,42 +20,94 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+
         h2{
             position: absolute;
+            top: 20rem;
         }
         .secondStepContainer{
             width: 100%;
             height: 100%;
             display: flex;
-            .inputEvent{
-                width: 50%;
-                margin-bottom: 4rem;
+            flex-direction: column;
+            align-items: center;
+            .topContainer{
+                justify-content: space-around;
+                width: 100%;
+                height: 30%;
+                display: flex;
+                flex-direction: row;
+                .secondStepDivision{
+                    width: 45%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .sections{
+                        width: 100%;
+                        margin: 1rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .titles{
+                            font-weight: bold;
+                            font-size: 1.2rem;
+                        }
+                        .hobbies{
+                            height: 3rem;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            .hobby {
+                                padding: 0.5rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: $br;
+                                border: 2px solid $logoColor;
+                                background-color: white;
+                                color: $logoColor;
+                                font-weight: bold;
+                                cursor: pointer;
+                            }
+                            .hobby:hover{
+                                background-color: #e9e3e3;
+                            }
+                        }
+                        .geoContainer{
+                            width: 90%;
+                        }
+                    }
+                  
+                }
+            }
+            .bottomContainer{
+                width: 100%;
+                height: 70%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
                 .titles{
                     font-weight: bold;
+                    font-size: 1.2rem;
                 }
-                .hobbies{
-                    height: 3rem;
+                textarea{
+                    font-size: 16px;
+                    width: 70%;
+                    padding: 12px 20px;
+                    display: inline-block;
+                    border-radius: $br;
+                    border: 1px solid #ccc;
+                    background-color: $backgroundWhite;
+                }
+                .bottomArea{
+                    height: 10rem;
                     width: 100%;
                     display: flex;
                     justify-content: space-between;
-                    .hobby {
-                        padding: 0.5rem;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        border-radius: $br;
-                        border: 2px solid $logoColor;
-                        background-color: white;
-                        color: $logoColor;
-                        font-weight: bold;
-                        cursor: pointer;
-                    }
-                    .hobby:hover{
-                        background-color: #e9e3e3;
-                    }
+                    align-items: center;
                 }
-              
             }
         }
     }

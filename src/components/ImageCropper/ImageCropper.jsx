@@ -44,11 +44,13 @@ const ImageCropper = (props) => {
             
             const formData = new FormData();
 
-            formData.append('croppedImage', convertedUrlToFile)
-          
+            formData.append('image', convertedUrlToFile)
+
             props.onChange(formData)
+            setTimeout(()=>{ setImage(null)},500)
         }
 	};
+
 
     return (
         <div className="imageCropperComponent">

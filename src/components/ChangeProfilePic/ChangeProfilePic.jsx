@@ -18,7 +18,7 @@ const ChangeProfilePic = (props) => {
         }};
 
     const [formData, setformData] = useState({})
-
+    
     const handleChange = (value) => {
         setformData(value)
        
@@ -31,11 +31,9 @@ const ChangeProfilePic = (props) => {
     
     const fileUploadhandler = async () => {
 
-            console.log()
             try{
                 let result = await axios.put(port+customer+'/update_picture/'+ props.user._id, formData, auth)
-                console.log(result)
-                if(result){
+                if(result.data){
                     props.dispatch({type: UPDATE, payload: result.data})
                 }
 

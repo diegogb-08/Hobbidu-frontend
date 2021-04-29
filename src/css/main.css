@@ -688,7 +688,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
   background-color: #0f7fe8; }
@@ -697,22 +697,22 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+11) {
   background-color: #e87d33; }
@@ -721,7 +721,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
   background-color: #0f7fe8; }
@@ -730,7 +730,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
   background-color: #3e9931; }
@@ -739,7 +739,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
   background-color: #0f7fe8; }
@@ -1828,37 +1828,81 @@ input:not(:focus):valid ~ .floating-label {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center; }
+    align-items: center; }
     .addPostContainer .addPostInfo h2 {
-      position: absolute; }
+      position: absolute;
+      top: 20rem; }
     .addPostContainer .addPostInfo .secondStepContainer {
       width: 100%;
       height: 100%;
-      display: flex; }
-      .addPostContainer .addPostInfo .secondStepContainer .inputEvent {
-        width: 50%;
-        margin-bottom: 4rem; }
-        .addPostContainer .addPostInfo .secondStepContainer .inputEvent .titles {
-          font-weight: bold; }
-        .addPostContainer .addPostInfo .secondStepContainer .inputEvent .hobbies {
-          height: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .addPostContainer .addPostInfo .secondStepContainer .topContainer {
+        justify-content: space-around;
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: row; }
+        .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision {
+          width: 45%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections {
+            width: 100%;
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; }
+            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .titles {
+              font-weight: bold;
+              font-size: 1.2rem; }
+            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies {
+              height: 3rem;
+              width: 100%;
+              display: flex;
+              justify-content: space-between; }
+              .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies .hobby {
+                padding: 0.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.3em;
+                border: 2px solid #f05356;
+                background-color: white;
+                color: #f05356;
+                font-weight: bold;
+                cursor: pointer; }
+              .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies .hobby:hover {
+                background-color: #e9e3e3; }
+            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .geoContainer {
+              width: 90%; }
+      .addPostContainer .addPostInfo .secondStepContainer .bottomContainer {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; }
+        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer .titles {
+          font-weight: bold;
+          font-size: 1.2rem; }
+        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer textarea {
+          font-size: 16px;
+          width: 70%;
+          padding: 12px 20px;
+          display: inline-block;
+          border-radius: 0.3em;
+          border: 1px solid #ccc;
+          background-color: #fafafa; }
+        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer .bottomArea {
+          height: 10rem;
           width: 100%;
           display: flex;
-          justify-content: space-between; }
-          .addPostContainer .addPostInfo .secondStepContainer .inputEvent .hobbies .hobby {
-            padding: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 0.3em;
-            border: 2px solid #f05356;
-            background-color: white;
-            color: #f05356;
-            font-weight: bold;
-            cursor: pointer; }
-          .addPostContainer .addPostInfo .secondStepContainer .inputEvent .hobbies .hobby:hover {
-            background-color: #e9e3e3; }
+          justify-content: space-between;
+          align-items: center; }
 
 .eventComponent {
   width: 100%;

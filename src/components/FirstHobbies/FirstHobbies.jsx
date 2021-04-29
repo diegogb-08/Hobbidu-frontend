@@ -49,6 +49,7 @@ const FirstHobbies = (props) => {
             let result = await axios.post(port+hobby,body)
             console.log(result)
             if(result.data)
+            //hacer validacion
                 setIsSelected([...isSelected, result.data])
         }else{
             setMessage('Max 3 hobbies reached')
