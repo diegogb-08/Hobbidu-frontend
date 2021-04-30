@@ -1,67 +1,40 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { customer, follow, port, POST } from '../../tools/apiPaths'
+import { customer, port, POST } from '../../tools/apiPaths'
 import ControlPanel from '../ControlPanel/ControlPanel'
 import Footer from '../Footer/Footer'
+import Post from '../Post/Post'
 
 const Home = (props) => {
 
 
     const [posts, setPosts] = useState([])
-    //const [following, setFollowing] = useState([])
+    
 
     console.log(posts)
 
-    useEffect(()=>{
-        getFollowers()
-        getMyPosts()
-    },[])
-
-    const getFollowers = async () => {
-
-        try{
-            
-            let result = await axios.get(port+follow+customer+'/'+props.user._id)
-            if (result.data){
-                result.data.following.map(element => {
-                    getFollowingPosts(element.user_id)
     
-                })
+    useEffect(()=>{
+
+        // this function gets all the posts from the main user and all the users that he/she is following
+        const getMyPosts = async () => {
+    
+            try{
+                let result = await axios.get(port+POST+customer+'/'+props.user._id)
+                if(result.data){
+                    setPosts(result.data)
+                }
+            }catch(err){
+    
             }
-        }catch(err){
-            if(err)
-                return err;
         }
-    }
+    
+        getMyPosts()
 
-    const getMyPosts = async () => {
+    },[props.user._id])
 
-        try{
-            let result = await axios.get(port+POST+customer+'/'+props.user._id)
-            if(result.data){
-            //setPosts({...posts, posts: [result.data]})
-            }
-        }catch(err){
-
-        }
-    }
-
-    const getFollowingPosts = async (id) => {
-
-        try{
-
-            let result = await axios.get(port+POST+customer+'/'+id)
-            if (result.data.length > 0){
-                //setPosts([...posts, result.data])
-            }
-
-        }catch(err){
-            if(err)
-                return err;
-        }
-        
-    }
+   
     
     return (
         <div className="homeComponent">
@@ -70,9 +43,29 @@ const Home = (props) => {
             <div className="spacer"></div>
             <div className="spacer"></div>
             <ControlPanel />
-            <h1>Hola esto es home</h1>
-            <p>Hola esto es Home</p>
-            This is Home view.
+            <div className="spacer"></div>
+            <div className="homeContainer">
+                <div className="homeDivisionPost">
+                    {
+                        posts ?
+                        <>
+                            {
+                                posts.map(post => {
+                                    return <Post 
+                                                post={post}
+                                                key={post._id}
+                                            />
+                                })
+                            }
+                        </>
+                        :
+                        <>
+                        <div>no hay posts</div>
+                        </>
+                    }
+                </div>
+            </div>
+            
             <Footer/>
         </div>
     )

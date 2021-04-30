@@ -1,0 +1,53 @@
+.postComponent{
+    width: 100%;
+    min-height: 40rem;
+    margin-bottom: 3rem;
+    border-radius: $br;
+    border: $border1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    .creator{
+        height: 3rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        border-radius: $br $br 0 0;
+        box-sizing: border-box;
+        align-items: center;
+        padding-left: 2rem;
+        .iconBtnAvatar{
+            width: 2.5rem;
+            height: 2.5rem;
+            .iconBtn{
+                border-radius: 50%;
+                color: white;
+                font-size: 2.5rem;
+                background-color: $logoColor;
+            }
+        }
+        p{
+            margin-left: 1rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+    .picture{
+        height: 35rem;
+        width: 100%;
+        box-sizing: border-box;
+        border-top: $border1;
+        border-bottom: $border1;
+        img{
+            width: 100%;
+        }
+    }
+    .comments{
+        min-height: 4rem;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: white;
+        border-radius: 0 0 $br $br;
+    }
+}

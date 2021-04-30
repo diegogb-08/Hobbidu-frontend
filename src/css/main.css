@@ -383,6 +383,14 @@ input:checked + .slider:before {
   align-items: center;
   flex-direction: column;
   background-color: #fafafa; }
+  .homeComponent .homeContainer {
+    width: 60rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .homeComponent .homeContainer .homeDivisionPost {
+      width: 35rem; }
 
 .landingsComponent {
   width: 100%;
@@ -694,43 +702,43 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+9) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+17) {
   background-color: #3e9931; }
@@ -742,7 +750,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -2180,5 +2188,51 @@ input:not(:focus):valid ~ .floating-label {
     display: flex;
     align-items: center;
     justify-content: center; }
+
+.postComponent {
+  width: 100%;
+  min-height: 40rem;
+  margin-bottom: 3rem;
+  border-radius: 0.3em;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; }
+  .postComponent .creator {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 0.3em 0.3em 0 0;
+    box-sizing: border-box;
+    align-items: center;
+    padding-left: 2rem; }
+    .postComponent .creator .iconBtnAvatar {
+      width: 2.5rem;
+      height: 2.5rem; }
+      .postComponent .creator .iconBtnAvatar .iconBtn {
+        border-radius: 50%;
+        color: white;
+        font-size: 2.5rem;
+        background-color: #f05356; }
+    .postComponent .creator p {
+      margin-left: 1rem;
+      font-size: 1rem;
+      font-weight: bold; }
+  .postComponent .picture {
+    height: 35rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb; }
+    .postComponent .picture img {
+      width: 100%; }
+  .postComponent .comments {
+    min-height: 4rem;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 0.3em 0.3em; }
 
 /*Fonts and another urls*/
