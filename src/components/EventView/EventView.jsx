@@ -203,7 +203,7 @@ const EventView = (props) => {
                         <>
                             <div className="event">
                                 <div className="notEvents">
-                                    <h2>Not events found related to your hobbies. Start posting your events</h2>
+                                    <h2>Not events found related to your hobbies. Try changing the location and the distance or start posting your events</h2>
                                 </div>
                             </div>
 
@@ -268,7 +268,7 @@ const EventView = (props) => {
                         <>
                             <div className="event">
                                 <div className="notEvents">
-                                    <h2>Not events found. Try to set up other params or start posting your events</h2>
+                                    <h2>Not events found. Try changing the location and the distance or start posting your events</h2>
                                 </div>
                             </div>
                         </>

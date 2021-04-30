@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from '../Modal/Modal';
 import GeoLocation from '../GeoLocation/GeoLocation';
 import { connect } from 'react-redux';
@@ -7,13 +7,31 @@ import axios from 'axios';
 import {port,customer, search, query, meeting} from '../../tools/apiPaths';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faUserTimes } from '@fortawesome/free-solid-svg-icons';
+import { useHistory } from 'react-router';
 // import Avatar from '../Avatar/Avatar';
 
 const AddEvent = (props) => {
+
+    let history = useHistory()
+
     // Modal Hook
     const [active, setActive] = useState(false);
     const toggle = () => {
         setActive(!active)
+        setEvent({
+            title: '',
+            hobby_id: '',
+            event_date: '',
+            maxJoiners: 2,
+            vehicle: false,
+            seats: '',
+            joiners: [],
+            description: '',
+        })
+        setSelected({})
+        setSuggestion([])
+        setDisabled('disabled')
+        setMessage('')
     } 
 
     const [selected, setSelected] = useState({});
@@ -22,7 +40,7 @@ const AddEvent = (props) => {
         title: '',
         hobby_id: '',
         event_date: '',
-        maxJoiners: 0,
+        maxJoiners: 2,
         vehicle: false,
         seats: '',
         joiners: [],
@@ -37,6 +55,10 @@ const AddEvent = (props) => {
 
     const [message, setMessage] = useState('')
 
+    useEffect(()=>{
+        setFriends([...friends, props.user])
+         // eslint-disable-next-line
+    },[])
 
 
     //Handlers
@@ -103,17 +125,22 @@ const AddEvent = (props) => {
                 let result = await axios.post(port+meeting, body)
                 if(result.data){
                     setTimeout(()=>{toggle()},500)
-                    setDisabled('disabled')
-                    setEvent({...event,  
+                    setEvent({
                         title: '',
                         hobby_id: '',
                         event_date: '',
-                        maxJoiners: 0,
+                        maxJoiners: 2,
                         vehicle: false,
                         seats: '',
                         joiners: [],
-                        description: ''
+                        description: '',
                     })
+                    setSelected({})
+                    setSuggestion([])
+                    setFriends([])
+                    setDisabled('disabled')
+                    setMessage('')
+                    history.push('/events')
                 }
             }catch (err){
                 throw new Error(404);
@@ -175,9 +202,7 @@ const AddEvent = (props) => {
                             <div className="inputEvent smallInputs">
                                 <div>
                                     <p className="titles">Max. joiners</p>
-                                    <select className="selector" name="maxJoiners" onChange={handleChange} defaultValue={0}>
-                                        <option value={0}  >0</option>
-                                        <option value={1}  >1</option>
+                                    <select className="selector" name="maxJoiners" onChange={handleChange} defaultValue={2}>
                                         <option value={2}  >2</option>
                                         <option value={3}  >3</option>
                                         <option value={4}  >4</option>

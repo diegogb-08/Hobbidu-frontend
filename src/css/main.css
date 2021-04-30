@@ -383,6 +383,34 @@ input:checked + .slider:before {
   align-items: center;
   flex-direction: column;
   background-color: #fafafa; }
+  .homeComponent .homeContainer {
+    width: 60rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .homeComponent .homeContainer .homeDivisionPost {
+      width: 35rem; }
+      .homeComponent .homeContainer .homeDivisionPost .noPosts {
+        width: 100%;
+        height: 30rem;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.3em;
+        border: 1px solid #dbdbdb; }
+        .homeComponent .homeContainer .homeDivisionPost .noPosts h2 {
+          text-align: center;
+          color: #f05356; }
+
+@media screen and (max-width: 600px) {
+  .homeComponent {
+    margin-bottom: 2rem; }
+    .homeComponent .homeContainer {
+      width: 100%; }
+      .homeComponent .homeContainer .homeDivisionPost {
+        width: 100%; } }
 
 .landingsComponent {
   width: 100%;
@@ -685,64 +713,64 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+2) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+3) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+8) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -854,11 +882,11 @@ input:not(:focus):valid ~ .floating-label {
   .navBarComponent .iconBtnAvatar {
     width: 2.5rem;
     height: 2.5rem; }
-    .navBarComponent .iconBtnAvatar .iconBtn {
+    .navBarComponent .iconBtnAvatar .profilePic .iconBtn {
       border-radius: 50%;
       color: white;
       font-size: 2.5rem;
-      background-color: gray; }
+      background-color: #7c7578; }
 
 .userComponent {
   width: 100%;
@@ -1257,7 +1285,9 @@ input:not(:focus):valid ~ .floating-label {
     .avatarComponent .profilePic .iconBtn {
       display: flex;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      background-color: #f05356;
+      border-radius: 50%; }
   .avatarComponent .imageCropper {
     width: 100%;
     height: 100%;
@@ -1469,6 +1499,8 @@ input:not(:focus):valid ~ .floating-label {
           color: red;
           box-sizing: border-box;
           padding: 2rem; }
+          .eventViewComponent .eventViewContainer .renderEventsContainer .event .notEvents h2 {
+            text-align: center; }
         .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent {
           width: 85%;
           height: 100%;
@@ -1804,6 +1836,102 @@ input:not(:focus):valid ~ .floating-label {
           .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer {
             width: 20rem; } }
 
+.addPostContainer {
+  width: 60rem;
+  height: 90vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Rajdhani", sans-serif;
+  flex-direction: column;
+  position: relative;
+  overflow-y: scroll;
+  scroll-behavior: smooth; }
+  .addPostContainer h1 {
+    font-family: "Caveat", cursive;
+    width: 100%;
+    text-align: center; }
+  .addPostContainer .addPostInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .addPostContainer .addPostInfo h2 {
+      position: absolute;
+      top: 20rem; }
+    .addPostContainer .addPostInfo .secondStepContainer {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .addPostContainer .addPostInfo .secondStepContainer .topContainer {
+        justify-content: space-around;
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: row; }
+        .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision {
+          width: 45%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections {
+            width: 100%;
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; }
+            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .titles {
+              font-weight: bold;
+              font-size: 1.2rem; }
+            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies {
+              height: 3rem;
+              width: 100%;
+              display: flex;
+              justify-content: space-between; }
+              .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies .hobby {
+                padding: 0.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.3em;
+                border: 2px solid #f05356;
+                background-color: white;
+                color: #f05356;
+                font-weight: bold;
+                cursor: pointer; }
+              .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies .hobby:hover {
+                background-color: #e9e3e3; }
+            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .geoContainer {
+              width: 90%; }
+      .addPostContainer .addPostInfo .secondStepContainer .bottomContainer {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; }
+        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer .titles {
+          font-weight: bold;
+          font-size: 1.2rem; }
+        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer textarea {
+          font-size: 16px;
+          width: 70%;
+          padding: 12px 20px;
+          display: inline-block;
+          border-radius: 0.3em;
+          border: 1px solid #ccc;
+          background-color: #fafafa; }
+        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer .bottomArea {
+          height: 10rem;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+
 .eventComponent {
   width: 100%;
   min-height: 100vh;
@@ -2080,5 +2208,124 @@ input:not(:focus):valid ~ .floating-label {
     display: flex;
     align-items: center;
     justify-content: center; }
+
+.postComponent {
+  width: 100%;
+  height: auto;
+  margin-bottom: 3rem;
+  border-radius: 0.3em;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; }
+  .postComponent .creator {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 0.3em 0.3em 0 0;
+    box-sizing: border-box;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between; }
+    .postComponent .creator .avatarName {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .postComponent .creator .avatarName .iconBtnAvatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer; }
+        .postComponent .creator .avatarName .iconBtnAvatar .iconBtn {
+          border-radius: 50%;
+          color: white;
+          font-size: 2.5rem;
+          background-color: #f05356; }
+      .postComponent .creator .avatarName p {
+        margin-left: 1rem;
+        font-size: 1rem;
+        font-weight: bold; }
+    .postComponent .creator .threeDots {
+      cursor: pointer; }
+  .postComponent .picture {
+    width: 100%; }
+    .postComponent .picture img {
+      width: 100%; }
+  .postComponent .description {
+    min-height: 4rem;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 0.3em 0.3em; }
+    .postComponent .description p {
+      margin-left: 1rem;
+      text-align: justify; }
+      .postComponent .description p b {
+        cursor: pointer; }
+      .postComponent .description p b:hover {
+        text-decoration: underline; }
+  .postComponent .timer {
+    font-size: 0.8rem;
+    margin: 0 0 0 1rem;
+    padding: 0; }
+  .postComponent .commentsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+    .postComponent .commentsContainer .commentCollection {
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .postComponent .commentsContainer .commentCollection .comment {
+        display: flex;
+        width: 90%;
+        flex-direction: row;
+        justify-content: left;
+        box-sizing: border-box; }
+        .postComponent .commentsContainer .commentCollection .comment p {
+          margin: 0.5rem 0 0.5rem 0;
+          padding: 0; }
+        .postComponent .commentsContainer .commentCollection .comment .userName {
+          font-weight: bold;
+          cursor: pointer;
+          margin-right: 1rem; }
+        .postComponent .commentsContainer .commentCollection .comment .userName:hover {
+          text-decoration: underline; }
+    .postComponent .commentsContainer .inputComments {
+      height: 3.5rem;
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .postComponent .commentsContainer .inputComments input {
+        font-size: 16px;
+        width: 65%;
+        padding: 12px 20px;
+        display: inline-block;
+        border-radius: 4rem;
+        border: 1px solid #ccc;
+        background-color: #fafafa; }
+      .postComponent .commentsContainer .inputComments p {
+        margin-left: 2rem;
+        color: #35abec;
+        font-weight: bold;
+        font-size: 1.1rem;
+        cursor: pointer; }
+
+@media screen and (max-width: 600px) {
+  .postComponent {
+    height: auto; }
+    .postComponent .description {
+      min-height: 2rem; } }
 
 /*Fonts and another urls*/
