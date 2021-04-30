@@ -391,6 +391,26 @@ input:checked + .slider:before {
     align-items: center; }
     .homeComponent .homeContainer .homeDivisionPost {
       width: 35rem; }
+      .homeComponent .homeContainer .homeDivisionPost .noPosts {
+        width: 100%;
+        height: 30rem;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.3em;
+        border: 1px solid #dbdbdb; }
+        .homeComponent .homeContainer .homeDivisionPost .noPosts h2 {
+          text-align: center;
+          color: #f05356; }
+
+@media screen and (max-width: 600px) {
+  .homeComponent {
+    margin-bottom: 2rem; }
+    .homeComponent .homeContainer {
+      width: 100%; }
+      .homeComponent .homeContainer .homeDivisionPost {
+        width: 100%; } }
 
 .landingsComponent {
   width: 100%;
@@ -693,28 +713,28 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+3) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
   background-color: #e87d33; }
@@ -726,10 +746,10 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
   background-color: #e87d33; }
@@ -738,16 +758,16 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+20) {
   background-color: #3e9931; }
@@ -2191,7 +2211,7 @@ input:not(:focus):valid ~ .floating-label {
 
 .postComponent {
   width: 100%;
-  min-height: 40rem;
+  height: auto;
   margin-bottom: 3rem;
   border-radius: 0.3em;
   border: 1px solid #dbdbdb;
@@ -2207,32 +2227,105 @@ input:not(:focus):valid ~ .floating-label {
     border-radius: 0.3em 0.3em 0 0;
     box-sizing: border-box;
     align-items: center;
-    padding-left: 2rem; }
-    .postComponent .creator .iconBtnAvatar {
-      width: 2.5rem;
-      height: 2.5rem; }
-      .postComponent .creator .iconBtnAvatar .iconBtn {
-        border-radius: 50%;
-        color: white;
-        font-size: 2.5rem;
-        background-color: #f05356; }
-    .postComponent .creator p {
-      margin-left: 1rem;
-      font-size: 1rem;
-      font-weight: bold; }
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between; }
+    .postComponent .creator .avatarName {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .postComponent .creator .avatarName .iconBtnAvatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer; }
+        .postComponent .creator .avatarName .iconBtnAvatar .iconBtn {
+          border-radius: 50%;
+          color: white;
+          font-size: 2.5rem;
+          background-color: #f05356; }
+      .postComponent .creator .avatarName p {
+        margin-left: 1rem;
+        font-size: 1rem;
+        font-weight: bold; }
+    .postComponent .creator .threeDots {
+      cursor: pointer; }
   .postComponent .picture {
-    height: 35rem;
-    width: 100%;
-    box-sizing: border-box;
-    border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb; }
+    width: 100%; }
     .postComponent .picture img {
       width: 100%; }
-  .postComponent .comments {
+  .postComponent .description {
     min-height: 4rem;
     box-sizing: border-box;
     width: 100%;
     background-color: white;
     border-radius: 0 0 0.3em 0.3em; }
+    .postComponent .description p {
+      margin-left: 1rem;
+      text-align: justify; }
+      .postComponent .description p b {
+        cursor: pointer; }
+      .postComponent .description p b:hover {
+        text-decoration: underline; }
+  .postComponent .timer {
+    font-size: 0.8rem;
+    margin: 0 0 0 1rem;
+    padding: 0; }
+  .postComponent .commentsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+    .postComponent .commentsContainer .commentCollection {
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .postComponent .commentsContainer .commentCollection .comment {
+        display: flex;
+        width: 90%;
+        flex-direction: row;
+        justify-content: left;
+        box-sizing: border-box; }
+        .postComponent .commentsContainer .commentCollection .comment p {
+          margin: 0.5rem 0 0.5rem 0;
+          padding: 0; }
+        .postComponent .commentsContainer .commentCollection .comment .userName {
+          font-weight: bold;
+          cursor: pointer;
+          margin-right: 1rem; }
+        .postComponent .commentsContainer .commentCollection .comment .userName:hover {
+          text-decoration: underline; }
+    .postComponent .commentsContainer .inputComments {
+      height: 3.5rem;
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .postComponent .commentsContainer .inputComments input {
+        font-size: 16px;
+        width: 65%;
+        padding: 12px 20px;
+        display: inline-block;
+        border-radius: 4rem;
+        border: 1px solid #ccc;
+        background-color: #fafafa; }
+      .postComponent .commentsContainer .inputComments p {
+        margin-left: 2rem;
+        color: #35abec;
+        font-weight: bold;
+        font-size: 1.1rem;
+        cursor: pointer; }
+
+@media screen and (max-width: 600px) {
+  .postComponent {
+    height: auto; }
+    .postComponent .description {
+      min-height: 2rem; } }
 
 /*Fonts and another urls*/

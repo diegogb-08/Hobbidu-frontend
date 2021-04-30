@@ -11,12 +11,8 @@ const Home = (props) => {
 
     const [posts, setPosts] = useState([])
     
-
-    console.log(posts)
-
-    
     useEffect(()=>{
-
+        let isMounted = true;
         // this function gets all the posts from the main user and all the users that he/she is following
         const getMyPosts = async () => {
     
@@ -31,7 +27,8 @@ const Home = (props) => {
         }
     
         getMyPosts()
-
+        // eslint-disable-next-line
+        return () => { isMounted = false };
     },[props.user._id])
 
    
@@ -47,7 +44,7 @@ const Home = (props) => {
             <div className="homeContainer">
                 <div className="homeDivisionPost">
                     {
-                        posts ?
+                        posts > 0 ?
                         <>
                             {
                                 posts.map(post => {
@@ -60,7 +57,11 @@ const Home = (props) => {
                         </>
                         :
                         <>
-                        <div>no hay posts</div>
+                        <div className="noPosts">
+                            <h2>There is no post just yet. <br/>
+                            Start posting something!
+                            </h2>
+                        </div>
                         </>
                     }
                 </div>

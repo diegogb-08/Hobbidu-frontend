@@ -1,6 +1,6 @@
 .postComponent{
     width: 100%;
-    min-height: 40rem;
+    height: auto;
     margin-bottom: 3rem;
     border-radius: $br;
     border: $border1;
@@ -16,38 +16,129 @@
         border-radius: $br $br 0 0;
         box-sizing: border-box;
         align-items: center;
-        padding-left: 2rem;
-        .iconBtnAvatar{
-            width: 2.5rem;
-            height: 2.5rem;
-            .iconBtn{
-                border-radius: 50%;
-                color: white;
-                font-size: 2.5rem;
-                background-color: $logoColor;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        justify-content: space-between;
+        .avatarName{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .iconBtnAvatar{
+                width: 2.5rem;
+                height: 2.5rem;
+                cursor: pointer;
+                .iconBtn{
+                    border-radius: 50%;
+                    color: white;
+                    font-size: 2.5rem;
+                    background-color: $logoColor;
+                }
+            }
+            p{
+                margin-left: 1rem;
+                font-size: 1rem;
+                font-weight: bold;
             }
         }
-        p{
-            margin-left: 1rem;
-            font-size: 1rem;
-            font-weight: bold;
+        .threeDots{
+            cursor: pointer;
         }
     }
     .picture{
-        height: 35rem;
         width: 100%;
-        box-sizing: border-box;
-        border-top: $border1;
-        border-bottom: $border1;
         img{
             width: 100%;
         }
     }
-    .comments{
+    .description{
         min-height: 4rem;
         box-sizing: border-box;
         width: 100%;
         background-color: white;
         border-radius: 0 0 $br $br;
+        p{
+            margin-left: 1rem;
+            text-align: justify;
+            b{
+                cursor: pointer;
+            }
+            b:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    .timer{
+        font-size: 0.8rem;
+        margin: 0 0 0 1rem;
+        padding: 0;
+    }
+    .commentsContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .commentCollection{
+            width: 100%;
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .comment{
+                display: flex;
+                width: 90%;
+                flex-direction: row;
+                justify-content: left;
+                box-sizing: border-box;
+                p{
+                    margin: 0.5rem 0 0.5rem 0;
+                    padding: 0;
+                }
+                .userName{
+                    font-weight: bold;
+                    cursor: pointer;
+                    margin-right: 1rem;
+                }
+                .userName:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .inputComments{
+            height: 3.5rem;
+            width: 100%;
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            input{
+                font-size: 16px;
+                width: 65%;
+                padding: 12px 20px;
+                display: inline-block;
+                border-radius: 4rem;
+                border: 1px solid #ccc;
+                background-color: $backgroundWhite;
+            }
+            p{
+                margin-left: 2rem;
+                color: $blue;
+                font-weight: bold;
+                font-size: 1.1rem;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+@media screen and (max-width: 600px) {
+    .postComponent{
+        height: auto;
+        .description{
+            min-height: 2rem;
+        }
     }
 }

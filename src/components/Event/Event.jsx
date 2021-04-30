@@ -46,7 +46,6 @@ const Event = (props) => {
     // handlestate
 
     const handleChange = (e) => {
-        //console.log(e.target.value)
         setContent(e.target.value)
     }
   
