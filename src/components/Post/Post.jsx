@@ -2,7 +2,7 @@ import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import moment from 'moment';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { CHECKUSER } from '../../redux/types/userType';
@@ -14,8 +14,12 @@ const Post = (props) => {
     let post = props.post;
     let history = useHistory()
 
+    const ref = useRef<HTMLDivElement>(null);
+
     const [comments, setComments] = useState([]);
     const [content, setContent] = useState('')
+    const [dropDownMenu, setDropDownMenu] = useState('')
+    console.log(dropDownMenu)
 
     useEffect(()=>{
         let isMounted = true; 
@@ -25,6 +29,27 @@ const Post = (props) => {
         return () => { isMounted = false };
         // eslint-disable-next-line
     },[])
+
+    const handleHideDropdown = (event) => {
+        if (event.key === 'Escape') {
+            setDropDownMenu('');
+        }
+    };
+
+    const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+            setDropDownMenu('');
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleHideDropdown, true);
+        document.addEventListener('click', handleClickOutside, true);
+        return () => {
+            document.removeEventListener('keydown', handleHideDropdown, true);
+            document.removeEventListener('click', handleClickOutside, true);
+        };
+    },[]);
 
     // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
     useEffect(() => {
@@ -89,7 +114,16 @@ const Post = (props) => {
         setTimeout(()=>{history.push(`/${user.user_name}`)})
     }
 
-    const deletePost = async (id) => {
+    const openMenu = async (id) => {
+
+        if (dropDownMenu === '')
+            setDropDownMenu({[id] : {display : 'flex'}})
+        else
+            setDropDownMenu('')
+
+    }
+        
+        const deletePost = async (id) => {
 
         try{
 
@@ -111,7 +145,13 @@ const Post = (props) => {
                     </div>
                     <p>{post?.user_id?.user_name}</p>
                 </div>
-                <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>deletePost(post._id)}/>
+                <div className="menu">
+                    <div className="dropDownMenu" style={dropDownMenu[post._id]}>
+                        <div className="sections"><p>Edit</p></div>
+                        <div className="sections" onClick={()=>deletePost(post._id)}><p>Delete</p></div>
+                    </div>
+                    <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>openMenu(post._id)}/>
+                </div>
             </div>
             <div className="picture">
                 <img src={port+'/'+post.image} alt="postImage"/>

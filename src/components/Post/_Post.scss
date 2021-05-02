@@ -41,8 +41,44 @@
                 font-weight: bold;
             }
         }
-        .threeDots{
-            cursor: pointer;
+        .menu{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .threeDots{
+                cursor: pointer;
+            }
+            .dropDownMenu{
+                top: 4.5rem;
+                position: relative;
+                background-color: white;
+                height: 7rem;
+                width: 8rem;
+                border: $border1;
+                box-sizing: border-box;
+                border-radius: $br;
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                display: none;
+                flex-direction: column;
+                padding: 0.5rem;
+                .sections{
+                    height: 3rem;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border-radius: $br;
+                    cursor: pointer;
+                    p{
+                        margin-left: 0.5rem;
+                    }
+                }
+                .sections:hover{
+                    background-color: #f1a8a9;
+                    font-weight: bold;
+                }
+            }
         }
     }
     .picture{
