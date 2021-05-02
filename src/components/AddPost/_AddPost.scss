@@ -112,3 +112,33 @@
         }
     }
 }
+@media screen and (max-width: 900px) {
+    .addPostContainer{
+        width: 100vw;
+        height: 90vh;
+        .addPostInfo{
+            h2{
+                margin: 0;
+                padding: 0;
+            }
+            .secondStepContainer{
+                .topContainer{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: auto;
+                    .secondStepDivision{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .bottomContainer{
+                    height: 15rem;
+                    .textarea{
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
