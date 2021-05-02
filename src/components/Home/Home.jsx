@@ -10,6 +10,8 @@ const Home = (props) => {
 
 
     const [posts, setPosts] = useState([])
+
+    console.log(posts)
     
     useEffect(()=>{
         let isMounted = true;
@@ -44,7 +46,7 @@ const Home = (props) => {
             <div className="homeContainer">
                 <div className="homeDivisionPost">
                     {
-                        posts > 0 ?
+                        posts.length > 0 ?
                         <>
                             {
                                 posts.map(post => {
