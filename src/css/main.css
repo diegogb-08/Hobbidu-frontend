@@ -713,64 +713,64 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+14) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+15) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+16) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+19) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .selectedHobbies {
   display: flex;
@@ -2296,7 +2296,8 @@ input:not(:focus):valid ~ .floating-label {
           flex-direction: row;
           align-items: center;
           border-radius: 0.3em;
-          cursor: pointer; }
+          cursor: pointer;
+          z-index: 1; }
           .postComponent .creator .menu .dropDownMenu .sections p {
             margin-left: 0.5rem; }
         .postComponent .creator .menu .dropDownMenu .sections:hover {
