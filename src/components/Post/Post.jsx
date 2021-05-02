@@ -14,13 +14,12 @@ const Post = (props) => {
     let post = props.post;
     let history = useHistory()
 
-    const ref = useRef<HTMLDivElement>(null);
+    const node = useRef();
 
     const [comments, setComments] = useState([]);
     const [content, setContent] = useState('')
     const [dropDownMenu, setDropDownMenu] = useState('')
-    console.log(dropDownMenu)
-
+   
     useEffect(()=>{
         let isMounted = true; 
         getComments()
@@ -36,18 +35,21 @@ const Post = (props) => {
         }
     };
 
-    const handleClickOutside = (event) => {
-        if (ref.current && !ref.current.contains(event.target)) {
-            setDropDownMenu('');
+    const handleClick = e => {
+        if (node.current.contains(e.target)) {
+          // inside click
+          return;
         }
+        // outside click 
+        setDropDownMenu('');
     };
 
     useEffect(() => {
         document.addEventListener('keydown', handleHideDropdown, true);
-        document.addEventListener('click', handleClickOutside, true);
+        document.addEventListener("mousedown", handleClick);
         return () => {
             document.removeEventListener('keydown', handleHideDropdown, true);
-            document.removeEventListener('click', handleClickOutside, true);
+            document.removeEventListener("mousedown", handleClick);
         };
     },[]);
 
@@ -122,8 +124,6 @@ const Post = (props) => {
             setDropDownMenu('')
 
     }
-        
-    console.log(post)
 
     return (
         <div className="postComponent">
@@ -143,7 +143,9 @@ const Post = (props) => {
                         <div className="sections"><p>Edit</p></div>
                         <div className="sections" onClick={props.onClick}><p>Delete</p></div>
                     </div>
-                    <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>openMenu(post._id)}/>
+                    <div ref={node}>
+                        <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>openMenu(post._id)}/>
+                    </div>
                 </div>
             </div>
             <div className="picture">
