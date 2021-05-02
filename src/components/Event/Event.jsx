@@ -76,7 +76,7 @@ const Event = (props) => {
             if(result.data)
                 setEvent(result.data)
         }catch(err){
-            console.log(err)
+
         }
     }
 

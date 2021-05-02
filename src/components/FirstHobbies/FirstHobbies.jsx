@@ -47,7 +47,7 @@ const FirstHobbies = (props) => {
 
         if(isSelected.length < 3){
             let result = await axios.post(port+hobby,body)
-            console.log(result)
+
             if(result.data)
             //hacer validacion
                 setIsSelected([...isSelected, result.data])

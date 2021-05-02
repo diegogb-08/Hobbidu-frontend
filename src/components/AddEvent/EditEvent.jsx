@@ -106,13 +106,10 @@ const EditEvent = (props) => {
             event_date: event.event_date,
         }
 
-        console.log(body)
-
         // Calling the api to create the Event
         if(event.hobby_id !== ''){
             try{
                 let result = await axios.put(port+meeting+'/'+props.user._id, body)
-                console.log(result)
                 if(result.data){
                     setTimeout(()=>{toggle()},500)
                     setDisabled('disabled')

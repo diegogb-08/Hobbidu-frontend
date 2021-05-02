@@ -11,7 +11,6 @@ const Home = (props) => {
 
     const [posts, setPosts] = useState([])
 
-    console.log(posts)
     
     useEffect(()=>{
         let isMounted = true;

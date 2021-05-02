@@ -72,9 +72,8 @@ const ChangeEmail = (props) => {
         
         try{
 
-            console.log(body)
             let result = await axios.put(port+customer+'/change_email/'+props.user._id, body, auth)
-            console.log(result.data)
+
             if(result){
                 props.dispatch({type: UPDATE, payload: result.data})
                 setTimeout(()=>{setActive(true)},500)
