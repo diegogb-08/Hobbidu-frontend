@@ -15,23 +15,39 @@ const Home = (props) => {
     useEffect(()=>{
         let isMounted = true;
         // this function gets all the posts from the main user and all the users that he/she is following
-        const getMyPosts = async () => {
-    
-            try{
-                let result = await axios.get(port+POST+customer+'/'+props.user._id)
-                if(result.data){
-                    setPosts(result.data)
-                }
-            }catch(err){
-    
-            }
-        }
+        
     
         getMyPosts()
         // eslint-disable-next-line
         return () => { isMounted = false };
+        // eslint-disable-next-line
     },[props.user._id])
 
+    const getMyPosts = async () => {
+    
+        try{
+            let result = await axios.get(port+POST+customer+'/'+props.user._id)
+            if(result.data){
+                setPosts(result.data)
+            }
+        }catch(err){
+
+        }
+    }
+
+
+    const deletePost = async (id) => {
+
+        try{
+
+            let result = await axios.delete(port+POST+'/'+id)
+            if(result.data){
+                getMyPosts()
+            }
+        }catch (err){
+
+        }
+    }
    
     
     return (
@@ -52,6 +68,7 @@ const Home = (props) => {
                                     return <Post 
                                                 post={post}
                                                 key={post._id}
+                                                onClick={()=>deletePost(post._id)}
                                             />
                                 })
                             }

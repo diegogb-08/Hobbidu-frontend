@@ -123,18 +123,7 @@ const Post = (props) => {
 
     }
         
-        const deletePost = async (id) => {
-
-        try{
-
-            let result = await axios.delete(port+POST+'/'+id)
-            if(result.data)
-                getComments()
-
-        }catch (err){
-
-        }
-    }
+    console.log(post)
 
     return (
         <div className="postComponent">
@@ -144,11 +133,15 @@ const Post = (props) => {
                         <Avatar src={port+'/'+ post?.user_id?.profile_img} onClick={()=>checkUserProfile(post?.user_id)}/>
                     </div>
                     <p>{post?.user_id?.user_name}</p>
+                    <p className="location">{post?.location.name}</p>
+                </div>
+                <div className="hobby">
+                    <p>#{post?.hobby_id.hobby_name}</p>
                 </div>
                 <div className="menu">
                     <div className="dropDownMenu" style={dropDownMenu[post._id]}>
                         <div className="sections"><p>Edit</p></div>
-                        <div className="sections" onClick={()=>deletePost(post._id)}><p>Delete</p></div>
+                        <div className="sections" onClick={props.onClick}><p>Delete</p></div>
                     </div>
                     <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>openMenu(post._id)}/>
                 </div>
