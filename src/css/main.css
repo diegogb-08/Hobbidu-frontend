@@ -713,10 +713,10 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
   background-color: #0f7fe8; }
@@ -728,46 +728,46 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+8) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+10) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+14) {
-  background-color: #e87d33; }
-
-.hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
 
+.hobby:nth-child(3n+14) {
+  background-color: #0f7fe8; }
+
+.hobby:nth-child(3n+15) {
+  background-color: #e87d33; }
+
 .hobby:nth-child(3n+16) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+20) {
   background-color: #3e9931; }
@@ -1931,6 +1931,26 @@ input:not(:focus):valid ~ .floating-label {
           display: flex;
           justify-content: space-between;
           align-items: center; }
+
+@media screen and (max-width: 900px) {
+  .addPostContainer {
+    width: 100vw;
+    height: 90vh; }
+    .addPostContainer .addPostInfo h2 {
+      margin: 0;
+      padding: 0; }
+    .addPostContainer .addPostInfo .secondStepContainer .topContainer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto; }
+      .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision {
+        width: 100%;
+        height: auto; }
+    .addPostContainer .addPostInfo .secondStepContainer .bottomContainer {
+      height: 15rem; }
+      .addPostContainer .addPostInfo .secondStepContainer .bottomContainer .textarea {
+        height: auto; } }
 
 .eventComponent {
   width: 100%;
