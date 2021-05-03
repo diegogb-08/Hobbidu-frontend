@@ -29,6 +29,17 @@ const Login = (props) => {
     const [errors, setErrors] = useState({});
     const [message, setMessage] = useState([]);
 
+    // Style variable error
+
+    const styles = {
+        error: {
+            borderColor: '#c92432',
+            color: '#c92432',
+            background: '#fffafa',
+        },
+        correct: {}
+    }
+
 
     // HANDLERS
 
@@ -104,6 +115,7 @@ const Login = (props) => {
                         onChange={handleState}
                         title="Email"
                         error={errors.email?.help}
+                        style={errors.email?.status ?  styles.error : styles.correct}
                     />
                 </div>
                 <div className="loginInput">
@@ -115,6 +127,7 @@ const Login = (props) => {
                         error={errors.password?.help}
                         showHide={password.showHide} 
                         onClick={() => showPassord()}
+                        style={errors.password?.status ?  styles.error : styles.correct}
                     />
                 </div>
                 <div className="errorMessage">
