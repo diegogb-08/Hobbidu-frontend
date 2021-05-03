@@ -1,13 +1,14 @@
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
-import moment from 'moment';
 import React, { useEffect, useState, useRef } from 'react'
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { CHECKUSER } from '../../redux/types/userType';
 import { comment, port, POST } from '../../tools/apiPaths';
+import axios from 'axios';
+import moment from 'moment';
+
 import Avatar from '../Avatar/Avatar';
+import { faEllipsisV, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Post = (props) => {
 
@@ -19,7 +20,24 @@ const Post = (props) => {
     const [comments, setComments] = useState([]);
     const [content, setContent] = useState('')
     const [dropDownMenu, setDropDownMenu] = useState('')
+    const [like, setLike] = useState({color: '#acacacc4'})
    
+    
+    const handleHideDropdown = (event) => {
+        if (event.key === 'Escape') {
+            setDropDownMenu('');
+        }
+    };
+    
+    const handleClick = e => {
+        if (node.current.contains(e.target)) {
+            // inside clic
+            return;
+        }
+        // outside click 
+        setDropDownMenu('');
+    };
+    
     useEffect(()=>{
         let isMounted = true; 
         getComments()
@@ -28,21 +46,6 @@ const Post = (props) => {
         return () => { isMounted = false };
         // eslint-disable-next-line
     },[])
-
-    const handleHideDropdown = (event) => {
-        if (event.key === 'Escape') {
-            setDropDownMenu('');
-        }
-    };
-
-    const handleClick = e => {
-        if (node.current.contains(e.target)) {
-          // inside click
-          return;
-        }
-        // outside click 
-        setDropDownMenu('');
-    };
 
     useEffect(() => {
         document.addEventListener('keydown', handleHideDropdown, true);
@@ -67,6 +70,16 @@ const Post = (props) => {
         };
         // eslint-disable-next-line
     },[content]);
+
+    useEffect(()=>{
+
+        if(post.like.find(id => id === props.user._id ) !== undefined){
+            setLike({color: '#f05356'})
+        }else{
+            setLike({color: '#acacacc4'})
+        }
+        // eslint-disable-next-line
+    },[post])
 
 
     // handlestate
@@ -125,9 +138,12 @@ const Post = (props) => {
 
     }
 
+    
+
+
     return (
         <div className="postComponent">
-            <div className="creator">
+            <div className="creator" ref={node}>
                 <div className="avatarName">
                     <div className="iconBtnAvatar">
                         <Avatar src={port+'/'+ post?.user_id?.profile_img} onClick={()=>checkUserProfile(post?.user_id)}/>
@@ -135,21 +151,25 @@ const Post = (props) => {
                     <p>{post?.user_id?.user_name}</p>
                     <p className="location">{post?.location.name}</p>
                 </div>
-                <div className="hobby">
-                    <p>#{post?.hobby_id.hobby_name}</p>
-                </div>
-                <div className="menu">
-                    <div className="dropDownMenu" style={dropDownMenu[post._id]}>
+                <div className="menu" >
+                    <div className="dropDownMenu"  style={dropDownMenu[post._id]}>
                         <div className="sections"><p>Edit</p></div>
                         <div className="sections" onClick={props.onClick}><p>Delete</p></div>
                     </div>
-                    <div ref={node}>
-                        <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>openMenu(post._id)}/>
-                    </div>
                 </div>
+                <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>openMenu(post._id)}/>
             </div>
             <div className="picture">
                 <img src={port+'/'+post.image} alt="postImage"/>
+            </div>
+            <div className="subMenu">
+                <div className="likeMenu">
+                    <FontAwesomeIcon icon={faHeart} className="like" onClick={props.likePost} style={like}/>
+                    <p className="likeCounting">{post?.like.length} {post?.like.length === 1 ? 'like' : 'likes'}</p>
+                </div>
+                <div className="hobby">
+                    <p>#{post?.hobby_id.hobby_name}</p>
+                </div>
             </div>
             <div className="description">
                 <p><b onClick={()=>checkUserProfile(post?.user_id)}>{post?.user_id?.user_name}</b> {post.description}</p>
