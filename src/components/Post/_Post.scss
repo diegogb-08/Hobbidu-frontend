@@ -226,6 +226,16 @@
 @media screen and (max-width: 600px) {
     .postComponent{
         height: auto;
+        .creator{
+            .avatarName{
+                .location{
+                    //width: 5rem;
+                }
+            }
+            .menu{
+                left: 2rem;
+            }
+        }
         .description{
             min-height: 2rem;
         }

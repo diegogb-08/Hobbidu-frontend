@@ -7,7 +7,7 @@ import Setting from '../Setting/Setting';
 import { useHistory } from 'react-router';
 import Avatar from '../Avatar/Avatar';
 import ControlPanel from '../ControlPanel/ControlPanel';
-import { customer, follow, port, meeting } from '../../tools/apiPaths';
+import { customer, follow, port, meeting, POST } from '../../tools/apiPaths';
 import axios from 'axios';
 
 const User = (props) => {
@@ -22,7 +22,7 @@ const User = (props) => {
     useEffect(()=>{
         getFollows()
         getEvents()
-        setPosts([])
+        getPosts()
         // eslint-disable-next-line
     },[]);
 
@@ -51,6 +51,18 @@ const User = (props) => {
             let result = await axios.get(port+meeting+customer+'/'+props.user._id)
             if(result.data)
                 setEvents(result.data)
+        }catch (err) {
+
+        }
+    }
+
+    const getPosts = async () => {
+
+        try{
+
+            let result = await axios.get(port+POST+customer+'/'+props.user._id)
+            if(result.data)
+                setPosts(result.data)
         }catch (err) {
 
         }

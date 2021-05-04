@@ -144,7 +144,7 @@ const AddEvent = (props) => {
                     history.push('/events')
                 }
             }catch (err){
-                throw new Error(404);
+                
             }
         }else{
             setMessage('Please, select your hobby!')
