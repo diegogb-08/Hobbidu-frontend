@@ -9,7 +9,7 @@ const Avatar = (props) => {
     return (
         <div className="avatarComponent" onClick={props.onClick}>
                 {
-                    props.src !== port+'/'+undefined ? 
+                    props.src !== port+undefined ? 
                     <>
                         <div className="imageCropper">
                             <img className="profileImg" src={props.src} alt="Avatar"/>

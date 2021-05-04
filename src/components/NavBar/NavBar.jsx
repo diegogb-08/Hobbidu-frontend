@@ -24,7 +24,7 @@ const NavBar = (props) => {
             <FontAwesomeIcon icon={faCalendarCheck} className={'iconBtn'}  onClick={()=>toggle('events')}/>
             {/* <FontAwesomeIcon icon={faCommentDots} className={'iconBtn'}  onClick={()=>toggle('messages')}/> */}
             <div className="iconBtnAvatar">
-                <Avatar src={port+'/'+props.user.profile_img} onClick={()=>toggle(userPath)}/>
+                <Avatar src={port+props.user.profile_img} onClick={()=>toggle(userPath)}/>
             </div>
         </div>
     )

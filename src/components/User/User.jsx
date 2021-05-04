@@ -60,7 +60,8 @@ const User = (props) => {
 
         try{
 
-            let result = await axios.get(port+POST+customer+'/'+props.user._id)
+            let result = await axios.get(port+POST+'/own/'+props.user._id)
+ 
             if(result.data)
                 setPosts(result.data)
         }catch (err) {
@@ -77,7 +78,7 @@ const User = (props) => {
             <ControlPanel />
             <div className="userContainer">
                 <div className="profilePic">
-                    <Avatar src={port+'/'+props.user?.profile_img}/>
+                    <Avatar src={port+props.user?.profile_img}/>
                 </div>
                 <div className="userDetails">
                     <div className="userDetailsTop">
