@@ -106,6 +106,7 @@ const AddEvent = (props) => {
 
     const toggleEvent = async () => {
 
+        
         let body = {
             title: event.title,
             user_id : props.user._id,
@@ -162,6 +163,7 @@ const AddEvent = (props) => {
         setFriends(friends.filter(element => element._id !== user._id))
     }
 
+
     return (
         <div>
             <div className="configComponent" onClick={()=>toggle()}>{props.children}</div>
@@ -195,6 +197,7 @@ const AddEvent = (props) => {
                             </div>
                             <div className="inputEvent">
                                 <p className="titles">Location</p>
+                                <p>{props.location.name}</p>
                                 <GeoLocation />
                             </div>
                         </div>
