@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import { faCommentDots, faCalendarCheck } from '@fortawesome/free-regular-svg-icons'
