@@ -138,9 +138,6 @@ const Post = (props) => {
 
     }
 
-    
-
-
     return (
         <div className="postComponent">
             <div className="creator" ref={node}>
@@ -151,13 +148,20 @@ const Post = (props) => {
                     <p>{post?.user_id?.user_name}</p>
                     <p className="location">{post?.location.name}</p>
                 </div>
-                <div className="menu" >
-                    <div className="dropDownMenu"  style={dropDownMenu[post._id]}>
-                        <div className="sections"><p>Edit</p></div>
-                        <div className="sections" onClick={props.onClick}><p>Delete</p></div>
-                    </div>
-                </div>
-                <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>openMenu(post._id)}/>
+                {
+                    post?.user_id._id === props.user._id ?
+                    <>
+                        <div className="menu" >
+                            <div className="dropDownMenu"  style={dropDownMenu[post._id]}>
+                                <div className="sections"><p>Edit</p></div>
+                                <div className="sections" onClick={props.onClick}><p>Delete</p></div>
+                            </div>
+                        </div>
+                        <FontAwesomeIcon icon={faEllipsisV} className="threeDots" onClick={()=>openMenu(post._id)}/>
+                    </>
+                    :
+                    null
+                }
             </div>
             <div className="picture">
                 <img src={port+'/'+post.image} alt="postImage"/>

@@ -713,43 +713,43 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+5) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+8) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+11) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+12) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+14) {
   background-color: #3e9931; }
@@ -758,19 +758,19 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+16) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+17) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+18) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+19) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+20) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .selectedHobbies {
   display: flex;
@@ -1212,11 +1212,13 @@ input:not(:focus):valid ~ .floating-label {
 
 .changeProfilePicComponent {
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   flex-direction: column;
   display: flex;
   align-items: center;
-  margin: 1rem; }
+  margin: 1rem;
+  box-sizing: border-box;
+  padding-bottom: 1rem; }
   .changeProfilePicComponent .pictureContainer {
     width: 15rem;
     height: 15rem;
@@ -2294,7 +2296,8 @@ input:not(:focus):valid ~ .floating-label {
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
         display: none;
         flex-direction: column;
-        padding: 0.5rem; }
+        padding: 0.5rem;
+        z-index: 1; }
         .postComponent .creator .menu .dropDownMenu .sections {
           height: 3rem;
           width: 100%;
@@ -2422,6 +2425,8 @@ input:not(:focus):valid ~ .floating-label {
 @media screen and (max-width: 600px) {
   .postComponent {
     height: auto; }
+    .postComponent .creator .menu {
+      left: 2rem; }
     .postComponent .description {
       min-height: 2rem; } }
 

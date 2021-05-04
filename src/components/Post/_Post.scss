@@ -67,6 +67,7 @@
                 display: none;
                 flex-direction: column;
                 padding: 0.5rem;
+                z-index: 1;
                 .sections{
                     height: 3rem;
                     width: 100%;
@@ -226,6 +227,16 @@
 @media screen and (max-width: 600px) {
     .postComponent{
         height: auto;
+        .creator{
+            .avatarName{
+                .location{
+                    //width: 5rem;
+                }
+            }
+            .menu{
+                left: 2rem;
+            }
+        }
         .description{
             min-height: 2rem;
         }
