@@ -45,7 +45,7 @@ const ChangeProfilePic = (props) => {
     return (
         <div className="changeProfilePicComponent">
             <div className="pictureContainer">
-                    <Avatar src={port+'/'+props.user.profile_img}/>
+                    <Avatar src={port+props.user.profile_img}/>
             </div>
 
             <div className="inputChangePicture">

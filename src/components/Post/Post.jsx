@@ -143,7 +143,7 @@ const Post = (props) => {
             <div className="creator" ref={node}>
                 <div className="avatarName">
                     <div className="iconBtnAvatar">
-                        <Avatar src={port+'/'+ post?.user_id?.profile_img} onClick={()=>checkUserProfile(post?.user_id)}/>
+                        <Avatar src={port+post?.user_id?.profile_img} onClick={()=>checkUserProfile(post?.user_id)}/>
                     </div>
                     <p>{post?.user_id?.user_name}</p>
                     <p className="location">{post?.location.name}</p>
@@ -164,7 +164,7 @@ const Post = (props) => {
                 }
             </div>
             <div className="picture">
-                <img src={port+'/'+post.image} alt="postImage"/>
+                <img src={port+post.image} alt="postImage"/>
             </div>
             <div className="subMenu">
                 <div className="likeMenu">

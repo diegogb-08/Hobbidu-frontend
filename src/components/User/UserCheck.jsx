@@ -3,7 +3,7 @@ import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
 import Avatar from '../Avatar/Avatar';
 import ControlPanel from '../ControlPanel/ControlPanel';
-import { port, follow, customer, meeting } from '../../tools/apiPaths';
+import { port, follow, customer, meeting, POST } from '../../tools/apiPaths';
 import axios from 'axios';
 
 const CheckUser = (props) => {
@@ -17,7 +17,7 @@ const CheckUser = (props) => {
     useEffect(()=>{
         getFollows()
         getEvents()
-        setPosts([])
+        getPosts()
         // eslint-disable-next-line
     },[])
 
@@ -54,6 +54,19 @@ const CheckUser = (props) => {
             let result = await axios.get(port+meeting+customer+'/'+props.checkUser._id)
             if(result.data)
                 setEvents(result.data)
+        }catch (err) {
+
+        }
+    }
+
+    const getPosts = async () => {
+
+        try{
+
+            let result = await axios.get(port+POST+'/own/'+props.checkUser._id)
+     
+            if(result.data)
+                setPosts(result.data)
         }catch (err) {
 
         }
@@ -101,7 +114,7 @@ const CheckUser = (props) => {
             <ControlPanel />
             <div className="userContainer">
                 <div className="profilePic">
-                    <Avatar src={port+'/'+props.checkUser?.profile_img}/>
+                    <Avatar src={port+props.checkUser?.profile_img}/>
                 </div>
                 <div className="userDetails">
                     <div className="userDetailsTop">

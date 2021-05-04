@@ -98,7 +98,7 @@ const ControlPanel = (props) => {
                                 return (
                                     <div className="suggestion" key={user._id} onClick={()=>checkUserProfile(user)}>
                                         <div className="iconBtnAvatar">
-                                            <Avatar src={port+'/'+ user?.profile_img}/>
+                                            <Avatar src={port+user?.profile_img}/>
                                         </div>
                                         <p>{user.name}</p>
                                         <p>@{user.user_name}</p>

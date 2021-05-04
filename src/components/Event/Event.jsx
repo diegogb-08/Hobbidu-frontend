@@ -175,7 +175,7 @@ const Event = (props) => {
                             <h3>{moment(event?.event_date).format('Do MMMM YYYY, h:mm a')}</h3>
                             <div className="createdBy">
                                 <div className="iconBtnAvatar">
-                                    <Avatar src={port+'/'+ event?.user_id?.profile_img}/>
+                                    <Avatar src={port+event?.user_id?.profile_img}/>
                                 </div>
                                 <p>{event?.user_id?.user_name}</p>
                                 <div className="hobbyTagContainer">
@@ -222,7 +222,7 @@ const Event = (props) => {
                                             return (
                                                 <div className="joiner" key={joiner._id} onClick={()=>checkUserProfile(joiner)}>
                                                     <div className="iconBtnAvatar">
-                                                        <Avatar src={port+'/'+joiner.profile_img}/>
+                                                        <Avatar src={port+joiner.profile_img}/>
                                                     </div>
                                                     <p>{joiner.name}</p>
                                                 </div>
