@@ -32,7 +32,7 @@ export default function validate(fields, context = 'register') {
                 if(! /^(?=.{6,16}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/.test(fields[key]))
                     errors[key] = {status: 'error', help: 'The user name must contain between 6 to 16 characters and special characters like "_" or ".".'};
             break;
-            case 'phoneNumber' :
+            case 'phone_number' :
                 if(! /^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}/.test(fields[key])
                     && ! /^(\+34|0034|34)?[ -]*(8|9)[ -]*([0-9][ -]*){8}/.test(fields[key]))
                     errors[key] = {status: 'error', help: 'Please provide a valid landline or mobile phone.'};

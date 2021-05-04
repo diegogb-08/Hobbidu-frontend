@@ -48,20 +48,15 @@
                 font-size: 0.8rem;
             }
         }
-        .hobby{
-            background-color: white;
-        }
         .menu{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            .threeDots{
-                cursor: pointer;
-            }
+            left: 5rem;
+            top: 4.5rem;
+            position: relative;
             .dropDownMenu{
-                top: 4.5rem;
-                position: relative;
                 background-color: white;
                 height: 7rem;
                 width: 8rem;
@@ -91,11 +86,55 @@
                 }
             }
         }
+        .threeDots{
+            cursor: pointer;
+            width: 2rem;
+        }
     }
     .picture{
         width: 100%;
         img{
             width: 100%;
+        }
+    }
+    .subMenu{
+        background-color: white;
+        height: 2rem;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        justify-content: space-between;
+        .likeMenu{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .like{
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: 0.5ms ease all;
+            }
+            .like:active{
+                font-size: 1.6rem;
+                
+            }
+            .likeCounting{
+                font-weight: bold;
+                margin: 0;
+                margin-left: 1rem;
+                padding: 0;
+            }
+        }
+        .hobby{
+            background-color: rgba(255, 255, 255, 0);
+            position: relative;
+            p{
+                margin: 0;
+                padding: 0;
+            }
         }
     }
     .description{
@@ -118,8 +157,9 @@
     }
     .timer{
         font-size: 0.8rem;
-        margin: 0 0 0 1rem;
-        padding: 0;
+        margin: 0;
+        padding: 0 0 0 1rem;
+        background-color: white;
     }
     .commentsContainer{
         display: flex;
@@ -127,6 +167,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+        background-color: white;
         .commentCollection{
             width: 100%;
             display: flex;

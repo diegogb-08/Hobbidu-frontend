@@ -48,6 +48,22 @@ const Home = (props) => {
 
         }
     }
+
+    const likePost = async (id) => {
+
+        let body = {
+            like: props.user._id
+        }
+
+        try{
+            let result = await axios.put(port+POST+'/like/'+id, body);
+            if(result.data){
+                getMyPosts()
+            }
+        }catch (err) {
+
+        }
+    }
    
     
     return (
@@ -69,6 +85,7 @@ const Home = (props) => {
                                                 post={post}
                                                 key={post._id}
                                                 onClick={()=>deletePost(post._id)}
+                                                likePost={()=>likePost(post._id)}
                                             />
                                 })
                             }

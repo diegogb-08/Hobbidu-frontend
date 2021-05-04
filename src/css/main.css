@@ -519,7 +519,7 @@ input:checked + .slider:before {
   .inputComponent .error {
     color: red;
     position: relative;
-    bottom: 5rem;
+    bottom: 4rem;
     font-size: 11px;
     font-style: italic;
     transition: 0.2s ease all; }
@@ -713,52 +713,52 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n+1) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+2) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+3) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+4) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n+5) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+6) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+7) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+8) {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n+9) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+10) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+11) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n+12) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+13) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+14) {
-  background-color: #3e9931; }
-
-.hobby:nth-child(3n+15) {
   background-color: #0f7fe8; }
 
+.hobby:nth-child(3n+15) {
+  background-color: #3e9931; }
+
 .hobby:nth-child(3n+16) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+17) {
   background-color: #3e9931; }
@@ -767,7 +767,7 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n+19) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n+20) {
   background-color: #e87d33; }
@@ -2275,18 +2275,15 @@ input:not(:focus):valid ~ .floating-label {
         top: 1rem;
         right: 5.5rem;
         font-size: 0.8rem; }
-    .postComponent .creator .hobby {
-      background-color: white; }
     .postComponent .creator .menu {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      justify-content: center; }
-      .postComponent .creator .menu .threeDots {
-        cursor: pointer; }
+      justify-content: center;
+      left: 5rem;
+      top: 4.5rem;
+      position: relative; }
       .postComponent .creator .menu .dropDownMenu {
-        top: 4.5rem;
-        position: relative;
         background-color: white;
         height: 7rem;
         width: 8rem;
@@ -2311,10 +2308,45 @@ input:not(:focus):valid ~ .floating-label {
         .postComponent .creator .menu .dropDownMenu .sections:hover {
           background-color: #f1a8a9;
           font-weight: bold; }
+    .postComponent .creator .threeDots {
+      cursor: pointer;
+      width: 2rem; }
   .postComponent .picture {
     width: 100%; }
     .postComponent .picture img {
       width: 100%; }
+  .postComponent .subMenu {
+    background-color: white;
+    height: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between; }
+    .postComponent .subMenu .likeMenu {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      .postComponent .subMenu .likeMenu .like {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.5ms ease all; }
+      .postComponent .subMenu .likeMenu .like:active {
+        font-size: 1.6rem; }
+      .postComponent .subMenu .likeMenu .likeCounting {
+        font-weight: bold;
+        margin: 0;
+        margin-left: 1rem;
+        padding: 0; }
+    .postComponent .subMenu .hobby {
+      background-color: rgba(255, 255, 255, 0);
+      position: relative; }
+      .postComponent .subMenu .hobby p {
+        margin: 0;
+        padding: 0; }
   .postComponent .description {
     min-height: 4rem;
     box-sizing: border-box;
@@ -2331,14 +2363,16 @@ input:not(:focus):valid ~ .floating-label {
         text-decoration: underline; }
   .postComponent .timer {
     font-size: 0.8rem;
-    margin: 0 0 0 1rem;
-    padding: 0; }
+    margin: 0;
+    padding: 0 0 0 1rem;
+    background-color: white; }
   .postComponent .commentsContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%; }
+    width: 100%;
+    background-color: white; }
     .postComponent .commentsContainer .commentCollection {
       width: 100%;
       display: flex;

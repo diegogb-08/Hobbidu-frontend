@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarPlus } from '@fortawesome/free-regular-svg-icons'
 import { faPlusCircle, faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -14,8 +14,12 @@ import { useHistory } from 'react-router';
 const ControlPanel = (props) => {
 
     let history = useHistory()
+    const node = useRef();
 
     const [suggestion, setsuggestion] = useState([])
+
+
+    // Handling change of input and calling api to get user
 
     const handleChange = async (e) => {
 
@@ -29,12 +33,40 @@ const ControlPanel = (props) => {
         }
     }
 
+    // Detect when pressing or clicking outside dropdownmenu
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleEscape);
+        document.addEventListener("mousedown", handleClick);
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+            document.removeEventListener("mousedown", handleClick);
+        };
+    },[]);
+
     // Functions
 
     const checkUserProfile = (user) => {
         props.dispatch({type: CHECKUSER, payload: user})
         setTimeout(()=>{history.push(`/${user.user_name}`)})
     }
+
+
+    const handleClick = e => {
+        if (node.current.contains(e.target)) {
+          // inside click
+          return;
+        }
+        // outside click 
+        setsuggestion([]);
+    };
+
+    const handleEscape = (event) => {
+        if (event.key === 'Escape' || event.keyCode === 27) {
+            setsuggestion([]);
+        }
+    };
+
 
     return (
         <div className="controlPanelComponent">
@@ -56,24 +88,26 @@ const ControlPanel = (props) => {
                 </AddPost>
             </div>
             <div className="autocompleteDropdownContainer">
-                {
-                    suggestion?.map(user => {
-                        if(user?._id === props.user?._id)
-                            // eslint-disable-next-line
-                            return;
-                        else
-                            return (
-                                <div className="suggestion" key={user._id} onClick={()=>checkUserProfile(user)}>
-                                    <div className="iconBtnAvatar">
-                                        <Avatar src={port+'/'+ user?.profile_img}/>
+                <div ref={node}>
+                    {
+                        suggestion?.map(user => {
+                            if(user?._id === props.user?._id)
+                                // eslint-disable-next-line
+                                return;
+                            else
+                                return (
+                                    <div className="suggestion" key={user._id} onClick={()=>checkUserProfile(user)}>
+                                        <div className="iconBtnAvatar">
+                                            <Avatar src={port+'/'+ user?.profile_img}/>
+                                        </div>
+                                        <p>{user.name}</p>
+                                        <p>@{user.user_name}</p>
+                                        <FontAwesomeIcon icon={faSearch} className="lens"/>
                                     </div>
-                                    <p>{user.name}</p>
-                                    <p>@{user.user_name}</p>
-                                    <FontAwesomeIcon icon={faSearch} className="lens"/>
-                                </div>
-                            )
-                    })
-                }
+                                )
+                        })
+                    }
+                </div>
             </div>
         </div>
     )

@@ -105,7 +105,14 @@ const EditInfo = (props) => {
                     <p className="title">Name</p>
                     <div className="inputAndDescription">
                         <div className="inputContainer">
-                            <InputForm type="text" name="name" lenght="16" onChange={handleState} value={user.name} style={errors.name?.status ?  styles.error : styles.correct}/>
+                            <InputForm 
+                                type="text" 
+                                name="name" 
+                                lenght="16" 
+                                onChange={handleState} 
+                                value={user.name} 
+                                style={errors.name?.status ?  styles.error : styles.correct}
+                            />
                         </div>
                         <p>To help people discover your account, use the name that people know you by,
                         like your full name, nickname, or business name.</p>
@@ -115,7 +122,14 @@ const EditInfo = (props) => {
                     <p className="title">User name</p>
                     <div className="inputAndDescription">
                         <div className="inputContainer">
-                            <InputForm type="text" name="user_name" lenght="16" onChange={handleState} value={user.user_name} style={errors.user_name?.status ?  styles.error : styles.correct}/>
+                            <InputForm 
+                                type="text" 
+                                name="user_name" 
+                                lenght="16" 
+                                onChange={handleState} 
+                                value={user.user_name} 
+                                style={errors.user_name?.status ?  styles.error : styles.correct}
+                            />
                         </div>
                         <p>The user name must contain between 6 to 16 characters and special characters like "_" or ".".</p>
                     </div>
@@ -124,7 +138,13 @@ const EditInfo = (props) => {
                     <p className="title">Birth date</p>
                     <div className="inputAndDescription">
                         <div className="inputContainer">
-                            <InputForm type="date" name="birth_date" lenght="16" onChange={handleState} value={user.birth_date}/>
+                            <InputForm 
+                                type="date"    
+                                name="birth_date" 
+                                lenght="16" 
+                                onChange={handleState} 
+                                value={user.birth_date}
+                            />
                         </div>
                     </div>
                 </div>
@@ -132,7 +152,15 @@ const EditInfo = (props) => {
                     <p className="title">Phone number</p>
                     <div className="inputAndDescription">
                         <div className="inputContainer">
-                            <InputForm type="text" name="phone_number" lenght="16" onChange={handleState} value={user.phone_number} style={errors.phone_number?.status ?  styles.error : styles.correct}/>
+                            <InputForm 
+                                type="text" 
+                                name="phone_number" 
+                                lenght="16" 
+                                onChange={handleState} 
+                                value={user.phone_number} 
+                                style={errors.phone_number?.status ?  styles.error : styles.correct}
+                                error={errors.phone_number?.help}
+                            />
                         </div>
                     </div>
                 </div>
