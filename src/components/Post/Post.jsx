@@ -22,7 +22,6 @@ const Post = (props) => {
     const [dropDownMenu, setDropDownMenu] = useState('')
     const [like, setLike] = useState({color: '#acacacc4'})
    
-    
     const handleHideDropdown = (event) => {
         if (event.key === 'Escape') {
             setDropDownMenu('');
@@ -71,9 +70,11 @@ const Post = (props) => {
         // eslint-disable-next-line
     },[content]);
 
+  
     useEffect(()=>{
 
-        if(post.like.find(id => id === props.user._id ) !== undefined){
+        if(post.like.find(like => like._id === props.user._id ) !== undefined){
+            console.log('estamos aqui')
             setLike({color: '#f05356'})
         }else{
             setLike({color: '#acacacc4'})
