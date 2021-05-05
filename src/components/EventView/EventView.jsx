@@ -36,7 +36,7 @@ const EventView = (props) => {
 
         let body = {
             distance: distance,
-            coords: props.location.coordinates
+            coords: props.location.coordinates ? props.location.coordinates : props.user.location.coordinates
         }
 
         try{
