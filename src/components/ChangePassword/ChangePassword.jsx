@@ -9,8 +9,11 @@ import { customer, port } from '../../tools/apiPaths'
 import { UPDATE } from '../../redux/types/userType';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
+import { useHistory } from 'react-router';
 
 const ChangePassword = (props) => {
+
+    let history = useHistory();
 
     //AUTHORIZATION
 
@@ -52,6 +55,13 @@ const ChangePassword = (props) => {
         // eslint-disable-next-line
     },[password]);
 
+    // Validate that no one can get inside the app without login or registering
+    useEffect(()=>{
+
+        if(!props.user?._id)
+            history.push('/')
+        // eslint-disable-next-line
+    },[])
 
     //FUNCTIONS
     const toggle = async () => {

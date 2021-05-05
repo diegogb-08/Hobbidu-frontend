@@ -180,7 +180,7 @@ const AddEvent = (props) => {
                                 <p className="titles">Select 1 of your hobbies</p>
                                 <div className="hobbies">
                                     {
-                                        props.user.hobbies.map(hobby => {
+                                        props.user.hobbies?.map(hobby => {
                                             return(
                                                 <div className="hobby" style={selected[hobby._id]} key={hobby._id} onClick={()=>selectHobby(hobby._id)}>
                                                     <p>{hobby.hobby_name}</p>

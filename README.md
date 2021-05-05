@@ -74,6 +74,7 @@ Back-end and front-end user authentication was built from scratch by encrypting 
 - Display all user post at their own profile.
 - Posibility to upload videos as well.
 - Live Chat
+- Create React Native App
 
 <a href="https://hobbidu.herokuapp.com/" target="_blank">
     <img src="public/landing.png">
@@ -171,9 +172,6 @@ Back-end and front-end user authentication was built from scratch by encrypting 
     </a> 
     <a href="https://www.w3schools.com/css/" target="_blank"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
-    </a> 
-    <a href="https://www.docker.com/" target="_blank"> 
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/>
     </a> 
     <a href="https://expressjs.com" target="_blank"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/>

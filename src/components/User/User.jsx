@@ -26,6 +26,7 @@ const User = (props) => {
         // eslint-disable-next-line
     },[]);
 
+    
     // Functions
 
     const editProfile = () => {

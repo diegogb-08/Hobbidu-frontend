@@ -32,28 +32,38 @@ const EventView = (props) => {
         // eslint-disable-next-line 
     },[distance,props.location.coordinates])
 
+    // Validate that no one can get inside the app without login or registering
+    useEffect(()=>{
+
+        if(!props.user?._id)
+            history.push('/')
+        // eslint-disable-next-line
+    },[])
+
     const filterEventsCall = async () => {
 
-        let body = {
-            distance: distance,
-            coords: props.location.coordinates ? props.location.coordinates : props.user.location.coordinates
-        }
+        if(props?.location?.coordinates || props.user?.location?.coordinates){
 
-        try{
-
-            let result = await axios.post(port+meeting+'/distance', body);
-            
-            if (result){
-
-                // here we are filtering the events by our hobbies
-                let events = filter(result.data)
-                setMyEvents(events.filter)
-                setMySuggestions(events.filterSuggestion)
+            let body = {
+                distance: distance,
+                coords: props.location.coordinates ? props.location.coordinates : props.user.location.coordinates
             }
-        }catch (err){
-            
-        }
 
+            try{
+
+                let result = await axios.post(port+meeting+'/distance', body);
+                
+                if (result){
+
+                    // here we are filtering the events by our hobbies
+                    let events = filter(result.data)
+                    setMyEvents(events.filter)
+                    setMySuggestions(events.filterSuggestion)
+                }
+            }catch (err){
+                
+            }
+        }
     }
 
     // here we are filtering the events by our hobbies

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router';
 import ChangeProfilePic from '../ChangeProfilePic/ChangeProfilePic';
 import EditInfo from '../EditInfo/EditInfo';
 import FirstHobbies from '../FirstHobbies/FirstHobbies';
@@ -7,6 +8,8 @@ import SideBar from '../SideBar/SideBar';
 import Tab from '../Tab/Tab';
 
 const EditAccount = (props) => {
+
+    let history = useHistory();
 
     //Hooks
 
@@ -21,6 +24,14 @@ const EditAccount = (props) => {
 
     useEffect(()=>{
         setSelected('Edit profile')
+    },[])
+
+    // Validate that no one can get inside the app without login or registering
+    useEffect(()=>{
+
+        if(!props.user?._id)
+            history.push('/')
+        // eslint-disable-next-line
     },[])
 
     return (
