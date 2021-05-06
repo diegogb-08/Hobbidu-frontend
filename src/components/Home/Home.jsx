@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import { useHistory } from 'react-router'
 import { customer, port, POST } from '../../tools/apiPaths'
 import ControlPanel from '../ControlPanel/ControlPanel'
 import Footer from '../Footer/Footer'
@@ -8,6 +9,7 @@ import Post from '../Post/Post'
 
 const Home = (props) => {
 
+    let history = useHistory()
 
     const [posts, setPosts] = useState([])
 
@@ -23,18 +25,30 @@ const Home = (props) => {
         // eslint-disable-next-line
     },[props.user._id])
 
+    // Validate that no one can get inside the app without login or registering
+    useEffect(()=>{
+
+        if(!props.user?._id)
+            history.push('/')
+        // eslint-disable-next-line
+    },[])
+
     const getMyPosts = async () => {
     
-        try{
-            let result = await axios.get(port+POST+customer+'/'+props.user._id)
-            if(result.data){
-                setPosts(result.data)
-            }
-        }catch(err){
+        if(props.user?._id){
 
+            try{
+                let result = await axios.get(port+POST+customer+'/'+props.user._id)
+                if(result.data){
+                    setPosts(result.data)
+                }
+            }catch(err){
+
+            }
         }
     }
 
+    
 
     const deletePost = async (id) => {
 
@@ -77,10 +91,10 @@ const Home = (props) => {
             <div className="homeContainer">
                 <div className="homeDivisionPost">
                     {
-                        posts.length > 0 ?
+                        posts?.length > 0 ?
                         <>
                             {
-                                posts.map(post => {
+                                posts?.map(post => {
                                     return <Post 
                                                 post={post}
                                                 key={post._id}

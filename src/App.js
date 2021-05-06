@@ -14,7 +14,8 @@ import CheckUser from './components/User/UserCheck'
 
 function App(props) {
 
-  let userPath = props.user?.user_name
+  let userPath = props.user?.user_name;
+
   return (
     <div className="App">
       <BrowserRouter>

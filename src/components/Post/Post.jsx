@@ -74,7 +74,6 @@ const Post = (props) => {
     useEffect(()=>{
 
         if(post.like.find(like => like._id === props.user._id ) !== undefined){
-            console.log('estamos aqui')
             setLike({color: '#f05356'})
         }else{
             setLike({color: '#acacacc4'})

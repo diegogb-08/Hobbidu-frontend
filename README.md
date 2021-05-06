@@ -1,70 +1,236 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+    <img height="200" src="public/website_logo.png" alt="Logo" >
 
-## Available Scripts
+<h4 align="center">Find your Hobby!</h4>
 
+<h4 align="center">Connect with People!</h4>
+  <p align="center">
+    <a href="https://hobbidu.herokuapp.com/">View Web Application</a>
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#installation">Installation</a>
+    </li>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#app-overview">Overview</a>
+    </li>
+    <li><a href="#languages-and-tools">Languages and Tools</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#repositories">Repositories</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+## Installation
+
+Install the dependencies and devDependencies for the frontend repository.
+
+```sh
+npm i
+```
 In the project directory, you can run:
 
-### `npm start`
+```sh
+npm start
+```
+And if you wish, you can run the scss
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm run scss
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Hobbidu is Full-Stack MERN web application that allows users to connect and meet with other people with a common hobby through events created by themselves. In this application, the users will be able to filter the events by distance to the wanted location. On top of this, they will be able to post and comment their hobbies routine.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The back end of the application was built with [Nodejs](https://nodejs.org/), [Mongoose](https://mongoosejs.com/) and [MongoDB](https://www.mongodb.com/) database. All data fetching was done using [Express](https://expressjs.com/) and [Axios](https://github.com/axios/axios) for declaring JSON structures. For the image handling, the web application is using [Multer](https://www.npmjs.com/package/multer), [fs-extra](https://www.npmjs.com/package/fs-extra) and [AWS S3 Bucket](https://aws.amazon.com/s3/) where we store all the pictures in a safe way. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The front end was created with [Reactjs](https://es.reactjs.org/) and [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript) and uses the [Redux](https://es.redux.js.org/) architectural framework for an optimal single-page user-experience.
 
-### `npm run eject`
+The backend and the frontend of the project are deployed in [Heroku](https://id.heroku.com/) through the `master` branch.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Authentication page
+Back-end and front-end user authentication was built from scratch by encrypting user password with [Bcryptjs](https://www.npmjs.com/package/bcryptjs) and creating a unique session token with [JSONWebToken](https://www.npmjs.com/package/jsonwebtoken) for each user on sign up or login. This allows for secure access to one's account on the single-page application which then renders distinct content based on the current user.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Future Features:
+- Direct messages between users.
+- Display all user post at their own profile.
+- Posibility to upload videos as well.
+- Live Chat
+- Create React Native App
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<a href="https://hobbidu.herokuapp.com/" target="_blank">
+    <img src="public/landing.png">
+</a>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+<!-- USAGE -->
+## APP OVERVIEW
+<!-- 
+#### Registration & Login
+<img src="public/gif/scroll.gif" alt="Scroll" >
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="public/gif/enterEmail.gif" alt="enterEmail" >
 
-### Code Splitting
+<br>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="public/gif/register.gif" alt="Register" >
 
-### Analyzing the Bundle Size
+<br>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img src="public/gif/login.gif" alt="Login" >
 
-### Making a Progressive Web App
+<br>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<img src="public/gif/logout.gif" alt="Logout" >
 
-### Advanced Configuration
+<br>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### User & Rental view
 
-### Deployment
+<img src="public/gif/carousel.gif" alt="carousel" >
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br>
+<br>
 
-### `npm run build` fails to minify
+<img src="public/gif/modal.gif" alt="modal" >
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+<br>
+
+<img src="public/gif/search.gif" alt="search" >
+
+<br>
+<br>
+
+<img src="public/gif/myList.gif" alt="myList" >
+
+<br>
+<br>
+
+
+
+<img src="public/gif/buyProcess.gif" alt="buyProcess" >
+
+<br>
+<br>
+
+<img src="public/gif/deleteAll.gif" alt="deleteAll" >
+
+<br>
+<br>
+
+
+#### Profile & Watchlist view
+
+<img src="public/gif/profileProcess.gif" alt="profileProcess" >
+
+<br>
+<br>
+
+<img src="public/gif/watchlist.gif" alt="watchlist" >
+
+<br>
+<br> -->
+
+
+---
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Languages and Tools:
+<p align="left">
+    <a href="https://aws.amazon.com/" target="_blank"> 
+        <img src="public/aws-logo.png" alt="Amazon Web Services" width="40" height="40"/>
+    </a> 
+    <a href="https://getbootstrap.com" target="_blank"> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/>
+    </a> 
+    <a href="https://www.w3schools.com/css/" target="_blank"> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
+    </a> 
+    <a href="https://expressjs.com" target="_blank"> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/>
+    </a>
+    <a href="https://git-scm.com/" target="_blank">
+        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
+    </a>
+    <a href="https://www.w3.org/html/" target="_blank">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+    </a>
+    <a href="https://www.mongodb.com/" target="_blank"> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/>
+    </a>
+    <a href="https://nodejs.org" target="_blank">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> 
+    </a>
+    <a href="https://postman.com" target="_blank">
+        <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/>
+    </a>
+    <a href="https://reactjs.org/" target="_blank">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
+    </a>
+    <a>
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/>
+    </a>
+    <a>
+        <img src="https://i.imgur.com/s59l4lu.png" alt="redux" width="40" height="40"/>
+    </a>
+    <a>
+        <img src="https://i.imgur.com/MD1U1tu.png" alt="redux" width="40" height="40"/>
+    </a>
+    <a>
+        <img src="https://i.imgur.com/0fbJECr.png" alt="redux" width="40" height="40"/>
+    </a>
+    <a>
+        <img src="https://i.imgur.com/lfb9mFw.png" alt="redux" width="40" height="40"/>
+    </a>
+</p>
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- LINKS TO REPOSITORIES -->
+## Repositories
+
+- [Hobbidu-frontend](https://github.com/diegogb-08/Hobbidu-frontend)
+- [Hobbidu-backend](https://github.com/diegogb-08/Hobbidu-backend)
+
+
+
+<!-- CONTACT -->
+## Contact
+
+- Diego García 
+    - [GitHub](https://github.com/diegogb-08)
+    - [LinkedIn](https://www.linkedin.com/in/diego-garcia-brisa/)

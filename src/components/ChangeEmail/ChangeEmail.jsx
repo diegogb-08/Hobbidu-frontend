@@ -9,8 +9,12 @@ import Footer from '../Footer/Footer';
 import InputForm from '../InputForm/InputForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
+import { useHistory } from 'react-router';
 
 const ChangeEmail = (props) => {
+
+    let history = useHistory();
+
     //AUTHORIZATION
 
     let token = props.token
@@ -54,6 +58,14 @@ const ChangeEmail = (props) => {
         };
         // eslint-disable-next-line
     },[credentials]);
+
+    // Validate that no one can get inside the app without login or registering
+    useEffect(()=>{
+
+        if(!props.user?._id)
+            history.push('/')
+        // eslint-disable-next-line
+    },[])
 
 
     //FUNCTIONS
