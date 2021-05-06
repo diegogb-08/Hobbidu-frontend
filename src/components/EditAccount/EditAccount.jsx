@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import ChangeProfilePic from '../ChangeProfilePic/ChangeProfilePic';
 import EditInfo from '../EditInfo/EditInfo';
@@ -64,4 +65,12 @@ const EditAccount = (props) => {
     )
 }
 
-export default EditAccount
+
+const mapStateToProps = state => {
+    return {
+        user : state.userReducer.user,
+        token: state.userReducer.token,
+    }
+}
+
+export default connect(mapStateToProps)(EditAccount); 
