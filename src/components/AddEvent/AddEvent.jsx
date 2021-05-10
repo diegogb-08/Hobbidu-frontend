@@ -32,6 +32,7 @@ const AddEvent = (props) => {
         setSuggestion([])
         setDisabled('disabled')
         setMessage('')
+        setFriends([props.user])
     } 
 
     const [selected, setSelected] = useState({});
@@ -50,18 +51,10 @@ const AddEvent = (props) => {
     const [suggestion, setSuggestion] = useState([])
 
     const [friends, setFriends] = useState([])
-    console.log(friends)
-    console.log(event.joiners)
 
     const [disabled, setDisabled] = useState('disabled')
 
     const [message, setMessage] = useState('')
-
-    useEffect(()=>{
-        setFriends([...friends, props.user])
-         // eslint-disable-next-line
-    },[])
-
 
     //Handlers
 
