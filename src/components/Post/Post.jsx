@@ -153,7 +153,7 @@ const Post = (props) => {
                     <>
                         <div className="menu" >
                             <div className="dropDownMenu"  style={dropDownMenu[post._id]}>
-                                <div className="sections"><p>Edit</p></div>
+                                {/* <div className="sections"><p>Edit</p></div> */}
                                 <div className="sections" onClick={props.onClick}><p>Delete</p></div>
                             </div>
                         </div>

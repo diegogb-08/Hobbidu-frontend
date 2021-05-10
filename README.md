@@ -75,6 +75,7 @@ Back-end and front-end user authentication was built from scratch by encrypting 
 - Posibility to upload videos as well.
 - Live Chat
 - Create React Native App
+- Push Notifications
 
 <a href="https://hobbidu.herokuapp.com/" target="_blank">
     <img src="public/landing.png">

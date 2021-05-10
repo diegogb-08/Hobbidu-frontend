@@ -197,7 +197,7 @@ const AddEvent = (props) => {
                             </div>
                             <div className="inputEvent">
                                 <p className="titles">Location</p>
-                                <p>{props.location.name}</p>
+                                <p>{props.location?.name}</p>
                                 <GeoLocation />
                             </div>
                         </div>

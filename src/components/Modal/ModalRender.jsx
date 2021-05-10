@@ -17,10 +17,10 @@ function ModalRender(props) {
     return (
         <div>
             <div className="configComponent" onClick={()=>toggle()}>{props.children}</div>
-                <Modal active={active} toggle={()=>toggle()}>
+            <Modal active={active} toggle={()=>toggle()}>
 
 
-                </Modal>
+            </Modal>
         </div>
     )
 }
