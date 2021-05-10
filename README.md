@@ -100,80 +100,55 @@ Back-end and front-end user authentication was built from scratch by encrypting 
 
 <!-- OVERVIEW -->
 ## APP OVERVIEW
-<!-- 
-#### Registration & Login
-<img src="public/gif/scroll.gif" alt="Scroll" >
 
-<br>
-<br>
-
-<img src="public/gif/enterEmail.gif" alt="enterEmail" >
-
-<br>
-<br>
+###### Registration & Login
 
 <img src="public/gif/register.gif" alt="Register" >
 
 <br>
 <br>
 
+###### Login and User profile update
+
 <img src="public/gif/login.gif" alt="Login" >
 
 <br>
 <br>
 
-<img src="public/gif/logout.gif" alt="Logout" >
+###### Edit hobbies, change email & password and logaout
+
+<img src="public/gif/edit_hobbies.gif" alt="follow users" >
 
 <br>
 <br>
 
-#### User & Rental view
+###### Follow users
 
-<img src="public/gif/carousel.gif" alt="carousel" >
-
-<br>
-<br>
-
-<img src="public/gif/modal.gif" alt="modal" >
+<img src="public/gif/follow.gif" alt="follow users" >
 
 <br>
 <br>
 
-<img src="public/gif/search.gif" alt="search" >
+###### Filter events by location and distance
+
+<img src="public/gif/event_location.gif" alt="follow users" >
 
 <br>
 <br>
 
-<img src="public/gif/myList.gif" alt="myList" >
+###### Create event
+
+<img src="public/gif/create_event.gif" alt="follow users" >
 
 <br>
 <br>
 
+###### Create post
 
-
-<img src="public/gif/buyProcess.gif" alt="buyProcess" >
-
-<br>
-<br>
-
-<img src="public/gif/deleteAll.gif" alt="deleteAll" >
+<img src="public/gif/create_post.gif" alt="follow users" >
 
 <br>
 <br>
-
-
-#### Profile & Watchlist view
-
-<img src="public/gif/profileProcess.gif" alt="profileProcess" >
-
-<br>
-<br>
-
-<img src="public/gif/watchlist.gif" alt="watchlist" >
-
-<br>
-<br> -->
-
 
 ---
 
