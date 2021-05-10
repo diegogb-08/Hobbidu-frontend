@@ -36,6 +36,8 @@
 
 ## Installation
 
+###### Frontend
+
 Install the dependencies and devDependencies for the frontend repository.
 
 ```sh
@@ -51,6 +53,20 @@ And if you wish, you can run the scss
 ```sh
 npm run scss
 ```
+
+###### Backend
+
+Install the dependencies and devDependencies for the backend repository.
+
+```sh
+npm i
+```
+In the project directory, you can run:
+
+```sh
+npm run start
+```
+On the other side you will need to add the enviroments to run your own MongoDB database.
 
 
 
@@ -82,7 +98,7 @@ Back-end and front-end user authentication was built from scratch by encrypting 
 </a>
 
 
-<!-- USAGE -->
+<!-- OVERVIEW -->
 ## APP OVERVIEW
 <!-- 
 #### Registration & Login
@@ -161,8 +177,6 @@ Back-end and front-end user authentication was built from scratch by encrypting 
 
 ---
 
-
-<!-- ACKNOWLEDGEMENTS -->
 ## Languages and Tools:
 <p align="left">
     <a href="https://aws.amazon.com/" target="_blank"> 

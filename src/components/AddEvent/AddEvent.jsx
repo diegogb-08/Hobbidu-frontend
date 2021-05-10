@@ -25,7 +25,7 @@ const AddEvent = (props) => {
             maxJoiners: 2,
             vehicle: false,
             seats: '',
-            joiners: [],
+            joiners: [props.user._id],
             description: '',
         })
         setSelected({})
@@ -50,6 +50,8 @@ const AddEvent = (props) => {
     const [suggestion, setSuggestion] = useState([])
 
     const [friends, setFriends] = useState([])
+    console.log(friends)
+    console.log(event.joiners)
 
     const [disabled, setDisabled] = useState('disabled')
 

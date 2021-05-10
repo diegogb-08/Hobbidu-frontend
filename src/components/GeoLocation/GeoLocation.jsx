@@ -27,6 +27,7 @@ const GeoLocation = ({ isScriptLoaded, isScriptLoadSucceed, dispatch}) => {
         name: value,
         coordinates: [coords.lng, coords.lat]
       }
+      console.clear()
       return await dispatch({type: ADDLOCATION, payload: location})
     }
 
