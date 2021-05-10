@@ -30,7 +30,7 @@ const EventView = (props) => {
     useEffect(()=>{
         filterEventsCall()
         // eslint-disable-next-line 
-    },[distance,props.location.coordinates])
+    },[distance, props.location])
 
     // Validate that no one can get inside the app without login or registering
     useEffect(()=>{
@@ -46,7 +46,7 @@ const EventView = (props) => {
 
             let body = {
                 distance: distance,
-                coords: props.location.coordinates ? props.location.coordinates : props.user.location.coordinates
+                coords: props.location?.coordinates ? props.location?.coordinates : props.user.location?.coordinates
             }
 
             try{
