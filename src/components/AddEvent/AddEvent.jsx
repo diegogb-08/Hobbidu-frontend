@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Modal from '../Modal/Modal';
 import GeoLocation from '../GeoLocation/GeoLocation';
 import { connect } from 'react-redux';

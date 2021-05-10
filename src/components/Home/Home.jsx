@@ -79,7 +79,7 @@ const Home = (props) => {
         }
     }
     
-    console.clear()
+    //console.clear()
     
     return (
         <div className="homeComponent">
