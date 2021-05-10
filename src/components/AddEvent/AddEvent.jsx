@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Modal from '../Modal/Modal';
 import GeoLocation from '../GeoLocation/GeoLocation';
 import { connect } from 'react-redux';
@@ -25,13 +25,14 @@ const AddEvent = (props) => {
             maxJoiners: 2,
             vehicle: false,
             seats: '',
-            joiners: [],
+            joiners: [props.user._id],
             description: '',
         })
         setSelected({})
         setSuggestion([])
         setDisabled('disabled')
         setMessage('')
+        setFriends([props.user])
     } 
 
     const [selected, setSelected] = useState({});
@@ -54,12 +55,6 @@ const AddEvent = (props) => {
     const [disabled, setDisabled] = useState('disabled')
 
     const [message, setMessage] = useState('')
-
-    useEffect(()=>{
-        setFriends([...friends, props.user])
-         // eslint-disable-next-line
-    },[])
-
 
     //Handlers
 

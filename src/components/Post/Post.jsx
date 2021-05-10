@@ -101,25 +101,26 @@ const Post = (props) => {
 
         }
     }
-
-    const postComment = async (id) => {
-
+    const postComment = async () => {
+     
         let body = {
-            post_id: id,
+            post_id: post._id,
             user_id: props.user._id,
             content: content
         }
-        
-        try{
-            let result = await axios.post(port+comment, body);
-            if(result.data)
-                setComments(result.data)
-                setContent('')
-                Array.from(document.querySelectorAll('input')).forEach(
-                    input => (input.value = "")
-                );
-        }catch (err) {
+        if(body.content !== ''){
 
+            try{
+                let result = await axios.post(port+comment, body);
+                if(result.data)
+                    setComments(result.data)
+                    setContent('')
+                    Array.from(document.querySelectorAll('input')).forEach(
+                        input => (input.value = "")
+                    );
+            }catch (err) {
+
+            }
         }
     }
 
@@ -194,7 +195,7 @@ const Post = (props) => {
                 </div>
                 <div className="inputComments">
                     <input type="text" name="content" placeholder="Add a comment" onChange={handleChange}/>
-                    <p onClick={()=>postComment(post._id)}>Post</p>
+                    <p onClick={()=>postComment()}>Post</p>
                 </div>
             </div>
         </div>
