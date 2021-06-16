@@ -45,7 +45,7 @@ const Register = (props) => {
         setUser({...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value});
         setMessage('')
         if (Object.keys(errors).length > 0) 
-        setErrors(validate({ ...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));
+            setErrors(validate({ ...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));
     }
 
 
