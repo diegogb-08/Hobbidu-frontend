@@ -1,0 +1,11 @@
+{
+    "selectLanguage" : {
+        "code": "en",
+        "name": "English",
+        "country_code": "gb"
+    },
+    "landing": {
+        "find_your_hobby": "FIND YOUR HOBBY",
+        "connect_with_people": "CONNECT WITH PEOPLE"
+    }
+}
