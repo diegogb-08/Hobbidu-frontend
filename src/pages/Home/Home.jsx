@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
 import { customer, port, POST } from '../../tools/apiPaths'
-import ControlPanel from '../ControlPanel/ControlPanel'
-import Footer from '../Footer/Footer'
-import Post from '../Post/Post'
+import ControlPanel from '../../components/ControlPanel/ControlPanel'
+import Footer from '../../components/Footer/Footer'
+import Post from '../../components/Post/Post'
 
 const Home = (props) => {
 
@@ -19,7 +19,7 @@ const Home = (props) => {
         // this function gets all the posts from the main user and all the users that he/she is following
         
     
-        getMyPosts()
+        if (isMounted) getMyPosts()
         // eslint-disable-next-line
         return () => { isMounted = false };
         // eslint-disable-next-line

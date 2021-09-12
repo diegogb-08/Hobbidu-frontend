@@ -1,12 +1,12 @@
-import {combineReducers} from 'redux';
-import userReducer from './userReducer';
-import hobbyReducer from './hobbyReducer';
-import eventReducer from './eventReducer';
+import { combineReducers } from 'redux'
+import userReducer from './userReducer'
+import hobbyReducer from './hobbyReducer'
+import eventReducer from './eventReducer'
 
 const rootReducer = combineReducers({
-    userReducer,
-    hobbyReducer,
-    eventReducer
-});
+  userReducer,
+  hobbyReducer,
+  eventReducer
+})
 
-export default rootReducer;
+export default rootReducer

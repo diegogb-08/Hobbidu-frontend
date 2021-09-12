@@ -4,7 +4,7 @@ import Cropper from "react-easy-crop";
 import Slider from "@material-ui/core/Slider";
 import Button from "@material-ui/core/Button";
 
-import getCroppedImg from '../../tools/cropImage.js'
+import getCroppedImg from '../../helper/cropImage.js'
 import {dataURLtoFile} from '../../tools/dataURLtoFile'
 
 const ImageCropper = (props) => {
