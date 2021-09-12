@@ -4,7 +4,7 @@ import validate from "../../helper/validate";
 import { connect } from "react-redux";
 import { LOGIN } from "../../redux/types/userType";
 import axios from "axios";
-import { port, customer, login } from "../../tools/apiPaths";
+import { port, USER, login } from "../../helper/apiPaths";
 import Button from "../Button/Button";
 import { SHOWHOBBIES } from "../../redux/types/hobbyType";
 
@@ -105,17 +105,14 @@ const Register = (props) => {
     };
 
     try {
-      const result = await axios.post(port + customer, body);
+      const result = await axios.post(port + USER, body);
       if (result) {
         const dataLogin = {
           email: result.data.email,
           password: user.password,
         };
 
-        const resultLogin = await axios.post(
-          port + customer + login,
-          dataLogin
-        );
+        const resultLogin = await axios.post(port + USER + login, dataLogin);
 
         if (resultLogin) {
           props.dispatch({ type: LOGIN, payload: resultLogin.data });

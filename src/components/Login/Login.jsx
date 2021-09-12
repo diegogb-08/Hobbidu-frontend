@@ -5,7 +5,7 @@ import axios from "axios";
 import { LOGIN, SETACTIVE } from "../../redux/types/userType";
 import { connect } from "react-redux";
 import validate from "../../helper/validate";
-import { port, customer, login, hobby } from "../../tools/apiPaths";
+import { port, USER, login, hobby } from "../../helper/apiPaths";
 import Button from "../Button/Button";
 import { ADD } from "../../redux/types/hobbyType";
 
@@ -99,7 +99,7 @@ const Login = (props) => {
 
     if (Object.keys(errs).length === 0) {
       try {
-        const result = await axios.post(port + customer + login, credentials);
+        const result = await axios.post(port + USER + login, credentials);
         const hobbies = await axios.get(port + hobby);
         if (result && hobbies) {
           props.dispatch({ type: LOGIN, payload: result.data });

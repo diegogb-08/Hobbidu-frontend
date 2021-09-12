@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { UPDATE } from "../../redux/types/userType";
-import { customer, port } from "../../tools/apiPaths";
+import { USER, port } from "../../helper/apiPaths";
 import validate from "../../helper/validate";
 import Button from "../Button/Button";
 import Footer from "../Footer/Footer";
@@ -100,7 +100,7 @@ const ChangeEmail = (props) => {
 
     try {
       const result = await axios.put(
-        port + customer + "/change_email/" + props.user._id,
+        port + USER + "/change_email/" + props.user._id,
         body,
         auth
       );

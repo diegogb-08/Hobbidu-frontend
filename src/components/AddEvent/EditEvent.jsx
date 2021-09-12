@@ -4,7 +4,7 @@ import GeoLocation from "../GeoLocation/GeoLocation";
 import { connect } from "react-redux";
 import Button from "../Button/Button";
 import axios from "axios";
-import { port, customer, search, query, meeting } from "../../tools/apiPaths";
+import { port, USER, SEARCH, QUERY, EVENT } from "../../helper/apiPaths";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus, faUserTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -51,7 +51,7 @@ const EditEvent = (props) => {
   const handleJoiners = async (e) => {
     try {
       const result = await axios.get(
-        port + customer + search + query + e.target.value
+        port + USER + SEARCH + QUERY + e.target.value
       );
       setSuggestion(result.data);
     } catch (err) {
@@ -65,7 +65,7 @@ const EditEvent = (props) => {
     if (maxJoiners !== event.joiners.length && joinerIdFound === undefined) {
       setEvent({ ...event, joiners: [...event.joiners, user._id] });
       setFriends([...friends, user]);
-      const result = await axios.get(port + customer + search + query);
+      const result = await axios.get(port + USER + SEARCH + QUERY);
       setSuggestion(result.data);
     }
   };
@@ -106,7 +106,7 @@ const EditEvent = (props) => {
     if (event.hobby_id !== "") {
       try {
         const result = await axios.put(
-          port + meeting + "/" + props.user._id,
+          port + EVENT + "/" + props.user._id,
           body
         );
         if (result.data) {

@@ -1,9 +1,9 @@
-export const customer = "/user";
+export const USER = "/user";
 export const login = "/login";
-export const query = "?query=";
+export const QUERY = "?QUERY=";
 export const hobby = "/hobby";
-export const meeting = "/event";
-export const search = "/search";
+export const EVENT = "/event";
+export const SEARCH = "/SEARCH";
 export const follow = "/follower";
 export const comment = "/comment";
 export const POST = "/post";

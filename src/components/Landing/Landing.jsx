@@ -1,39 +1,39 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { useHistory } from "react-router";
-import FirstHobbies from "../FirstHobbies/FirstHobbies";
-import Login from "../Login/Login";
-import Register from "../Register/Register";
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { useHistory } from 'react-router'
+import FirstHobbies from '../FirstHobbies/FirstHobbies'
+import Login from '../Login/Login'
+import Register from '../Register/Register'
 
 const Landing = (props) => {
-  let history = useHistory();
+  const history = useHistory()
 
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(true)
 
   const register = () => {
     setTimeout(() => {
-      setActive(!active);
-    }, 500);
-  };
+      setActive(!active)
+    }, 500)
+  }
 
   if (props.user?.hobbies?.length > 0) {
-    history.push("/home");
+    history.push('/home')
   }
 
   return (
-    <div className="landingsComponent">
-      <div className="landingContainers landingLeft">
-        <div className="slogan top">
+    <div className='landingsComponent'>
+      <div className='landingContainers landingLeft'>
+        <div className='slogan top'>
           <p>FIND YOUR HOBBY</p>
         </div>
-        <div className="slogan bottom">
+        <div className='slogan bottom'>
           <p>CONNECT WITH PEOPLE</p>
         </div>
       </div>
-      <div className="landingContainers landingRight">
-        <div className="spacer"></div>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
+      <div className='landingContainers landingRight'>
+        <div className='spacer'></div>
+        <div className='spacer'></div>
+        <div className='spacer'></div>
         {active ? (
           <>
             {props.showHobbies ? (
@@ -43,9 +43,9 @@ const Landing = (props) => {
             ) : (
               <>
                 <Login />
-                <div className="registerLanding">
-                  <p>Don't have an account?</p>
-                  <p className="register" onClick={() => register()}>
+                <div className='registerLanding'>
+                  <p>Don&apos;t have an account?</p>
+                  <p className='register' onClick={() => register()}>
                     Register
                   </p>
                 </div>
@@ -61,9 +61,9 @@ const Landing = (props) => {
             ) : (
               <>
                 <Register />
-                <div className="registerLanding">
+                <div className='registerLanding'>
                   <p>Do you have an account?</p>
-                  <p className="register" onClick={() => register()}>
+                  <p className='register' onClick={() => register()}>
                     Sign In
                   </p>
                 </div>
@@ -73,14 +73,14 @@ const Landing = (props) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
     user: state.userReducer.user,
     showHobbies: state.hobbyReducer.showHobbies,
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(Landing);
+export default connect(mapStateToProps)(Landing)

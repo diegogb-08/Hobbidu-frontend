@@ -1,82 +1,80 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { useHistory } from "react-router";
-import { customer, port, POST } from "../../tools/apiPaths";
-import ControlPanel from "../../components/ControlPanel/ControlPanel";
-import Footer from "../../components/Footer/Footer";
-import Post from "../../components/Post/Post";
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import { useHistory } from 'react-router'
+import { USER, port, POST } from '../../helper/apiPaths'
+import ControlPanel from '../../components/ControlPanel/ControlPanel'
+import Footer from '../../components/Footer/Footer'
+import Post from '../../components/Post/Post'
 
 const Home = (props) => {
-  let history = useHistory();
+  const history = useHistory()
 
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    let isMounted = true;
+    let isMounted = true
     // this function gets all the posts from the main user and all the users that he/she is following
 
-    if (isMounted) getMyPosts();
-    // eslint-disable-next-line
+    if (isMounted) getMyPosts()
+
     return () => {
-      isMounted = false;
-    };
+      isMounted = false
+    }
     // eslint-disable-next-line
-  }, [props.user._id]);
+  }, [props.user._id])
 
   // Validate that no one can get inside the app without login or registering
   useEffect(() => {
-    if (!props.user?._id) history.push("/");
+    if (!props.user?._id) history.push('/')
     // eslint-disable-next-line
-  }, []);
+  }, [])
 
   const getMyPosts = async () => {
     if (props.user?._id) {
       try {
-        let result = await axios.get(
-          port + POST + customer + "/" + props.user._id
-        );
+        const result = await axios.get(
+          port + POST + USER + '/' + props.user._id
+        )
         if (result.data) {
-          setPosts(result.data);
+          setPosts(result.data)
         }
       } catch (err) {}
     }
-  };
+  }
 
   const deletePost = async (id) => {
     try {
-      let result = await axios.delete(port + POST + "/" + id);
+      const result = await axios.delete(port + POST + '/' + id)
       if (result.data) {
-        getMyPosts();
+        getMyPosts()
       }
     } catch (err) {}
-  };
+  }
 
   const likePost = async (id) => {
-    let body = {
+    const body = {
       like: props.user._id,
-    };
+    }
 
     try {
-      let result = await axios.put(port + POST + "/like/" + id, body);
+      const result = await axios.put(port + POST + '/like/' + id, body)
       if (result.data) {
-        getMyPosts();
+        getMyPosts()
       }
     } catch (err) {}
-  };
-
-  //console.clear()
+  }
 
   return (
-    <div className="homeComponent">
-      <div className="spacer"></div>
-      <div className="spacer"></div>
-      <div className="spacer"></div>
-      <div className="spacer"></div>
+    <div className='homeComponent'>
+      <div className='spacer'></div>
+      <div className='spacer'></div>
+      <div className='spacer'></div>
+      <div className='spacer'></div>
       <ControlPanel />
-      <div className="spacer"></div>
-      <div className="homeContainer">
-        <div className="homeDivisionPost">
+      <div className='spacer'></div>
+      <div className='homeContainer'>
+        <div className='homeDivisionPost'>
           {posts?.length > 0 ? (
             <>
               {posts?.map((post) => {
@@ -87,12 +85,12 @@ const Home = (props) => {
                     onClick={() => deletePost(post._id)}
                     likePost={() => likePost(post._id)}
                   />
-                );
+                )
               })}
             </>
           ) : (
             <>
-              <div className="noPosts">
+              <div className='noPosts'>
                 <h2>
                   There is no post just yet. <br />
                   Start posting something!
@@ -105,14 +103,14 @@ const Home = (props) => {
 
       <Footer />
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
     user: state.userReducer.user,
     hobby: state.hobbyReducer.hobby,
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Home)

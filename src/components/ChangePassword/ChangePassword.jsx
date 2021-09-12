@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import validate from "../../helper/validate";
 import Button from "../Button/Button";
 import InputForm from "../InputForm/InputForm";
-import { customer, port } from "../../tools/apiPaths";
+import { USER, port } from "../../helper/apiPaths";
 import { UPDATE } from "../../redux/types/userType";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
@@ -95,7 +95,7 @@ const ChangePassword = (props) => {
 
     try {
       const result = await axios.put(
-        port + customer + "/change_password/" + props.user._id,
+        port + USER + "/change_password/" + props.user._id,
         body,
         auth
       );

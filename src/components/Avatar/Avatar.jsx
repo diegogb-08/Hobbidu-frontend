@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
-import { port } from "../../tools/apiPaths";
+import { port } from "../../helper/apiPaths";
 
 const Avatar = (props) => {
   return (
