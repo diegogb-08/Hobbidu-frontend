@@ -1,8 +1,8 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { connect } from "react-redux";
-import { port } from "../../helper/apiPaths";
+import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons"
+import { connect } from "react-redux"
+import { port } from "../../helper/apiPaths"
 
 const Avatar = (props) => {
   return (
@@ -10,7 +10,12 @@ const Avatar = (props) => {
       {props.src !== port + undefined ? (
         <>
           <div className="imageCropper">
-            <img className="profileImg" src={props.src} alt="Avatar" />
+            <img
+              loading="lazy"
+              className="profileImg"
+              src={props.src}
+              alt="Avatar"
+            />
           </div>
         </>
       ) : (
@@ -21,13 +26,13 @@ const Avatar = (props) => {
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
     user: state.userReducer.user,
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(Avatar);
+export default connect(mapStateToProps)(Avatar)
