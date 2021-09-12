@@ -135,56 +135,56 @@ const Post = (props) => {
   }
 
   return (
-    <div className='postComponent'>
-      <div className='creator' ref={node}>
-        <div className='avatarName'>
-          <div className='iconBtnAvatar'>
+    <div className="postComponent">
+      <div className="creator" ref={node}>
+        <div className="avatarName">
+          <div className="iconBtnAvatar">
             <Avatar
               src={port + post?.user_id?.profile_img}
               onClick={() => checkUserProfile(post?.user_id)}
             />
           </div>
           <p>{post?.user_id?.user_name}</p>
-          <p className='location'>{post?.location.name}</p>
+          <p className="location">{post?.location.name}</p>
         </div>
         {post?.user_id._id === props.user._id ? (
           <>
-            <div className='menu'>
-              <div className='dropDownMenu' style={dropDownMenu[post._id]}>
+            <div className="menu">
+              <div className="dropDownMenu" style={dropDownMenu[post._id]}>
                 {/* <div className="sections"><p>Edit</p></div> */}
-                <div className='sections' onClick={props.onClick}>
+                <div className="sections" onClick={props.onClick}>
                   <p>Delete</p>
                 </div>
               </div>
             </div>
             <FontAwesomeIcon
               icon={faEllipsisV}
-              className='threeDots'
+              className="threeDots"
               onClick={() => openMenu(post._id)}
             />
           </>
         ) : null}
       </div>
-      <div className='picture'>
-        <img src={port + post.image} alt='postImage' />
+      <div className="picture">
+        <img loading="lazy" src={port + post.image} alt="postImage" />
       </div>
-      <div className='subMenu'>
-        <div className='likeMenu'>
+      <div className="subMenu">
+        <div className="likeMenu">
           <FontAwesomeIcon
             icon={faHeart}
-            className='like'
+            className="like"
             onClick={props.likePost}
             style={like}
           />
-          <p className='likeCounting'>
+          <p className="likeCounting">
             {post?.like.length} {post?.like.length === 1 ? 'like' : 'likes'}
           </p>
         </div>
-        <div className='hobby'>
+        <div className="hobby">
           <p>#{post?.hobby_id.hobby_name}</p>
         </div>
       </div>
-      <div className='description'>
+      <div className="description">
         <p>
           <b onClick={() => checkUserProfile(post?.user_id)}>
             {post?.user_id?.user_name}
@@ -192,16 +192,16 @@ const Post = (props) => {
           {post.description}
         </p>
       </div>
-      <p className='timer'>
+      <p className="timer">
         {moment(post.creation_date).startOf('hour').fromNow()}
       </p>
-      <div className='commentsContainer'>
-        <div className='commentCollection'>
+      <div className="commentsContainer">
+        <div className="commentCollection">
           {comments.map((comment) => {
             return (
-              <div className='comment' key={comment._id}>
+              <div className="comment" key={comment._id}>
                 <p
-                  className='userName'
+                  className="userName"
                   onClick={() => checkUserProfile(comment.user_id)}
                 >
                   {comment.user_id.user_name}
@@ -211,11 +211,11 @@ const Post = (props) => {
             )
           })}
         </div>
-        <div className='inputComments'>
+        <div className="inputComments">
           <input
-            type='text'
-            name='content'
-            placeholder='Add a comment'
+            type="text"
+            name="content"
+            placeholder="Add a comment"
             onChange={handleChange}
           />
           <p onClick={() => postComment()}>Post</p>
