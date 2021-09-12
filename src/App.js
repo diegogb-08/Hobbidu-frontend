@@ -1,16 +1,16 @@
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ChangeEmail from "./components/ChangeEmail/ChangeEmail";
-import ChangePassword from "./components/ChangePassword/ChangePassword";
-import EditAccount from "./components/EditAccount/EditAccount";
-import Event from "./components/Event/Event";
-import EventView from "./components/EventView/EventView";
+import ChangeEmail from "./pages/ChangeEmail/ChangeEmail";
+import ChangePassword from "./pages/ChangePassword/ChangePassword";
+import EditAccount from "./pages/EditAccount/EditAccount";
+import Event from "./pages/Event/Event";
+import EventView from "./pages/EventView/EventView";
 
-import Header from "./components/Header/Header";
+import Header from "./pages/Header/Header";
 import Home from "./pages/Home/Home";
-import Landing from "./components/Landing/Landing";
-import User from "./components/User/User";
-import CheckUser from "./components/User/UserCheck";
+import Landing from "./pages/Landing/Landing";
+import User from "./pages/User/User";
+import CheckUser from "./pages/User/UserCheck";
 
 function App(props) {
   const userPath = props.user?.user_name;

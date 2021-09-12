@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
-import axios from 'axios'
-import { EVENT, port, comment } from '../../helper/apiPaths'
-import ControlPanel from '../ControlPanel/ControlPanel'
-import Footer from '../Footer/Footer'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { CHECKUSER } from "../../redux/types/userType"
+import { connect } from "react-redux"
+import { EVENT, port, comment } from "../../helper/apiPaths"
+import { faEdit } from "@fortawesome/free-regular-svg-icons"
 import {
   faMapMarkerAlt,
   faUserPlus,
   faCheck,
-} from '@fortawesome/free-solid-svg-icons'
-import { faEdit } from '@fortawesome/free-regular-svg-icons'
-import moment from 'moment'
-import Avatar from '../Avatar/Avatar'
-import EditEvent from '../AddEvent/EditEvent'
-import { CHECKUSER } from '../../redux/types/userType'
-import { useHistory } from 'react-router'
+} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useHistory } from "react-router"
+import Avatar from "../../components/Avatar/Avatar"
+import axios from "axios"
+import ControlPanel from "../../components/ControlPanel/ControlPanel"
+import EditEvent from "../../components/AddEvent/EditEvent"
+import Footer from "../../components/Footer/Footer"
+import moment from "moment"
+import React, { useEffect, useState } from "react"
 
 const Event = (props) => {
   const history = useHistory()
 
   const [event, setEvent] = useState({})
   const [comments, setComments] = useState([])
-  const [content, setContent] = useState('')
+  const [content, setContent] = useState("")
 
   const leftSpots = event.maxJoiners - event.joiners?.length
 
@@ -36,16 +36,16 @@ const Event = (props) => {
   useEffect(() => {
     const listener = (event) => {
       if (
-        event.code === 'Enter' ||
-        event.code === 'NumpadEnter' ||
+        event.code === "Enter" ||
+        event.code === "NumpadEnter" ||
         event.keyCode === 13
       ) {
         post()
       }
     }
-    document.addEventListener('keydown', listener)
+    document.addEventListener("keydown", listener)
     return () => {
-      document.removeEventListener('keydown', listener)
+      document.removeEventListener("keydown", listener)
     }
     // eslint-disable-next-line
   }, [content])
@@ -64,14 +64,14 @@ const Event = (props) => {
     }
 
     try {
-      const result = await axios.put(port + EVENT + '/join/' + event._id, body)
+      const result = await axios.put(port + EVENT + "/join/" + event._id, body)
       if (result) setEvent(result.data)
     } catch (err) {}
   }
 
   const getEvent = async () => {
     try {
-      const result = await axios.get(port + EVENT + '/' + props.event._id)
+      const result = await axios.get(port + EVENT + "/" + props.event._id)
       if (result.data) setEvent(result.data)
     } catch (err) {}
   }
@@ -89,8 +89,8 @@ const Event = (props) => {
     if (
       joiners?.find((element) => element._id === props.user._id) !== undefined
     )
-      return 'Going'
-    else return 'Join'
+      return "Going"
+    else return "Join"
   }
 
   // Get all posts from the backend once it mount
@@ -98,7 +98,7 @@ const Event = (props) => {
   const getPosts = async () => {
     try {
       const result = await axios.get(
-        port + comment + EVENT + '/' + props.event._id
+        port + comment + EVENT + "/" + props.event._id
       )
       if (result.data) setComments(result.data)
     } catch (err) {}
@@ -116,9 +116,9 @@ const Event = (props) => {
     try {
       const result = await axios.post(port + comment, body)
       if (result.data) setComments(result.data)
-      setContent('')
-      Array.from(document.querySelectorAll('input')).forEach(
-        (input) => (input.value = '')
+      setContent("")
+      Array.from(document.querySelectorAll("input")).forEach(
+        (input) => (input.value = "")
       )
     } catch (err) {}
   }
@@ -131,17 +131,17 @@ const Event = (props) => {
   }
 
   return (
-    <div className='eventComponent'>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
+    <div className="eventComponent">
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
       <ControlPanel />
-      <div className='eventCointainer'>
-        <h2 className='title'>{event.title}</h2>
+      <div className="eventCointainer">
+        <h2 className="title">{event.title}</h2>
         {event?.user_id?._id === props.user?._id ? (
           <>
-            <div className='edit'>
+            <div className="edit">
               <EditEvent event={event}>
                 <FontAwesomeIcon icon={faEdit} />
               </EditEvent>
@@ -150,43 +150,43 @@ const Event = (props) => {
         ) : (
           <></>
         )}
-        <div className='eventInfoContainer'>
-          <div className='eventInfo'>
-            <div className='eventInfoLeft'>
-              <div className='location'>
-                <FontAwesomeIcon icon={faMapMarkerAlt} className='icon' />
+        <div className="eventInfoContainer">
+          <div className="eventInfo">
+            <div className="eventInfoLeft">
+              <div className="location">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
                 <p>{event.location?.name}</p>
               </div>
               <h3>
-                {moment(event?.event_date).format('Do MMMM YYYY, h:mm a')}
+                {moment(event?.event_date).format("Do MMMM YYYY, h:mm a")}
               </h3>
-              <div className='createdBy'>
-                <div className='iconBtnAvatar'>
+              <div className="createdBy">
+                <div className="iconBtnAvatar">
                   <Avatar src={port + event?.user_id?.profile_img} />
                 </div>
                 <p>{event?.user_id?.user_name}</p>
-                <div className='hobbyTagContainer'>
-                  <div className='hobbyTag'>
+                <div className="hobbyTagContainer">
+                  <div className="hobbyTag">
                     <p>{event?.hobby_id?.hobby_name}</p>
                   </div>
                 </div>
               </div>
-              <div className='spacer'></div>
-              <div className='spacer'></div>
-              <div className='spacer'></div>
-              <div className='description'>
+              <div className="spacer"></div>
+              <div className="spacer"></div>
+              <div className="spacer"></div>
+              <div className="description">
                 <p>{event.description}</p>
               </div>
             </div>
-            <div className='eventInfoRight'>
-              <div className='eventInfoRightContainer'>
-                <div className='joiners'>
+            <div className="eventInfoRight">
+              <div className="eventInfoRightContainer">
+                <div className="joiners">
                   <p>{event.joiners?.length} joiner/s</p>
-                  <p className='spotsLeft'> {leftSpots} spots left!</p>
+                  <p className="spotsLeft"> {leftSpots} spots left!</p>
                 </div>
-                <div className='vehicleContainer'>
+                <div className="vehicleContainer">
                   <p>
-                    <b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}
+                    <b>Own vehicle:</b> {event.vehicle ? "Yes" : "No"}
                   </p>
                   {event.vehicle ? (
                     <>
@@ -196,24 +196,24 @@ const Event = (props) => {
                     <></>
                   )}
                 </div>
-                <div className='addJoiner'>
-                  <div className='signUp' onClick={() => joinUser(event)}>
+                <div className="addJoiner">
+                  <div className="signUp" onClick={() => joinUser(event)}>
                     <FontAwesomeIcon
                       icon={getJoiners(event?.joiners)}
-                      className='joinUserIcon'
+                      className="joinUserIcon"
                     />
                     <p>{setJoinGoin(event?.joiners)}</p>
                   </div>
                 </div>
-                <div className='renderJoiners'>
+                <div className="renderJoiners">
                   {event.joiners?.map((joiner) => {
                     return (
                       <div
-                        className='joiner'
+                        className="joiner"
                         key={joiner._id}
                         onClick={() => checkUserProfile(joiner)}
                       >
-                        <div className='iconBtnAvatar'>
+                        <div className="iconBtnAvatar">
                           <Avatar src={port + joiner.profile_img} />
                         </div>
                         <p>{joiner.name}</p>
@@ -224,13 +224,13 @@ const Event = (props) => {
               </div>
             </div>
           </div>
-          <div className='commentContainer'>
-            <div className='commentCollection'>
+          <div className="commentContainer">
+            <div className="commentCollection">
               {comments.map((comment) => {
                 return (
-                  <div className='comment' key={comment._id}>
+                  <div className="comment" key={comment._id}>
                     <p
-                      className='userName'
+                      className="userName"
                       onClick={() => checkUserProfile(comment.user_id)}
                     >
                       {comment.user_id.user_name}
@@ -240,11 +240,11 @@ const Event = (props) => {
                 )
               })}
             </div>
-            <div className='postComment'>
+            <div className="postComment">
               <input
-                type='text'
-                name='content'
-                placeholder='Add a comment'
+                type="text"
+                name="content"
+                placeholder="Add a comment"
                 onChange={handleChange}
               />
               <p onClick={() => post()}>Post</p>
@@ -252,10 +252,10 @@ const Event = (props) => {
           </div>
         </div>
       </div>
-      <div className='spacer'></div>
-      <div className='sapcer'></div>
-      <div className='sapcer'></div>
-      <div className='sapcer'></div>
+      <div className="spacer"></div>
+      <div className="sapcer"></div>
+      <div className="sapcer"></div>
+      <div className="sapcer"></div>
 
       <Footer />
     </div>

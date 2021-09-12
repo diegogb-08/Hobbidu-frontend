@@ -1,41 +1,41 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { UPDATE } from "../../redux/types/userType";
-import { USER, port } from "../../helper/apiPaths";
-import validate from "../../helper/validate";
-import Button from "../Button/Button";
-import Footer from "../Footer/Footer";
-import InputForm from "../InputForm/InputForm";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
-import { useHistory } from "react-router";
+import axios from "axios"
+import React, { useEffect, useState } from "react"
+import { connect } from "react-redux"
+import { UPDATE } from "../../redux/types/userType"
+import { USER, port } from "../../helper/apiPaths"
+import validate from "../../helper/validate"
+import Button from "../../components/Button/Button"
+import Footer from "../../components/Footer/Footer"
+import InputForm from "../../components/InputForm/InputForm"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCheckCircle } from "@fortawesome/free-regular-svg-icons"
+import { useHistory } from "react-router"
 
 const ChangeEmail = (props) => {
-  const history = useHistory();
+  const history = useHistory()
 
   // AUTHORIZATION
 
-  const token = props.token;
+  const token = props.token
   const auth = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  };
+  }
 
   // HOOKS
   const [credentials, setEmail] = useState({
     oldEmail: "",
     email: "",
     password: "",
-  });
-  const [errors, setErrors] = useState({});
-  const [message, setMessage] = useState([]);
+  })
+  const [errors, setErrors] = useState({})
+  const [message, setMessage] = useState([])
   const [password, setPassword] = useState({
     hideShow: "password",
     showHide: "SHOW",
-  });
-  const [active, setActive] = useState(false);
+  })
+  const [active, setActive] = useState(false)
 
   // HANDLERS
   const handleChange = (e) => {
@@ -43,8 +43,8 @@ const ChangeEmail = (props) => {
       ...credentials,
       [e.target.name]: e.target.value,
       [e.target.name]: e.target.value,
-    });
-    setMessage("");
+    })
+    setMessage("")
     if (Object.keys(errors).length > 0) {
       setErrors(
         validate(
@@ -55,9 +55,9 @@ const ChangeEmail = (props) => {
           },
           "login"
         )
-      );
+      )
     }
-  };
+  }
 
   // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
   useEffect(() => {
@@ -67,71 +67,71 @@ const ChangeEmail = (props) => {
         event.code === "NumpadEnter" ||
         event.keyCode === 13
       ) {
-        toggle();
+        toggle()
       }
-    };
-    document.addEventListener("keydown", listener);
+    }
+    document.addEventListener("keydown", listener)
     return () => {
-      document.removeEventListener("keydown", listener);
-    };
+      document.removeEventListener("keydown", listener)
+    }
     // eslint-disable-next-line
-  }, [credentials]);
+  }, [credentials])
 
   // Validate that no one can get inside the app without login or registering
   useEffect(() => {
     if (!props.user?._id) {
-      history.push("/");
+      history.push("/")
     }
     // eslint-disable-next-line
-  }, []);
+  }, [])
 
   // FUNCTIONS
   const toggle = async () => {
-    const errs = validate(credentials, "login");
-    setErrors(errs);
+    const errs = validate(credentials, "login")
+    setErrors(errs)
 
-    if (Object.keys(errs).length > 0) return;
+    if (Object.keys(errs).length > 0) return
 
     const body = {
       oldEmail: credentials.oldEmail,
       newEmail: credentials.email,
       password: credentials.password,
-    };
+    }
 
     try {
       const result = await axios.put(
         port + USER + "/change_email/" + props.user._id,
         body,
         auth
-      );
+      )
 
       if (result) {
-        props.dispatch({ type: UPDATE, payload: result.data });
+        props.dispatch({ type: UPDATE, payload: result.data })
         setTimeout(() => {
-          setActive(true);
-        }, 500);
+          setActive(true)
+        }, 500)
         setTimeout(() => {
-          setActive(false);
-        }, 2500);
+          setActive(false)
+        }, 2500)
       } else {
-        setMessage("The email you are trying to add already exist");
+        setMessage("The email you are trying to add already exist")
       }
     } catch (error) {
-      setMessage("Email or Password incorrect");
+      setMessage("Email or Password incorrect")
     }
-  };
+  }
 
   const showPassord = () => {
     if (password.hideShow === "password") {
-      return setPassword({ ...password, hideShow: "text", showHide: "HIDE" });
+      return setPassword({ ...password, hideShow: "text", showHide: "HIDE" })
     } else {
       return setPassword({
         ...password,
         hideShow: "password",
         showHide: "SHOW",
-      });
+      })
     }
-  };
+  }
 
   return (
     <div className="changeEmailComponent">
@@ -181,14 +181,14 @@ const ChangeEmail = (props) => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
     user: state.userReducer.user,
     token: state.userReducer.token,
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(ChangeEmail);
+export default connect(mapStateToProps)(ChangeEmail)

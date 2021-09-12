@@ -1,15 +1,15 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
-import { EVENT, port } from '../../helper/apiPaths'
-import ControlPanel from '../ControlPanel/ControlPanel'
-import moment from 'moment'
-import Footer from '../Footer/Footer'
-import GeoLocation from '../GeoLocation/GeoLocation'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserPlus, faCheck } from '@fortawesome/free-solid-svg-icons'
-import { ADDEVENT } from '../../redux/types/eventType'
-import { useHistory } from 'react-router'
+import axios from "axios"
+import React, { useEffect, useState } from "react"
+import { connect } from "react-redux"
+import { EVENT, port } from "../../helper/apiPaths"
+import ControlPanel from "../../components/ControlPanel/ControlPanel"
+import moment from "moment"
+import Footer from "../../components/Footer/Footer"
+import GeoLocation from "../../components/GeoLocation/GeoLocation"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faUserPlus, faCheck } from "@fortawesome/free-solid-svg-icons"
+import { ADDEVENT } from "../../redux/types/eventType"
+import { useHistory } from "react-router"
 
 const EventView = (props) => {
   const history = useHistory()
@@ -33,7 +33,7 @@ const EventView = (props) => {
 
   // Validate that no one can get inside the app without login or registering
   useEffect(() => {
-    if (!props.user?._id) history.push('/')
+    if (!props.user?._id) history.push("/")
     // eslint-disable-next-line
   }, [])
 
@@ -47,7 +47,7 @@ const EventView = (props) => {
       }
 
       try {
-        const result = await axios.post(port + EVENT + '/distance', body)
+        const result = await axios.post(port + EVENT + "/distance", body)
 
         if (result) {
           // here we are filtering the events by our hobbies
@@ -89,8 +89,8 @@ const EventView = (props) => {
 
   const setJoinGoin = (joiners) => {
     if (joiners.find((element) => element._id === props.user._id) !== undefined)
-      return 'Going'
-    else return 'Join'
+      return "Going"
+    else return "Join"
   }
 
   const joinUser = async (event) => {
@@ -99,7 +99,7 @@ const EventView = (props) => {
     }
 
     try {
-      const result = await axios.put(port + EVENT + '/join/' + event._id, body)
+      const result = await axios.put(port + EVENT + "/join/" + event._id, body)
       if (result) return filterEventsCall()
     } catch (err) {}
   }
@@ -112,19 +112,19 @@ const EventView = (props) => {
   }
 
   return (
-    <div className='eventViewComponent'>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
+    <div className="eventViewComponent">
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
       <ControlPanel />
-      <div className='eventViewContainer'>
-        <div className='filterEvents'>
-          <div className='filterDistance'>
+      <div className="eventViewContainer">
+        <div className="filterEvents">
+          <div className="filterDistance">
             <p>Within</p>
             <select
-              className='selector'
-              name='distance'
+              className="selector"
+              name="distance"
               onChange={handleChange}
               defaultValue={25000}
             >
@@ -136,14 +136,14 @@ const EventView = (props) => {
               <option value={1000000}> any dinstance </option>
             </select>
             <p>of</p>
-            <div className='geolocationEventContainer'>
+            <div className="geolocationEventContainer">
               <GeoLocation />
             </div>
           </div>
         </div>
-        <div className='renderEventsContainer'>
-          <div className='spacer'></div>
-          <h2 className='title'>Events related to your hobbies</h2>
+        <div className="renderEventsContainer">
+          <div className="spacer"></div>
+          <h2 className="title">Events related to your hobbies</h2>
           {myEvents.length > 0 ? (
             <>
               <div>
@@ -152,31 +152,31 @@ const EventView = (props) => {
 
                   if (new Date(event.event_date) >= new Date())
                     return (
-                      <div className='event' key={event._id}>
-                        <div className='date'>
+                      <div className="event" key={event._id}>
+                        <div className="date">
                           <p>
                             {moment(event.event_date).format(
-                              'ddd, Do MMM YYYY'
+                              "ddd, Do MMM YYYY"
                             )}
                           </p>
                         </div>
-                        <div className='eventContent'>
-                          <div className='eventContentLeft'>
+                        <div className="eventContent">
+                          <div className="eventContentLeft">
                             <h2 onClick={() => openEvent(event)}>
                               {event.title}
                             </h2>
                             <p>{event.location.name}</p>
-                            <div className='joinersSpotsLeft'>
+                            <div className="joinersSpotsLeft">
                               <p>{event.joiners?.length} joiner/s</p>
-                              <p className='spotsLeft'>
-                                {' '}
+                              <p className="spotsLeft">
+                                {" "}
                                 {leftSpots} spots left!
                               </p>
                             </div>
                           </div>
-                          <div className='eventContentCenter'>
+                          <div className="eventContentCenter">
                             <p>
-                              <b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}
+                              <b>Own vehicle:</b> {event.vehicle ? "Yes" : "No"}
                             </p>
                             {event.vehicle ? (
                               <>
@@ -186,17 +186,17 @@ const EventView = (props) => {
                               <></>
                             )}
                           </div>
-                          <div className='eventContentRight'>
-                            <div className='hobbyTag'>
+                          <div className="eventContentRight">
+                            <div className="hobbyTag">
                               <p>{event.hobby_id.hobby_name}</p>
                             </div>
                             <div
-                              className='signUp'
+                              className="signUp"
                               onClick={() => joinUser(event)}
                             >
                               <FontAwesomeIcon
                                 icon={getJoiners(event?.joiners)}
-                                className='joinUserIcon'
+                                className="joinUserIcon"
                               />
                               <p>{setJoinGoin(event?.joiners)}</p>
                             </div>
@@ -211,8 +211,8 @@ const EventView = (props) => {
             </>
           ) : (
             <>
-              <div className='event'>
-                <div className='notEvents'>
+              <div className="event">
+                <div className="notEvents">
                   <h2>
                     Not events found related to your hobbies. Try changing the
                     location and the distance or start posting your events
@@ -221,8 +221,8 @@ const EventView = (props) => {
               </div>
             </>
           )}
-          <div className='spacer'></div>
-          <h2 className='title'>Other events you might find interesting!</h2>
+          <div className="spacer"></div>
+          <h2 className="title">Other events you might find interesting!</h2>
           {mySuggestions.length > 0 ? (
             <>
               <div>
@@ -230,31 +230,31 @@ const EventView = (props) => {
                   const leftSpots = event.maxJoiners - event.joiners?.length
                   if (new Date(event.event_date) >= new Date())
                     return (
-                      <div className='event' key={event._id}>
-                        <div className='date'>
+                      <div className="event" key={event._id}>
+                        <div className="date">
                           <p>
                             {moment(event.event_date).format(
-                              'ddd, Do MMM YYYY'
+                              "ddd, Do MMM YYYY"
                             )}
                           </p>
                         </div>
-                        <div className='eventContent'>
-                          <div className='eventContentLeft'>
+                        <div className="eventContent">
+                          <div className="eventContentLeft">
                             <h2 onClick={() => openEvent(event)}>
                               {event.title}
                             </h2>
                             <p>{event.location.name}</p>
-                            <div className='joinersSpotsLeft'>
+                            <div className="joinersSpotsLeft">
                               <p>{event.joiners?.length} joiner</p>
-                              <p className='spotsLeft'>
-                                {' '}
+                              <p className="spotsLeft">
+                                {" "}
                                 {leftSpots} spots left!
                               </p>
                             </div>
                           </div>
-                          <div className='eventContentCenter'>
+                          <div className="eventContentCenter">
                             <p>
-                              <b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}
+                              <b>Own vehicle:</b> {event.vehicle ? "Yes" : "No"}
                             </p>
                             {event.vehicle ? (
                               <>
@@ -264,18 +264,18 @@ const EventView = (props) => {
                               <></>
                             )}
                           </div>
-                          <div className='eventContentRight'>
-                            <div className='hobbyTag'>
+                          <div className="eventContentRight">
+                            <div className="hobbyTag">
                               <p>{event.hobby_id.hobby_name}</p>
                               {/* <FilterHobbyTag hobby_id={event.hobby_id}/> */}
                             </div>
                             <div
-                              className='signUp'
+                              className="signUp"
                               onClick={() => joinUser(event)}
                             >
                               <FontAwesomeIcon
                                 icon={getJoiners(event?.joiners)}
-                                className='joinUserIcon'
+                                className="joinUserIcon"
                               />
                               <p>Join</p>
                             </div>
@@ -290,8 +290,8 @@ const EventView = (props) => {
             </>
           ) : (
             <>
-              <div className='event'>
-                <div className='notEvents'>
+              <div className="event">
+                <div className="notEvents">
                   <h2>
                     Not events found. Try changing the location and the distance
                     or start posting your events
@@ -300,8 +300,8 @@ const EventView = (props) => {
               </div>
             </>
           )}
-          <div className='spacer'></div>
-          <div className='spacer'></div>
+          <div className="spacer"></div>
+          <div className="spacer"></div>
         </div>
       </div>
       <Footer />

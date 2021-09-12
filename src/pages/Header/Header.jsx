@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import logo from "../../img/website_logo_transparent_background.png";
-import NavBar from "../NavBar/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 
 const Header = (props) => {
   return (
