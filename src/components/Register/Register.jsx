@@ -1,81 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import InputForm from '../InputForm/InputForm'
 import validate from '../../helper/validate'
 import { connect } from 'react-redux'
-import { LOGIN } from '../../redux/types/userType'
+// import { LOGIN } from '../../redux/types/userType'
 import axios from 'axios'
-import { PORT, USER, login } from '../../helper/apiPaths'
+import { PORT, USER, LOGIN } from '../../helper/apiPaths'
 import Button from '../Button/Button'
 import { SHOWHOBBIES } from '../../redux/types/hobbyType'
+import useForm from '../../hooks/useForm'
+
+const INITIAL_STATE = {
+  full_name: '',
+  user_name: '',
+  email: '',
+  password: '',
+}
+// Style variable error
+
+const styles = {
+  error: {
+    borderColor: '#c92432',
+    color: '#c92432',
+    background: '#fffafa',
+  },
+  correct: {},
+}
 
 const Register = (props) => {
-  // HOOKS
-  const [user, setUser] = useState({
-    full_name: '',
-    user_name: '',
-    email: '',
-    password: '',
-  })
+  const [user, errors, message, handleState, setErrors, setMessage] = useForm(
+    INITIAL_STATE,
+    'register'
+  )
 
   const [password, setPassword] = useState({
     hideShow: 'password',
     showHide: 'SHOW',
   })
-
-  const [errors, setErrors] = useState({})
-  const [message, setMessage] = useState([])
-
-  // Style variable error
-
-  const styles = {
-    error: {
-      borderColor: '#c92432',
-      color: '#c92432',
-      background: '#fffafa',
-    },
-    correct: {},
-  }
-
-  // HANDLERS
-
-  const handleState = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-      [e.target.name]: e.target.value,
-    })
-    setMessage('')
-    if (Object.keys(errors).length > 0) {
-      setErrors(
-        validate(
-          {
-            ...user,
-            [e.target.name]: e.target.value,
-            [e.target.name]: e.target.value,
-          },
-          'register'
-        )
-      )
-    }
-  }
-
-  // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
-  useEffect(() => {
-    const listener = (event) => {
-      if (
-        event.code === 'Enter' ||
-        event.code === 'NumpadEnter' ||
-        event.keyCode === 13
-      ) {
-        toggle()
-      }
-    }
-    document.addEventListener('keydown', listener)
-    return () => {
-      document.removeEventListener('keydown', listener)
-    }
-    // eslint-disable-next-line
-  }, [user])
 
   // FUNCTIONS
 
@@ -112,7 +72,7 @@ const Register = (props) => {
           password: user.password,
         }
 
-        const resultLogin = await axios.post(PORT + USER + login, dataLogin)
+        const resultLogin = await axios.post(PORT + USER + LOGIN, dataLogin)
 
         if (resultLogin) {
           props.dispatch({ type: LOGIN, payload: resultLogin.data })
@@ -177,11 +137,9 @@ const Register = (props) => {
         <div className="errorMessage">
           <p>{message}</p>
         </div>
-        <div className="registerInput buttonLogin">
-          <Button onClick={() => toggle()}>
-            <p>Continue</p>
-          </Button>
-        </div>
+        <Button onClick={() => toggle()}>
+          <p>Continue</p>
+        </Button>
       </div>
     </div>
   )

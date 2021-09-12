@@ -1,65 +1,60 @@
-import React, { useState } from 'react'
+// React dependencies
 import { useHistory } from 'react-router-dom'
-import InputForm from '../InputForm/InputForm'
-import axios from 'axios'
-import { LOGIN, SETACTIVE } from '../../redux/types/userType'
+import { useState } from 'react'
+
+// State Managements
 import { connect } from 'react-redux'
+import { LOGIN, SETACTIVE } from '../../redux/types/userType'
+
+// helper
 import validate from '../../helper/validate'
-import { PORT, USER, login, hobby } from '../../helper/apiPaths'
+
+// Components
+// import { ADD } from '../../redux/types/hobbyType'
 import Button from '../Button/Button'
-import { ADD } from '../../redux/types/hobbyType'
+import InputForm from '../InputForm/InputForm'
+
+// Custom Hooks
+import useForm from '../../hooks/useForm'
+import { useQuery } from 'react-query'
+import { fetchLogin } from '../../services/fetch'
+
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+}
+// Style variable error
+
+const styles = {
+  error: {
+    borderColor: '#c92432',
+    color: '#c92432',
+    background: '#fffafa',
+  },
+  correct: {},
+}
 
 const Login = (props) => {
   const history = useHistory()
 
-  // HOOKS
-
-  const [credentials, setCredentials] = useState({
-    email: '',
-    password: '',
-  })
+  const [credentials, errors, message, handleState, setErrors, setMessage] =
+    useForm(INITIAL_STATE, 'login')
+  const { data, isLoading, isError, isSuccess, refetch } = useQuery(
+    ['Login', credentials.email],
+    fetchLogin(credentials),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      refetchInterval: false,
+      enabled: false,
+    }
+  )
 
   const [password, setPassword] = useState({
     hideShow: 'password',
     showHide: 'SHOW',
   })
-
-  const [errors, setErrors] = useState({})
-  const [message, setMessage] = useState([])
-
-  // Style variable error
-
-  const styles = {
-    error: {
-      borderColor: '#c92432',
-      color: '#c92432',
-      background: '#fffafa',
-    },
-    correct: {},
-  }
-
-  // HANDLERS
-
-  const handleState = (e) => {
-    setCredentials({
-      ...credentials,
-      [e.target.name]: e.target.value,
-      [e.target.name]: e.target.value,
-    })
-    setMessage('')
-    if (Object.keys(errors).length > 0) {
-      setErrors(
-        validate(
-          {
-            ...credentials,
-            [e.target.name]: e.target.value,
-            [e.target.name]: e.target.value,
-          },
-          'login'
-        )
-      )
-    }
-  }
 
   // FUNCTIONS
 
@@ -80,17 +75,13 @@ const Login = (props) => {
     setErrors(errs)
 
     if (Object.keys(errs).length === 0) {
-      try {
-        const result = await axios.post(PORT + USER + login, credentials)
-        const hobbies = await axios.get(PORT + hobby)
-        if (result && hobbies) {
-          props.dispatch({ type: LOGIN, payload: result.data })
-          props.dispatch({ type: ADD, payload: hobbies.data })
-
-          props.dispatch({ type: SETACTIVE })
-          history.push('/home')
-        }
-      } catch (err) {
+      if (isSuccess) {
+        refetch()
+        props.dispatch({ type: LOGIN, payload: data })
+        props.dispatch({ type: SETACTIVE })
+        history.push('/home')
+      }
+      if (isError) {
         setMessage('Email or password not found')
       }
     }
@@ -129,7 +120,7 @@ const Login = (props) => {
         <div className="errorMessage">
           <p>{message}</p>
         </div>
-        <Button onClick={() => toggle()}>
+        <Button onClick={() => toggle()} isLoading={isLoading}>
           <p>Enjoy!</p>
         </Button>
       </div>

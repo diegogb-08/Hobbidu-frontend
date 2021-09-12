@@ -1,5 +1,5 @@
 export const USER = '/user'
-export const login = '/login'
+export const LOGIN = '/login'
 export const QUERY = '?QUERY='
 export const hobby = '/hobby'
 export const EVENT = '/event'

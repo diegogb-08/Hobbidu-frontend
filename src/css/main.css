@@ -1294,7 +1294,8 @@ input:not(:focus):valid ~ .floating-label {
   position: relative;
   bottom: 70px;
   border-radius: 0.3em;
-  left: 90%; }
+  left: 90%;
+  cursor: pointer; }
 
 .spacerCorrector {
   height: 3.8rem; }
@@ -1423,8 +1424,7 @@ input:not(:focus):valid ~ .floating-label {
     padding: 0 3rem 0 3rem; }
 
 .errorMessage {
-  color: red;
-  height: 1rem; }
+  color: red; }
 
 .firstHobbiesComponent {
   display: flex;
@@ -1469,19 +1469,19 @@ input:not(:focus):valid ~ .floating-label {
           font-weight: bold; }
 
 .hobby:nth-child(3n + 1) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n + 2) {
   background-color: #3e9931; }
 
 .hobby:nth-child(3n + 3) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n + 4) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n + 5) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n + 6) {
   background-color: #3e9931; }
@@ -1493,40 +1493,40 @@ input:not(:focus):valid ~ .floating-label {
   background-color: #e87d33; }
 
 .hobby:nth-child(3n + 9) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n + 10) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n + 11) {
   background-color: #0f7fe8; }
 
 .hobby:nth-child(3n + 12) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n + 13) {
-  background-color: #e87d33; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n + 14) {
-  background-color: #0f7fe8; }
+  background-color: #3e9931; }
 
 .hobby:nth-child(3n + 15) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n + 16) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n + 17) {
-  background-color: #3e9931; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n + 18) {
-  background-color: #0f7fe8; }
+  background-color: #e87d33; }
 
 .hobby:nth-child(3n + 19) {
-  background-color: #3e9931; }
+  background-color: #0f7fe8; }
 
 .hobby:nth-child(3n + 20) {
-  background-color: #e87d33; }
+  background-color: #0f7fe8; }
 
 .selectedHobbies {
   display: flex;

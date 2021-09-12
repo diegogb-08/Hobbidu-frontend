@@ -1,29 +1,41 @@
-import React from "react";
+import React from 'react'
 
-function InputForm(props) {
+function InputForm({
+  type,
+  name,
+  length,
+  onChange,
+  onKeyDown,
+  value,
+  style,
+  title,
+  showHide,
+  onClick,
+  error,
+}) {
   return (
     <div className="inputComponent">
       <input
         className="inputText"
-        type={props.type}
-        name={props.name}
-        maxLength={props.length}
-        onChange={props.onChange}
-        onKeyDown={props.onKeyDown}
-        value={props.value}
-        style={props.style}
+        type={type}
+        name={name}
+        maxLength={length}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+        value={value}
+        style={style}
         required
       ></input>
-      <span className="floating-label">{props.title}</span>
-      {props.showHide && (
-        <div className="iconInput" onClick={props.onClick}>
-          {props.showHide}
+      <span className="floating-label">{title}</span>
+      {showHide && (
+        <div className="iconInput" onClick={onClick}>
+          {showHide}
         </div>
       )}
-      {!props.showHide && <div className="spacerCorrector"></div>}
-      <span className="error">{props.error}</span>
+      {!showHide && <div className="spacerCorrector"></div>}
+      <span className="error">{error}</span>
     </div>
-  );
+  )
 }
 
-export default InputForm;
+export default InputForm

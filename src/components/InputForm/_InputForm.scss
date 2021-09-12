@@ -49,6 +49,7 @@ input:not(:focus):valid ~ .floating-label {
   bottom: 70px;
   border-radius: $br;
   left: 90%;
+  cursor: pointer;
 }
 
 .spacerCorrector {
