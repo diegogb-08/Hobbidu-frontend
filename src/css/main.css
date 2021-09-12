@@ -12,7 +12,8 @@ html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */
+}
 
 /* Sections
      ========================================================================== */
@@ -20,13 +21,15 @@ html {
    * Remove the margin in all browsers.
    */
 body {
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 /**
    * Render the `main` element consistently in IE.
    */
 main {
-  display: flex; }
+  display: flex;
+}
 
 /**
    * Correct the font size and margin on `h1` elements within `section` and
@@ -34,7 +37,8 @@ main {
    */
 h1 {
   font-size: 3em;
-  margin: 0.67em 0; }
+  margin: 0.67em 0;
+}
 
 /* Grouping content
      ========================================================================== */
@@ -48,7 +52,8 @@ hr {
   height: 0;
   /* 1 */
   overflow: visible;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
    * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -58,7 +63,8 @@ pre {
   font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
-  /* 2 */ }
+  /* 2 */
+}
 
 /* Text-level semantics
      ========================================================================== */
@@ -66,7 +72,8 @@ pre {
    * Remove the gray background on active links in IE 10.
    */
 a {
-  background-color: transparent; }
+  background-color: transparent;
+}
 
 /**
    * 1. Remove the bottom border in Chrome 57-
@@ -78,14 +85,16 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   text-decoration: underline dotted;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
    * Add the correct font weight in Chrome, Edge, and Safari.
    */
 b,
 strong {
-  font-weight: bolder; }
+  font-weight: bolder;
+}
 
 /**
    * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -97,13 +106,15 @@ samp {
   font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
    * Add the correct font size in all browsers.
    */
 small {
-  font-size: 80%; }
+  font-size: 80%;
+}
 
 /**
    * Prevent `sub` and `sup` elements from affecting the line height in
@@ -114,13 +125,16 @@ sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 sub {
-  bottom: -0.25em; }
+  bottom: -0.25em;
+}
 
 sup {
-  top: -0.5em; }
+  top: -0.5em;
+}
 
 /* Embedded content
      ========================================================================== */
@@ -128,7 +142,8 @@ sup {
    * Remove the border on images inside links in IE 10.
    */
 img {
-  border-style: none; }
+  border-style: none;
+}
 
 /* Forms
      ========================================================================== */
@@ -148,7 +163,8 @@ textarea {
   line-height: 1.15;
   /* 1 */
   margin: 0;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
    * Show the overflow in IE.
@@ -157,7 +173,8 @@ textarea {
 button,
 input {
   /* 1 */
-  overflow: visible; }
+  overflow: visible;
+}
 
 /**
    * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -166,7 +183,8 @@ input {
 button,
 select {
   /* 1 */
-  text-transform: none; }
+  text-transform: none;
+}
 
 /**
    * Correct the inability to style clickable types in iOS and Safari.
@@ -175,7 +193,8 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; }
+  -webkit-appearance: button;
+}
 
 /**
    * Remove the inner border and padding in Firefox.
@@ -185,7 +204,8 @@ button::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
-  padding: 0; }
+  padding: 0;
+}
 
 /**
    * Restore the focus styles unset by the previous rule.
@@ -194,13 +214,15 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText; }
+  outline: 1px dotted ButtonText;
+}
 
 /**
    * Correct the padding in Firefox.
    */
 fieldset {
-  padding: 0.35em 0.75em 0.625em; }
+  padding: 0.35em 0.75em 0.625em;
+}
 
 /**
    * 1. Correct the text wrapping in Edge and IE.
@@ -220,19 +242,22 @@ legend {
   padding: 0;
   /* 3 */
   white-space: normal;
-  /* 1 */ }
+  /* 1 */
+}
 
 /**
    * Add the correct vertical alignment in Chrome, Firefox, and Opera.
    */
 progress {
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /**
    * Remove the default vertical scrollbar in IE 10+.
    */
 textarea {
-  overflow: auto; }
+  overflow: auto;
+}
 
 /**
    * 1. Add the correct box sizing in IE 10.
@@ -243,14 +268,16 @@ textarea {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-  height: auto; }
+  height: auto;
+}
 
 /**
    * 1. Correct the odd appearance in Chrome and Safari.
@@ -260,13 +287,15 @@ textarea {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 /**
    * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -276,7 +305,8 @@ textarea {
   -webkit-appearance: button;
   /* 1 */
   font: inherit;
-  /* 2 */ }
+  /* 2 */
+}
 
 /* Interactive
      ========================================================================== */
@@ -284,13 +314,15 @@ textarea {
    * Add the correct display in Edge, IE 10+, and Firefox.
    */
 details {
-  display: block; }
+  display: block;
+}
 
 /*
    * Add the correct display in all browsers.
    */
 summary {
-  display: list-item; }
+  display: list-item;
+}
 
 /* Misc
      ========================================================================== */
@@ -298,31 +330,37 @@ summary {
    * Add the correct display in IE 10+.
    */
 template {
-  display: none; }
+  display: none;
+}
 
 /**
    * Add the correct display in IE 10.
    */
 [hidden] {
-  display: none; }
+  display: none;
+}
 
 .spacer {
   height: 1rem;
-  width: 1rem; }
+  width: 1rem;
+}
 
 .halfSpacer {
-  height: 0.5rem; }
+  height: 0.5rem;
+}
 
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px; }
+  height: 34px;
+}
 
 .switch input {
   opacity: 0;
   width: 0;
-  height: 0; }
+  height: 0;
+}
 
 .slider {
   position: absolute;
@@ -332,8 +370,9 @@ template {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s; }
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
 
 .slider:before {
   position: absolute;
@@ -343,26 +382,32 @@ template {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s; }
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
 
 input:checked + .slider {
-  background-color: #2196F3; }
+  background-color: #2196f3;
+}
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3; }
+  box-shadow: 0 0 1px #2196f3;
+}
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
-  transform: translateX(26px); }
+  transform: translateX(26px);
+}
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px; }
+  border-radius: 34px;
+}
 
 .slider.round:before {
-  border-radius: 50%; }
+  border-radius: 50%;
+}
 
 /*Margin*/
 /*Padding*/
@@ -374,7 +419,8 @@ input:checked + .slider:before {
   align-items: center;
   flex-direction: column;
   font-family: "Rajdhani", sans-serif;
-  width: 100%; }
+  width: 100%;
+}
 
 .homeComponent {
   width: 100%;
@@ -382,35 +428,44 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #fafafa; }
-  .homeComponent .homeContainer {
-    width: 60rem;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .homeComponent .homeContainer .homeDivisionPost {
-      width: 35rem; }
-      .homeComponent .homeContainer .homeDivisionPost .noPosts {
-        width: 100%;
-        height: 30rem;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0.3em;
-        border: 1px solid #dbdbdb; }
-        .homeComponent .homeContainer .homeDivisionPost .noPosts h2 {
-          text-align: center;
-          color: #f05356; }
+  background-color: #fafafa;
+}
+.homeComponent .homeContainer {
+  width: 60rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homeComponent .homeContainer .homeDivisionPost {
+  width: 35rem;
+}
+.homeComponent .homeContainer .homeDivisionPost .noPosts {
+  width: 100%;
+  height: 30rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3em;
+  border: 1px solid #dbdbdb;
+}
+.homeComponent .homeContainer .homeDivisionPost .noPosts h2 {
+  text-align: center;
+  color: #f05356;
+}
 
 @media screen and (max-width: 600px) {
   .homeComponent {
-    margin-bottom: 2rem; }
-    .homeComponent .homeContainer {
-      width: 100%; }
-      .homeComponent .homeContainer .homeDivisionPost {
-        width: 100%; } }
+    margin-bottom: 2rem;
+  }
+  .homeComponent .homeContainer {
+    width: 100%;
+  }
+  .homeComponent .homeContainer .homeDivisionPost {
+    width: 100%;
+  }
+}
 
 .landingsComponent {
   width: 100%;
@@ -419,14 +474,16 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row; }
+  flex-direction: row;
+}
 
 .landingContainers {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .landingLeft {
   width: 60%;
@@ -434,7 +491,8 @@ input:checked + .slider:before {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto 100%; }
+  background-size: auto 100%;
+}
 
 .slogan {
   height: 7rem;
@@ -447,18 +505,23 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; }
-  .slogan p {
-    font-size: 2.5rem; }
+  text-align: center;
+}
+.slogan p {
+  font-size: 2.5rem;
+}
 
 .top {
-  bottom: 15%; }
+  bottom: 15%;
+}
 
 .bottom {
-  top: 30%; }
+  top: 30%;
+}
 
 .landingRight {
-  width: 40%; }
+  width: 40%;
+}
 
 .registerLanding {
   background-color: #ffffff;
@@ -469,20 +532,26 @@ input:checked + .slider:before {
   justify-content: center;
   width: 85%;
   height: 10%;
-  margin-top: 0.5rem; }
-  .registerLanding .register {
-    margin-left: 1rem;
-    font-weight: bold;
-    color: #f05356;
-    cursor: pointer; }
+  margin-top: 0.5rem;
+}
+.registerLanding .register {
+  margin-left: 1rem;
+  font-weight: bold;
+  color: #f05356;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 800px) {
   .landingsComponent {
-    flex-direction: column-reverse; }
+    flex-direction: column-reverse;
+  }
   .landingLeft {
-    width: 100%; }
+    width: 100%;
+  }
   .landingRight {
-    width: 100%; } }
+    width: 100%;
+  }
+}
 
 .headerComponent {
   box-sizing: border-box;
@@ -495,10 +564,12 @@ input:checked + .slider:before {
   z-index: 200;
   position: fixed;
   top: 0;
-  background-color: white; }
+  background-color: white;
+}
 
 .logo {
-  height: 80%; }
+  height: 80%;
+}
 
 .navbar {
   position: absolute;
@@ -507,22 +578,27 @@ input:checked + .slider:before {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center; }
+  align-items: center;
+}
 
 @media screen and (max-width: 950px) {
   .navbar {
-    display: none; } }
+    display: none;
+  }
+}
 
 .inputComponent {
   width: 100%;
-  margin-right: 2rem; }
-  .inputComponent .error {
-    color: red;
-    position: relative;
-    bottom: 4rem;
-    font-size: 11px;
-    font-style: italic;
-    transition: 0.2s ease all; }
+  margin-right: 2rem;
+}
+.inputComponent .error {
+  color: red;
+  position: relative;
+  bottom: 4rem;
+  font-size: 11px;
+  font-style: italic;
+  transition: 0.2s ease all;
+}
 
 input:focus ~ .floating-label,
 input:not(:focus):valid ~ .floating-label {
@@ -530,7 +606,8 @@ input:not(:focus):valid ~ .floating-label {
   bottom: 45px;
   font-size: 11px;
   opacity: 1;
-  color: #7c7578; }
+  color: #7c7578;
+}
 
 .inputText {
   font-size: 16px;
@@ -539,7 +616,8 @@ input:not(:focus):valid ~ .floating-label {
   display: inline-block;
   border-radius: 0.3em;
   border: 1px solid #ccc;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+}
 
 .floating-label {
   position: relative;
@@ -547,7 +625,8 @@ input:not(:focus):valid ~ .floating-label {
   left: 20px;
   bottom: 30px;
   transition: 0.2s ease all;
-  color: #7c7578; }
+  color: #7c7578;
+}
 
 .iconInput {
   display: flex;
@@ -558,10 +637,12 @@ input:not(:focus):valid ~ .floating-label {
   position: relative;
   bottom: 70px;
   border-radius: 0.3em;
-  left: 90%; }
+  left: 90%;
+}
 
 .spacerCorrector {
-  height: 3.8rem; }
+  height: 3.8rem;
+}
 
 .loginComponent {
   display: flex;
@@ -573,17 +654,20 @@ input:not(:focus):valid ~ .floating-label {
   font-family: "Caveat", cursive;
   color: #333333;
   background-color: #ffffff;
-  border: 1px solid #dbdbdb; }
-  .loginComponent h2 {
-    width: 15rem;
-    text-align: center;
-    border-bottom: 1.5px solid #333333;
-    line-height: 0.1em;
-    margin: 10px 0 20px;
-    font-size: 2.5rem; }
-    .loginComponent h2 span {
-      background-color: #ffffff;
-      padding: 0 10px; }
+  border: 1px solid #dbdbdb;
+}
+.loginComponent h2 {
+  width: 15rem;
+  text-align: center;
+  border-bottom: 1.5px solid #333333;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  font-size: 2.5rem;
+}
+.loginComponent h2 span {
+  background-color: #ffffff;
+  padding: 0 10px;
+}
 
 .loginContainer {
   width: 100%;
@@ -591,20 +675,24 @@ input:not(:focus):valid ~ .floating-label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Rajdhani", sans-serif; }
+  font-family: "Rajdhani", sans-serif;
+}
 
 .loginInput {
   width: 70%;
   height: 2.5rem;
   display: flex;
   margin-top: 1rem;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+}
 
 .buttonLogin {
   margin-left: 0.5rem;
-  font-weight: bold; }
-  .buttonLogin p {
-    color: white; }
+  font-weight: bold;
+}
+.buttonLogin p {
+  color: white;
+}
 
 .buttonComponent {
   background-color: #f05356;
@@ -616,7 +704,8 @@ input:not(:focus):valid ~ .floating-label {
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .registerComponent {
   display: flex;
@@ -628,21 +717,25 @@ input:not(:focus):valid ~ .floating-label {
   font-family: "Caveat", cursive;
   color: #333333;
   background-color: #ffffff;
-  border: 1px solid #dbdbdb; }
-  .registerComponent h2 {
-    width: 15rem;
-    text-align: center;
-    border-bottom: 1.5px solid #333333;
-    line-height: 0.1em;
-    margin: 10px 0 20px;
-    font-size: 2.5rem; }
-    .registerComponent h2 span {
-      background-color: #ffffff;
-      padding: 0 10px; }
+  border: 1px solid #dbdbdb;
+}
+.registerComponent h2 {
+  width: 15rem;
+  text-align: center;
+  border-bottom: 1.5px solid #333333;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  font-size: 2.5rem;
+}
+.registerComponent h2 span {
+  background-color: #ffffff;
+  padding: 0 10px;
+}
 
 .registerTitle {
   margin-top: 2rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+}
 
 .registerContainer {
   width: 100%;
@@ -650,25 +743,30 @@ input:not(:focus):valid ~ .floating-label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Rajdhani", sans-serif; }
+  font-family: "Rajdhani", sans-serif;
+}
 
 .registerInput {
   width: 70%;
   height: 2.5rem;
   display: flex;
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2.5rem;
+}
 
 .buttonLogin {
   margin-top: 2rem;
   margin-left: 0.5rem;
-  font-weight: bold; }
-  .buttonLogin p {
-    color: white;
-    padding: 0 3rem 0 3rem; }
+  font-weight: bold;
+}
+.buttonLogin p {
+  color: white;
+  padding: 0 3rem 0 3rem;
+}
 
 .errorMessage {
   color: red;
-  height: 1rem; }
+  height: 1rem;
+}
 
 .firstHobbiesComponent {
   display: flex;
@@ -680,97 +778,123 @@ input:not(:focus):valid ~ .floating-label {
   font-family: "Caveat", cursive;
   color: #333333;
   background-color: #ffffff;
-  border: 1px solid #dbdbdb; }
-  .firstHobbiesComponent h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin: 0;
-    padding: 0; }
-  .firstHobbiesComponent .hobbiesContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "Rajdhani", sans-serif; }
-    .firstHobbiesComponent .hobbiesContainer .hobbyGrid {
-      width: 90%;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-gap: 0.5rem; }
-      .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0.3em;
-        cursor: pointer;
-        color: white;
-        height: 2.5rem; }
-        .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby p {
-          text-align: center;
-          margin: 0;
-          padding: 0.2rem;
-          font-weight: bold; }
+  border: 1px solid #dbdbdb;
+}
+.firstHobbiesComponent h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+.firstHobbiesComponent .hobbiesContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rajdhani", sans-serif;
+}
+.firstHobbiesComponent .hobbiesContainer .hobbyGrid {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0.5rem;
+}
+.firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3em;
+  cursor: pointer;
+  color: white;
+  height: 2.5rem;
+}
+.firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby p {
+  text-align: center;
+  margin: 0;
+  padding: 0.2rem;
+  font-weight: bold;
+}
 
-.hobby:nth-child(3n+1) {
-  background-color: #e87d33; }
+.hobby:nth-child(3n + 1) {
+  background-color: #e87d33;
+}
 
-.hobby:nth-child(3n+2) {
-  background-color: #3e9931; }
+.hobby:nth-child(3n + 2) {
+  background-color: #3e9931;
+}
 
-.hobby:nth-child(3n+3) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 3) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+4) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 4) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+5) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 5) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+6) {
-  background-color: #e87d33; }
+.hobby:nth-child(3n + 6) {
+  background-color: #e87d33;
+}
 
-.hobby:nth-child(3n+7) {
-  background-color: #3e9931; }
+.hobby:nth-child(3n + 7) {
+  background-color: #3e9931;
+}
 
-.hobby:nth-child(3n+8) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 8) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+9) {
-  background-color: #e87d33; }
+.hobby:nth-child(3n + 9) {
+  background-color: #e87d33;
+}
 
-.hobby:nth-child(3n+10) {
-  background-color: #3e9931; }
+.hobby:nth-child(3n + 10) {
+  background-color: #3e9931;
+}
 
-.hobby:nth-child(3n+11) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 11) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+12) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 12) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+13) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 13) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+14) {
-  background-color: #e87d33; }
+.hobby:nth-child(3n + 14) {
+  background-color: #e87d33;
+}
 
-.hobby:nth-child(3n+15) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 15) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+16) {
-  background-color: #3e9931; }
+.hobby:nth-child(3n + 16) {
+  background-color: #3e9931;
+}
 
-.hobby:nth-child(3n+17) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 17) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+18) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 18) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+19) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 19) {
+  background-color: #0f7fe8;
+}
 
-.hobby:nth-child(3n+20) {
-  background-color: #0f7fe8; }
+.hobby:nth-child(3n + 20) {
+  background-color: #0f7fe8;
+}
 
 .selectedHobbies {
   display: flex;
@@ -781,21 +905,24 @@ input:not(:focus):valid ~ .floating-label {
   height: 2.5rem;
   width: 90%;
   margin-bottom: 1rem;
-  font-family: "Rajdhani", sans-serif; }
-  .selectedHobbies .selected {
-    border-radius: 0.3em;
-    margin: 0.2rem;
-    height: 2.5rem;
-    width: auto;
-    background-color: #f05356;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .selectedHobbies .selected p {
-      text-align: center;
-      margin: 0;
-      padding: 0.2rem;
-      font-weight: bold; }
+  font-family: "Rajdhani", sans-serif;
+}
+.selectedHobbies .selected {
+  border-radius: 0.3em;
+  margin: 0.2rem;
+  height: 2.5rem;
+  width: auto;
+  background-color: #f05356;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectedHobbies .selected p {
+  text-align: center;
+  margin: 0;
+  padding: 0.2rem;
+  font-weight: bold;
+}
 
 .searchNewHobby {
   display: flex;
@@ -806,49 +933,61 @@ input:not(:focus):valid ~ .floating-label {
   height: 2.5rem;
   width: 70%;
   margin-top: 4rem;
-  font-family: "Rajdhani", sans-serif; }
-  .searchNewHobby p {
-    font-weight: bold; }
+  font-family: "Rajdhani", sans-serif;
+}
+.searchNewHobby p {
+  font-weight: bold;
+}
 
 .hobbyButton {
   width: 10rem;
   height: 2.5rem;
   display: flex;
   margin-bottom: 1.5rem;
-  font-family: "Rajdhani", sans-serif; }
-  .hobbyButton p {
-    color: white;
-    font-weight: bold;
-    font-size: 18px; }
+  font-family: "Rajdhani", sans-serif;
+}
+.hobbyButton p {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
 
 .message {
   height: 2rem;
   font-family: "Rajdhani", sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center; }
-  .message p {
-    font-size: 1.5rem;
-    margin: 0;
-    padding: 0;
-    color: #3e9931;
-    font-weight: bold;
-    text-align: center; }
+  align-items: center;
+}
+.message p {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: #3e9931;
+  font-weight: bold;
+  text-align: center;
+}
 
 @media only screen and (max-width: 1030px) {
   .firstHobbiesComponent {
     width: 100%;
-    height: 100%; }
-    .firstHobbiesComponent h2 {
-      font-size: 1.5rem;
-      padding: 0.5rem; }
-    .firstHobbiesComponent .hobbiesContainer .hobbyGrid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); }
-      .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby {
-        height: 2rem; }
-        .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby p {
-          font-size: 12px; } }
+    height: 100%;
+  }
+  .firstHobbiesComponent h2 {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .firstHobbiesComponent .hobbiesContainer .hobbyGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby {
+    height: 2rem;
+  }
+  .firstHobbiesComponent .hobbiesContainer .hobbyGrid .hobby p {
+    font-size: 12px;
+  }
+}
 
 .footerComponent {
   box-sizing: border-box;
@@ -861,32 +1000,40 @@ input:not(:focus):valid ~ .floating-label {
   z-index: 1;
   position: fixed;
   bottom: 0;
-  background-color: white; }
+  background-color: white;
+}
 
 @media screen and (max-width: 950px) {
   .footerComponent {
-    display: flex; } }
+    display: flex;
+  }
+}
 
 .navBarComponent {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center; }
-  .navBarComponent .iconBtn {
-    font-size: 2rem;
-    color: #7c7578;
-    cursor: pointer; }
-  .navBarComponent .iconBtn:hover {
-    color: #333333; }
-  .navBarComponent .iconBtnAvatar {
-    width: 2.5rem;
-    height: 2.5rem; }
-    .navBarComponent .iconBtnAvatar .profilePic .iconBtn {
-      border-radius: 50%;
-      color: white;
-      font-size: 2.5rem;
-      background-color: #7c7578; }
+  align-items: center;
+}
+.navBarComponent .iconBtn {
+  font-size: 2rem;
+  color: #7c7578;
+  cursor: pointer;
+}
+.navBarComponent .iconBtn:hover {
+  color: #333333;
+}
+.navBarComponent .iconBtnAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.navBarComponent .iconBtnAvatar .profilePic .iconBtn {
+  border-radius: 50%;
+  color: white;
+  font-size: 2.5rem;
+  background-color: #7c7578;
+}
 
 .userComponent {
   width: 100%;
@@ -894,141 +1041,199 @@ input:not(:focus):valid ~ .floating-label {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #fafafa; }
-  .userComponent .userContainer {
-    width: 60rem;
-    height: 30rem;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  background-color: #fafafa;
+}
+.userComponent .userContainer {
+  width: 60rem;
+  height: 30rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+}
+.userComponent .userContainer .profilePic {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15rem;
+  color: #fafafa;
+  background-color: #f05356;
+}
+.userComponent .userContainer .userDetails {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.userComponent .userContainer .userDetails .userDetailsTop {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.userComponent .userContainer .userDetails .userDetailsTop .userName {
+  font-size: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+.userComponent .userContainer .userDetails .userDetailsTop .editProfile {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.userComponent .userContainer .userDetails .userDetailsTop .editProfile p {
+  border: 1px solid #dbdbdb;
+  padding: 0.5rem;
+  border-radius: 0.3em;
+  font-weight: bold;
+  cursor: pointer;
+}
+.userComponent
+  .userContainer
+  .userDetails
+  .userDetailsTop
+  .editProfile
+  .iconBtn {
+  font-size: 1.5rem;
+  color: #7c7578;
+  cursor: pointer;
+}
+.userComponent
+  .userContainer
+  .userDetails
+  .userDetailsTop
+  .editProfile
+  .iconBtn:hover {
+  color: #333333;
+}
+@media screen and (max-width: 700px) {
+  .userComponent .userContainer .userDetails .userDetailsTop {
+    flex-direction: column;
     align-items: center;
-    border: 1px solid #dbdbdb;
-    box-sizing: border-box; }
-    .userComponent .userContainer .profilePic {
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 15rem;
-      color: #fafafa;
-      background-color: #f05356; }
-    .userComponent .userContainer .userDetails {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column; }
-      .userComponent .userContainer .userDetails .userDetailsTop {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-        width: 100%; }
-        .userComponent .userContainer .userDetails .userDetailsTop .userName {
-          font-size: 2.5rem;
-          padding: 0;
-          margin: 0; }
-        .userComponent .userContainer .userDetails .userDetailsTop .editProfile {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-          flex-direction: row;
-          width: 100%; }
-          .userComponent .userContainer .userDetails .userDetailsTop .editProfile p {
-            border: 1px solid #dbdbdb;
-            padding: 0.5rem;
-            border-radius: 0.3em;
-            font-weight: bold;
-            cursor: pointer; }
-          .userComponent .userContainer .userDetails .userDetailsTop .editProfile .iconBtn {
-            font-size: 1.5rem;
-            color: #7c7578;
-            cursor: pointer; }
-          .userComponent .userContainer .userDetails .userDetailsTop .editProfile .iconBtn:hover {
-            color: #333333; }
-      @media screen and (max-width: 700px) {
-        .userComponent .userContainer .userDetails .userDetailsTop {
-          flex-direction: column;
-          align-items: center; }
-          .userComponent .userContainer .userDetails .userDetailsTop .userName {
-            margin: 0.5rem;
-            font-size: 1.5rem; }
-          .userComponent .userContainer .userDetails .userDetailsTop .editProfile {
-            margin: 0.5rem; }
-          .userComponent .userContainer .userDetails .userDetailsTop .iconBtn {
-            margin: 0.5rem; } }
-      .userComponent .userContainer .userDetails .userDetailsMiddle {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%; }
-        .userComponent .userContainer .userDetails .userDetailsMiddle .sections {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-evenly;
-          align-items: center; }
-          .userComponent .userContainer .userDetails .userDetailsMiddle .sections .number {
-            font-weight: bold;
-            margin: 0 0.5rem 0 0.5rem; }
-      .userComponent .userContainer .userDetails .userDetailsBottom {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%; }
-        .userComponent .userContainer .userDetails .userDetailsBottom .nameAndLocation {
-          display: flex;
-          justify-content: space-between; }
-          .userComponent .userContainer .userDetails .userDetailsBottom .nameAndLocation .name {
-            font-size: 20px;
-            font-weight: bold; }
-        .userComponent .userContainer .userDetails .userDetailsBottom .hobbies {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-evenly;
-          align-items: center;
-          text-align: center; }
-          .userComponent .userContainer .userDetails .userDetailsBottom .hobbies .hobby {
-            border-radius: 0.3em;
-            margin: 0.2rem;
-            height: 2.5rem;
-            width: auto;
-            background-color: #f05356;
-            display: flex;
-            justify-content: center;
-            align-items: center; }
-            .userComponent .userContainer .userDetails .userDetailsBottom .hobbies .hobby p {
-              text-align: center;
-              margin: 0;
-              padding: 0.2rem;
-              font-weight: bold;
-              color: #ffffff; }
-        .userComponent .userContainer .userDetails .userDetailsBottom .descritpion {
-          width: 100%; }
+  }
+  .userComponent .userContainer .userDetails .userDetailsTop .userName {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .userComponent .userContainer .userDetails .userDetailsTop .editProfile {
+    margin: 0.5rem;
+  }
+  .userComponent .userContainer .userDetails .userDetailsTop .iconBtn {
+    margin: 0.5rem;
+  }
+}
+.userComponent .userContainer .userDetails .userDetailsMiddle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.userComponent .userContainer .userDetails .userDetailsMiddle .sections {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.userComponent
+  .userContainer
+  .userDetails
+  .userDetailsMiddle
+  .sections
+  .number {
+  font-weight: bold;
+  margin: 0 0.5rem 0 0.5rem;
+}
+.userComponent .userContainer .userDetails .userDetailsBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.userComponent .userContainer .userDetails .userDetailsBottom .nameAndLocation {
+  display: flex;
+  justify-content: space-between;
+}
+.userComponent
+  .userContainer
+  .userDetails
+  .userDetailsBottom
+  .nameAndLocation
+  .name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.userComponent .userContainer .userDetails .userDetailsBottom .hobbies {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.userComponent .userContainer .userDetails .userDetailsBottom .hobbies .hobby {
+  border-radius: 0.3em;
+  margin: 0.2rem;
+  height: 2.5rem;
+  width: auto;
+  background-color: #f05356;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userComponent
+  .userContainer
+  .userDetails
+  .userDetailsBottom
+  .hobbies
+  .hobby
+  p {
+  text-align: center;
+  margin: 0;
+  padding: 0.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+.userComponent .userContainer .userDetails .userDetailsBottom .descritpion {
+  width: 100%;
+}
 
 @media screen and (max-width: 900px) {
   .userComponent {
-    padding-bottom: 3rem; }
-    .userComponent .userContainer {
-      padding-top: 2rem;
-      height: 35rem;
-      width: 100%;
-      flex-direction: column; }
-      .userComponent .userContainer .profilePic {
-        width: 10rem;
-        height: 10rem;
-        font-size: 10rem; }
-      .userComponent .userContainer .userDetails {
-        width: 100%; }
-        .userComponent .userContainer .userDetails .userDetailsBottom {
-          width: 85%; }
-          .userComponent .userContainer .userDetails .userDetailsBottom .name {
-            display: flex;
-            justify-content: center; } }
+    padding-bottom: 3rem;
+  }
+  .userComponent .userContainer {
+    padding-top: 2rem;
+    height: 35rem;
+    width: 100%;
+    flex-direction: column;
+  }
+  .userComponent .userContainer .profilePic {
+    width: 10rem;
+    height: 10rem;
+    font-size: 10rem;
+  }
+  .userComponent .userContainer .userDetails {
+    width: 100%;
+  }
+  .userComponent .userContainer .userDetails .userDetailsBottom {
+    width: 85%;
+  }
+  .userComponent .userContainer .userDetails .userDetailsBottom .name {
+    display: flex;
+    justify-content: center;
+  }
+}
 
 .settingContainer {
   display: flex;
@@ -1037,20 +1242,23 @@ input:not(:focus):valid ~ .floating-label {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "Rajdhani", sans-serif; }
-  .settingContainer .settingMenu {
-    width: 95%;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    border-radius: 0.3em;
-    margin: 0.5rem;
-    cursor: pointer;
-    font-size: 22px; }
-  .settingContainer .settingMenu:hover {
-    background-color: #acacacc4; }
+  font-family: "Rajdhani", sans-serif;
+}
+.settingContainer .settingMenu {
+  width: 95%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  border-radius: 0.3em;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-size: 22px;
+}
+.settingContainer .settingMenu:hover {
+  background-color: #acacacc4;
+}
 
 .editAccountComponent {
   width: 100%;
@@ -1058,7 +1266,8 @@ input:not(:focus):valid ~ .floating-label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+}
 
 .editAccountContainer {
   width: 60%;
@@ -1067,46 +1276,60 @@ input:not(:focus):valid ~ .floating-label {
   display: flex;
   flex-direction: row;
   border: 1px solid #dbdbdb;
-  box-sizing: border-box; }
-  .editAccountContainer .sideBarLeft {
-    width: 25%; }
-  .editAccountContainer .tabRight {
-    width: 75%; }
+  box-sizing: border-box;
+}
+.editAccountContainer .sideBarLeft {
+  width: 25%;
+}
+.editAccountContainer .tabRight {
+  width: 75%;
+}
 
 @media screen and (max-width: 900px) {
   .editAccountComponent .editAccountContainer {
     width: 100%;
-    height: 70%; }
-    .editAccountComponent .editAccountContainer .sideBarLeft {
-      width: 35%; }
-    .editAccountComponent .editAccountContainer .tabRight {
-      width: 65%; } }
+    height: 70%;
+  }
+  .editAccountComponent .editAccountContainer .sideBarLeft {
+    width: 35%;
+  }
+  .editAccountComponent .editAccountContainer .tabRight {
+    width: 65%;
+  }
+}
 
 .sideBarComponent {
-  width: 100%; }
-  .sideBarComponent .ulSideBarContinent {
-    width: 100%;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0;
-    margin: 0; }
-    .sideBarComponent .ulSideBarContinent .navItem {
-      height: 3rem;
-      display: flex;
-      align-items: center; }
-      .sideBarComponent .ulSideBarContinent .navItem .active {
-        border-left: 2px solid #f05356;
-        height: 3rem;
-        position: relative;
-        font-weight: bold; }
-      .sideBarComponent .ulSideBarContinent .navItem p {
-        cursor: pointer;
-        margin-left: 3rem; }
-      @media screen and (max-width: 900px) {
-        .sideBarComponent .ulSideBarContinent .navItem p {
-          margin-left: 1rem; } }
+  width: 100%;
+}
+.sideBarComponent .ulSideBarContinent {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.sideBarComponent .ulSideBarContinent .navItem {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+.sideBarComponent .ulSideBarContinent .navItem .active {
+  border-left: 2px solid #f05356;
+  height: 3rem;
+  position: relative;
+  font-weight: bold;
+}
+.sideBarComponent .ulSideBarContinent .navItem p {
+  cursor: pointer;
+  margin-left: 3rem;
+}
+@media screen and (max-width: 900px) {
+  .sideBarComponent .ulSideBarContinent .navItem p {
+    margin-left: 1rem;
+  }
+}
 
 .tabInfo {
   width: 100%;
@@ -1115,7 +1338,8 @@ input:not(:focus):valid ~ .floating-label {
   justify-content: center;
   align-items: center;
   border: 1px solid #dbdbdb;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .editInfoComponent {
   width: 100%;
@@ -1124,70 +1348,102 @@ input:not(:focus):valid ~ .floating-label {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 2rem; }
-  .editInfoComponent .editInfoContainer {
-    height: 100%;
+  padding: 2rem;
+}
+.editInfoComponent .editInfoContainer {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.editInfoComponent .editInfoContainer .editSections {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+.editInfoComponent .editInfoContainer .editSections .title {
+  width: 20%;
+  font-weight: bold;
+}
+.editInfoComponent .editInfoContainer .editSections .inputAndDescription {
+  width: 80%;
+}
+.editInfoComponent
+  .editInfoContainer
+  .editSections
+  .inputAndDescription
+  .inputContainer {
+  width: 60%;
+  height: 1.5rem;
+}
+.editInfoComponent
+  .editInfoContainer
+  .editSections
+  .inputAndDescription
+  .geolocation {
+  z-index: 100;
+}
+.editInfoComponent .editInfoContainer .editSections .inputAndDescription p {
+  padding-top: 1rem;
+  width: 80%;
+}
+@media screen and (max-width: 900px) {
+  .editInfoComponent .editInfoContainer .editSections {
+    flex-direction: column;
+    padding-left: 2rem;
+  }
+  .editInfoComponent .editInfoContainer .editSections .title {
     width: 100%;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column; }
-    .editInfoComponent .editInfoContainer .editSections {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      margin-top: 1rem; }
-      .editInfoComponent .editInfoContainer .editSections .title {
-        width: 20%;
-        font-weight: bold; }
-      .editInfoComponent .editInfoContainer .editSections .inputAndDescription {
-        width: 80%; }
-        .editInfoComponent .editInfoContainer .editSections .inputAndDescription .inputContainer {
-          width: 60%;
-          height: 1.5rem; }
-        .editInfoComponent .editInfoContainer .editSections .inputAndDescription .geolocation {
-          z-index: 100; }
-        .editInfoComponent .editInfoContainer .editSections .inputAndDescription p {
-          padding-top: 1rem;
-          width: 80%; }
-    @media screen and (max-width: 900px) {
-      .editInfoComponent .editInfoContainer .editSections {
-        flex-direction: column;
-        padding-left: 2rem; }
-        .editInfoComponent .editInfoContainer .editSections .title {
-          width: 100%; }
-        .editInfoComponent .editInfoContainer .editSections .inputAndDescription {
-          width: 90%; }
-          .editInfoComponent .editInfoContainer .editSections .inputAndDescription .inputContainer {
-            width: 80%; } }
-    .editInfoComponent .editInfoContainer .message {
-      color: #f05356;
-      font-size: 14px; }
-    .editInfoComponent .editInfoContainer .buttonEditContainer {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end; }
-      .editInfoComponent .editInfoContainer .buttonEditContainer .buttonEdit {
-        width: 7rem;
-        height: 2.5rem;
-        margin-right: 1.5rem; }
-        .editInfoComponent .editInfoContainer .buttonEditContainer .buttonEdit p {
-          color: white;
-          font-weight: bold;
-          font-size: 1.3rem; }
+  }
+  .editInfoComponent .editInfoContainer .editSections .inputAndDescription {
+    width: 90%;
+  }
+  .editInfoComponent
+    .editInfoContainer
+    .editSections
+    .inputAndDescription
+    .inputContainer {
+    width: 80%;
+  }
+}
+.editInfoComponent .editInfoContainer .message {
+  color: #f05356;
+  font-size: 14px;
+}
+.editInfoComponent .editInfoContainer .buttonEditContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.editInfoComponent .editInfoContainer .buttonEditContainer .buttonEdit {
+  width: 7rem;
+  height: 2.5rem;
+  margin-right: 1.5rem;
+}
+.editInfoComponent .editInfoContainer .buttonEditContainer .buttonEdit p {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
 
 .canvas {
   z-index: 100;
   background-color: white;
-  border-radius: 0.3em; }
-  .canvas .placesAutocomplete {
-    width: 100%; }
-    .canvas .placesAutocomplete .inputDiv {
-      width: 100%; }
+  border-radius: 0.3em;
+}
+.canvas .placesAutocomplete {
+  width: 100%;
+}
+.canvas .placesAutocomplete .inputDiv {
+  width: 100%;
+}
 
 .autocompleteDropdownContainer {
   z-index: 100;
@@ -1195,7 +1451,8 @@ input:not(:focus):valid ~ .floating-label {
   position: relative;
   width: 110%;
   border: 1px solid #dbdbdb;
-  border-radius: 0.3em; }
+  border-radius: 0.3em;
+}
 
 .suggestion {
   z-index: 100;
@@ -1205,10 +1462,12 @@ input:not(:focus):valid ~ .floating-label {
   border-bottom: 1px black dotted;
   display: flex;
   align-items: center;
-  color: black; }
-  .suggestion .iconSuggestion {
-    margin-right: 1rem;
-    margin-left: 1rem; }
+  color: black;
+}
+.suggestion .iconSuggestion {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
 
 .changeProfilePicComponent {
   width: 100%;
@@ -1218,45 +1477,54 @@ input:not(:focus):valid ~ .floating-label {
   align-items: center;
   margin: 1rem;
   box-sizing: border-box;
-  padding-bottom: 1rem; }
-  .changeProfilePicComponent .pictureContainer {
-    width: 15rem;
-    height: 15rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15rem; }
+  padding-bottom: 1rem;
+}
+.changeProfilePicComponent .pictureContainer {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15rem;
+}
+.changeProfilePicComponent .inputChangePicture {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.changeProfilePicComponent .inputChangePicture .inputFileContainer {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.changeProfilePicComponent .inputChangePicture .buttonFile {
+  height: 3rem;
+  border: 2px solid #f05356;
+  border-radius: 0.3em;
+  color: #f05356;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem 0 0.5rem;
+  cursor: pointer;
+}
+.changeProfilePicComponent .inputChangePicture .buttonFile:hover {
+  background-color: #f1dede;
+}
+@media screen and (max-width: 900px) {
   .changeProfilePicComponent .inputChangePicture {
-    width: 100%;
-    height: 80%;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center; }
-    .changeProfilePicComponent .inputChangePicture .inputFileContainer {
-      width: 20%;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-    .changeProfilePicComponent .inputChangePicture .buttonFile {
-      height: 3rem;
-      border: 2px solid #f05356;
-      border-radius: 0.3em;
-      color: #f05356;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 0.5rem 0 0.5rem;
-      cursor: pointer; }
-    .changeProfilePicComponent .inputChangePicture .buttonFile:hover {
-      background-color: #f1dede; }
-  @media screen and (max-width: 900px) {
-    .changeProfilePicComponent .inputChangePicture {
-      flex-direction: column;
-      justify-content: center; }
-      .changeProfilePicComponent .inputChangePicture .inputFileContainer {
-        width: 70%;
-        margin: 1rem; } }
+  }
+  .changeProfilePicComponent .inputChangePicture .inputFileContainer {
+    width: 70%;
+    margin: 1rem;
+  }
+}
 
 .inputFile {
   width: 0.1px;
@@ -1264,46 +1532,53 @@ input:not(:focus):valid ~ .floating-label {
   opacity: 0;
   overflow: hidden;
   position: absolute;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .iconPic {
   font-size: 4rem;
-  color: #f05356; }
+  color: #f05356;
+}
 
 .avatarComponent {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; }
-  .avatarComponent .profilePic {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    align-items: center;
-    color: #fafafa; }
-    .avatarComponent .profilePic .iconBtn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #f05356;
-      border-radius: 50%; }
-  .avatarComponent .imageCropper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%; }
-    .avatarComponent .imageCropper .profileImg {
-      display: inline;
-      margin: 0 auto;
-      margin-left: 0;
-      height: auto;
-      width: 100%;
-      cursor: pointer;
-      border-radius: 0%; }
+  align-items: center;
+}
+.avatarComponent .profilePic {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+  color: #fafafa;
+}
+.avatarComponent .profilePic .iconBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f05356;
+  border-radius: 50%;
+}
+.avatarComponent .imageCropper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.avatarComponent .imageCropper .profileImg {
+  display: inline;
+  margin: 0 auto;
+  margin-left: 0;
+  height: auto;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0%;
+}
 
 .changePasswordComponent {
   width: 100%;
@@ -1312,9 +1587,47 @@ input:not(:focus):valid ~ .floating-label {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+}
+.changePasswordComponent .changePasswordContainer {
+  width: 50%;
+  height: 70%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+}
+.changePasswordComponent .changePasswordContainer .check {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15rem;
+  color: #82c91e;
+  transition: 0.5 ease all;
+}
+.changePasswordComponent .changePasswordContainer .inputPassword {
+  width: 50%;
+  height: 10%;
+  margin: 1rem;
+}
+.changePasswordComponent .changePasswordContainer .buttonPassword {
+  width: 10rem;
+  height: 2.5rem;
+  margin-left: 2rem;
+}
+.changePasswordComponent .changePasswordContainer .buttonPassword p {
+  color: white;
+  font-weight: bold;
+}
+@media screen and (max-width: 900px) {
   .changePasswordComponent .changePasswordContainer {
-    width: 50%;
+    width: 80%;
     height: 70%;
     background-color: #ffffff;
     display: flex;
@@ -1322,45 +1635,17 @@ input:not(:focus):valid ~ .floating-label {
     justify-content: center;
     align-items: center;
     border: 1px solid #dbdbdb;
-    box-sizing: border-box; }
-    .changePasswordComponent .changePasswordContainer .check {
-      position: absolute;
-      width: 15rem;
-      height: 15rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 15rem;
-      color: #82c91e;
-      transition: 0.5 ease all; }
-    .changePasswordComponent .changePasswordContainer .inputPassword {
-      width: 50%;
-      height: 10%;
-      margin: 1rem; }
-    .changePasswordComponent .changePasswordContainer .buttonPassword {
-      width: 10rem;
-      height: 2.5rem;
-      margin-left: 2rem; }
-      .changePasswordComponent .changePasswordContainer .buttonPassword p {
-        color: white;
-        font-weight: bold; }
-  @media screen and (max-width: 900px) {
-    .changePasswordComponent .changePasswordContainer {
-      width: 80%;
-      height: 70%;
-      background-color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid #dbdbdb;
-      box-sizing: border-box; }
-      .changePasswordComponent .changePasswordContainer .inputPassword {
-        width: 70%;
-        height: 15%;
-        margin: 1rem 3.5rem 1rem 1rem; }
-      .changePasswordComponent .changePasswordContainer .buttonPassword {
-        margin: 0; } }
+    box-sizing: border-box;
+  }
+  .changePasswordComponent .changePasswordContainer .inputPassword {
+    width: 70%;
+    height: 15%;
+    margin: 1rem 3.5rem 1rem 1rem;
+  }
+  .changePasswordComponent .changePasswordContainer .buttonPassword {
+    margin: 0;
+  }
+}
 
 .changeEmailComponent {
   width: 100%;
@@ -1369,9 +1654,47 @@ input:not(:focus):valid ~ .floating-label {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+}
+.changeEmailComponent .changeEmailContainer {
+  width: 50%;
+  height: 70%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+}
+.changeEmailComponent .changeEmailContainer .check {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15rem;
+  color: #82c91e;
+  transition: 0.5 ease all;
+}
+.changeEmailComponent .changeEmailContainer .inputEmail {
+  width: 50%;
+  height: 10%;
+  margin: 1rem;
+}
+.changeEmailComponent .changeEmailContainer .buttonEmail {
+  width: 10rem;
+  height: 2.5rem;
+  margin-left: 2rem;
+}
+.changeEmailComponent .changeEmailContainer .buttonEmail p {
+  color: white;
+  font-weight: bold;
+}
+@media screen and (max-width: 900px) {
   .changeEmailComponent .changeEmailContainer {
-    width: 50%;
+    width: 80%;
     height: 70%;
     background-color: #ffffff;
     display: flex;
@@ -1379,45 +1702,17 @@ input:not(:focus):valid ~ .floating-label {
     justify-content: center;
     align-items: center;
     border: 1px solid #dbdbdb;
-    box-sizing: border-box; }
-    .changeEmailComponent .changeEmailContainer .check {
-      position: absolute;
-      width: 15rem;
-      height: 15rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 15rem;
-      color: #82c91e;
-      transition: 0.5 ease all; }
-    .changeEmailComponent .changeEmailContainer .inputEmail {
-      width: 50%;
-      height: 10%;
-      margin: 1rem; }
-    .changeEmailComponent .changeEmailContainer .buttonEmail {
-      width: 10rem;
-      height: 2.5rem;
-      margin-left: 2rem; }
-      .changeEmailComponent .changeEmailContainer .buttonEmail p {
-        color: white;
-        font-weight: bold; }
-  @media screen and (max-width: 900px) {
-    .changeEmailComponent .changeEmailContainer {
-      width: 80%;
-      height: 70%;
-      background-color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid #dbdbdb;
-      box-sizing: border-box; }
-      .changeEmailComponent .changeEmailContainer .inputEmail {
-        width: 70%;
-        height: 15%;
-        margin: 1rem 3.5rem 1rem 1rem; }
-      .changeEmailComponent .changeEmailContainer .buttonEmail {
-        margin: 0; } }
+    box-sizing: border-box;
+  }
+  .changeEmailComponent .changeEmailContainer .inputEmail {
+    width: 70%;
+    height: 15%;
+    margin: 1rem 3.5rem 1rem 1rem;
+  }
+  .changeEmailComponent .changeEmailContainer .buttonEmail {
+    margin: 0;
+  }
+}
 
 .eventViewComponent {
   width: 100%;
@@ -1425,202 +1720,426 @@ input:not(:focus):valid ~ .floating-label {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #fafafa; }
-  .eventViewComponent .eventViewContainer {
-    width: 60rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 0.3em;
-    box-sizing: border-box; }
-    .eventViewComponent .eventViewContainer .filterEvents {
-      width: 100%;
-      height: 5rem;
-      background-color: #f05356;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 0.3em; }
-      .eventViewComponent .eventViewContainer .filterEvents .filterDistance {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 40rem; }
-        .eventViewComponent .eventViewContainer .filterEvents .filterDistance p {
-          color: white;
-          font-weight: bold;
-          font-size: 1.5rem; }
-        .eventViewComponent .eventViewContainer .filterEvents .filterDistance .geolocationEventContainer {
-          height: 2.5rem;
-          width: 15rem; }
-        .eventViewComponent .eventViewContainer .filterEvents .filterDistance .selector {
-          height: 2.5rem;
-          width: 8.5rem;
-          font-size: 1.5rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 1.2rem; }
-    .eventViewComponent .eventViewContainer .renderEventsContainer {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: column; }
-      .eventViewComponent .eventViewContainer .renderEventsContainer .title {
-        margin: 0;
-        padding: 0; }
-      .eventViewComponent .eventViewContainer .renderEventsContainer .event {
-        width: 100%;
-        height: 10.5rem;
-        margin-top: 2rem;
-        background-color: #ffffff;
-        border: 1px solid #dbdbdb;
-        border-radius: 0.3em;
-        display: flex;
-        flex-direction: row; }
-        .eventViewComponent .eventViewContainer .renderEventsContainer .event .date {
-          height: 100%;
-          width: 7rem;
-          background-color: #f05356;
-          border-radius: 0.3em 0 0 0.3em;
-          display: flex;
-          justify-content: center;
-          align-items: center; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .date p {
-            text-align: center;
-            font-weight: bold;
-            color: white;
-            font-size: 1.5rem; }
-        .eventViewComponent .eventViewContainer .renderEventsContainer .event .notEvents {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: red;
-          box-sizing: border-box;
-          padding: 2rem; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .notEvents h2 {
-            text-align: center; }
-        .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent {
-          width: 85%;
-          height: 100%;
-          display: flex;
-          flex-direction: row;
-          padding: 0 0 1rem 1rem; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft {
-            width: 50%; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft h2 {
-              cursor: pointer; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft .joinersSpotsLeft {
-              display: flex;
-              width: 10rem;
-              justify-content: space-between; }
-              .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft .joinersSpotsLeft .spotsLeft {
-                color: red; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentCenter {
-            width: 25%;
-            display: flex;
-            flex-direction: column; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight {
-            width: 25%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .hobbyTag {
-              width: 50%;
-              height: 3rem;
-              background-color: #f05356;
-              border-radius: 0.3em;
-              display: flex;
-              justify-content: center;
-              align-items: center; }
-              .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .hobbyTag p {
-                color: white;
-                font-weight: bold;
-                text-align: center; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp {
-              width: 50%;
-              height: 2rem;
-              border: 1px solid #dbdbdb;
-              border-radius: 0.3em;
-              display: flex;
-              padding: 0.5rem;
-              box-sizing: border-box;
-              flex-direction: row;
-              align-items: center;
-              cursor: pointer; }
-              .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp .joinUserIcon {
-                color: #f05356;
-                font-size: 1.2rem; }
-              .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp p {
-                margin-left: 1rem;
-                font-size: 1.2rem; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp:hover {
-              background-color: #ebe1e1; }
+  background-color: #fafafa;
+}
+.eventViewComponent .eventViewContainer {
+  width: 60rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.3em;
+  box-sizing: border-box;
+}
+.eventViewComponent .eventViewContainer .filterEvents {
+  width: 100%;
+  height: 5rem;
+  background-color: #f05356;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0.3em;
+}
+.eventViewComponent .eventViewContainer .filterEvents .filterDistance {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40rem;
+}
+.eventViewComponent .eventViewContainer .filterEvents .filterDistance p {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.eventViewComponent
+  .eventViewContainer
+  .filterEvents
+  .filterDistance
+  .geolocationEventContainer {
+  height: 2.5rem;
+  width: 15rem;
+}
+.eventViewComponent
+  .eventViewContainer
+  .filterEvents
+  .filterDistance
+  .selector {
+  height: 2.5rem;
+  width: 8.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.eventViewComponent .eventViewContainer .renderEventsContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.eventViewComponent .eventViewContainer .renderEventsContainer .title {
+  margin: 0;
+  padding: 0;
+}
+.eventViewComponent .eventViewContainer .renderEventsContainer .event {
+  width: 100%;
+  height: 10.5rem;
+  margin-top: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.3em;
+  display: flex;
+  flex-direction: row;
+}
+.eventViewComponent .eventViewContainer .renderEventsContainer .event .date {
+  height: 100%;
+  width: 7rem;
+  background-color: #f05356;
+  border-radius: 0.3em 0 0 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eventViewComponent .eventViewContainer .renderEventsContainer .event .date p {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .notEvents {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .notEvents
+  h2 {
+  text-align: center;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 1rem 1rem;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentLeft {
+  width: 50%;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentLeft
+  h2 {
+  cursor: pointer;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentLeft
+  .joinersSpotsLeft {
+  display: flex;
+  width: 10rem;
+  justify-content: space-between;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentLeft
+  .joinersSpotsLeft
+  .spotsLeft {
+  color: red;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentCenter {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentRight {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentRight
+  .hobbyTag {
+  width: 50%;
+  height: 3rem;
+  background-color: #f05356;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentRight
+  .hobbyTag
+  p {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentRight
+  .signUp {
+  width: 50%;
+  height: 2rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.3em;
+  display: flex;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentRight
+  .signUp
+  .joinUserIcon {
+  color: #f05356;
+  font-size: 1.2rem;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentRight
+  .signUp
+  p {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+.eventViewComponent
+  .eventViewContainer
+  .renderEventsContainer
+  .event
+  .eventContent
+  .eventContentRight
+  .signUp:hover {
+  background-color: #ebe1e1;
+}
 
 @media screen and (max-width: 900px) {
   .eventViewComponent {
-    padding-bottom: 3rem; }
-    .eventViewComponent .eventViewContainer {
-      width: 100%; }
-      .eventViewComponent .eventViewContainer .filterEvents {
-        width: 100%; }
-        .eventViewComponent .eventViewContainer .filterEvents .filterDistance {
-          margin-right: 2rem;
-          width: 100%; }
-          .eventViewComponent .eventViewContainer .filterEvents .filterDistance p {
-            font-size: 1.2rem; }
-          .eventViewComponent .eventViewContainer .filterEvents .filterDistance .geolocationEventContainer {
-            height: 2.5rem;
-            width: 6rem; }
-            .eventViewComponent .eventViewContainer .filterEvents .filterDistance .geolocationEventContainer .autocompleteDropdownContainer {
-              width: 8rem; }
-          .eventViewComponent .eventViewContainer .filterEvents .filterDistance .selector {
-            width: 6.5rem;
-            font-size: 1rem; }
-      .eventViewComponent .eventViewContainer .renderEventsContainer .title {
-        text-align: center; }
-      .eventViewComponent .eventViewContainer .renderEventsContainer .event {
-        width: 100%; }
-        .eventViewComponent .eventViewContainer .renderEventsContainer .event .date {
-          width: 15%; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .date p {
-            font-size: 1rem; }
-        .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent {
-          width: 85%; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            width: 50%; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft h2 {
-              font-size: 1.2rem;
-              margin: 0;
-              padding: 0; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentLeft p {
-              font-size: 14px;
-              margin: 0;
-              padding: 0; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentCenter {
-            width: 15%; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentCenter p {
-              font-size: 14px;
-              text-align: center; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight {
-            width: 35%; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .hobbyTag {
-              width: 85%; }
-            .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp {
-              justify-content: center; }
-              .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .eventContentRight .signUp p {
-                display: none; }
-          .eventViewComponent .eventViewContainer .renderEventsContainer .event .eventContent .notEvents {
-            box-sizing: border-box;
-            padding: 2rem; } }
+    padding-bottom: 3rem;
+  }
+  .eventViewComponent .eventViewContainer {
+    width: 100%;
+  }
+  .eventViewComponent .eventViewContainer .filterEvents {
+    width: 100%;
+  }
+  .eventViewComponent .eventViewContainer .filterEvents .filterDistance {
+    margin-right: 2rem;
+    width: 100%;
+  }
+  .eventViewComponent .eventViewContainer .filterEvents .filterDistance p {
+    font-size: 1.2rem;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .filterEvents
+    .filterDistance
+    .geolocationEventContainer {
+    height: 2.5rem;
+    width: 6rem;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .filterEvents
+    .filterDistance
+    .geolocationEventContainer
+    .autocompleteDropdownContainer {
+    width: 8rem;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .filterEvents
+    .filterDistance
+    .selector {
+    width: 6.5rem;
+    font-size: 1rem;
+  }
+  .eventViewComponent .eventViewContainer .renderEventsContainer .title {
+    text-align: center;
+  }
+  .eventViewComponent .eventViewContainer .renderEventsContainer .event {
+    width: 100%;
+  }
+  .eventViewComponent .eventViewContainer .renderEventsContainer .event .date {
+    width: 15%;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .date
+    p {
+    font-size: 1rem;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent {
+    width: 85%;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentLeft
+    h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentLeft
+    p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentCenter {
+    width: 15%;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentCenter
+    p {
+    font-size: 14px;
+    text-align: center;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentRight {
+    width: 35%;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentRight
+    .hobbyTag {
+    width: 85%;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentRight
+    .signUp {
+    justify-content: center;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .eventContentRight
+    .signUp
+    p {
+    display: none;
+  }
+  .eventViewComponent
+    .eventViewContainer
+    .renderEventsContainer
+    .event
+    .eventContent
+    .notEvents {
+    box-sizing: border-box;
+    padding: 2rem;
+  }
+}
 
 .controlPanelComponent {
   width: 60rem;
@@ -1629,74 +2148,100 @@ input:not(:focus):valid ~ .floating-label {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box; }
-  .controlPanelComponent .controlPanelContainers {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; }
-  .controlPanelComponent .controlPanelLeft input {
-    font-size: 16px;
-    width: 100%;
-    padding: 12px 20px;
-    display: inline-block;
-    border-radius: 0.3em;
-    border: 1px solid #ccc;
-    background-color: #fafafa; }
-  .controlPanelComponent .controlPanelRight {
-    color: #f05356;
-    font-size: 2rem;
-    justify-content: space-evenly; }
-    .controlPanelComponent .controlPanelRight .panelBtn {
-      cursor: pointer; }
-  .controlPanelComponent .autocompleteDropdownContainer {
-    position: absolute;
-    width: 60rem;
-    top: 128px;
-    transition: 0.5s ease all; }
-    .controlPanelComponent .autocompleteDropdownContainer .suggestion {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      box-sizing: border-box;
-      cursor: pointer; }
-      .controlPanelComponent .autocompleteDropdownContainer .suggestion p {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #7c7578; }
-      .controlPanelComponent .autocompleteDropdownContainer .suggestion .iconBtnAvatar {
-        width: 2.5rem;
-        height: 2.5rem; }
-        .controlPanelComponent .autocompleteDropdownContainer .suggestion .iconBtnAvatar .iconBtn {
-          border-radius: 50%;
-          color: white;
-          font-size: 2.5rem;
-          background-color: #f05356; }
-      .controlPanelComponent .autocompleteDropdownContainer .suggestion .lens {
-        font-size: 2rem;
-        color: #7c7578; }
-    .controlPanelComponent .autocompleteDropdownContainer .suggestion:hover {
-      background-color: #f05356; }
-      .controlPanelComponent .autocompleteDropdownContainer .suggestion:hover p {
-        color: white; }
+  box-sizing: border-box;
+}
+.controlPanelComponent .controlPanelContainers {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.controlPanelComponent .controlPanelLeft input {
+  font-size: 16px;
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border-radius: 0.3em;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+.controlPanelComponent .controlPanelRight {
+  color: #f05356;
+  font-size: 2rem;
+  justify-content: space-evenly;
+}
+.controlPanelComponent .controlPanelRight .panelBtn {
+  cursor: pointer;
+}
+.controlPanelComponent .autocompleteDropdownContainer {
+  position: absolute;
+  width: 60rem;
+  top: 128px;
+  transition: 0.5s ease all;
+}
+.controlPanelComponent .autocompleteDropdownContainer .suggestion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.controlPanelComponent .autocompleteDropdownContainer .suggestion p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #7c7578;
+}
+.controlPanelComponent
+  .autocompleteDropdownContainer
+  .suggestion
+  .iconBtnAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.controlPanelComponent
+  .autocompleteDropdownContainer
+  .suggestion
+  .iconBtnAvatar
+  .iconBtn {
+  border-radius: 50%;
+  color: white;
+  font-size: 2.5rem;
+  background-color: #f05356;
+}
+.controlPanelComponent .autocompleteDropdownContainer .suggestion .lens {
+  font-size: 2rem;
+  color: #7c7578;
+}
+.controlPanelComponent .autocompleteDropdownContainer .suggestion:hover {
+  background-color: #f05356;
+}
+.controlPanelComponent .autocompleteDropdownContainer .suggestion:hover p {
+  color: white;
+}
 
 @media screen and (max-width: 900px) {
   .controlPanelComponent {
-    width: 100%; }
-    .controlPanelComponent .controlPanelLeft {
-      width: 70%;
-      padding-left: 0.5rem; }
-    .controlPanelComponent .controlPanelRight {
-      width: 30%; }
-    .controlPanelComponent .autocompleteDropdownContainer {
-      width: 100%; }
-      .controlPanelComponent .autocompleteDropdownContainer .suggestion p {
-        font-size: 1rem; } }
+    width: 100%;
+  }
+  .controlPanelComponent .controlPanelLeft {
+    width: 70%;
+    padding-left: 0.5rem;
+  }
+  .controlPanelComponent .controlPanelRight {
+    width: 30%;
+  }
+  .controlPanelComponent .autocompleteDropdownContainer {
+    width: 100%;
+  }
+  .controlPanelComponent .autocompleteDropdownContainer .suggestion p {
+    font-size: 1rem;
+  }
+}
 
 .AddEventContainer {
   width: 60rem;
@@ -1708,135 +2253,200 @@ input:not(:focus):valid ~ .floating-label {
   flex-direction: column;
   position: relative;
   overflow-y: scroll;
-  scroll-behavior: smooth; }
-  .AddEventContainer h1 {
-    font-family: "Caveat", cursive;
-    width: 100%;
-    text-align: center; }
-  .AddEventContainer .addEventInfo {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; }
-    .AddEventContainer .addEventInfo .addEventSections {
-      width: 50%;
-      height: 100%;
-      padding: 1rem; }
-      .AddEventContainer .addEventInfo .addEventSections .inputEvent {
-        width: 90%;
-        margin-bottom: 4rem; }
-        .AddEventContainer .addEventInfo .addEventSections .inputEvent .titles {
-          font-weight: bold; }
-        .AddEventContainer .addEventInfo .addEventSections .inputEvent input {
-          font-size: 16px;
-          width: 100%;
-          padding: 12px 20px;
-          display: inline-block;
-          border-radius: 0.3em;
-          border: 1px solid #ccc;
-          background-color: #fafafa; }
-        .AddEventContainer .addEventInfo .addEventSections .inputEvent textarea {
-          font-size: 16px;
-          width: 100%;
-          padding: 12px 20px;
-          display: inline-block;
-          border-radius: 0.3em;
-          border: 1px solid #ccc;
-          background-color: #fafafa; }
-        .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer {
-          z-index: 100;
-          background-color: white;
-          position: relative;
-          width: 26rem;
-          border: 1px solid #dbdbdb;
-          position: absolute; }
-          .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer .suggestion {
-            z-index: 100;
-            height: 2rem;
-            width: 100%;
-            background-color: white;
-            border-bottom: 1px black dotted;
-            display: flex;
-            align-items: center;
-            color: black;
-            cursor: pointer; }
-            .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer .suggestion .iconSuggestion {
-              margin-right: 1rem;
-              margin-left: 1rem; }
-          .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer .suggestion:hover {
-            background-color: #f05356; }
-      .AddEventContainer .addEventInfo .addEventSections .smallInputs {
-        flex-direction: row;
-        display: flex;
-        justify-content: space-evenly; }
-        .AddEventContainer .addEventInfo .addEventSections .smallInputs .selector {
-          height: 2.5rem;
-          width: 2.5rem;
-          font-size: 1.5rem;
-          display: flex;
-          justify-content: center;
-          align-items: center; }
-      .AddEventContainer .addEventInfo .addEventSections .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); }
-        .AddEventContainer .addEventInfo .addEventSections .grid .friend {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center; }
-          .AddEventContainer .addEventInfo .addEventSections .grid .friend .iconFriend {
-            color: gray;
-            cursor: pointer; }
-      .AddEventContainer .addEventInfo .addEventSections .inputHobbies {
-        width: 100%; }
-        .AddEventContainer .addEventInfo .addEventSections .inputHobbies .hobbies {
-          height: 3rem;
-          width: 100%;
-          display: flex;
-          justify-content: space-between; }
-          .AddEventContainer .addEventInfo .addEventSections .inputHobbies .hobbies .hobby {
-            padding: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 0.3em;
-            border: 2px solid #f05356;
-            background-color: white;
-            color: #f05356;
-            font-weight: bold;
-            cursor: pointer; }
-          .AddEventContainer .addEventInfo .addEventSections .inputHobbies .hobbies .hobby:hover {
-            background-color: #e9e3e3; }
-        .AddEventContainer .addEventInfo .addEventSections .inputHobbies .message {
-          color: red;
-          font-weight: bold;
-          margin: 0;
-          padding: 0; }
-      .AddEventContainer .addEventInfo .addEventSections .inputButton {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end; }
-        .AddEventContainer .addEventInfo .addEventSections .inputButton .eventButton {
-          height: 3rem;
-          width: 50%; }
-          .AddEventContainer .addEventInfo .addEventSections .inputButton .eventButton p {
-            font-weight: bold;
-            color: white; }
+  scroll-behavior: smooth;
+}
+.AddEventContainer h1 {
+  font-family: "Caveat", cursive;
+  width: 100%;
+  text-align: center;
+}
+.AddEventContainer .addEventInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.AddEventContainer .addEventInfo .addEventSections {
+  width: 50%;
+  height: 100%;
+  padding: 1rem;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputEvent {
+  width: 90%;
+  margin-bottom: 4rem;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputEvent .titles {
+  font-weight: bold;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputEvent input {
+  font-size: 16px;
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border-radius: 0.3em;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputEvent textarea {
+  font-size: 16px;
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border-radius: 0.3em;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+.AddEventContainer
+  .addEventInfo
+  .addEventSections
+  .inputEvent
+  .autocompleteDropdownContainer {
+  z-index: 100;
+  background-color: white;
+  position: relative;
+  width: 26rem;
+  border: 1px solid #dbdbdb;
+  position: absolute;
+}
+.AddEventContainer
+  .addEventInfo
+  .addEventSections
+  .inputEvent
+  .autocompleteDropdownContainer
+  .suggestion {
+  z-index: 100;
+  height: 2rem;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px black dotted;
+  display: flex;
+  align-items: center;
+  color: black;
+  cursor: pointer;
+}
+.AddEventContainer
+  .addEventInfo
+  .addEventSections
+  .inputEvent
+  .autocompleteDropdownContainer
+  .suggestion
+  .iconSuggestion {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.AddEventContainer
+  .addEventInfo
+  .addEventSections
+  .inputEvent
+  .autocompleteDropdownContainer
+  .suggestion:hover {
+  background-color: #f05356;
+}
+.AddEventContainer .addEventInfo .addEventSections .smallInputs {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+}
+.AddEventContainer .addEventInfo .addEventSections .smallInputs .selector {
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddEventContainer .addEventInfo .addEventSections .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.AddEventContainer .addEventInfo .addEventSections .grid .friend {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.AddEventContainer .addEventInfo .addEventSections .grid .friend .iconFriend {
+  color: gray;
+  cursor: pointer;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputHobbies {
+  width: 100%;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputHobbies .hobbies {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.AddEventContainer
+  .addEventInfo
+  .addEventSections
+  .inputHobbies
+  .hobbies
+  .hobby {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3em;
+  border: 2px solid #f05356;
+  background-color: white;
+  color: #f05356;
+  font-weight: bold;
+  cursor: pointer;
+}
+.AddEventContainer
+  .addEventInfo
+  .addEventSections
+  .inputHobbies
+  .hobbies
+  .hobby:hover {
+  background-color: #e9e3e3;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputHobbies .message {
+  color: red;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputButton .eventButton {
+  height: 3rem;
+  width: 50%;
+}
+.AddEventContainer .addEventInfo .addEventSections .inputButton .eventButton p {
+  font-weight: bold;
+  color: white;
+}
 
 @media screen and (max-width: 900px) {
   .AddEventContainer {
-    width: 100%; }
-    .AddEventContainer .addEventInfo {
-      align-items: center;
-      justify-content: end;
-      flex-direction: column; }
-      .AddEventContainer .addEventInfo .addEventSections {
-        width: 90%; }
-        .AddEventContainer .addEventInfo .addEventSections .inputEvent {
-          margin-bottom: 2rem; }
-          .AddEventContainer .addEventInfo .addEventSections .inputEvent .autocompleteDropdownContainer {
-            width: 20rem; } }
+    width: 100%;
+  }
+  .AddEventContainer .addEventInfo {
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+  }
+  .AddEventContainer .addEventInfo .addEventSections {
+    width: 90%;
+  }
+  .AddEventContainer .addEventInfo .addEventSections .inputEvent {
+    margin-bottom: 2rem;
+  }
+  .AddEventContainer
+    .addEventInfo
+    .addEventSections
+    .inputEvent
+    .autocompleteDropdownContainer {
+    width: 20rem;
+  }
+}
 
 .addPostContainer {
   width: 60rem;
@@ -1848,113 +2458,190 @@ input:not(:focus):valid ~ .floating-label {
   flex-direction: column;
   position: relative;
   overflow-y: scroll;
-  scroll-behavior: smooth; }
-  .addPostContainer h1 {
-    font-family: "Caveat", cursive;
-    width: 100%;
-    text-align: center; }
-  .addPostContainer .addPostInfo {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .addPostContainer .addPostInfo h2 {
-      position: absolute;
-      top: 20rem; }
-    .addPostContainer .addPostInfo .secondStepContainer {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .addPostContainer .addPostInfo .secondStepContainer .topContainer {
-        justify-content: space-around;
-        width: 100%;
-        height: 30%;
-        display: flex;
-        flex-direction: row; }
-        .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision {
-          width: 45%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center; }
-          .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections {
-            width: 100%;
-            margin: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; }
-            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .titles {
-              font-weight: bold;
-              font-size: 1.2rem; }
-            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies {
-              height: 3rem;
-              width: 100%;
-              display: flex;
-              justify-content: space-between; }
-              .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies .hobby {
-                padding: 0.5rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 0.3em;
-                border: 2px solid #f05356;
-                background-color: white;
-                color: #f05356;
-                font-weight: bold;
-                cursor: pointer; }
-              .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .hobbies .hobby:hover {
-                background-color: #e9e3e3; }
-            .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision .sections .geoContainer {
-              width: 90%; }
-      .addPostContainer .addPostInfo .secondStepContainer .bottomContainer {
-        width: 100%;
-        height: 70%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column; }
-        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer .titles {
-          font-weight: bold;
-          font-size: 1.2rem; }
-        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer textarea {
-          font-size: 16px;
-          width: 70%;
-          padding: 12px 20px;
-          display: inline-block;
-          border-radius: 0.3em;
-          border: 1px solid #ccc;
-          background-color: #fafafa; }
-        .addPostContainer .addPostInfo .secondStepContainer .bottomContainer .bottomArea {
-          height: 10rem;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center; }
+  scroll-behavior: smooth;
+}
+.addPostContainer h1 {
+  font-family: "Caveat", cursive;
+  width: 100%;
+  text-align: center;
+}
+.addPostContainer .addPostInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.addPostContainer .addPostInfo h2 {
+  position: absolute;
+  top: 20rem;
+}
+.addPostContainer .addPostInfo .secondStepContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.addPostContainer .addPostInfo .secondStepContainer .topContainer {
+  justify-content: space-around;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+}
+.addPostContainer
+  .addPostInfo
+  .secondStepContainer
+  .topContainer
+  .secondStepDivision {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.addPostContainer
+  .addPostInfo
+  .secondStepContainer
+  .topContainer
+  .secondStepDivision
+  .sections {
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.addPostContainer
+  .addPostInfo
+  .secondStepContainer
+  .topContainer
+  .secondStepDivision
+  .sections
+  .titles {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.addPostContainer
+  .addPostInfo
+  .secondStepContainer
+  .topContainer
+  .secondStepDivision
+  .sections
+  .hobbies {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.addPostContainer
+  .addPostInfo
+  .secondStepContainer
+  .topContainer
+  .secondStepDivision
+  .sections
+  .hobbies
+  .hobby {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3em;
+  border: 2px solid #f05356;
+  background-color: white;
+  color: #f05356;
+  font-weight: bold;
+  cursor: pointer;
+}
+.addPostContainer
+  .addPostInfo
+  .secondStepContainer
+  .topContainer
+  .secondStepDivision
+  .sections
+  .hobbies
+  .hobby:hover {
+  background-color: #e9e3e3;
+}
+.addPostContainer
+  .addPostInfo
+  .secondStepContainer
+  .topContainer
+  .secondStepDivision
+  .sections
+  .geoContainer {
+  width: 90%;
+}
+.addPostContainer .addPostInfo .secondStepContainer .bottomContainer {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.addPostContainer .addPostInfo .secondStepContainer .bottomContainer .titles {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.addPostContainer .addPostInfo .secondStepContainer .bottomContainer textarea {
+  font-size: 16px;
+  width: 70%;
+  padding: 12px 20px;
+  display: inline-block;
+  border-radius: 0.3em;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+.addPostContainer
+  .addPostInfo
+  .secondStepContainer
+  .bottomContainer
+  .bottomArea {
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 @media screen and (max-width: 900px) {
   .addPostContainer {
     width: 100vw;
     height: 90vh;
-    padding-bottom: 2rem; }
-    .addPostContainer .addPostInfo h2 {
-      margin: 0;
-      padding: 0;
-      width: 50%; }
-    .addPostContainer .addPostInfo .secondStepContainer .topContainer {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: auto; }
-      .addPostContainer .addPostInfo .secondStepContainer .topContainer .secondStepDivision {
-        width: 100%;
-        height: auto; }
-    .addPostContainer .addPostInfo .secondStepContainer .bottomContainer {
-      height: 15rem; }
-      .addPostContainer .addPostInfo .secondStepContainer .bottomContainer .textarea {
-        height: auto; } }
+    padding-bottom: 2rem;
+  }
+  .addPostContainer .addPostInfo h2 {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+  }
+  .addPostContainer .addPostInfo .secondStepContainer .topContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .addPostContainer
+    .addPostInfo
+    .secondStepContainer
+    .topContainer
+    .secondStepDivision {
+    width: 100%;
+    height: auto;
+  }
+  .addPostContainer .addPostInfo .secondStepContainer .bottomContainer {
+    height: 15rem;
+  }
+  .addPostContainer
+    .addPostInfo
+    .secondStepContainer
+    .bottomContainer
+    .textarea {
+    height: auto;
+  }
+}
 
 .eventComponent {
   width: 100%;
@@ -1962,276 +2649,546 @@ input:not(:focus):valid ~ .floating-label {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #fafafa; }
-  .eventComponent .eventCointainer {
-    width: 60rem;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid #dbdbdb;
-    box-sizing: border-box;
-    border-radius: 0.3em; }
-    .eventComponent .eventCointainer .title {
-      font-size: 2rem;
-      margin: 0;
-      padding-top: 1rem;
-      text-align: center; }
-    .eventComponent .eventCointainer .edit {
-      position: relative;
-      color: gray;
-      font-size: 1.5rem;
-      top: 16%;
-      left: 45%;
-      cursor: pointer; }
-    .eventComponent .eventCointainer .edit:hover {
-      color: #f05356; }
-    .eventComponent .eventCointainer .eventInfoContainer {
-      height: 100%;
-      width: 100%; }
-      .eventComponent .eventCointainer .eventInfoContainer .eventInfo {
-        height: 80%;
-        width: 100%;
-        display: flex; }
-        .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft {
-          width: 70%;
-          height: 100%;
-          flex-direction: column;
-          box-sizing: border-box;
-          padding: 1rem; }
-          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .location {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            align-items: center; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .location .icon {
-              color: #f05356;
-              margin-right: 1rem; }
-          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft h3 {
-            margin: 0; }
-          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy {
-            height: 5rem;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtnAvatar {
-              width: 2.5rem;
-              height: 2.5rem; }
-              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .iconBtnAvatar .iconBtn {
-                border-radius: 50%;
-                color: white;
-                font-size: 2.5rem;
-                background-color: #f05356; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy p {
-              margin-left: 1rem;
-              font-size: 1.5rem;
-              font-weight: bold; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer {
-              display: flex;
-              justify-content: flex-end;
-              align-items: center;
-              width: 50%;
-              height: 100%; }
-              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag {
-                display: flex;
-                min-height: 3rem;
-                width: 7rem;
-                background-color: #f05356;
-                border-radius: 0.3em;
-                justify-content: center;
-                align-items: center; }
-                .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag p {
-                  color: white;
-                  font-weight: bold;
-                  margin: 0;
-                  padding: 0;
-                  font-size: 1rem; }
-          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .description {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            align-items: center; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .description p {
-              text-align: justify; }
-        .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight {
-          width: 30%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          box-sizing: border-box;
-          padding: 1rem; }
-          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer {
-            border: 1px solid #dbdbdb;
-            background-color: #fafafa;
-            height: 100%;
-            width: 100%;
-            border-radius: 0.3em; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .joiners {
-              width: 100%;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: space-evenly; }
-              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .joiners .spotsLeft {
-                color: red;
-                font-weight: bold; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .vehicleContainer {
-              width: 100%;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: space-evenly; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .addJoiner {
-              width: 100%;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: center; }
-              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .addJoiner .signUp {
-                width: 6rem;
-                height: 2rem;
-                border: 1px solid #dbdbdb;
-                border-radius: 0.3em;
-                display: flex;
-                padding: 0.5rem;
-                box-sizing: border-box;
-                flex-direction: row;
-                align-items: center;
-                cursor: pointer; }
-                .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .addJoiner .signUp .joinUserIcon {
-                  color: #f05356;
-                  font-size: 1.2rem; }
-                .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .addJoiner .signUp p {
-                  margin-left: 1rem;
-                  font-size: 1.2rem; }
-            .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners {
-              width: 100%;
-              height: 70%;
-              padding: 1rem;
-              box-sizing: border-box;
-              display: flex;
-              align-items: center;
-              flex-direction: column; }
-              .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners .joiner {
-                width: 90%;
-                height: 3rem;
-                border: 1px solid #dbdbdb;
-                background-color: white;
-                border-radius: 0.3em;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding-left: 1rem;
-                padding-right: 1rem;
-                box-sizing: border-box;
-                margin-bottom: 0.5rem;
-                cursor: pointer; }
-                .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners .joiner .iconBtnAvatar {
-                  width: 2.5rem;
-                  height: 2.5rem; }
-                  .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight .eventInfoRightContainer .renderJoiners .joiner .iconBtnAvatar .iconBtn {
-                    border-radius: 50%;
-                    color: white;
-                    font-size: 2.5rem;
-                    background-color: #f05356; }
-      .eventComponent .eventCointainer .eventInfoContainer .commentContainer {
-        width: 100%;
-        min-height: 3.5rem;
-        border-radius: 0 0 0.3em 0.3em;
-        display: flex;
-        flex-direction: column; }
-        .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection {
-          width: 100%;
-          display: flex;
-          box-sizing: border-box;
-          flex-direction: column;
-          border-bottom: 1px solid #dbdbdb;
-          border-top: 1px solid #dbdbdb;
-          justify-content: center;
-          align-items: center; }
-          .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection .comment {
-            display: flex;
-            width: 90%;
-            flex-direction: row;
-            justify-content: left;
-            box-sizing: border-box; }
-            .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection .comment p {
-              margin: 0.5rem 0 0.5rem 0;
-              padding: 0; }
-            .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection .comment .userName {
-              font-weight: bold;
-              cursor: pointer;
-              margin-right: 1rem; }
-            .eventComponent .eventCointainer .eventInfoContainer .commentContainer .commentCollection .comment .userName:hover {
-              text-decoration: underline; }
-        .eventComponent .eventCointainer .eventInfoContainer .commentContainer .postComment {
-          height: 3.5rem;
-          width: 100%;
-          display: flex;
-          box-sizing: border-box;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center; }
-          .eventComponent .eventCointainer .eventInfoContainer .commentContainer .postComment input {
-            font-size: 16px;
-            width: 65%;
-            padding: 12px 20px;
-            display: inline-block;
-            border-radius: 4rem;
-            border: 1px solid #ccc;
-            background-color: #fafafa; }
-          .eventComponent .eventCointainer .eventInfoContainer .commentContainer .postComment p {
-            margin-left: 2rem;
-            color: #35abec;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer; }
+  background-color: #fafafa;
+}
+.eventComponent .eventCointainer {
+  width: 60rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 0.3em;
+}
+.eventComponent .eventCointainer .title {
+  font-size: 2rem;
+  margin: 0;
+  padding-top: 1rem;
+  text-align: center;
+}
+.eventComponent .eventCointainer .edit {
+  position: relative;
+  color: gray;
+  font-size: 1.5rem;
+  top: 16%;
+  left: 45%;
+  cursor: pointer;
+}
+.eventComponent .eventCointainer .edit:hover {
+  color: #f05356;
+}
+.eventComponent .eventCointainer .eventInfoContainer {
+  height: 100%;
+  width: 100%;
+}
+.eventComponent .eventCointainer .eventInfoContainer .eventInfo {
+  height: 80%;
+  width: 100%;
+  display: flex;
+}
+.eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft {
+  width: 70%;
+  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .location {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .location
+  .icon {
+  color: #f05356;
+  margin-right: 1rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  h3 {
+  margin: 0;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .createdBy {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .createdBy
+  .iconBtnAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .createdBy
+  .iconBtnAvatar
+  .iconBtn {
+  border-radius: 50%;
+  color: white;
+  font-size: 2.5rem;
+  background-color: #f05356;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .createdBy
+  p {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .createdBy
+  .hobbyTagContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .createdBy
+  .hobbyTagContainer
+  .hobbyTag {
+  display: flex;
+  min-height: 3rem;
+  width: 7rem;
+  background-color: #f05356;
+  border-radius: 0.3em;
+  justify-content: center;
+  align-items: center;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .createdBy
+  .hobbyTagContainer
+  .hobbyTag
+  p {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .description {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoLeft
+  .description
+  p {
+  text-align: justify;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer {
+  border: 1px solid #dbdbdb;
+  background-color: #fafafa;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.3em;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .joiners {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .joiners
+  .spotsLeft {
+  color: red;
+  font-weight: bold;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .vehicleContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .addJoiner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .addJoiner
+  .signUp {
+  width: 6rem;
+  height: 2rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.3em;
+  display: flex;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .addJoiner
+  .signUp
+  .joinUserIcon {
+  color: #f05356;
+  font-size: 1.2rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .addJoiner
+  .signUp
+  p {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .renderJoiners {
+  width: 100%;
+  height: 70%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .renderJoiners
+  .joiner {
+  width: 90%;
+  height: 3rem;
+  border: 1px solid #dbdbdb;
+  background-color: white;
+  border-radius: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .renderJoiners
+  .joiner
+  .iconBtnAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .eventInfo
+  .eventInfoRight
+  .eventInfoRightContainer
+  .renderJoiners
+  .joiner
+  .iconBtnAvatar
+  .iconBtn {
+  border-radius: 50%;
+  color: white;
+  font-size: 2.5rem;
+  background-color: #f05356;
+}
+.eventComponent .eventCointainer .eventInfoContainer .commentContainer {
+  width: 100%;
+  min-height: 3.5rem;
+  border-radius: 0 0 0.3em 0.3em;
+  display: flex;
+  flex-direction: column;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .commentContainer
+  .commentCollection {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+  justify-content: center;
+  align-items: center;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .commentContainer
+  .commentCollection
+  .comment {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: left;
+  box-sizing: border-box;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .commentContainer
+  .commentCollection
+  .comment
+  p {
+  margin: 0.5rem 0 0.5rem 0;
+  padding: 0;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .commentContainer
+  .commentCollection
+  .comment
+  .userName {
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .commentContainer
+  .commentCollection
+  .comment
+  .userName:hover {
+  text-decoration: underline;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .commentContainer
+  .postComment {
+  height: 3.5rem;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .commentContainer
+  .postComment
+  input {
+  font-size: 16px;
+  width: 65%;
+  padding: 12px 20px;
+  display: inline-block;
+  border-radius: 4rem;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+.eventComponent
+  .eventCointainer
+  .eventInfoContainer
+  .commentContainer
+  .postComment
+  p {
+  margin-left: 2rem;
+  color: #35abec;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 900px) {
   .eventComponent {
-    padding-bottom: 3rem; }
-    .eventComponent .eventCointainer {
-      width: 100%; }
-      .eventComponent .eventCointainer .edit {
-        left: 40%; }
-      .eventComponent .eventCointainer .eventInfoContainer .eventInfo {
-        flex-direction: column; }
-        .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft {
-          width: 100%; }
-          .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoLeft .createdBy .hobbyTagContainer .hobbyTag {
-            width: 7rem; }
-        .eventComponent .eventCointainer .eventInfoContainer .eventInfo .eventInfoRight {
-          width: 100%; } }
+    padding-bottom: 3rem;
+  }
+  .eventComponent .eventCointainer {
+    width: 100%;
+  }
+  .eventComponent .eventCointainer .edit {
+    left: 40%;
+  }
+  .eventComponent .eventCointainer .eventInfoContainer .eventInfo {
+    flex-direction: column;
+  }
+  .eventComponent
+    .eventCointainer
+    .eventInfoContainer
+    .eventInfo
+    .eventInfoLeft {
+    width: 100%;
+  }
+  .eventComponent
+    .eventCointainer
+    .eventInfoContainer
+    .eventInfo
+    .eventInfoLeft
+    .createdBy
+    .hobbyTagContainer
+    .hobbyTag {
+    width: 7rem;
+  }
+  .eventComponent
+    .eventCointainer
+    .eventInfoContainer
+    .eventInfo
+    .eventInfoRight {
+    width: 100%;
+  }
+}
 
 .imageCropperComponent {
   height: 100%;
   width: 100%;
-  border-radius: 0.3em; }
-  .imageCropperComponent .cropperContainer {
-    height: 90%;
-    padding: 10px; }
-    .imageCropperComponent .cropperContainer .cropper {
-      height: 90%;
-      width: 100%;
-      position: relative; }
-    .imageCropperComponent .cropperContainer .slider {
-      height: 10%;
-      width: 100%;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      margin: auto; }
-  .imageCropperComponent .buttonContainer {
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
+  border-radius: 0.3em;
+}
+.imageCropperComponent .cropperContainer {
+  height: 90%;
+  padding: 10px;
+}
+.imageCropperComponent .cropperContainer .cropper {
+  height: 90%;
+  width: 100%;
+  position: relative;
+}
+.imageCropperComponent .cropperContainer .slider {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+}
+.imageCropperComponent .buttonContainer {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .postComponent {
   width: 100%;
@@ -2241,192 +3198,232 @@ input:not(:focus):valid ~ .floating-label {
   border: 1px solid #dbdbdb;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; }
-  .postComponent .creator {
-    height: 3.5rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    border-radius: 0.3em 0.3em 0 0;
-    box-sizing: border-box;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    justify-content: space-between; }
-    .postComponent .creator .avatarName {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center; }
-      .postComponent .creator .avatarName .iconBtnAvatar {
-        width: 2.5rem;
-        height: 2.5rem;
-        cursor: pointer; }
-        .postComponent .creator .avatarName .iconBtnAvatar .iconBtn {
-          border-radius: 50%;
-          color: white;
-          font-size: 2.5rem;
-          background-color: #f05356; }
-      .postComponent .creator .avatarName p {
-        margin-left: 1rem;
-        font-size: 1rem;
-        font-weight: bold; }
-      .postComponent .creator .avatarName .location {
-        font-weight: lighter;
-        position: relative;
-        top: 1rem;
-        right: 5rem;
-        font-size: 0.8rem; }
-    .postComponent .creator .menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      left: 5rem;
-      top: 3rem;
-      position: relative; }
-      .postComponent .creator .menu .dropDownMenu {
-        background-color: white;
-        width: 8rem;
-        border: 1px solid #dbdbdb;
-        box-sizing: border-box;
-        border-radius: 0.3em;
-        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-        display: none;
-        flex-direction: column;
-        padding: 0.5rem;
-        z-index: 1; }
-        .postComponent .creator .menu .dropDownMenu .sections {
-          height: 3rem;
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          border-radius: 0.3em;
-          cursor: pointer;
-          z-index: 1; }
-          .postComponent .creator .menu .dropDownMenu .sections p {
-            margin-left: 0.5rem; }
-        .postComponent .creator .menu .dropDownMenu .sections:hover {
-          background-color: #f1a8a9;
-          font-weight: bold; }
-    .postComponent .creator .threeDots {
-      cursor: pointer;
-      width: 2rem; }
-  .postComponent .picture {
-    width: 100%; }
-    .postComponent .picture img {
-      width: 100%; }
-  .postComponent .subMenu {
-    background-color: white;
-    height: 2rem;
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    justify-content: space-between; }
-    .postComponent .subMenu .likeMenu {
-      display: flex;
-      flex-direction: row;
-      align-items: center; }
-      .postComponent .subMenu .likeMenu .like {
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: 0.5ms ease all; }
-      .postComponent .subMenu .likeMenu .like:active {
-        font-size: 1.6rem; }
-      .postComponent .subMenu .likeMenu .likeCounting {
-        font-weight: bold;
-        margin: 0;
-        margin-left: 1rem;
-        padding: 0; }
-    .postComponent .subMenu .hobby {
-      background-color: rgba(255, 255, 255, 0);
-      position: relative; }
-      .postComponent .subMenu .hobby p {
-        margin: 0;
-        padding: 0; }
-  .postComponent .description {
-    min-height: 4rem;
-    box-sizing: border-box;
-    width: 100%;
-    background-color: white;
-    border-radius: 0 0 0.3em 0.3em; }
-    .postComponent .description p {
-      margin-right: 1rem;
-      margin-left: 1rem;
-      text-align: justify; }
-      .postComponent .description p b {
-        cursor: pointer; }
-      .postComponent .description p b:hover {
-        text-decoration: underline; }
-  .postComponent .timer {
-    font-size: 0.8rem;
-    margin: 0;
-    padding: 0 0 0 1rem;
-    background-color: white; }
-  .postComponent .commentsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: white; }
-    .postComponent .commentsContainer .commentCollection {
-      width: 100%;
-      display: flex;
-      box-sizing: border-box;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; }
-      .postComponent .commentsContainer .commentCollection .comment {
-        display: flex;
-        width: 90%;
-        flex-direction: row;
-        justify-content: left;
-        box-sizing: border-box; }
-        .postComponent .commentsContainer .commentCollection .comment p {
-          margin: 0.5rem 0 0.5rem 0;
-          padding: 0; }
-        .postComponent .commentsContainer .commentCollection .comment .userName {
-          font-weight: bold;
-          cursor: pointer;
-          margin-right: 1rem; }
-        .postComponent .commentsContainer .commentCollection .comment .userName:hover {
-          text-decoration: underline; }
-    .postComponent .commentsContainer .inputComments {
-      height: 3.5rem;
-      width: 100%;
-      display: flex;
-      box-sizing: border-box;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center; }
-      .postComponent .commentsContainer .inputComments input {
-        font-size: 16px;
-        width: 65%;
-        padding: 12px 20px;
-        display: inline-block;
-        border-radius: 4rem;
-        border: 1px solid #ccc;
-        background-color: #fafafa; }
-      .postComponent .commentsContainer .inputComments p {
-        margin-left: 2rem;
-        color: #35abec;
-        font-weight: bold;
-        font-size: 1.1rem;
-        cursor: pointer; }
+  flex-direction: column;
+}
+.postComponent .creator {
+  height: 3.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 0.3em 0.3em 0 0;
+  box-sizing: border-box;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  justify-content: space-between;
+}
+.postComponent .creator .avatarName {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.postComponent .creator .avatarName .iconBtnAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+.postComponent .creator .avatarName .iconBtnAvatar .iconBtn {
+  border-radius: 50%;
+  color: white;
+  font-size: 2.5rem;
+  background-color: #f05356;
+}
+.postComponent .creator .avatarName p {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.postComponent .creator .avatarName .location {
+  font-weight: lighter;
+  position: relative;
+  top: 1rem;
+  right: 5rem;
+  font-size: 0.8rem;
+}
+.postComponent .creator .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 5rem;
+  top: 3rem;
+  position: relative;
+}
+.postComponent .creator .menu .dropDownMenu {
+  background-color: white;
+  width: 8rem;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 0.3em;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem;
+  z-index: 1;
+}
+.postComponent .creator .menu .dropDownMenu .sections {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.3em;
+  cursor: pointer;
+  z-index: 1;
+}
+.postComponent .creator .menu .dropDownMenu .sections p {
+  margin-left: 0.5rem;
+}
+.postComponent .creator .menu .dropDownMenu .sections:hover {
+  background-color: #f1a8a9;
+  font-weight: bold;
+}
+.postComponent .creator .threeDots {
+  cursor: pointer;
+  width: 2rem;
+}
+.postComponent .picture {
+  width: 100%;
+}
+.postComponent .picture img {
+  width: 100%;
+}
+.postComponent .subMenu {
+  background-color: white;
+  height: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  justify-content: space-between;
+}
+.postComponent .subMenu .likeMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.postComponent .subMenu .likeMenu .like {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.5ms ease all;
+}
+.postComponent .subMenu .likeMenu .like:active {
+  font-size: 1.6rem;
+}
+.postComponent .subMenu .likeMenu .likeCounting {
+  font-weight: bold;
+  margin: 0;
+  margin-left: 1rem;
+  padding: 0;
+}
+.postComponent .subMenu .hobby {
+  background-color: rgba(255, 255, 255, 0);
+  position: relative;
+}
+.postComponent .subMenu .hobby p {
+  margin: 0;
+  padding: 0;
+}
+.postComponent .description {
+  min-height: 4rem;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  border-radius: 0 0 0.3em 0.3em;
+}
+.postComponent .description p {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  text-align: justify;
+}
+.postComponent .description p b {
+  cursor: pointer;
+}
+.postComponent .description p b:hover {
+  text-decoration: underline;
+}
+.postComponent .timer {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  background-color: white;
+}
+.postComponent .commentsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+}
+.postComponent .commentsContainer .commentCollection {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.postComponent .commentsContainer .commentCollection .comment {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: left;
+  box-sizing: border-box;
+}
+.postComponent .commentsContainer .commentCollection .comment p {
+  margin: 0.5rem 0 0.5rem 0;
+  padding: 0;
+}
+.postComponent .commentsContainer .commentCollection .comment .userName {
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.postComponent .commentsContainer .commentCollection .comment .userName:hover {
+  text-decoration: underline;
+}
+.postComponent .commentsContainer .inputComments {
+  height: 3.5rem;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.postComponent .commentsContainer .inputComments input {
+  font-size: 16px;
+  width: 65%;
+  padding: 12px 20px;
+  display: inline-block;
+  border-radius: 4rem;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+.postComponent .commentsContainer .inputComments p {
+  margin-left: 2rem;
+  color: #35abec;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 600px) {
   .postComponent {
-    height: auto; }
-    .postComponent .creator .menu {
-      left: 2rem; }
-    .postComponent .description {
-      min-height: 2rem; } }
+    height: auto;
+  }
+  .postComponent .creator .menu {
+    left: 2rem;
+  }
+  .postComponent .description {
+    min-height: 2rem;
+  }
+}
 
 /*Fonts and another urls*/

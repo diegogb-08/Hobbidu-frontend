@@ -1,36 +1,36 @@
 .canvas {
-    z-index: 100;
-    background-color: white;
-    border-radius: $br;
-    .placesAutocomplete{
-        width: 100%;
-        .inputDiv{
-            width: 100%;
-        }
-    }
-}
-
-.autocompleteDropdownContainer{
-    z-index: 100;
-    background-color: white;
-    position: relative;
-    width: 110%;
-    border: $border1;
-    border-radius: $br;
-}
-
-.suggestion{
-    z-index: 100;
-    height: 4rem;
+  z-index: 100;
+  background-color: white;
+  border-radius: $br;
+  .placesAutocomplete {
     width: 100%;
-    background-color: white;
-    border-bottom: 1px black dotted;
-    display: flex;
-    align-items: center;
-    color: black;
-    
-    .iconSuggestion{
-        margin-right: 1rem;
-        margin-left: 1rem;
+    .inputDiv {
+      width: 100%;
     }
+  }
+}
+
+.autocompleteDropdownContainer {
+  z-index: 100;
+  background-color: white;
+  position: relative;
+  width: 110%;
+  border: $border1;
+  border-radius: $br;
+}
+
+.suggestion {
+  z-index: 100;
+  height: 4rem;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px black dotted;
+  display: flex;
+  align-items: center;
+  color: black;
+
+  .iconSuggestion {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
 }

@@ -1,176 +1,175 @@
-.userComponent{
-    width: 100%;
-    min-height: 100vh;
+.userComponent {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $backgroundWhite;
+  .userContainer {
+    width: 60rem;
+    height: 30rem;
+    background-color: $white1;
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
-    background-color: $backgroundWhite;
-    .userContainer{
-        width: 60rem;
-        height: 30rem;
-        background-color: $white1;
+    border: $border1;
+    box-sizing: border-box;
+    .profilePic {
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15rem;
+      color: $backgroundWhite;
+      background-color: $logoColor;
+    }
+
+    .userDetails {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .userDetailsTop {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        .userName {
+          font-size: 2.5rem;
+          padding: 0;
+          margin: 0;
+        }
+        .editProfile {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-direction: row;
+          width: 100%;
+          p {
+            border: $border1;
+            padding: 0.5rem;
+            border-radius: $br;
+            font-weight: bold;
+            cursor: pointer;
+          }
+          .iconBtn {
+            font-size: 1.5rem;
+            color: $fontcolor3;
+            cursor: pointer;
+          }
+          .iconBtn:hover {
+            color: $fontcolor1;
+          }
+        }
+      }
+      @media screen and (max-width: 700px) {
+        .userDetailsTop {
+          flex-direction: column;
+          align-items: center;
+          .userName {
+            margin: 0.5rem;
+            font-size: 1.5rem;
+          }
+          .editProfile {
+            margin: 0.5rem;
+          }
+          .iconBtn {
+            margin: 0.5rem;
+          }
+        }
+      }
+
+      .userDetailsMiddle {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        border: $border1;
-        box-sizing: border-box;
-        .profilePic {
-            width: 15rem;
-            height: 15rem;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 15rem;
-            color: $backgroundWhite;
+        width: 100%;
+        .sections {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          .number {
+            font-weight: bold;
+            margin: 0 0.5rem 0 0.5rem;
+          }
+        }
+      }
+      .userDetailsBottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        .nameAndLocation {
+          display: flex;
+          justify-content: space-between;
+          .name {
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+        .hobbies {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          text-align: center;
+          .hobby {
+            border-radius: $br;
+            margin: 0.2rem;
+            height: 2.5rem;
+            width: auto;
             background-color: $logoColor;
-        }
-        
-        .userDetails{
-            width: 50%;
-            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            .userDetailsTop {
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                flex-direction: row;
-                width: 100%;
-                .userName {
-                    font-size: 2.5rem;
-                    padding: 0;
-                    margin: 0;
-                }
-                .editProfile{
-                   display: flex;
-                   justify-content: space-evenly;
-                   align-items: center;
-                   flex-direction: row;
-                   width: 100%;
-                    p{
-                        border: $border1;
-                        padding: 0.5rem;
-                        border-radius: $br;
-                        font-weight: bold;
-                        cursor: pointer;
-                    }
-                    .iconBtn{
-                        font-size: 1.5rem;
-                        color: $fontcolor3;
-                        cursor: pointer;
-                    }
-                    .iconBtn:hover{
-                        color: $fontcolor1;
-                    }
-                }
+            p {
+              text-align: center;
+              margin: 0;
+              padding: 0.2rem;
+              font-weight: bold;
+              color: $fontcolor4;
             }
-            @media screen and (max-width: 700px) {
-                .userDetailsTop{
-                    flex-direction: column;
-                    align-items: center;
-                    .userName {
-                        margin: 0.5rem;
-                        font-size: 1.5rem;
-                    }
-                    .editProfile{
-                        margin: 0.5rem;
-                    }
-                    .iconBtn{
-                        margin: 0.5rem;
-                    }
-                }
-            }
-
-            .userDetailsMiddle{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                align-items: center;
-                width: 100%;
-                .sections{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    .number {
-                        font-weight: bold;
-                        margin: 0 0.5rem 0 0.5rem;
-                    }
-                }
-            }
-            .userDetailsBottom{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                width: 100%;
-                .nameAndLocation{
-                    display: flex;
-                    justify-content: space-between;
-                    .name{
-                        font-size: 20px;
-                        font-weight: bold;
-                    }
-            
-                }
-                .hobbies{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    text-align: center;
-                    .hobby {
-                        border-radius: $br;
-                        margin: 0.2rem;
-                        height: 2.5rem;
-                        width: auto;
-                        background-color: $logoColor;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        p {
-                            text-align: center;
-                            margin: 0;
-                            padding: 0.2rem;
-                            font-weight: bold;
-                            color: $fontcolor4;
-                        }
-                    }
-                }
-                .descritpion{
-                    width: 100%;
-                }
-            }
+          }
         }
+        .descritpion {
+          width: 100%;
+        }
+      }
     }
+  }
 }
 
 @media screen and (max-width: 900px) {
-    .userComponent{
-        padding-bottom: 3rem;
-        .userContainer{
-            padding-top: 2rem;
-            height: 35rem;
-            width: 100%;
-            flex-direction: column;
-            .profilePic{
-                width: 10rem;
-                height: 10rem;
-                font-size: 10rem;
-            }
-            .userDetails{
-                width: 100%;
-                .userDetailsBottom {
-                    width: 85%;
-                    .name{
-                        display: flex;
-                        justify-content: center;
-                    }
-                }
-            }
+  .userComponent {
+    padding-bottom: 3rem;
+    .userContainer {
+      padding-top: 2rem;
+      height: 35rem;
+      width: 100%;
+      flex-direction: column;
+      .profilePic {
+        width: 10rem;
+        height: 10rem;
+        font-size: 10rem;
+      }
+      .userDetails {
+        width: 100%;
+        .userDetailsBottom {
+          width: 85%;
+          .name {
+            display: flex;
+            justify-content: center;
+          }
         }
+      }
     }
+  }
 }

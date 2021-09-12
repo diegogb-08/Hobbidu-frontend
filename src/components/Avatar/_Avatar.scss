@@ -1,41 +1,39 @@
-.avatarComponent{
+.avatarComponent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .profilePic {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
+    border-radius: 50%;
     align-items: center;
-    .profilePic {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        border-radius: 50%;
-        align-items: center;
-        color: $backgroundWhite;
-        .iconBtn{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $logoColor;
-            border-radius: 50%;
-        }
+    color: $backgroundWhite;
+    .iconBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $logoColor;
+      border-radius: 50%;
     }
-    .imageCropper{
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        border-radius: 50%;
-        .profileImg{
-            display: inline;
-            margin: 0 auto;
-            margin-left: 0; //centers the image
-            height: auto;
-            width: 100%;
-            cursor: pointer;
-            border-radius: 0%;
-        }
+  }
+  .imageCropper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    .profileImg {
+      display: inline;
+      margin: 0 auto;
+      margin-left: 0; //centers the image
+      height: auto;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 0%;
     }
-
+  }
 }
-

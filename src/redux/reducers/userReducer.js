@@ -1,55 +1,59 @@
-import { LOGIN, LOGOUT, UPDATE, SETACTIVE, ADDLOCATION, CHECKUSER } from '../types/userType'
+import {
+  LOGIN,
+  LOGOUT,
+  UPDATE,
+  SETACTIVE,
+  ADDLOCATION,
+  CHECKUSER,
+} from "../types/userType";
 
 const initialState = {
   user: {},
-  token: '',
+  token: "",
   active: false,
   location: {},
-  checkUser: {}
-
-}
+  checkUser: {},
+};
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN :
+    case LOGIN:
       return {
         ...state,
         user: action.payload.user,
-        token: action.payload.token
+        token: action.payload.token,
+      };
 
-      }
-
-    case SETACTIVE :
+    case SETACTIVE:
       return {
         ...state,
-        active: true
-      }
+        active: true,
+      };
 
-    case ADDLOCATION :
+    case ADDLOCATION:
       return {
         ...state,
-        location: action.payload
+        location: action.payload,
+      };
 
-      }
+    case LOGOUT:
+      return initialState;
 
-    case LOGOUT :
-      return initialState
-
-    case UPDATE :
+    case UPDATE:
       return {
         ...state,
-        user: action.payload
-      }
+        user: action.payload,
+      };
 
-    case CHECKUSER :
+    case CHECKUSER:
       return {
         ...state,
-        checkUser: action.payload
-      }
+        checkUser: action.payload,
+      };
 
-    default :
-      return state
+    default:
+      return state;
   }
-}
+};
 
-export default userReducer
+export default userReducer;

@@ -1,258 +1,256 @@
 .eventViewComponent {
-    width: 100%;
-    min-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $backgroundWhite;
+  .eventViewContainer {
+    width: 60rem;
+    height: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    background-color: $backgroundWhite;
-    .eventViewContainer{
-        width: 60rem;
-        height: 100%;
+    align-items: center;
+    border-radius: $br;
+    box-sizing: border-box;
+    .filterEvents {
+      width: 100%;
+      height: 5rem;
+      background-color: $logoColor;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: $br;
+
+      .filterDistance {
         display: flex;
-        flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
-        border-radius: $br;
-        box-sizing: border-box;
-        .filterEvents{
-            width: 100%;
-            height: 5rem;
-            background-color: $logoColor;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            border-radius: $br;
+        width: 40rem;
 
-            .filterDistance{
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                width: 40rem;
-
-                p{
-                    color: white;
-                    font-weight: bold;
-                    font-size: 1.5rem;
-                }
-                .geolocationEventContainer{
-                    height: 2.5rem;
-                    width: 15rem;
-                }
-                .selector{
-                    height: 2.5rem;
-                    width: 8.5rem;
-                    font-size: 1.5rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 1.2rem;
-                }
-            }
-
+        p {
+          color: white;
+          font-weight: bold;
+          font-size: 1.5rem;
         }
-        .renderEventsContainer{
-            height: 100%;
-            width: 100%;
+        .geolocationEventContainer {
+          height: 2.5rem;
+          width: 15rem;
+        }
+        .selector {
+          height: 2.5rem;
+          width: 8.5rem;
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .renderEventsContainer {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .title {
+        margin: 0;
+        padding: 0;
+      }
+      .event {
+        width: 100%;
+        height: 10.5rem;
+        margin-top: 2rem;
+        background-color: $white1;
+        border: $border1;
+        border-radius: $br;
+        display: flex;
+        flex-direction: row;
+        .date {
+          height: 100%;
+          width: 7rem;
+          background-color: $logoColor;
+          border-radius: $br 0 0 $br;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.5rem;
+          }
+        }
+        .notEvents {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: red;
+          box-sizing: border-box;
+          padding: 2rem;
+          h2 {
+            text-align: center;
+          }
+        }
+        .eventContent {
+          width: 85%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          padding: 0 0 1rem 1rem;
+          .eventContentLeft {
+            width: 50%;
+            h2 {
+              cursor: pointer;
+            }
+            .joinersSpotsLeft {
+              display: flex;
+              width: 10rem;
+              justify-content: space-between;
+              .spotsLeft {
+                color: red;
+              }
+            }
+          }
+          .eventContentCenter {
+            width: 25%;
             display: flex;
             flex-direction: column;
-            .title{
-                margin: 0;
-                padding: 0;
+          }
+          .eventContentRight {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            .hobbyTag {
+              width: 50%;
+              height: 3rem;
+              background-color: $logoColor;
+              border-radius: $br;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              p {
+                color: white;
+                font-weight: bold;
+                text-align: center;
+              }
             }
-            .event{
-                width: 100%;
-                height: 10.5rem;
-                margin-top: 2rem;
-                background-color: $white1;
-                border: $border1;
-                border-radius: $br;
-                display: flex;
-                flex-direction: row;
-                .date{
-                    height: 100%;
-                    width: 7rem;
-                    background-color: $logoColor;
-                    border-radius: $br 0 0 $br;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    p{
-                        text-align: center;
-                        font-weight: bold;
-                        color: white;
-                        font-size: 1.5rem;
-
-                    }
-                }
-                .notEvents{
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: red;
-                    box-sizing: border-box;
-                    padding: 2rem;
-                    h2{
-                        text-align: center;
-                    }
-                }
-                .eventContent{
-                    width: 85%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    padding: 0 0 1rem 1rem;
-                    .eventContentLeft{
-                        width: 50%;
-                        h2{
-                            cursor: pointer;
-                        }
-                        .joinersSpotsLeft{
-                            display: flex;
-                            width: 10rem;
-                            justify-content: space-between;
-                            .spotsLeft{
-                                color: red;
-                            }
-                        }
-                    }
-                    .eventContentCenter{
-                        width: 25%;
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    .eventContentRight{
-                        width: 25%;
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: space-evenly;
-                        .hobbyTag{
-                            width: 50%;
-                            height: 3rem;
-                            background-color: $logoColor;
-                            border-radius: $br;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            p {
-                                color: white;
-                                font-weight: bold;
-                                text-align: center;
-                            }
-                        }
-                        .signUp{
-                            width: 50%;
-                            height: 2rem;
-                            border: $border1;
-                            border-radius: $br;
-                            display: flex;
-                            padding: 0.5rem;
-                            box-sizing: border-box;
-                            flex-direction: row;
-                            align-items: center;
-                            cursor: pointer;
-                            .joinUserIcon{
-                                color: $logoColor;
-                                font-size: 1.2rem;
-                            }
-                            p{
-                                margin-left: 1rem;
-                                font-size: 1.2rem;
-                            }
-                        }
-                        .signUp:hover {
-                            background-color: rgb(235, 225, 225);
-                        }
-                    }
-                }
+            .signUp {
+              width: 50%;
+              height: 2rem;
+              border: $border1;
+              border-radius: $br;
+              display: flex;
+              padding: 0.5rem;
+              box-sizing: border-box;
+              flex-direction: row;
+              align-items: center;
+              cursor: pointer;
+              .joinUserIcon {
+                color: $logoColor;
+                font-size: 1.2rem;
+              }
+              p {
+                margin-left: 1rem;
+                font-size: 1.2rem;
+              }
             }
+            .signUp:hover {
+              background-color: rgb(235, 225, 225);
+            }
+          }
         }
+      }
     }
+  }
 }
 @media screen and (max-width: 900px) {
-    .eventViewComponent{
-        padding-bottom: 3rem;
-        .eventViewContainer{
-            width: 100%;
-            .filterEvents{
-                width: 100%;
-                .filterDistance{
-                    margin-right: 2rem;
-                    width: 100%;
-                    p{
-                        font-size: 1.2rem;
-                    }
-                    .geolocationEventContainer{
-                        height: 2.5rem;
-                        width: 6rem;
-                        .autocompleteDropdownContainer{
-                            width: 8rem;
-                        }
-                    }
-                    .selector{
-                        width: 6.5rem;
-                        font-size: 1rem;
-                    }
-                }
+  .eventViewComponent {
+    padding-bottom: 3rem;
+    .eventViewContainer {
+      width: 100%;
+      .filterEvents {
+        width: 100%;
+        .filterDistance {
+          margin-right: 2rem;
+          width: 100%;
+          p {
+            font-size: 1.2rem;
+          }
+          .geolocationEventContainer {
+            height: 2.5rem;
+            width: 6rem;
+            .autocompleteDropdownContainer {
+              width: 8rem;
             }
-            .renderEventsContainer{
-                .title{
-                    text-align: center;                   
-                }
-                .event{
-                    width: 100%;
-                    .date{
-                        width: 15%;
-                        p{
-                            font-size: 1rem;
-                        }
-                    }
-                    .eventContent{
-                        width: 85%;
-                        .eventContentLeft{
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-evenly;
-                            width: 50%;
-                            h2{
-                                font-size: 1.2rem;
-                                margin: 0;
-                                padding: 0;
-                            }
-                            p{
-                                font-size: 14px;
-                                margin: 0;
-                                padding: 0;
-                            }
-                        }
-                        .eventContentCenter{
-                            width: 15%;
-                            p{
-                                font-size: 14px;
-                                text-align: center;
-                            }
-                        }
-                        .eventContentRight{
-                            width: 35%;
-                            .hobbyTag{
-                                width: 85%;
-                            }
-                            .signUp{
-                                justify-content: center;
-                                p{
-                                    display: none;
-                                }
-                            }
-                        }
-                        .notEvents{
-                            box-sizing: border-box;
-                            padding: 2rem;
-                        }
-                    }
-                }
-            }
+          }
+          .selector {
+            width: 6.5rem;
+            font-size: 1rem;
+          }
         }
+      }
+      .renderEventsContainer {
+        .title {
+          text-align: center;
+        }
+        .event {
+          width: 100%;
+          .date {
+            width: 15%;
+            p {
+              font-size: 1rem;
+            }
+          }
+          .eventContent {
+            width: 85%;
+            .eventContentLeft {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              width: 50%;
+              h2 {
+                font-size: 1.2rem;
+                margin: 0;
+                padding: 0;
+              }
+              p {
+                font-size: 14px;
+                margin: 0;
+                padding: 0;
+              }
+            }
+            .eventContentCenter {
+              width: 15%;
+              p {
+                font-size: 14px;
+                text-align: center;
+              }
+            }
+            .eventContentRight {
+              width: 35%;
+              .hobbyTag {
+                width: 85%;
+              }
+              .signUp {
+                justify-content: center;
+                p {
+                  display: none;
+                }
+              }
+            }
+            .notEvents {
+              box-sizing: border-box;
+              padding: 2rem;
+            }
+          }
+        }
+      }
     }
+  }
 }

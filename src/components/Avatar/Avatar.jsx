@@ -1,36 +1,33 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { connect } from 'react-redux';
-import { port } from '../../tools/apiPaths';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
+import { port } from "../../tools/apiPaths";
 
 const Avatar = (props) => {
-   
-    return (
-        <div className="avatarComponent" onClick={props.onClick}>
-                {
-                    props.src !== port+undefined ? 
-                    <>
-                        <div className="imageCropper">
-                            <img className="profileImg" src={props.src} alt="Avatar"/>
-                        </div>
-                    </>
-                    :
-                    <>
-                        <div className="profilePic">
-                            <FontAwesomeIcon icon={faUserCircle} className="iconBtn" />
-                        </div>
-                    </>
-                }
+  return (
+    <div className="avatarComponent" onClick={props.onClick}>
+      {props.src !== port + undefined ? (
+        <>
+          <div className="imageCropper">
+            <img className="profileImg" src={props.src} alt="Avatar" />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="profilePic">
+            <FontAwesomeIcon icon={faUserCircle} className="iconBtn" />
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
 
-        </div>
-    )
-}
+const mapStateToProps = (state) => {
+  return {
+    user: state.userReducer.user,
+  };
+};
 
-const mapStateToProps = state => {
-    return {
-        user : state.userReducer.user,
-    }
-}
-
-export default connect(mapStateToProps)(Avatar); 
+export default connect(mapStateToProps)(Avatar);

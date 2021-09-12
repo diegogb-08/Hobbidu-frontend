@@ -1,42 +1,41 @@
 /*Utilities*/
-@import './scss/reset.scss';
-@import './scss/mixings.scss';
-@import './scss/variables.scss';
-
+@import "./scss/reset.scss";
+@import "./scss/mixings.scss";
+@import "./scss/variables.scss";
 
 /*Components and main views*/
 
-@import './App.scss';
-@import './components/Home/Home.scss';
-@import './components/Landing/Landing.scss';
-@import './components/Header/Header.scss';
-@import './components/InputForm/InputForm.scss';
-@import './components/Login/Login.scss';
-@import './components/Button/Button.scss';
-@import './components/Register/Register.scss';
-@import './components/FirstHobbies/FirstHobbies.scss';
-@import './components/Footer/Footer.scss';
-@import './components/NavBar/NavBar.scss';
-@import './components/User/User.scss';
-@import './components/Setting/Setting.scss';
-@import './components/EditAccount/EditAccount.scss';
-@import './components/SideBar/SideBar.scss';
-@import './components/Tab/Tab.scss';
-@import './components/EditInfo/EditInfo.scss';
-@import './components/GeoLocation/GeoLocation.scss';
-@import './components/ChangeProfilePic/ChangeProfilePic.scss';
-@import './components/Avatar/Avatar.scss'; 
-@import './components/ChangePassword/ChangePassword.scss';
-@import './components/ChangeEmail/ChangeEmail.scss';
-@import './components/EventView/EventView.scss';
-@import './components/ControlPanel/ControlPanel.scss';
-@import './components/AddEvent/AddEvent.scss';
-@import './components/AddPost/AddPost.scss';
-@import './components/Event/Event.scss';
-@import './components/ImageCropper/ImageCropper.scss';
-@import './components/Post/Post.scss';
+@import "./App.scss";
+@import "./components/Home/Home.scss";
+@import "./components/Landing/Landing.scss";
+@import "./components/Header/Header.scss";
+@import "./components/InputForm/InputForm.scss";
+@import "./components/Login/Login.scss";
+@import "./components/Button/Button.scss";
+@import "./components/Register/Register.scss";
+@import "./components/FirstHobbies/FirstHobbies.scss";
+@import "./components/Footer/Footer.scss";
+@import "./components/NavBar/NavBar.scss";
+@import "./components/User/User.scss";
+@import "./components/Setting/Setting.scss";
+@import "./components/EditAccount/EditAccount.scss";
+@import "./components/SideBar/SideBar.scss";
+@import "./components/Tab/Tab.scss";
+@import "./components/EditInfo/EditInfo.scss";
+@import "./components/GeoLocation/GeoLocation.scss";
+@import "./components/ChangeProfilePic/ChangeProfilePic.scss";
+@import "./components/Avatar/Avatar.scss";
+@import "./components/ChangePassword/ChangePassword.scss";
+@import "./components/ChangeEmail/ChangeEmail.scss";
+@import "./components/EventView/EventView.scss";
+@import "./components/ControlPanel/ControlPanel.scss";
+@import "./components/AddEvent/AddEvent.scss";
+@import "./components/AddPost/AddPost.scss";
+@import "./components/Event/Event.scss";
+@import "./components/ImageCropper/ImageCropper.scss";
+@import "./components/Post/Post.scss";
 
 /*Fonts and another urls*/
 
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");

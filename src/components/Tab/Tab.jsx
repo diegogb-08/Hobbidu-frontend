@@ -1,14 +1,10 @@
-import React from 'react'
+import React from "react";
 
 const Tab = (props) => {
-    if(props.isSelected){
-        return (
-           <div className="tabInfo">
-               { props.children }
-           </div>
-       )   
-   }
-   return null;
-}
+  if (props.isSelected) {
+    return <div className="tabInfo">{props.children}</div>;
+  }
+  return null;
+};
 
-export default Tab
+export default Tab;

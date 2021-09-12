@@ -1,165 +1,193 @@
-import React, { useEffect, useState } from 'react'
-import InputForm from '../InputForm/InputForm'
-import validate from '../../helper/validate'
-import { connect } from 'react-redux'
-import { LOGIN } from '../../redux/types/userType'
-import axios from 'axios'
-import { port, customer, login } from '../../tools/apiPaths'
-import Button from '../Button/Button'
-import { SHOWHOBBIES } from '../../redux/types/hobbyType'
+import React, { useEffect, useState } from "react";
+import InputForm from "../InputForm/InputForm";
+import validate from "../../helper/validate";
+import { connect } from "react-redux";
+import { LOGIN } from "../../redux/types/userType";
+import axios from "axios";
+import { port, customer, login } from "../../tools/apiPaths";
+import Button from "../Button/Button";
+import { SHOWHOBBIES } from "../../redux/types/hobbyType";
 
 const Register = (props) => {
   // HOOKS
   const [user, setUser] = useState({
-    full_name: '',
-    user_name: '',
-    email: '',
-    password: ''
-  })
+    full_name: "",
+    user_name: "",
+    email: "",
+    password: "",
+  });
 
   const [password, setPassword] = useState({
-    hideShow: 'password',
-    showHide: 'SHOW'
-  })
+    hideShow: "password",
+    showHide: "SHOW",
+  });
 
-  const [errors, setErrors] = useState({})
-  const [message, setMessage] = useState([])
+  const [errors, setErrors] = useState({});
+  const [message, setMessage] = useState([]);
 
   // Style variable error
 
   const styles = {
     error: {
-      borderColor: '#c92432',
-      color: '#c92432',
-      background: '#fffafa'
+      borderColor: "#c92432",
+      color: "#c92432",
+      background: "#fffafa",
     },
-    correct: {}
-  }
+    correct: {},
+  };
 
   // HANDLERS
 
   const handleState = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value })
-    setMessage('')
-    if (Object.keys(errors).length > 0) { setErrors(validate({ ...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value }, 'register')) }
-  }
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value,
+    });
+    setMessage("");
+    if (Object.keys(errors).length > 0) {
+      setErrors(
+        validate(
+          {
+            ...user,
+            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value,
+          },
+          "register"
+        )
+      );
+    }
+  };
 
   // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
   useEffect(() => {
-    const listener = event => {
-      if (event.code === 'Enter' || event.code === 'NumpadEnter' || event.keyCode === 13) {
-        toggle()
+    const listener = (event) => {
+      if (
+        event.code === "Enter" ||
+        event.code === "NumpadEnter" ||
+        event.keyCode === 13
+      ) {
+        toggle();
       }
-    }
-    document.addEventListener('keydown', listener)
+    };
+    document.addEventListener("keydown", listener);
     return () => {
-      document.removeEventListener('keydown', listener)
-    }
+      document.removeEventListener("keydown", listener);
+    };
     // eslint-disable-next-line
-    }, [user]);
+  }, [user]);
 
   // FUNCTIONS
 
   const showPassord = () => {
-    if (password.hideShow === 'password') {
-      return setPassword({ ...password, hideShow: 'text', showHide: 'HIDE' })
+    if (password.hideShow === "password") {
+      return setPassword({ ...password, hideShow: "text", showHide: "HIDE" });
     } else {
-      return setPassword({ ...password, hideShow: 'password', showHide: 'SHOW' })
+      return setPassword({
+        ...password,
+        hideShow: "password",
+        showHide: "SHOW",
+      });
     }
-  }
+  };
 
   const toggle = async () => {
-    const errs = validate(user, 'register')
-    setErrors(errs)
+    const errs = validate(user, "register");
+    setErrors(errs);
 
-    if (Object.keys(errs).length > 0) return
+    if (Object.keys(errs).length > 0) return;
 
     const body = {
       name: user.full_name,
       user_name: user.user_name,
       email: user.email,
-      password: user.password
-    }
+      password: user.password,
+    };
 
     try {
-      const result = await axios.post(port + customer, body)
+      const result = await axios.post(port + customer, body);
       if (result) {
         const dataLogin = {
           email: result.data.email,
-          password: user.password
-        }
+          password: user.password,
+        };
 
-        const resultLogin = await axios.post(port + customer + login, dataLogin)
+        const resultLogin = await axios.post(
+          port + customer + login,
+          dataLogin
+        );
 
         if (resultLogin) {
-          props.dispatch({ type: LOGIN, payload: resultLogin.data })
-          props.dispatch({ type: SHOWHOBBIES })
+          props.dispatch({ type: LOGIN, payload: resultLogin.data });
+          props.dispatch({ type: SHOWHOBBIES });
         }
       }
     } catch (error) {
-      setMessage('User already exist! Try with different email or User name')
+      setMessage("User already exist! Try with different email or User name");
     }
-  }
+  };
 
   return (
-        <div className='registerComponent'>
-            <div className="registerTitle">
-                <h2><span>REGISTER!</span></h2>
-            </div>
-            <div className="registerContainer">
-                <div className="registerInput">
-                    <InputForm
-                        type="text"
-                        name="full_name"
-                        onChange={handleState}
-                        title="Full Name"
-                        error={errors.full_name?.help}
-                        style={errors.full_name?.status ? styles.error : styles.correct}
-                    />
-                </div>
-                <div className="registerInput">
-                    <InputForm
-                        type="text"
-                        name="user_name"
-                        onChange={handleState}
-                        title="User Name"
-                        error={errors.user_name?.help}
-                        style={errors.user_name?.status ? styles.error : styles.correct}
-                    />
-                </div>
-                <div className="registerInput">
-                    <InputForm
-                        type="text"
-                        name="email"
-                        onChange={handleState}
-                        title="Email"
-                        error={errors.email?.help}
-                        style={errors.email?.status ? styles.error : styles.correct}
-                    />
-                </div>
-                <div className="registerInput">
-                    <InputForm
-                        type={password.hideShow}
-                        name="password"
-                        onChange={handleState}
-                        title="Password"
-                        error={errors.password?.help}
-                        style={errors.password?.status ? styles.error : styles.correct}
-                        showHide={password.showHide}
-                        onClick={() => showPassord()}
-                    />
-                </div>
-                <div className="errorMessage">
-                    <p>{message}</p>
-                </div>
-                <div className="registerInput buttonLogin">
-                    <Button onClick={() => toggle()}>
-                        <p>Continue</p>
-                    </Button>
-                </div>
-            </div>
+    <div className="registerComponent">
+      <div className="registerTitle">
+        <h2>
+          <span>REGISTER!</span>
+        </h2>
+      </div>
+      <div className="registerContainer">
+        <div className="registerInput">
+          <InputForm
+            type="text"
+            name="full_name"
+            onChange={handleState}
+            title="Full Name"
+            error={errors.full_name?.help}
+            style={errors.full_name?.status ? styles.error : styles.correct}
+          />
         </div>
-  )
-}
+        <div className="registerInput">
+          <InputForm
+            type="text"
+            name="user_name"
+            onChange={handleState}
+            title="User Name"
+            error={errors.user_name?.help}
+            style={errors.user_name?.status ? styles.error : styles.correct}
+          />
+        </div>
+        <div className="registerInput">
+          <InputForm
+            type="text"
+            name="email"
+            onChange={handleState}
+            title="Email"
+            error={errors.email?.help}
+            style={errors.email?.status ? styles.error : styles.correct}
+          />
+        </div>
+        <div className="registerInput">
+          <InputForm
+            type={password.hideShow}
+            name="password"
+            onChange={handleState}
+            title="Password"
+            error={errors.password?.help}
+            style={errors.password?.status ? styles.error : styles.correct}
+            showHide={password.showHide}
+            onClick={() => showPassord()}
+          />
+        </div>
+        <div className="errorMessage">
+          <p>{message}</p>
+        </div>
+        <div className="registerInput buttonLogin">
+          <Button onClick={() => toggle()}>
+            <p>Continue</p>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default connect()(Register)
+export default connect()(Register);

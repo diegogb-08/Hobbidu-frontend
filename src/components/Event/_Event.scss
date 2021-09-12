@@ -1,309 +1,307 @@
-.eventComponent{
-    width: 100%;
-    min-height: 100vh;
+.eventComponent {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $backgroundWhite;
+  .eventCointainer {
+    width: 60rem;
+    background-color: $white1;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    background-color: $backgroundWhite;
-    .eventCointainer{
-        width: 60rem;
-        background-color: $white1;
+    justify-content: space-evenly;
+    align-items: center;
+    border: $border1;
+    box-sizing: border-box;
+    border-radius: $br;
+    .title {
+      font-size: 2rem;
+      margin: 0;
+      padding-top: 1rem;
+      text-align: center;
+    }
+    .edit {
+      position: relative;
+      color: gray;
+      font-size: 1.5rem;
+      top: 16%;
+      left: 45%;
+      cursor: pointer;
+    }
+    .edit:hover {
+      color: $logoColor;
+    }
+    .eventInfoContainer {
+      height: 100%;
+      width: 100%;
+      .eventInfo {
+        height: 80%;
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        border: $border1;
-        box-sizing: border-box;
-        border-radius: $br;
-        .title{
-            font-size: 2rem;
+
+        .eventInfoLeft {
+          width: 70%;
+          height: 100%;
+          flex-direction: column;
+          box-sizing: border-box;
+          padding: 1rem;
+          .location {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+            .icon {
+              color: $logoColor;
+              margin-right: 1rem;
+            }
+          }
+          h3 {
             margin: 0;
-            padding-top: 1rem;
-            text-align: center;
-        }
-        .edit{
-            position: relative;
-            color: gray;
-            font-size: 1.5rem;
-            top: 16%;
-            left: 45%;
-            cursor: pointer;
-        }
-        .edit:hover{
-            color: $logoColor;
-        }
-        .eventInfoContainer{
+          }
+          .createdBy {
+            height: 5rem;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .iconBtnAvatar {
+              width: 2.5rem;
+              height: 2.5rem;
+              .iconBtn {
+                border-radius: 50%;
+                color: white;
+                font-size: 2.5rem;
+                background-color: $logoColor;
+              }
+            }
+            p {
+              margin-left: 1rem;
+              font-size: 1.5rem;
+              font-weight: bold;
+            }
+            .hobbyTagContainer {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              width: 50%;
+              height: 100%;
+              .hobbyTag {
+                display: flex;
+                min-height: 3rem;
+                width: 7rem;
+                background-color: $logoColor;
+                border-radius: $br;
+                justify-content: center;
+                align-items: center;
+                p {
+                  color: white;
+                  font-weight: bold;
+                  margin: 0;
+                  padding: 0;
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+          .description {
             height: 100%;
             width: 100%;
-            .eventInfo{
-                height: 80%;
-                width: 100%;
-                display: flex;
-
-                .eventInfoLeft{
-                    width: 70%;
-                    height: 100%;
-                    flex-direction: column;
-                    box-sizing: border-box;
-                    padding: 1rem;
-                    .location{
-                        display: flex;
-                        flex-direction: row;
-                        width: 100%;
-                        align-items: center;
-                        .icon{
-                            color: $logoColor;
-                            margin-right: 1rem;
-                        }
-                    }
-                    h3{
-                        margin: 0;
-                    }
-                    .createdBy{
-                        height: 5rem;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        .iconBtnAvatar{
-                            width: 2.5rem;
-                            height: 2.5rem;
-                            .iconBtn{
-                                border-radius: 50%;
-                                color: white;
-                                font-size: 2.5rem;
-                                background-color: $logoColor;
-                            }
-                        }
-                        p{
-                            margin-left: 1rem;
-                            font-size: 1.5rem;
-                            font-weight: bold;
-                        }
-                        .hobbyTagContainer{
-                            display: flex;
-                            justify-content: flex-end;
-                            align-items: center;
-                            width: 50%;
-                            height: 100%;
-                            .hobbyTag{
-                                display: flex;
-                                min-height: 3rem;
-                                width: 7rem;
-                                background-color: $logoColor;
-                                border-radius: $br;
-                                justify-content: center;
-                                align-items: center;
-                                p{
-                                    color: white;
-                                    font-weight: bold;
-                                    margin: 0;
-                                    padding: 0;
-                                    font-size: 1rem;
-                                }
-                            }
-                        }
-                    }
-                    .description{
-                        height: 100%;
-                        width: 100%;
-                        display: flex;
-                        align-items: center;
-                        p{
-                            text-align: justify;
-                        }
-                    }
-                }
-                .eventInfoRight{
-                    width: 30%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    box-sizing: border-box;
-                    padding: 1rem;
-                    .eventInfoRightContainer{
-                        border: $border1;
-                        background-color: $backgroundWhite;
-                        height: 100%;
-                        width: 100%;
-                        border-radius: $br;
-                        .joiners{
-                            width: 100%;
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            justify-content: space-evenly;
-                            .spotsLeft{
-                                color: red;
-                                font-weight: bold;
-                            }
-                        }
-                        .vehicleContainer{
-                            width: 100%;
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            justify-content: space-evenly;
-                        }
-                        .addJoiner{
-                            width: 100%;
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            justify-content: center;
-                            .signUp{
-                                width: 6rem;
-                                height: 2rem;
-                                border: $border1;
-                                border-radius: $br;
-                                display: flex;
-                                padding: 0.5rem;
-                                box-sizing: border-box;
-                                flex-direction: row;
-                                align-items: center;
-                                cursor: pointer;
-                                .joinUserIcon{
-                                    color: $logoColor;
-                                    font-size: 1.2rem;
-                                }
-                                p{
-                                    margin-left: 1rem;
-                                    font-size: 1.2rem;
-                                }
-                            }
-                        }
-                        .renderJoiners{
-                            width: 100%;
-                            height: 70%;
-                            padding: 1rem;
-                            box-sizing: border-box;
-                            display: flex;
-                            align-items: center;
-                            flex-direction: column;
-                            .joiner{
-                                width: 90%;
-                                height: 3rem;
-                                border: $border1;
-                                background-color: white;
-                                border-radius: $br;
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                                padding-left: 1rem;
-                                padding-right: 1rem;
-                                box-sizing: border-box;
-                                margin-bottom: 0.5rem;
-                                cursor: pointer;
-                                .iconBtnAvatar{
-                                    width: 2.5rem;
-                                    height: 2.5rem;
-                                    .iconBtn{
-                                        border-radius: 50%;
-                                        color: white;
-                                        font-size: 2.5rem;
-                                        background-color: $logoColor;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            display: flex;
+            align-items: center;
+            p {
+              text-align: justify;
             }
-            .commentContainer{
-                width: 100%;
-                min-height: 3.5rem;
-                border-radius: 0 0 $br $br;
-                display: flex;
-                flex-direction: column;
-                
-                .commentCollection{
-                    width: 100%;
-                    display: flex;
-                    box-sizing: border-box;
-                    flex-direction: column;
-                    border-bottom: $border1;
-                    border-top: $border1;
-                    justify-content: center;
-                    align-items: center;
-                    .comment{
-                        display: flex;
-                        width: 90%;
-                        flex-direction: row;
-                        justify-content: left;
-                        box-sizing: border-box;
-                        p{
-                            margin: 0.5rem 0 0.5rem 0;
-                            padding: 0;
-                        }
-                        .userName{
-                            font-weight: bold;
-                            cursor: pointer;
-                            margin-right: 1rem;
-                        }
-                        .userName:hover{
-                            text-decoration: underline;
-                        }
-                    }
-                }
-                .postComment{
-                    height: 3.5rem;
-                    width: 100%;
-                    display: flex;
-                    box-sizing: border-box;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center;
-                    input{
-                        font-size: 16px;
-                        width: 65%;
-                        padding: 12px 20px;
-                        display: inline-block;
-                        border-radius: 4rem;
-                        border: 1px solid #ccc;
-                        background-color: $backgroundWhite;
-                    }
-                    p{
-                        margin-left: 2rem;
-                        color: $blue;
-                        font-weight: bold;
-                        font-size: 1.1rem;
-                        cursor: pointer;
-                    }
-                }
-            }
+          }
         }
+        .eventInfoRight {
+          width: 30%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          box-sizing: border-box;
+          padding: 1rem;
+          .eventInfoRightContainer {
+            border: $border1;
+            background-color: $backgroundWhite;
+            height: 100%;
+            width: 100%;
+            border-radius: $br;
+            .joiners {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-evenly;
+              .spotsLeft {
+                color: red;
+                font-weight: bold;
+              }
+            }
+            .vehicleContainer {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-evenly;
+            }
+            .addJoiner {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              .signUp {
+                width: 6rem;
+                height: 2rem;
+                border: $border1;
+                border-radius: $br;
+                display: flex;
+                padding: 0.5rem;
+                box-sizing: border-box;
+                flex-direction: row;
+                align-items: center;
+                cursor: pointer;
+                .joinUserIcon {
+                  color: $logoColor;
+                  font-size: 1.2rem;
+                }
+                p {
+                  margin-left: 1rem;
+                  font-size: 1.2rem;
+                }
+              }
+            }
+            .renderJoiners {
+              width: 100%;
+              height: 70%;
+              padding: 1rem;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              .joiner {
+                width: 90%;
+                height: 3rem;
+                border: $border1;
+                background-color: white;
+                border-radius: $br;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                box-sizing: border-box;
+                margin-bottom: 0.5rem;
+                cursor: pointer;
+                .iconBtnAvatar {
+                  width: 2.5rem;
+                  height: 2.5rem;
+                  .iconBtn {
+                    border-radius: 50%;
+                    color: white;
+                    font-size: 2.5rem;
+                    background-color: $logoColor;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .commentContainer {
+        width: 100%;
+        min-height: 3.5rem;
+        border-radius: 0 0 $br $br;
+        display: flex;
+        flex-direction: column;
+
+        .commentCollection {
+          width: 100%;
+          display: flex;
+          box-sizing: border-box;
+          flex-direction: column;
+          border-bottom: $border1;
+          border-top: $border1;
+          justify-content: center;
+          align-items: center;
+          .comment {
+            display: flex;
+            width: 90%;
+            flex-direction: row;
+            justify-content: left;
+            box-sizing: border-box;
+            p {
+              margin: 0.5rem 0 0.5rem 0;
+              padding: 0;
+            }
+            .userName {
+              font-weight: bold;
+              cursor: pointer;
+              margin-right: 1rem;
+            }
+            .userName:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .postComment {
+          height: 3.5rem;
+          width: 100%;
+          display: flex;
+          box-sizing: border-box;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          input {
+            font-size: 16px;
+            width: 65%;
+            padding: 12px 20px;
+            display: inline-block;
+            border-radius: 4rem;
+            border: 1px solid #ccc;
+            background-color: $backgroundWhite;
+          }
+          p {
+            margin-left: 2rem;
+            color: $blue;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+          }
+        }
+      }
     }
+  }
 }
 @media screen and (max-width: 900px) {
-    .eventComponent{
-        padding-bottom: 3rem;
-        .eventCointainer{
+  .eventComponent {
+    padding-bottom: 3rem;
+    .eventCointainer {
+      width: 100%;
+      .edit {
+        left: 40%;
+      }
+      .eventInfoContainer {
+        .eventInfo {
+          flex-direction: column;
+          .eventInfoLeft {
             width: 100%;
-            .edit{
-                left: 40%;
-            }
-            .eventInfoContainer{
-                .eventInfo{
-                    flex-direction: column;
-                    .eventInfoLeft{
-                        width: 100%;
-                        .createdBy{
-
-                            .hobbyTagContainer{
-                                
-                                .hobbyTag{
-                                    width: 7rem;
-                                }
-                            }
-                        }
-                    }
-                    .eventInfoRight{
-                        width: 100%;
-                    }
+            .createdBy {
+              .hobbyTagContainer {
+                .hobbyTag {
+                  width: 7rem;
                 }
+              }
             }
+          }
+          .eventInfoRight {
+            width: 100%;
+          }
         }
+      }
     }
+  }
 }

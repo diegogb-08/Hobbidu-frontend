@@ -1,25 +1,25 @@
-import { Component } from 'react'
-import ReactDOM from 'react-dom'
+import { Component } from "react";
+import ReactDOM from "react-dom";
 
-const portalRoot = document.getElementById('portal')
+const portalRoot = document.getElementById("portal");
 
 export default class Portal extends Component {
-  constructor () {
-    super()
-    this.el = document.createElement('div')
-  };
-
-  componentDidMount () {
-    portalRoot.appendChild(this.el)
+  constructor() {
+    super();
+    this.el = document.createElement("div");
   }
 
-  componentWillUnmount () {
-    portalRoot.removeChild(this.el)
+  componentDidMount() {
+    portalRoot.appendChild(this.el);
   }
 
-  render () {
-    const { children } = this.props
+  componentWillUnmount() {
+    portalRoot.removeChild(this.el);
+  }
 
-    return ReactDOM.createPortal(children, this.el)
+  render() {
+    const { children } = this.props;
+
+    return ReactDOM.createPortal(children, this.el);
   }
 }

@@ -1,38 +1,38 @@
 .editAccountComponent {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $backgroundWhite;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $backgroundWhite;
 }
 
-.editAccountContainer{
-    width: 60%;
-    height: 85%;
-    background-color: $white1;
-    display: flex;
-    flex-direction: row;
-    border: $border1;
-    box-sizing: border-box;
-    .sideBarLeft{
-        width: 25%
-    }
-    .tabRight {
-        width: 75%
-    }
+.editAccountContainer {
+  width: 60%;
+  height: 85%;
+  background-color: $white1;
+  display: flex;
+  flex-direction: row;
+  border: $border1;
+  box-sizing: border-box;
+  .sideBarLeft {
+    width: 25%;
+  }
+  .tabRight {
+    width: 75%;
+  }
 }
 @media screen and (max-width: 900px) {
-    .editAccountComponent{
-        .editAccountContainer{
-            width: 100%;
-            height: 70%;
-            .sideBarLeft{
-                width: 35%
-            }
-            .tabRight {
-                width: 65%
-            }
-        }
+  .editAccountComponent {
+    .editAccountContainer {
+      width: 100%;
+      height: 70%;
+      .sideBarLeft {
+        width: 35%;
+      }
+      .tabRight {
+        width: 65%;
+      }
     }
+  }
 }

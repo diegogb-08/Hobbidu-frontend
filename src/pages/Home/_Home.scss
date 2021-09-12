@@ -1,43 +1,43 @@
-.homeComponent{
-    width: 100%;
-    min-height: 100vh;
+.homeComponent {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $backgroundWhite;
+  .homeContainer {
+    width: 60rem;
+    height: auto;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    background-color: $backgroundWhite;
-    .homeContainer{
-        width: 60rem;
-        height: auto;
+    align-items: center;
+    .homeDivisionPost {
+      width: 35rem;
+      .noPosts {
+        width: 100%;
+        height: 30rem;
+        background-color: white;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        .homeDivisionPost{
-            width: 35rem;
-            .noPosts{
-                width: 100%;
-                height: 30rem;
-                background-color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: $br;
-                border: $border1;
-                h2{
-                    text-align: center;
-                    color: $logoColor;
-                }
-            }
+        border-radius: $br;
+        border: $border1;
+        h2 {
+          text-align: center;
+          color: $logoColor;
         }
+      }
     }
+  }
 }
 @media screen and (max-width: 600px) {
-    .homeComponent{
-        margin-bottom: 2rem;
-        .homeContainer{
-            width: 100%;
-            .homeDivisionPost{
-                width: 100%;
-            }
-        }
+  .homeComponent {
+    margin-bottom: 2rem;
+    .homeContainer {
+      width: 100%;
+      .homeDivisionPost {
+        width: 100%;
+      }
     }
+  }
 }

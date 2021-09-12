@@ -1,40 +1,40 @@
-import { ADD, REMOVE, CLEAN, SHOWHOBBIES } from '../types/hobbyType'
+import { ADD, REMOVE, CLEAN, SHOWHOBBIES } from "../types/hobbyType";
 
 const initialState = {
   allHobbies: [],
-  showHobbies: false
-}
+  showHobbies: false,
+};
 
 const allHobbiesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
       return {
         allHobbies: action.payload,
-        showHobbies: true
-      }
+        showHobbies: true,
+      };
 
     case REMOVE:
       // eslint-disable-next-line no-case-declarations
-      const numIndex = parseInt(action.payload)
+      const numIndex = parseInt(action.payload);
       return {
         allHobbies: [
           ...state.allHobbies.slice(0, numIndex),
-          ...state.allHobbies.slice(numIndex + 1)
-        ]
-      }
+          ...state.allHobbies.slice(numIndex + 1),
+        ],
+      };
 
     case SHOWHOBBIES:
       return {
         ...state,
-        showHobbies: true
-      }
+        showHobbies: true,
+      };
 
     case CLEAN:
-      return initialState
+      return initialState;
 
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default allHobbiesReducer
+export default allHobbiesReducer;

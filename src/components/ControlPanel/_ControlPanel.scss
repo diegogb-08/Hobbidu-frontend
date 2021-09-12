@@ -1,101 +1,97 @@
-.controlPanelComponent{
-    width: 60rem;
-    height: 4rem;
+.controlPanelComponent {
+  width: 60rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  .controlPanelContainers {
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    .controlPanelContainers{
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+  }
+  .controlPanelLeft {
+    input {
+      font-size: 16px;
+      width: 100%;
+      padding: 12px 20px;
+      display: inline-block;
+      border-radius: $br;
+      border: 1px solid #ccc;
+      background-color: $backgroundWhite;
     }
-    .controlPanelLeft{
-        input{
-            font-size: 16px;
-            width: 100%;
-            padding: 12px 20px;
-            display: inline-block;
-            border-radius: $br;
-            border: 1px solid #ccc;
-            background-color: $backgroundWhite;
+  }
+  .controlPanelRight {
+    color: $logoColor;
+    font-size: 2rem;
+    justify-content: space-evenly;
+    .panelBtn {
+      cursor: pointer;
+    }
+  }
+  .autocompleteDropdownContainer {
+    position: absolute;
+    width: 60rem;
+    top: 128px;
+    transition: 0.5s ease all;
+    .suggestion {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      box-sizing: border-box;
+      cursor: pointer;
+      p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $fontcolor3;
+      }
+      .iconBtnAvatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        .iconBtn {
+          border-radius: 50%;
+          color: white;
+          font-size: 2.5rem;
+          background-color: $logoColor;
         }
-    }
-    .controlPanelRight{
-        color: $logoColor;
+      }
+      .lens {
         font-size: 2rem;
-        justify-content: space-evenly;
-        .panelBtn{
-            cursor: pointer;
-        }
+        color: $fontcolor3;
+      }
     }
-    .autocompleteDropdownContainer{
-        position: absolute;
-        width: 60rem;
-        top: 128px;
-        transition: 0.5s ease all;
-        .suggestion{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            box-sizing: border-box;
-            cursor: pointer;
-            p{
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: $fontcolor3 ;
-            }
-            .iconBtnAvatar{
-                width: 2.5rem;
-                height: 2.5rem;
-                .iconBtn{
-                    border-radius: 50%;
-                    color: white;
-                    font-size: 2.5rem;
-                    background-color: $logoColor;
-                }
-            }
-            .lens{
-                font-size: 2rem;
-                color: $fontcolor3;
-            }
-            
-            
-        }
-        .suggestion:hover{
-            background-color: $logoColor;
-            p{
-                color: white;
-            }
-          
-        }
+    .suggestion:hover {
+      background-color: $logoColor;
+      p {
+        color: white;
+      }
     }
+  }
 }
 @media screen and (max-width: 900px) {
-    .controlPanelComponent{
-        width: 100%;
-        .controlPanelLeft{
-            width: 70%;
-            padding-left: 0.5rem;
-        }
-        .controlPanelRight{
-            width: 30%;
-            
-        }
-        .autocompleteDropdownContainer{
-            width: 100%;
-            .suggestion{
-                p{
-                    font-size: 1rem;
-                }
-            }
-        }
+  .controlPanelComponent {
+    width: 100%;
+    .controlPanelLeft {
+      width: 70%;
+      padding-left: 0.5rem;
     }
+    .controlPanelRight {
+      width: 30%;
+    }
+    .autocompleteDropdownContainer {
+      width: 100%;
+      .suggestion {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }

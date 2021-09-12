@@ -1,171 +1,170 @@
-.AddEventContainer{
-    width: 60rem;
-    height: 90vh;
-    padding: 1rem;
-    box-sizing: border-box;
+.AddEventContainer {
+  width: 60rem;
+  height: 90vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  font-family: $fontCasual;
+  flex-direction: column;
+  position: relative;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  h1 {
+    font-family: $fontStyle;
+    width: 100%;
+    text-align: center;
+  }
+  .addEventInfo {
+    width: 100%;
+    height: 100%;
     display: flex;
-    font-family: $fontCasual;
-    flex-direction: column;
-    position: relative;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    h1{
-        font-family: $fontStyle;
-        width: 100%;
-        text-align: center;
-    }
-    .addEventInfo{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        .addEventSections{
-            width: 50%;
-            height: 100%;
-            padding: 1rem;
-            .inputEvent{
-                width: 90%;
-                margin-bottom: 4rem;
-                .titles{
-                    font-weight: bold;
-                }
-                input{
-                    font-size: 16px;
-                    width: 100%;
-                    padding: 12px 20px;
-                    display: inline-block;
-                    border-radius: $br;
-                    border: 1px solid #ccc;
-                    background-color: $backgroundWhite;
-                }
-                textarea{
-                    font-size: 16px;
-                    width: 100%;
-                    padding: 12px 20px;
-                    display: inline-block;
-                    border-radius: $br;
-                    border: 1px solid #ccc;
-                    background-color: $backgroundWhite;
-                }
-                .autocompleteDropdownContainer{
-                    z-index: 100;
-                    background-color: white;
-                    position: relative;
-                    width: 26rem;
-                    border: $border1;
-                    position: absolute;
-                    .suggestion{
-                        z-index: 100;
-                        height: 2rem;
-                        width: 100%;
-                        background-color: white;
-                        border-bottom: 1px black dotted;
-                        display: flex;
-                        align-items: center;
-                        color: black;
-                        cursor: pointer;
-                        .iconSuggestion{
-                            margin-right: 1rem;
-                            margin-left: 1rem;
-                        }
-                    }
-                    .suggestion:hover {
-                        background-color: $logoColor;
-                    }
-                }
-                
-            }
-            .smallInputs{
-                flex-direction: row;
-                display: flex;
-                justify-content: space-evenly;
-                .selector{
-                    height: 2.5rem;
-                    width: 2.5rem;
-                    font-size: 1.5rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-            .grid{
-                display: grid;
-                grid-template-columns: repeat(2,1fr);
-                .friend{
-                    display: flex;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    .iconFriend{
-                        color: gray;
-                        cursor: pointer;
-                    }
-                }
-            }
-          
-            .inputHobbies{
-                width: 100%;
-                .hobbies{
-                    height: 3rem;
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    .hobby {
-                        padding: 0.5rem;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        border-radius: $br;
-                        border: 2px solid $logoColor;
-                        background-color: white;
-                        color: $logoColor;
-                        font-weight: bold;
-                        cursor: pointer;
-                    }
-                    .hobby:hover{
-                        background-color: #e9e3e3;
-                    }
-                }
-                .message{
-                    color: red;
-                    font-weight: bold;
-                    margin: 0;
-                    padding: 0;
-                }
-            }
-            .inputButton{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: flex-end;
-                .eventButton{
-                    height: 3rem;
-                    width: 50%;
-                    p{
-                        font-weight: bold;
-                        color: white;
-                    }
-                }
-            }
+    flex-direction: row;
+    justify-content: center;
+    .addEventSections {
+      width: 50%;
+      height: 100%;
+      padding: 1rem;
+      .inputEvent {
+        width: 90%;
+        margin-bottom: 4rem;
+        .titles {
+          font-weight: bold;
         }
+        input {
+          font-size: 16px;
+          width: 100%;
+          padding: 12px 20px;
+          display: inline-block;
+          border-radius: $br;
+          border: 1px solid #ccc;
+          background-color: $backgroundWhite;
+        }
+        textarea {
+          font-size: 16px;
+          width: 100%;
+          padding: 12px 20px;
+          display: inline-block;
+          border-radius: $br;
+          border: 1px solid #ccc;
+          background-color: $backgroundWhite;
+        }
+        .autocompleteDropdownContainer {
+          z-index: 100;
+          background-color: white;
+          position: relative;
+          width: 26rem;
+          border: $border1;
+          position: absolute;
+          .suggestion {
+            z-index: 100;
+            height: 2rem;
+            width: 100%;
+            background-color: white;
+            border-bottom: 1px black dotted;
+            display: flex;
+            align-items: center;
+            color: black;
+            cursor: pointer;
+            .iconSuggestion {
+              margin-right: 1rem;
+              margin-left: 1rem;
+            }
+          }
+          .suggestion:hover {
+            background-color: $logoColor;
+          }
+        }
+      }
+      .smallInputs {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-evenly;
+        .selector {
+          height: 2.5rem;
+          width: 2.5rem;
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .friend {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          .iconFriend {
+            color: gray;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .inputHobbies {
+        width: 100%;
+        .hobbies {
+          height: 3rem;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          .hobby {
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: $br;
+            border: 2px solid $logoColor;
+            background-color: white;
+            color: $logoColor;
+            font-weight: bold;
+            cursor: pointer;
+          }
+          .hobby:hover {
+            background-color: #e9e3e3;
+          }
+        }
+        .message {
+          color: red;
+          font-weight: bold;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .inputButton {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        .eventButton {
+          height: 3rem;
+          width: 50%;
+          p {
+            font-weight: bold;
+            color: white;
+          }
+        }
+      }
     }
+  }
 }
 @media screen and (max-width: 900px) {
-    .AddEventContainer{
-        width: 100%;
-        .addEventInfo{
-            align-items: center;
-            justify-content: end;
-            flex-direction: column;
-            .addEventSections{
-                width: 90%;
-                .inputEvent{
-                    margin-bottom: 2rem;
-                    .autocompleteDropdownContainer{
-                        width: 20rem;
-                    }
-                }   
-            }
+  .AddEventContainer {
+    width: 100%;
+    .addEventInfo {
+      align-items: center;
+      justify-content: end;
+      flex-direction: column;
+      .addEventSections {
+        width: 90%;
+        .inputEvent {
+          margin-bottom: 2rem;
+          .autocompleteDropdownContainer {
+            width: 20rem;
+          }
         }
+      }
     }
+  }
 }
