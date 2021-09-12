@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
-import Modal from "../Modal/Modal";
-import GeoLocation from "../GeoLocation/GeoLocation";
-import { connect } from "react-redux";
-import Button from "../Button/Button";
-import axios from "axios";
-import { port, USER, SEARCH, QUERY, EVENT } from "../../helper/apiPaths";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserPlus, faUserTimes } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect, useState } from 'react'
+import Modal from '../Modal/Modal'
+import GeoLocation from '../GeoLocation/GeoLocation'
+import { connect } from 'react-redux'
+import Button from '../Button/Button'
+import axios from 'axios'
+import { PORT, USER, SEARCH, QUERY, EVENT } from '../../helper/apiPaths'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPlus, faUserTimes } from '@fortawesome/free-solid-svg-icons'
 
 const EditEvent = (props) => {
   // Modal Hook
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false)
   const toggle = () => {
-    setActive(!active);
-  };
+    setActive(!active)
+  }
 
-  const editEvent = props.event;
+  const editEvent = props.event
 
-  const [selected, setSelected] = useState({});
+  const [selected, setSelected] = useState({})
 
   const [event, setEvent] = useState({
     title: editEvent.title,
@@ -28,15 +28,15 @@ const EditEvent = (props) => {
     seats: editEvent.seats,
     joiners: editEvent.joiners,
     description: editEvent.description,
-  });
+  })
 
-  const [suggestion, setSuggestion] = useState([]);
+  const [suggestion, setSuggestion] = useState([])
 
-  const [friends, setFriends] = useState([]);
+  const [friends, setFriends] = useState([])
 
-  const [disabled, setDisabled] = useState("disabled");
+  const [disabled, setDisabled] = useState('disabled')
 
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('')
 
   // Handlers
 
@@ -44,46 +44,46 @@ const EditEvent = (props) => {
     setEvent({
       ...event,
       [e.target.name]:
-        e.target.type === "number" ? +e.target.value : e.target.value,
-    });
-  };
+        e.target.type === 'number' ? +e.target.value : e.target.value,
+    })
+  }
 
   const handleJoiners = async (e) => {
     try {
       const result = await axios.get(
-        port + USER + SEARCH + QUERY + e.target.value
-      );
-      setSuggestion(result.data);
+        PORT + USER + SEARCH + QUERY + e.target.value
+      )
+      setSuggestion(result.data)
     } catch (err) {
-      throw new Error(404);
+      throw new Error(404)
     }
-  };
+  }
 
   const handleSelected = async (user) => {
-    const maxJoiners = parseInt(event.maxJoiners);
-    const joinerIdFound = event.joiners.find((id) => id === user._id);
+    const maxJoiners = parseInt(event.maxJoiners)
+    const joinerIdFound = event.joiners.find((id) => id === user._id)
     if (maxJoiners !== event.joiners.length && joinerIdFound === undefined) {
-      setEvent({ ...event, joiners: [...event.joiners, user._id] });
-      setFriends([...friends, user]);
-      const result = await axios.get(port + USER + SEARCH + QUERY);
-      setSuggestion(result.data);
+      setEvent({ ...event, joiners: [...event.joiners, user._id] })
+      setFriends([...friends, user])
+      const result = await axios.get(PORT + USER + SEARCH + QUERY)
+      setSuggestion(result.data)
     }
-  };
+  }
 
   const handleCheckBox = (e) => {
     if (e.target.checked === true) {
-      setDisabled("");
-      setEvent({ ...event, vehicle: e.target.checked });
+      setDisabled('')
+      setEvent({ ...event, vehicle: e.target.checked })
     } else {
-      setDisabled("disabled");
-      setEvent({ ...event, vehicle: e.target.checked, seats: "" });
+      setDisabled('disabled')
+      setEvent({ ...event, vehicle: e.target.checked, seats: '' })
     }
-  };
+  }
 
   useEffect(() => {
-    setProps();
+    setProps()
     // eslint-disable-next-line
-  }, []);
+  }, [])
 
   // Functions
 
@@ -100,61 +100,61 @@ const EditEvent = (props) => {
       description: event.description,
       location: props.location,
       event_date: event.event_date,
-    };
+    }
 
     // Calling the api to create the Event
-    if (event.hobby_id !== "") {
+    if (event.hobby_id !== '') {
       try {
         const result = await axios.put(
-          port + EVENT + "/" + props.user._id,
+          PORT + EVENT + '/' + props.user._id,
           body
-        );
+        )
         if (result.data) {
           setTimeout(() => {
-            toggle();
-          }, 500);
-          setDisabled("disabled");
+            toggle()
+          }, 500)
+          setDisabled('disabled')
           setEvent({
             ...event,
-            title: "",
-            hobby_id: "",
-            event_date: "",
+            title: '',
+            hobby_id: '',
+            event_date: '',
             maxJoiners: 0,
             vehicle: false,
-            seats: "",
+            seats: '',
             joiners: [],
-            description: "",
-          });
+            description: '',
+          })
         }
       } catch (err) {
-        setMessage("Something went wrong");
+        setMessage('Something went wrong')
       }
     } else {
-      setMessage("Please, select your hobby!");
+      setMessage('Please, select your hobby!')
     }
-  };
+  }
 
   const selectHobby = (hobbyId) => {
-    setSelected({ [hobbyId]: { backgroundColor: "#f05356", color: "white" } });
-    setEvent({ ...event, hobbyId: hobbyId });
-    setMessage("");
-  };
+    setSelected({ [hobbyId]: { backgroundColor: '#f05356', color: 'white' } })
+    setEvent({ ...event, hobbyId: hobbyId })
+    setMessage('')
+  }
 
   const deleteJoiner = (user) => {
     setEvent({
       ...event,
       joiners: event.joiners.filter((element) => element !== user._id),
-    });
-    setFriends(friends.filter((element) => element._id !== user._id));
-  };
+    })
+    setFriends(friends.filter((element) => element._id !== user._id))
+  }
 
   const setProps = () => {
-    setFriends(editEvent.joiners);
-    selectHobby(editEvent.hobby_id?._id);
+    setFriends(editEvent.joiners)
+    selectHobby(editEvent.hobby_id?._id)
     if (editEvent.vehicle === true) {
-      setDisabled("");
+      setDisabled('')
     }
-  };
+  }
 
   return (
     <div>
@@ -190,7 +190,7 @@ const EditEvent = (props) => {
                       >
                         <p>{hobby.hobby_name}</p>
                       </div>
-                    );
+                    )
                   })}
                 </div>
                 <p className="message">{message}</p>
@@ -278,7 +278,7 @@ const EditEvent = (props) => {
                         />
                         <p>{friend.name}</p>
                       </div>
-                    );
+                    )
                   })}
                 </div>
                 <p className="titles">Joiners</p>
@@ -303,7 +303,7 @@ const EditEvent = (props) => {
                         />
                         <p>{user.name}</p>
                       </div>
-                    );
+                    )
                   })}
                 </div>
               </div>
@@ -335,14 +335,14 @@ const EditEvent = (props) => {
         </div>
       </Modal>
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
     user: state.userReducer.user,
     location: state.userReducer.location,
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(EditEvent);
+export default connect(mapStateToProps)(EditEvent)

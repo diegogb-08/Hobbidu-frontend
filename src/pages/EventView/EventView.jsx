@@ -1,15 +1,15 @@
-import axios from "axios"
-import React, { useEffect, useState } from "react"
-import { connect } from "react-redux"
-import { EVENT, port } from "../../helper/apiPaths"
-import ControlPanel from "../../components/ControlPanel/ControlPanel"
-import moment from "moment"
-import Footer from "../../components/Footer/Footer"
-import GeoLocation from "../../components/GeoLocation/GeoLocation"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faUserPlus, faCheck } from "@fortawesome/free-solid-svg-icons"
-import { ADDEVENT } from "../../redux/types/eventType"
-import { useHistory } from "react-router"
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import { EVENT, PORT } from '../../helper/apiPaths'
+import ControlPanel from '../../components/ControlPanel/ControlPanel'
+import moment from 'moment'
+import Footer from '../../components/Footer/Footer'
+import GeoLocation from '../../components/GeoLocation/GeoLocation'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPlus, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { ADDEVENT } from '../../redux/types/eventType'
+import { useHistory } from 'react-router'
 
 const EventView = (props) => {
   const history = useHistory()
@@ -33,7 +33,7 @@ const EventView = (props) => {
 
   // Validate that no one can get inside the app without login or registering
   useEffect(() => {
-    if (!props.user?._id) history.push("/")
+    if (!props.user?._id) history.push('/')
     // eslint-disable-next-line
   }, [])
 
@@ -47,7 +47,7 @@ const EventView = (props) => {
       }
 
       try {
-        const result = await axios.post(port + EVENT + "/distance", body)
+        const result = await axios.post(PORT + EVENT + '/distance', body)
 
         if (result) {
           // here we are filtering the events by our hobbies
@@ -89,8 +89,8 @@ const EventView = (props) => {
 
   const setJoinGoin = (joiners) => {
     if (joiners.find((element) => element._id === props.user._id) !== undefined)
-      return "Going"
-    else return "Join"
+      return 'Going'
+    else return 'Join'
   }
 
   const joinUser = async (event) => {
@@ -99,7 +99,7 @@ const EventView = (props) => {
     }
 
     try {
-      const result = await axios.put(port + EVENT + "/join/" + event._id, body)
+      const result = await axios.put(PORT + EVENT + '/join/' + event._id, body)
       if (result) return filterEventsCall()
     } catch (err) {}
   }
@@ -156,7 +156,7 @@ const EventView = (props) => {
                         <div className="date">
                           <p>
                             {moment(event.event_date).format(
-                              "ddd, Do MMM YYYY"
+                              'ddd, Do MMM YYYY'
                             )}
                           </p>
                         </div>
@@ -169,14 +169,14 @@ const EventView = (props) => {
                             <div className="joinersSpotsLeft">
                               <p>{event.joiners?.length} joiner/s</p>
                               <p className="spotsLeft">
-                                {" "}
+                                {' '}
                                 {leftSpots} spots left!
                               </p>
                             </div>
                           </div>
                           <div className="eventContentCenter">
                             <p>
-                              <b>Own vehicle:</b> {event.vehicle ? "Yes" : "No"}
+                              <b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}
                             </p>
                             {event.vehicle ? (
                               <>
@@ -234,7 +234,7 @@ const EventView = (props) => {
                         <div className="date">
                           <p>
                             {moment(event.event_date).format(
-                              "ddd, Do MMM YYYY"
+                              'ddd, Do MMM YYYY'
                             )}
                           </p>
                         </div>
@@ -247,14 +247,14 @@ const EventView = (props) => {
                             <div className="joinersSpotsLeft">
                               <p>{event.joiners?.length} joiner</p>
                               <p className="spotsLeft">
-                                {" "}
+                                {' '}
                                 {leftSpots} spots left!
                               </p>
                             </div>
                           </div>
                           <div className="eventContentCenter">
                             <p>
-                              <b>Own vehicle:</b> {event.vehicle ? "Yes" : "No"}
+                              <b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}
                             </p>
                             {event.vehicle ? (
                               <>

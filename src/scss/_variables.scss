@@ -5,9 +5,9 @@ $backgroundTags: #ecddd3, #d7e3f0, #faf9e7, #f1dede;
 $repeat: 20;
 // Font-Families
 
-$fontStyle: "Caveat", cursive;
+$fontStyle: 'Caveat', cursive;
 
-$fontCasual: "Rajdhani", sans-serif;
+$fontCasual: 'Rajdhani', sans-serif;
 
 //Extra radios
 
@@ -19,9 +19,22 @@ $transition: (0.2s, 0.4s, 0.6s, 0.8s);
 
 $white1: #ffffff;
 $backgroundWhite: #fafafa;
-$logoColor: #f05356;
-$blue: #35abec;
 $black: #262626;
+
+// pink color
+$pink: #f05356;
+$light-pink: #e2393b;
+$dark-pink: #d1474a;
+
+// red color
+$red: rgb(206, 36, 36);
+$light-red: rgb(211, 65, 65);
+$dark-red: rgb(165, 29, 29);
+
+// blue color
+$blue: #2196f3;
+$light-blue: #21b8f3;
+$dark-blue: #1f85d8;
 
 $lable1: #e87d33;
 $lable2: #0f7fe8;
@@ -67,4 +80,4 @@ $p10: 10rem;
 
 /* Image */
 
-$imgpath: "/src/img/";
+$imgpath: '/src/img/';

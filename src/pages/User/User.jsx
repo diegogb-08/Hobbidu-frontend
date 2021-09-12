@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react"
-import Footer from "../../components/Footer/Footer"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faUserCog } from "@fortawesome/free-solid-svg-icons"
-import { connect } from "react-redux"
-import Setting from "../../components/Setting/Setting"
-import { useHistory } from "react-router"
-import Avatar from "../../components/Avatar/Avatar"
-import ControlPanel from "../../components/ControlPanel/ControlPanel"
-import { USER, follow, port, EVENT, POST } from "../../helper/apiPaths"
-import axios from "axios"
+import React, { useEffect, useState } from 'react'
+import Footer from '../../components/Footer/Footer'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCog } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux'
+import Setting from '../../components/Setting/Setting'
+import { useHistory } from 'react-router'
+import Avatar from '../../components/Avatar/Avatar'
+import ControlPanel from '../../components/ControlPanel/ControlPanel'
+import { USER, follow, PORT, EVENT, POST } from '../../helper/apiPaths'
+import axios from 'axios'
 
 const User = (props) => {
   const history = useHistory()
@@ -29,14 +29,14 @@ const User = (props) => {
 
   const editProfile = () => {
     setTimeout(() => {
-      history.push("/account/edit")
+      history.push('/account/edit')
     })
   }
 
   const getFollows = async () => {
     try {
       const result = await axios.get(
-        port + follow + USER + "/" + props.user._id
+        PORT + follow + USER + '/' + props.user._id
       )
       setFollowers(result.data.followers)
       setFollowing(result.data.following)
@@ -45,14 +45,14 @@ const User = (props) => {
 
   const getEvents = async () => {
     try {
-      const result = await axios.get(port + EVENT + USER + "/" + props.user._id)
+      const result = await axios.get(PORT + EVENT + USER + '/' + props.user._id)
       if (result.data) setEvents(result.data)
     } catch (err) {}
   }
 
   const getPosts = async () => {
     try {
-      const result = await axios.get(port + POST + "/own/" + props.user._id)
+      const result = await axios.get(PORT + POST + '/own/' + props.user._id)
 
       if (result.data) setPosts(result.data)
     } catch (err) {}
@@ -67,7 +67,7 @@ const User = (props) => {
       <ControlPanel />
       <div className="userContainer">
         <div className="profilePic">
-          <Avatar src={port + props.user?.profile_img} />
+          <Avatar src={PORT + props.user?.profile_img} />
         </div>
         <div className="userDetails">
           <div className="userDetailsTop">

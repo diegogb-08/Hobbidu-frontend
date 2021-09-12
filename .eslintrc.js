@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     'react/prop-types': RULES.OFF,
     'react/react-in-jsx-scope': RULES.OFF,
-    'react/no-unescaped-entities': RULES.WARN,
+    'react/no-unescaped-entities': RULES.OFF,
+    'no-unused-vars': RULES.WARN,
   },
 }

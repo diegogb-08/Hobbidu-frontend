@@ -1,59 +1,59 @@
-import React, { useState } from "react";
-import Modal from "../Modal/Modal";
-import GeoLocation from "../GeoLocation/GeoLocation";
-import { connect } from "react-redux";
-import Button from "../Button/Button";
-import axios from "axios";
-import { port, USER, SEARCH, QUERY, EVENT } from "../../helper/apiPaths";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserPlus, faUserTimes } from "@fortawesome/free-solid-svg-icons";
-import { useHistory } from "react-router";
+import React, { useState } from 'react'
+import Modal from '../Modal/Modal'
+import GeoLocation from '../GeoLocation/GeoLocation'
+import { connect } from 'react-redux'
+import Button from '../Button/Button'
+import axios from 'axios'
+import { PORT, USER, SEARCH, QUERY, EVENT } from '../../helper/apiPaths'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPlus, faUserTimes } from '@fortawesome/free-solid-svg-icons'
+import { useHistory } from 'react-router'
 // import Avatar from '../Avatar/Avatar';
 
 const AddEvent = (props) => {
-  const history = useHistory();
+  const history = useHistory()
 
   // Modal Hook
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false)
   const toggle = () => {
-    setActive(!active);
+    setActive(!active)
     setEvent({
-      title: "",
-      hobby_id: "",
-      event_date: "",
+      title: '',
+      hobby_id: '',
+      event_date: '',
       maxJoiners: 2,
       vehicle: false,
-      seats: "",
+      seats: '',
       joiners: [props.user._id],
-      description: "",
-    });
-    setSelected({});
-    setSuggestion([]);
-    setDisabled("disabled");
-    setMessage("");
-    setFriends([props.user]);
-  };
+      description: '',
+    })
+    setSelected({})
+    setSuggestion([])
+    setDisabled('disabled')
+    setMessage('')
+    setFriends([props.user])
+  }
 
-  const [selected, setSelected] = useState({});
+  const [selected, setSelected] = useState({})
 
   const [event, setEvent] = useState({
-    title: "",
-    hobby_id: "",
-    event_date: "",
+    title: '',
+    hobby_id: '',
+    event_date: '',
     maxJoiners: 2,
     vehicle: false,
-    seats: "",
+    seats: '',
     joiners: [],
-    description: "",
-  });
+    description: '',
+  })
 
-  const [suggestion, setSuggestion] = useState([]);
+  const [suggestion, setSuggestion] = useState([])
 
-  const [friends, setFriends] = useState([]);
+  const [friends, setFriends] = useState([])
 
-  const [disabled, setDisabled] = useState("disabled");
+  const [disabled, setDisabled] = useState('disabled')
 
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('')
 
   // Handlers
 
@@ -61,39 +61,39 @@ const AddEvent = (props) => {
     setEvent({
       ...event,
       [e.target.name]:
-        e.target.type === "number" ? +e.target.value : e.target.value,
-    });
-  };
+        e.target.type === 'number' ? +e.target.value : e.target.value,
+    })
+  }
 
   const handleJoiners = async (e) => {
     try {
       const result = await axios.get(
-        port + USER + SEARCH + QUERY + e.target.value
-      );
-      setSuggestion(result.data);
+        PORT + USER + SEARCH + QUERY + e.target.value
+      )
+      setSuggestion(result.data)
     } catch (err) {}
-  };
+  }
 
   const handleSelected = async (user) => {
-    const maxJoiners = parseInt(event.maxJoiners);
-    const joinerIdFound = event.joiners.find((id) => id === user._id);
+    const maxJoiners = parseInt(event.maxJoiners)
+    const joinerIdFound = event.joiners.find((id) => id === user._id)
     if (maxJoiners !== event.joiners.length && joinerIdFound === undefined) {
-      setEvent({ ...event, joiners: [...event.joiners, user._id] });
-      setFriends([...friends, user]);
-      const result = await axios.get(port + USER + SEARCH + QUERY);
-      setSuggestion(result.data);
+      setEvent({ ...event, joiners: [...event.joiners, user._id] })
+      setFriends([...friends, user])
+      const result = await axios.get(PORT + USER + SEARCH + QUERY)
+      setSuggestion(result.data)
     }
-  };
+  }
 
   const handleCheckBox = (e) => {
     if (e.target.checked === true) {
-      setDisabled("");
-      setEvent({ ...event, vehicle: e.target.checked });
+      setDisabled('')
+      setEvent({ ...event, vehicle: e.target.checked })
     } else {
-      setDisabled("disabled");
-      setEvent({ ...event, vehicle: e.target.checked, seats: "" });
+      setDisabled('disabled')
+      setEvent({ ...event, vehicle: e.target.checked, seats: '' })
     }
-  };
+  }
 
   // Functions
 
@@ -109,52 +109,52 @@ const AddEvent = (props) => {
       description: event.description,
       location: props.location,
       event_date: event.event_date,
-    };
+    }
 
     // Calling the api to create the Event
-    if (event.hobby_id !== "") {
+    if (event.hobby_id !== '') {
       try {
-        const result = await axios.post(port + EVENT, body);
+        const result = await axios.post(PORT + EVENT, body)
         if (result.data) {
           setTimeout(() => {
-            toggle();
-          }, 500);
+            toggle()
+          }, 500)
           setEvent({
-            title: "",
-            hobby_id: "",
-            event_date: "",
+            title: '',
+            hobby_id: '',
+            event_date: '',
             maxJoiners: 2,
             vehicle: false,
-            seats: "",
+            seats: '',
             joiners: [],
-            description: "",
-          });
-          setSelected({});
-          setSuggestion([]);
-          setFriends([]);
-          setDisabled("disabled");
-          setMessage("");
-          history.push("/events");
+            description: '',
+          })
+          setSelected({})
+          setSuggestion([])
+          setFriends([])
+          setDisabled('disabled')
+          setMessage('')
+          history.push('/events')
         }
       } catch (err) {}
     } else {
-      setMessage("Please, select your hobby!");
+      setMessage('Please, select your hobby!')
     }
-  };
+  }
 
   const selectHobby = (hobbyId) => {
-    setSelected({ [hobbyId]: { backgroundColor: "#f05356", color: "white" } });
-    setEvent({ ...event, hobby_id: hobbyId });
-    setMessage("");
-  };
+    setSelected({ [hobbyId]: { backgroundColor: '#f05356', color: 'white' } })
+    setEvent({ ...event, hobby_id: hobbyId })
+    setMessage('')
+  }
 
   const deleteJoiner = (user) => {
     setEvent({
       ...event,
       joiners: event.joiners.filter((element) => element !== user._id),
-    });
-    setFriends(friends.filter((element) => element._id !== user._id));
-  };
+    })
+    setFriends(friends.filter((element) => element._id !== user._id))
+  }
 
   return (
     <div>
@@ -189,7 +189,7 @@ const AddEvent = (props) => {
                       >
                         <p>{hobby.hobby_name}</p>
                       </div>
-                    );
+                    )
                   })}
                 </div>
                 <p className="message">{message}</p>
@@ -272,7 +272,7 @@ const AddEvent = (props) => {
                         />
                         <p>{friend.name}</p>
                       </div>
-                    );
+                    )
                   })}
                 </div>
                 <p className="titles">Joiners</p>
@@ -298,7 +298,7 @@ const AddEvent = (props) => {
                         {/* <Avatar /> */}
                         <p>{user.name}</p>
                       </div>
-                    );
+                    )
                   })}
                 </div>
               </div>
@@ -329,14 +329,14 @@ const AddEvent = (props) => {
         </div>
       </Modal>
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => {
   return {
     user: state.userReducer.user,
     location: state.userReducer.location,
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(AddEvent);
+export default connect(mapStateToProps)(AddEvent)

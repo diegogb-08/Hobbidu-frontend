@@ -1,28 +1,28 @@
-import { CHECKUSER } from "../../redux/types/userType"
-import { connect } from "react-redux"
-import { EVENT, port, comment } from "../../helper/apiPaths"
-import { faEdit } from "@fortawesome/free-regular-svg-icons"
+import { CHECKUSER } from '../../redux/types/userType'
+import { connect } from 'react-redux'
+import { EVENT, PORT, comment } from '../../helper/apiPaths'
+import { faEdit } from '@fortawesome/free-regular-svg-icons'
 import {
   faMapMarkerAlt,
   faUserPlus,
   faCheck,
-} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useHistory } from "react-router"
-import Avatar from "../../components/Avatar/Avatar"
-import axios from "axios"
-import ControlPanel from "../../components/ControlPanel/ControlPanel"
-import EditEvent from "../../components/AddEvent/EditEvent"
-import Footer from "../../components/Footer/Footer"
-import moment from "moment"
-import React, { useEffect, useState } from "react"
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useHistory } from 'react-router'
+import Avatar from '../../components/Avatar/Avatar'
+import axios from 'axios'
+import ControlPanel from '../../components/ControlPanel/ControlPanel'
+import EditEvent from '../../components/AddEvent/EditEvent'
+import Footer from '../../components/Footer/Footer'
+import moment from 'moment'
+import React, { useEffect, useState } from 'react'
 
 const Event = (props) => {
   const history = useHistory()
 
   const [event, setEvent] = useState({})
   const [comments, setComments] = useState([])
-  const [content, setContent] = useState("")
+  const [content, setContent] = useState('')
 
   const leftSpots = event.maxJoiners - event.joiners?.length
 
@@ -36,16 +36,16 @@ const Event = (props) => {
   useEffect(() => {
     const listener = (event) => {
       if (
-        event.code === "Enter" ||
-        event.code === "NumpadEnter" ||
+        event.code === 'Enter' ||
+        event.code === 'NumpadEnter' ||
         event.keyCode === 13
       ) {
         post()
       }
     }
-    document.addEventListener("keydown", listener)
+    document.addEventListener('keydown', listener)
     return () => {
-      document.removeEventListener("keydown", listener)
+      document.removeEventListener('keydown', listener)
     }
     // eslint-disable-next-line
   }, [content])
@@ -64,14 +64,14 @@ const Event = (props) => {
     }
 
     try {
-      const result = await axios.put(port + EVENT + "/join/" + event._id, body)
+      const result = await axios.put(PORT + EVENT + '/join/' + event._id, body)
       if (result) setEvent(result.data)
     } catch (err) {}
   }
 
   const getEvent = async () => {
     try {
-      const result = await axios.get(port + EVENT + "/" + props.event._id)
+      const result = await axios.get(PORT + EVENT + '/' + props.event._id)
       if (result.data) setEvent(result.data)
     } catch (err) {}
   }
@@ -89,8 +89,8 @@ const Event = (props) => {
     if (
       joiners?.find((element) => element._id === props.user._id) !== undefined
     )
-      return "Going"
-    else return "Join"
+      return 'Going'
+    else return 'Join'
   }
 
   // Get all posts from the backend once it mount
@@ -98,7 +98,7 @@ const Event = (props) => {
   const getPosts = async () => {
     try {
       const result = await axios.get(
-        port + comment + EVENT + "/" + props.event._id
+        PORT + comment + EVENT + '/' + props.event._id
       )
       if (result.data) setComments(result.data)
     } catch (err) {}
@@ -114,11 +114,11 @@ const Event = (props) => {
     }
 
     try {
-      const result = await axios.post(port + comment, body)
+      const result = await axios.post(PORT + comment, body)
       if (result.data) setComments(result.data)
-      setContent("")
-      Array.from(document.querySelectorAll("input")).forEach(
-        (input) => (input.value = "")
+      setContent('')
+      Array.from(document.querySelectorAll('input')).forEach(
+        (input) => (input.value = '')
       )
     } catch (err) {}
   }
@@ -158,11 +158,11 @@ const Event = (props) => {
                 <p>{event.location?.name}</p>
               </div>
               <h3>
-                {moment(event?.event_date).format("Do MMMM YYYY, h:mm a")}
+                {moment(event?.event_date).format('Do MMMM YYYY, h:mm a')}
               </h3>
               <div className="createdBy">
                 <div className="iconBtnAvatar">
-                  <Avatar src={port + event?.user_id?.profile_img} />
+                  <Avatar src={PORT + event?.user_id?.profile_img} />
                 </div>
                 <p>{event?.user_id?.user_name}</p>
                 <div className="hobbyTagContainer">
@@ -186,7 +186,7 @@ const Event = (props) => {
                 </div>
                 <div className="vehicleContainer">
                   <p>
-                    <b>Own vehicle:</b> {event.vehicle ? "Yes" : "No"}
+                    <b>Own vehicle:</b> {event.vehicle ? 'Yes' : 'No'}
                   </p>
                   {event.vehicle ? (
                     <>
@@ -214,7 +214,7 @@ const Event = (props) => {
                         onClick={() => checkUserProfile(joiner)}
                       >
                         <div className="iconBtnAvatar">
-                          <Avatar src={port + joiner.profile_img} />
+                          <Avatar src={PORT + joiner.profile_img} />
                         </div>
                         <p>{joiner.name}</p>
                       </div>

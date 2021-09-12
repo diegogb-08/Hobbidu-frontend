@@ -30,7 +30,7 @@
       cursor: pointer;
     }
     .edit:hover {
-      color: $logoColor;
+      color: $pink;
     }
     .eventInfoContainer {
       height: 100%;
@@ -52,7 +52,7 @@
             width: 100%;
             align-items: center;
             .icon {
-              color: $logoColor;
+              color: $pink;
               margin-right: 1rem;
             }
           }
@@ -72,7 +72,7 @@
                 border-radius: 50%;
                 color: white;
                 font-size: 2.5rem;
-                background-color: $logoColor;
+                background-color: $pink;
               }
             }
             p {
@@ -90,7 +90,7 @@
                 display: flex;
                 min-height: 3rem;
                 width: 7rem;
-                background-color: $logoColor;
+                background-color: $pink;
                 border-radius: $br;
                 justify-content: center;
                 align-items: center;
@@ -165,7 +165,7 @@
                 align-items: center;
                 cursor: pointer;
                 .joinUserIcon {
-                  color: $logoColor;
+                  color: $pink;
                   font-size: 1.2rem;
                 }
                 p {
@@ -203,7 +203,7 @@
                     border-radius: 50%;
                     color: white;
                     font-size: 2.5rem;
-                    background-color: $logoColor;
+                    background-color: $pink;
                   }
                 }
               }

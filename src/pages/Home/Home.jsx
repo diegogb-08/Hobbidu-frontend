@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
-import { USER, port, POST } from '../../helper/apiPaths'
+import { USER, PORT, POST } from '../../helper/apiPaths'
 import ControlPanel from '../../components/ControlPanel/ControlPanel'
 import Footer from '../../components/Footer/Footer'
 import Post from '../../components/Post/Post'
@@ -34,7 +34,7 @@ const Home = (props) => {
     if (props.user?._id) {
       try {
         const result = await axios.get(
-          port + POST + USER + '/' + props.user._id
+          PORT + POST + USER + '/' + props.user._id
         )
         if (result.data) {
           setPosts(result.data)
@@ -45,7 +45,7 @@ const Home = (props) => {
 
   const deletePost = async (id) => {
     try {
-      const result = await axios.delete(port + POST + '/' + id)
+      const result = await axios.delete(PORT + POST + '/' + id)
       if (result.data) {
         getMyPosts()
       }
@@ -58,7 +58,7 @@ const Home = (props) => {
     }
 
     try {
-      const result = await axios.put(port + POST + '/like/' + id, body)
+      const result = await axios.put(PORT + POST + '/like/' + id, body)
       if (result.data) {
         getMyPosts()
       }
@@ -66,15 +66,15 @@ const Home = (props) => {
   }
 
   return (
-    <div className='homeComponent'>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
+    <div className="homeComponent">
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
       <ControlPanel />
-      <div className='spacer'></div>
-      <div className='homeContainer'>
-        <div className='homeDivisionPost'>
+      <div className="spacer"></div>
+      <div className="homeContainer">
+        <div className="homeDivisionPost">
           {posts?.length > 0 ? (
             <>
               {posts?.map((post) => {
@@ -90,7 +90,7 @@ const Home = (props) => {
             </>
           ) : (
             <>
-              <div className='noPosts'>
+              <div className="noPosts">
                 <h2>
                   There is no post just yet. <br />
                   Start posting something!

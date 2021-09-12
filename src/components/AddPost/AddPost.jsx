@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import GeoLocation from '../GeoLocation/GeoLocation'
 import Button from '@material-ui/core/Button'
 import axios from 'axios'
-import { port, POST } from '../../helper/apiPaths'
+import { PORT, POST } from '../../helper/apiPaths'
 import { useHistory } from 'react-router'
 
 const AddPost = (props) => {
@@ -59,7 +59,7 @@ const AddPost = (props) => {
     try {
       const result = await axios({
         method: 'post',
-        url: port + POST,
+        url: PORT + POST,
         data: formData,
         headers: { 'Content-Type': 'multipart/form-data' },
       })
@@ -79,13 +79,13 @@ const AddPost = (props) => {
 
   return (
     <div>
-      <div className='configComponent' onClick={() => toggle()}>
+      <div className="configComponent" onClick={() => toggle()}>
         {props.children}
       </div>
       <Modal active={active} toggle={() => toggle()}>
-        <div className='addPostContainer'>
+        <div className="addPostContainer">
           <h1>New Post</h1>
-          <div className='addPostInfo'>
+          <div className="addPostInfo">
             {!nextStep ? (
               <>
                 <h2>Choose a picture from your gallery</h2>
@@ -93,16 +93,16 @@ const AddPost = (props) => {
               </>
             ) : (
               <>
-                <div className='secondStepContainer'>
-                  <div className='topContainer'>
-                    <div className='secondStepDivision'>
-                      <div className='sections'>
-                        <p className='titles'>Select 1 of your hobbies</p>
-                        <div className='hobbies'>
+                <div className="secondStepContainer">
+                  <div className="topContainer">
+                    <div className="secondStepDivision">
+                      <div className="sections">
+                        <p className="titles">Select 1 of your hobbies</p>
+                        <div className="hobbies">
                           {props.user.hobbies.map((hobby) => {
                             return (
                               <div
-                                className='hobby'
+                                className="hobby"
                                 style={selected[hobby._id]}
                                 key={hobby._id}
                                 onClick={() => selectHobby(hobby._id)}
@@ -114,36 +114,36 @@ const AddPost = (props) => {
                         </div>
                       </div>
                     </div>
-                    <div className='secondStepDivision'>
-                      <div className='sections'>
-                        <p className='titles'>Location</p>
-                        <div className='geoContainer'>
+                    <div className="secondStepDivision">
+                      <div className="sections">
+                        <p className="titles">Location</p>
+                        <div className="geoContainer">
                           <GeoLocation />
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className='bottomContainer'>
-                    <p className='titles'>Write a Caption</p>
+                  <div className="bottomContainer">
+                    <p className="titles">Write a Caption</p>
                     <textarea
-                      name='description'
-                      id=''
-                      cols='70'
-                      rows='10'
+                      name="description"
+                      id=""
+                      cols="70"
+                      rows="10"
                       onChange={handleState}
                     />
-                    <div className='bottomArea'>
+                    <div className="bottomArea">
                       <Button
-                        variant='contained'
-                        color='primary'
+                        variant="contained"
+                        color="primary"
                         style={{ marginRight: '10px' }}
                         onClick={() => goBack()}
                       >
                         Go Back
                       </Button>
                       <Button
-                        variant='outlined'
-                        color='secondary'
+                        variant="outlined"
+                        color="secondary"
                         onClick={() => post()}
                       >
                         Post

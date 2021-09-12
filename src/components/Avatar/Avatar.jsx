@@ -1,13 +1,13 @@
-import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons"
-import { connect } from "react-redux"
-import { port } from "../../helper/apiPaths"
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux'
+import { PORT } from '../../helper/apiPaths'
 
 const Avatar = (props) => {
   return (
     <div className="avatarComponent" onClick={props.onClick}>
-      {props.src !== port + undefined ? (
+      {props.src !== PORT + undefined ? (
         <>
           <div className="imageCropper">
             <img

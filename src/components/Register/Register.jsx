@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from "react";
-import InputForm from "../InputForm/InputForm";
-import validate from "../../helper/validate";
-import { connect } from "react-redux";
-import { LOGIN } from "../../redux/types/userType";
-import axios from "axios";
-import { port, USER, login } from "../../helper/apiPaths";
-import Button from "../Button/Button";
-import { SHOWHOBBIES } from "../../redux/types/hobbyType";
+import React, { useEffect, useState } from 'react'
+import InputForm from '../InputForm/InputForm'
+import validate from '../../helper/validate'
+import { connect } from 'react-redux'
+import { LOGIN } from '../../redux/types/userType'
+import axios from 'axios'
+import { PORT, USER, login } from '../../helper/apiPaths'
+import Button from '../Button/Button'
+import { SHOWHOBBIES } from '../../redux/types/hobbyType'
 
 const Register = (props) => {
   // HOOKS
   const [user, setUser] = useState({
-    full_name: "",
-    user_name: "",
-    email: "",
-    password: "",
-  });
+    full_name: '',
+    user_name: '',
+    email: '',
+    password: '',
+  })
 
   const [password, setPassword] = useState({
-    hideShow: "password",
-    showHide: "SHOW",
-  });
+    hideShow: 'password',
+    showHide: 'SHOW',
+  })
 
-  const [errors, setErrors] = useState({});
-  const [message, setMessage] = useState([]);
+  const [errors, setErrors] = useState({})
+  const [message, setMessage] = useState([])
 
   // Style variable error
 
   const styles = {
     error: {
-      borderColor: "#c92432",
-      color: "#c92432",
-      background: "#fffafa",
+      borderColor: '#c92432',
+      color: '#c92432',
+      background: '#fffafa',
     },
     correct: {},
-  };
+  }
 
   // HANDLERS
 
@@ -43,8 +43,8 @@ const Register = (props) => {
       ...user,
       [e.target.name]: e.target.value,
       [e.target.name]: e.target.value,
-    });
-    setMessage("");
+    })
+    setMessage('')
     if (Object.keys(errors).length > 0) {
       setErrors(
         validate(
@@ -53,76 +53,76 @@ const Register = (props) => {
             [e.target.name]: e.target.value,
             [e.target.name]: e.target.value,
           },
-          "register"
+          'register'
         )
-      );
+      )
     }
-  };
+  }
 
   // it detects the changes from the input and on key press Enter, sends the info to multiSearch()
   useEffect(() => {
     const listener = (event) => {
       if (
-        event.code === "Enter" ||
-        event.code === "NumpadEnter" ||
+        event.code === 'Enter' ||
+        event.code === 'NumpadEnter' ||
         event.keyCode === 13
       ) {
-        toggle();
+        toggle()
       }
-    };
-    document.addEventListener("keydown", listener);
+    }
+    document.addEventListener('keydown', listener)
     return () => {
-      document.removeEventListener("keydown", listener);
-    };
+      document.removeEventListener('keydown', listener)
+    }
     // eslint-disable-next-line
-  }, [user]);
+  }, [user])
 
   // FUNCTIONS
 
   const showPassord = () => {
-    if (password.hideShow === "password") {
-      return setPassword({ ...password, hideShow: "text", showHide: "HIDE" });
+    if (password.hideShow === 'password') {
+      return setPassword({ ...password, hideShow: 'text', showHide: 'HIDE' })
     } else {
       return setPassword({
         ...password,
-        hideShow: "password",
-        showHide: "SHOW",
-      });
+        hideShow: 'password',
+        showHide: 'SHOW',
+      })
     }
-  };
+  }
 
   const toggle = async () => {
-    const errs = validate(user, "register");
-    setErrors(errs);
+    const errs = validate(user, 'register')
+    setErrors(errs)
 
-    if (Object.keys(errs).length > 0) return;
+    if (Object.keys(errs).length > 0) return
 
     const body = {
       name: user.full_name,
       user_name: user.user_name,
       email: user.email,
       password: user.password,
-    };
+    }
 
     try {
-      const result = await axios.post(port + USER, body);
+      const result = await axios.post(PORT + USER, body)
       if (result) {
         const dataLogin = {
           email: result.data.email,
           password: user.password,
-        };
+        }
 
-        const resultLogin = await axios.post(port + USER + login, dataLogin);
+        const resultLogin = await axios.post(PORT + USER + login, dataLogin)
 
         if (resultLogin) {
-          props.dispatch({ type: LOGIN, payload: resultLogin.data });
-          props.dispatch({ type: SHOWHOBBIES });
+          props.dispatch({ type: LOGIN, payload: resultLogin.data })
+          props.dispatch({ type: SHOWHOBBIES })
         }
       }
     } catch (error) {
-      setMessage("User already exist! Try with different email or User name");
+      setMessage('User already exist! Try with different email or User name')
     }
-  };
+  }
 
   return (
     <div className="registerComponent">
@@ -184,7 +184,7 @@ const Register = (props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default connect()(Register);
+export default connect()(Register)

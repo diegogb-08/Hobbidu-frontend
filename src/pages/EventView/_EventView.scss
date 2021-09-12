@@ -16,7 +16,7 @@
     .filterEvents {
       width: 100%;
       height: 5rem;
-      background-color: $logoColor;
+      background-color: $pink;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
@@ -69,7 +69,7 @@
         .date {
           height: 100%;
           width: 7rem;
-          background-color: $logoColor;
+          background-color: $pink;
           border-radius: $br 0 0 $br;
           display: flex;
           justify-content: center;
@@ -129,7 +129,7 @@
             .hobbyTag {
               width: 50%;
               height: 3rem;
-              background-color: $logoColor;
+              background-color: $pink;
               border-radius: $br;
               display: flex;
               justify-content: center;
@@ -152,7 +152,7 @@
               align-items: center;
               cursor: pointer;
               .joinUserIcon {
-                color: $logoColor;
+                color: $pink;
                 font-size: 1.2rem;
               }
               p {

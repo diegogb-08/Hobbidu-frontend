@@ -1,12 +1,42 @@
 .buttonComponent {
-  background-color: $logoColor;
-  height: 100%;
-  width: 100%;
+  background-color: $pink;
+  padding: 1px 40px;
+  border-color: $pink;
   border-radius: $br;
-  color: $fontcolor1;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  p {
+    color: $fontcolor4;
+  }
+}
+.buttonComponent:hover {
+  background-color: $light-pink;
+}
+
+.buttonComponent:active {
+  background: $dark-pink;
+}
+
+.button--red {
+  background-color: $red;
+  border-color: $red;
+}
+
+.button--red:hover {
+  background-color: $light-red;
+}
+
+.button--red:active {
+  background: $dark-red;
 }

@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react"
-import Footer from "../../components/Footer/Footer"
-import { connect } from "react-redux"
-import Avatar from "../../components/Avatar/Avatar"
-import ControlPanel from "../../components/ControlPanel/ControlPanel"
-import { port, follow, USER, EVENT, POST } from "../../helper/apiPaths"
-import axios from "axios"
+import React, { useEffect, useState } from 'react'
+import Footer from '../../components/Footer/Footer'
+import { connect } from 'react-redux'
+import Avatar from '../../components/Avatar/Avatar'
+import ControlPanel from '../../components/ControlPanel/ControlPanel'
+import { PORT, follow, USER, EVENT, POST } from '../../helper/apiPaths'
+import axios from 'axios'
 
 const CheckUser = (props) => {
   const [followers, setFollowers] = useState([])
   const [following, setFollowing] = useState([])
-  const [followBtn, setFollowBtn] = useState("")
+  const [followBtn, setFollowBtn] = useState('')
   const [events, setEvents] = useState([])
   const [posts, setPosts] = useState([])
 
@@ -25,9 +25,9 @@ const CheckUser = (props) => {
       followers.find((element) => element?.follower_id === props.user._id) ===
       undefined
     ) {
-      setFollowBtn("Follow")
+      setFollowBtn('Follow')
     } else {
-      setFollowBtn("Following")
+      setFollowBtn('Following')
     }
     // eslint-disable-next-line
   }, [followers])
@@ -37,7 +37,7 @@ const CheckUser = (props) => {
   const getFollows = async () => {
     try {
       const result = await axios.get(
-        port + follow + USER + "/" + props.checkUser._id
+        PORT + follow + USER + '/' + props.checkUser._id
       )
       setFollowers(result.data.followers)
       setFollowing(result.data.following)
@@ -47,7 +47,7 @@ const CheckUser = (props) => {
   const getEvents = async () => {
     try {
       const result = await axios.get(
-        port + EVENT + USER + "/" + props.checkUser._id
+        PORT + EVENT + USER + '/' + props.checkUser._id
       )
       if (result.data) setEvents(result.data)
     } catch (err) {}
@@ -56,7 +56,7 @@ const CheckUser = (props) => {
   const getPosts = async () => {
     try {
       const result = await axios.get(
-        port + POST + "/own/" + props.checkUser._id
+        PORT + POST + '/own/' + props.checkUser._id
       )
 
       if (result.data) setPosts(result.data)
@@ -64,12 +64,12 @@ const CheckUser = (props) => {
   }
 
   const followUser = async (state) => {
-    if (state === "Following") {
+    if (state === 'Following') {
       try {
         const element = followers.find(
           (element) => element?.follower_id === props.user._id
         )
-        const result = await axios.delete(port + follow + "/" + element._id)
+        const result = await axios.delete(PORT + follow + '/' + element._id)
         if (result.data) getFollows()
       } catch (err) {}
     } else {
@@ -79,7 +79,7 @@ const CheckUser = (props) => {
           follower_id: props.user._id,
         }
 
-        const result = await axios.post(port + follow, body)
+        const result = await axios.post(PORT + follow, body)
         if (result.data) getFollows()
       } catch (err) {}
     }
@@ -94,7 +94,7 @@ const CheckUser = (props) => {
       <ControlPanel />
       <div className="userContainer">
         <div className="profilePic">
-          <Avatar src={port + props.checkUser?.profile_img} />
+          <Avatar src={PORT + props.checkUser?.profile_img} />
         </div>
         <div className="userDetails">
           <div className="userDetailsTop">

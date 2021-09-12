@@ -1,23 +1,17 @@
-import React, { useState } from "react"
-import { connect } from "react-redux"
-import { useHistory } from "react-router"
-import FirstHobbies from "../../components/FirstHobbies/FirstHobbies"
-import Login from "../../components/Login/Login"
-import Register from "../../components/Register/Register"
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { useHistory } from 'react-router'
+import FirstHobbies from '../../components/FirstHobbies/FirstHobbies'
+import Login from '../../components/Login/Login'
+import Register from '../../components/Register/Register'
 
-const Landing = (props) => {
+const Landing = ({ user, showHobbies }) => {
   const history = useHistory()
 
-  const [active, setActive] = useState(true)
+  const [isActive, setisActive] = useState(true)
 
-  const register = () => {
-    setTimeout(() => {
-      setActive(!active)
-    }, 500)
-  }
-
-  if (props.user?.hobbies?.length > 0) {
-    history.push("/home")
+  if (user?.hobbies?.length > 0) {
+    history.push('/home')
   }
 
   return (
@@ -31,39 +25,34 @@ const Landing = (props) => {
         </div>
       </div>
       <div className="landingContainers landingRight">
-        <div className="spacer"></div>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
-        {active ? (
+        {showHobbies ? (
           <>
-            {props.showHobbies ? (
-              <>
-                <FirstHobbies />
-              </>
-            ) : (
+            <FirstHobbies />
+          </>
+        ) : (
+          <>
+            {isActive ? (
               <>
                 <Login />
                 <div className="registerLanding">
                   <p>Don&apos;t have an account?</p>
-                  <p className="register" onClick={() => register()}>
+                  <p
+                    className="register"
+                    onClick={() => setisActive(!isActive)}
+                  >
                     Register
                   </p>
                 </div>
-              </>
-            )}
-          </>
-        ) : (
-          <>
-            {props.showHobbies ? (
-              <>
-                <FirstHobbies />
               </>
             ) : (
               <>
                 <Register />
                 <div className="registerLanding">
                   <p>Do you have an account?</p>
-                  <p className="register" onClick={() => register()}>
+                  <p
+                    className="register"
+                    onClick={() => setisActive(!isActive)}
+                  >
                     Sign In
                   </p>
                 </div>

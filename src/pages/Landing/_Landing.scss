@@ -6,69 +6,63 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-}
-
-.landingContainers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.landingLeft {
-  width: 60%;
-  background-image: url(#{$imgpath}landing_background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto 100%;
-}
-
-.slogan {
-  height: 7rem;
-  width: 17rem;
-  background-color: $transparentWhite;
-  position: relative;
-  border-radius: $br;
-  color: $fontcolor1;
-  font-family: $fontStyle;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  p {
-    font-size: 2.5rem;
+  .landingContainers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    .slogan {
+      height: 7rem;
+      width: 17rem;
+      background-color: $transparentWhite;
+      position: relative;
+      border-radius: $br;
+      color: $fontcolor1;
+      font-family: $fontStyle;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      p {
+        font-size: 2.5rem;
+      }
+    }
   }
-}
-
-.top {
-  bottom: 15%;
-}
-
-.bottom {
-  top: 30%;
-}
-
-.landingRight {
-  width: 40%;
-}
-
-.registerLanding {
-  background-color: $white1;
-  border: $border1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 85%;
-  height: 10%;
-  margin-top: 0.5rem;
-  .register {
-    margin-left: 1rem;
-    font-weight: bold;
-    color: $fontcolor2;
-    cursor: pointer;
+  .landingLeft {
+    width: 60%;
+    background-image: url(#{$imgpath}landing_background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    .top {
+      bottom: 15%;
+    }
+    .bottom {
+      top: 30%;
+    }
+  }
+  .landingRight {
+    width: 40%;
+    padding-top: '3rem';
+    .registerLanding {
+      background-color: $white1;
+      border: $border1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 85%;
+      height: 10%;
+      margin-top: 0.5rem;
+      .register {
+        margin-left: 1rem;
+        font-weight: bold;
+        color: $fontcolor2;
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -77,11 +71,14 @@
 @media screen and (max-width: 800px) {
   .landingsComponent {
     flex-direction: column-reverse;
-  }
-  .landingLeft {
-    width: 100%;
-  }
-  .landingRight {
-    width: 100%;
+    .landingContainers {
+      width: 100%;
+      .landingLeft {
+        width: 100%;
+      }
+      .landingRight {
+        width: 100%;
+      }
+    }
   }
 }

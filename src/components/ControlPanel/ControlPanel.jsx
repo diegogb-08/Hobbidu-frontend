@@ -5,7 +5,7 @@ import { faPlusCircle, faSearch } from '@fortawesome/free-solid-svg-icons'
 import AddEvent from '../AddEvent/AddEvent'
 import AddPost from '../AddPost/AddPost'
 import axios from 'axios'
-import { USER, port, QUERY, SEARCH } from '../../helper/apiPaths'
+import { USER, PORT, QUERY, SEARCH } from '../../helper/apiPaths'
 import Avatar from '../Avatar/Avatar'
 import { connect } from 'react-redux'
 import { CHECKUSER } from '../../redux/types/userType'
@@ -22,7 +22,7 @@ const ControlPanel = (props) => {
   const handleChange = async (e) => {
     try {
       const result = await axios.get(
-        port + USER + SEARCH + QUERY + e.target.value
+        PORT + USER + SEARCH + QUERY + e.target.value
       )
       setsuggestion(result.data)
     } catch (err) {}
@@ -64,17 +64,17 @@ const ControlPanel = (props) => {
   }
 
   return (
-    <div className='controlPanelComponent'>
-      <div className='controlPanelLeft controlPanelContainers'>
+    <div className="controlPanelComponent">
+      <div className="controlPanelLeft controlPanelContainers">
         <input
-          type='text'
-          name='search'
+          type="text"
+          name="search"
           onChange={handleChange}
           style={props.style}
-          placeholder='Search for people...'
+          placeholder="Search for people..."
         />
       </div>
-      <div className='controlPanelRight controlPanelContainers'>
+      <div className="controlPanelRight controlPanelContainers">
         <AddEvent>
           <FontAwesomeIcon icon={faCalendarPlus} className={'panelBtn'} />
         </AddEvent>
@@ -82,7 +82,7 @@ const ControlPanel = (props) => {
           <FontAwesomeIcon icon={faPlusCircle} className={'panelBtn'} />
         </AddPost>
       </div>
-      <div className='autocompleteDropdownContainer'>
+      <div className="autocompleteDropdownContainer">
         <div ref={node}>
           {suggestion?.map((user) => {
             if (user?._id === props.user?._id)
@@ -91,16 +91,16 @@ const ControlPanel = (props) => {
             else
               return (
                 <div
-                  className='suggestion'
+                  className="suggestion"
                   key={user._id}
                   onClick={() => checkUserProfile(user)}
                 >
-                  <div className='iconBtnAvatar'>
-                    <Avatar src={port + user?.profile_img} />
+                  <div className="iconBtnAvatar">
+                    <Avatar src={PORT + user?.profile_img} />
                   </div>
                   <p>{user.name}</p>
                   <p>@{user.user_name}</p>
-                  <FontAwesomeIcon icon={faSearch} className='lens' />
+                  <FontAwesomeIcon icon={faSearch} className="lens" />
                 </div>
               )
           })}

@@ -1,15 +1,15 @@
-import axios from "axios"
-import React, { useEffect, useState } from "react"
-import { connect } from "react-redux"
-import { UPDATE } from "../../redux/types/userType"
-import { USER, port } from "../../helper/apiPaths"
-import validate from "../../helper/validate"
-import Button from "../../components/Button/Button"
-import Footer from "../../components/Footer/Footer"
-import InputForm from "../../components/InputForm/InputForm"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheckCircle } from "@fortawesome/free-regular-svg-icons"
-import { useHistory } from "react-router"
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import { UPDATE } from '../../redux/types/userType'
+import { USER, PORT } from '../../helper/apiPaths'
+import validate from '../../helper/validate'
+import Button from '../../components/Button/Button'
+import Footer from '../../components/Footer/Footer'
+import InputForm from '../../components/InputForm/InputForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
+import { useHistory } from 'react-router'
 
 const ChangeEmail = (props) => {
   const history = useHistory()
@@ -25,15 +25,15 @@ const ChangeEmail = (props) => {
 
   // HOOKS
   const [credentials, setEmail] = useState({
-    oldEmail: "",
-    email: "",
-    password: "",
+    oldEmail: '',
+    email: '',
+    password: '',
   })
   const [errors, setErrors] = useState({})
   const [message, setMessage] = useState([])
   const [password, setPassword] = useState({
-    hideShow: "password",
-    showHide: "SHOW",
+    hideShow: 'password',
+    showHide: 'SHOW',
   })
   const [active, setActive] = useState(false)
 
@@ -44,7 +44,7 @@ const ChangeEmail = (props) => {
       [e.target.name]: e.target.value,
       [e.target.name]: e.target.value,
     })
-    setMessage("")
+    setMessage('')
     if (Object.keys(errors).length > 0) {
       setErrors(
         validate(
@@ -53,7 +53,7 @@ const ChangeEmail = (props) => {
             [e.target.name]: e.target.value,
             [e.target.name]: e.target.value,
           },
-          "login"
+          'login'
         )
       )
     }
@@ -63,16 +63,16 @@ const ChangeEmail = (props) => {
   useEffect(() => {
     const listener = (event) => {
       if (
-        event.code === "Enter" ||
-        event.code === "NumpadEnter" ||
+        event.code === 'Enter' ||
+        event.code === 'NumpadEnter' ||
         event.keyCode === 13
       ) {
         toggle()
       }
     }
-    document.addEventListener("keydown", listener)
+    document.addEventListener('keydown', listener)
     return () => {
-      document.removeEventListener("keydown", listener)
+      document.removeEventListener('keydown', listener)
     }
     // eslint-disable-next-line
   }, [credentials])
@@ -80,14 +80,14 @@ const ChangeEmail = (props) => {
   // Validate that no one can get inside the app without login or registering
   useEffect(() => {
     if (!props.user?._id) {
-      history.push("/")
+      history.push('/')
     }
     // eslint-disable-next-line
   }, [])
 
   // FUNCTIONS
   const toggle = async () => {
-    const errs = validate(credentials, "login")
+    const errs = validate(credentials, 'login')
     setErrors(errs)
 
     if (Object.keys(errs).length > 0) return
@@ -100,7 +100,7 @@ const ChangeEmail = (props) => {
 
     try {
       const result = await axios.put(
-        port + USER + "/change_email/" + props.user._id,
+        PORT + USER + '/change_email/' + props.user._id,
         body,
         auth
       )
@@ -114,21 +114,21 @@ const ChangeEmail = (props) => {
           setActive(false)
         }, 2500)
       } else {
-        setMessage("The email you are trying to add already exist")
+        setMessage('The email you are trying to add already exist')
       }
     } catch (error) {
-      setMessage("Email or Password incorrect")
+      setMessage('Email or Password incorrect')
     }
   }
 
   const showPassord = () => {
-    if (password.hideShow === "password") {
-      return setPassword({ ...password, hideShow: "text", showHide: "HIDE" })
+    if (password.hideShow === 'password') {
+      return setPassword({ ...password, hideShow: 'text', showHide: 'HIDE' })
     } else {
       return setPassword({
         ...password,
-        hideShow: "password",
-        showHide: "SHOW",
+        hideShow: 'password',
+        showHide: 'SHOW',
       })
     }
   }

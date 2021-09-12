@@ -5,7 +5,7 @@ import InputForm from '../InputForm/InputForm'
 import validate from '../../helper/validate'
 import GeoLocation from '../GeoLocation/GeoLocation'
 import axios from 'axios'
-import { USER, port } from '../../helper/apiPaths'
+import { USER, PORT } from '../../helper/apiPaths'
 import { UPDATE } from '../../redux/types/userType'
 
 const EditInfo = (props) => {
@@ -80,7 +80,7 @@ const EditInfo = (props) => {
 
     try {
       const result = await axios.put(
-        port + USER + '/' + props.user._id,
+        PORT + USER + '/' + props.user._id,
         body,
         auth
       )
@@ -112,16 +112,16 @@ const EditInfo = (props) => {
   }, [user])
 
   return (
-    <div className='editInfoComponent'>
-      <div className='editInfoContainer'>
-        <div className='editSections'>
-          <p className='title'>Name</p>
-          <div className='inputAndDescription'>
-            <div className='inputContainer'>
+    <div className="editInfoComponent">
+      <div className="editInfoContainer">
+        <div className="editSections">
+          <p className="title">Name</p>
+          <div className="inputAndDescription">
+            <div className="inputContainer">
               <InputForm
-                type='text'
-                name='name'
-                lenght='16'
+                type="text"
+                name="name"
+                lenght="16"
                 onChange={handleState}
                 value={user.name}
                 style={errors.name?.status ? styles.error : styles.correct}
@@ -133,14 +133,14 @@ const EditInfo = (props) => {
             </p>
           </div>
         </div>
-        <div className='editSections'>
-          <p className='title'>User name</p>
-          <div className='inputAndDescription'>
-            <div className='inputContainer'>
+        <div className="editSections">
+          <p className="title">User name</p>
+          <div className="inputAndDescription">
+            <div className="inputContainer">
               <InputForm
-                type='text'
-                name='user_name'
-                lenght='16'
+                type="text"
+                name="user_name"
+                lenght="16"
                 onChange={handleState}
                 value={user.user_name}
                 style={errors.user_name?.status ? styles.error : styles.correct}
@@ -152,28 +152,28 @@ const EditInfo = (props) => {
             </p>
           </div>
         </div>
-        <div className='editSections'>
-          <p className='title'>Birth date</p>
-          <div className='inputAndDescription'>
-            <div className='inputContainer'>
+        <div className="editSections">
+          <p className="title">Birth date</p>
+          <div className="inputAndDescription">
+            <div className="inputContainer">
               <InputForm
-                type='date'
-                name='birth_date'
-                lenght='16'
+                type="date"
+                name="birth_date"
+                lenght="16"
                 onChange={handleState}
                 value={user.birth_date}
               />
             </div>
           </div>
         </div>
-        <div className='editSections'>
-          <p className='title'>Phone number</p>
-          <div className='inputAndDescription'>
-            <div className='inputContainer'>
+        <div className="editSections">
+          <p className="title">Phone number</p>
+          <div className="inputAndDescription">
+            <div className="inputContainer">
               <InputForm
-                type='text'
-                name='phone_number'
-                lenght='16'
+                type="text"
+                name="phone_number"
+                lenght="16"
                 onChange={handleState}
                 value={user.phone_number}
                 style={
@@ -184,31 +184,31 @@ const EditInfo = (props) => {
             </div>
           </div>
         </div>
-        <div className='editSections'>
-          <p className='title'>Location</p>
-          <div className='inputAndDescription'>
-            <div className='inputContainer geolocation'>
+        <div className="editSections">
+          <p className="title">Location</p>
+          <div className="inputAndDescription">
+            <div className="inputContainer geolocation">
               <GeoLocation />
             </div>
           </div>
         </div>
-        <div className='editSections'>
-          <p className='title'>Biography</p>
-          <div className='inputAndDescription'>
-            <div className='inputContainer'>
+        <div className="editSections">
+          <p className="title">Biography</p>
+          <div className="inputAndDescription">
+            <div className="inputContainer">
               <textarea
-                className='inputText'
-                rows='3'
-                cols='50'
-                name='bio'
-                maxLength='100'
+                className="inputText"
+                rows="3"
+                cols="50"
+                name="bio"
+                maxLength="100"
                 onChange={handleState}
                 value={user.bio}
               />
             </div>
-            <div className='spacer'></div>
-            <div className='spacer'></div>
-            <div className='spacer'></div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
+            <div className="spacer"></div>
             <p>
               Provide your personal information, even if the account is used for
               a business. This information will not be included in your public
@@ -216,9 +216,9 @@ const EditInfo = (props) => {
             </p>
           </div>
         </div>
-        <p className='message'>{message}</p>
-        <div className='buttonEditContainer'>
-          <div className='buttonEdit'>
+        <p className="message">{message}</p>
+        <div className="buttonEditContainer">
+          <div className="buttonEdit">
             <Button onClick={() => toggle()}>
               <p>Save</p>
             </Button>

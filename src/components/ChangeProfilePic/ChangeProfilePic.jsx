@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import Avatar from '../Avatar/Avatar'
 import axios from 'axios'
-import { USER, port } from '../../helper/apiPaths'
+import { USER, PORT } from '../../helper/apiPaths'
 import { UPDATE } from '../../redux/types/userType'
 import ImageCropper from '../ImageCropper/ImageCropper'
 
@@ -31,7 +31,7 @@ const ChangeProfilePic = (props) => {
   const fileUploadhandler = async () => {
     try {
       const result = await axios.put(
-        port + USER + '/update_picture/' + props.user._id,
+        PORT + USER + '/update_picture/' + props.user._id,
         formData,
         auth
       )
@@ -42,12 +42,12 @@ const ChangeProfilePic = (props) => {
   }
 
   return (
-    <div className='changeProfilePicComponent'>
-      <div className='pictureContainer'>
-        <Avatar src={port + props.user.profile_img} />
+    <div className="changeProfilePicComponent">
+      <div className="pictureContainer">
+        <Avatar src={PORT + props.user.profile_img} />
       </div>
 
-      <div className='inputChangePicture'>
+      <div className="inputChangePicture">
         <ImageCropper onChange={handleChange}>Upload</ImageCropper>
       </div>
     </div>

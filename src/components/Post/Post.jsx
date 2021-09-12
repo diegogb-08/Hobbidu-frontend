@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
 import { CHECKUSER } from '../../redux/types/userType'
-import { comment, port, POST } from '../../helper/apiPaths'
+import { comment, PORT, POST } from '../../helper/apiPaths'
 import axios from 'axios'
 import moment from 'moment'
 
@@ -93,7 +93,7 @@ const Post = (props) => {
 
   const getComments = async () => {
     try {
-      const result = await axios.get(port + comment + POST + '/' + post._id)
+      const result = await axios.get(PORT + comment + POST + '/' + post._id)
       if (result.data) {
         setComments(result.data)
       }
@@ -107,7 +107,7 @@ const Post = (props) => {
     }
     if (body.content !== '') {
       try {
-        const result = await axios.post(port + comment, body)
+        const result = await axios.post(PORT + comment, body)
         if (result.data) {
           setComments(result.data)
         }
@@ -140,7 +140,7 @@ const Post = (props) => {
         <div className="avatarName">
           <div className="iconBtnAvatar">
             <Avatar
-              src={port + post?.user_id?.profile_img}
+              src={PORT + post?.user_id?.profile_img}
               onClick={() => checkUserProfile(post?.user_id)}
             />
           </div>
@@ -166,7 +166,7 @@ const Post = (props) => {
         ) : null}
       </div>
       <div className="picture">
-        <img loading="lazy" src={port + post.image} alt="postImage" />
+        <img loading="lazy" src={PORT + post.image} alt="postImage" />
       </div>
       <div className="subMenu">
         <div className="likeMenu">

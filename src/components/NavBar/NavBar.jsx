@@ -5,7 +5,7 @@ import { faCalendarCheck } from '@fortawesome/free-regular-svg-icons'
 import { useHistory } from 'react-router'
 import { connect } from 'react-redux'
 import Avatar from '../Avatar/Avatar'
-import { port } from '../../helper/apiPaths'
+import { PORT } from '../../helper/apiPaths'
 
 const NavBar = (props) => {
   const history = useHistory()
@@ -19,7 +19,7 @@ const NavBar = (props) => {
   }
 
   return (
-    <div className='navBarComponent'>
+    <div className="navBarComponent">
       <FontAwesomeIcon
         icon={faHouseUser}
         className={'iconBtn'}
@@ -31,9 +31,9 @@ const NavBar = (props) => {
         onClick={() => toggle('events')}
       />
       {/* <FontAwesomeIcon icon={faCommentDots} className={'iconBtn'}  onClick={()=>toggle('messages')}/> */}
-      <div className='iconBtnAvatar'>
+      <div className="iconBtnAvatar">
         <Avatar
-          src={port + props.user.profile_img}
+          src={PORT + props.user.profile_img}
           onClick={() => toggle(userPath)}
         />
       </div>

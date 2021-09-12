@@ -26,7 +26,7 @@
     }
   }
   .controlPanelRight {
-    color: $logoColor;
+    color: $pink;
     font-size: 2rem;
     justify-content: space-evenly;
     .panelBtn {
@@ -59,7 +59,7 @@
           border-radius: 50%;
           color: white;
           font-size: 2.5rem;
-          background-color: $logoColor;
+          background-color: $pink;
         }
       }
       .lens {
@@ -68,7 +68,7 @@
       }
     }
     .suggestion:hover {
-      background-color: $logoColor;
+      background-color: $pink;
       p {
         color: white;
       }

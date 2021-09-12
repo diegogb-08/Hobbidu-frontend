@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { USER, hobby, port } from '../../helper/apiPaths'
+import { USER, hobby, PORT } from '../../helper/apiPaths'
 import InputForm from '../InputForm/InputForm'
 import { connect } from 'react-redux'
 import Button from '../Button/Button'
@@ -27,7 +27,7 @@ const FirstHobbies = (props) => {
   const [message, setMessage] = useState('')
 
   const getHobbies = async () => {
-    const result = await axios.get(port + hobby)
+    const result = await axios.get(PORT + hobby)
     setHobbies(result.data)
     props.dispatch({ type: ADD, payload: result.data })
   }
@@ -45,7 +45,7 @@ const FirstHobbies = (props) => {
     }
 
     if (isSelected.length < 3) {
-      const result = await axios.post(port + hobby, body)
+      const result = await axios.post(PORT + hobby, body)
 
       if (result.data)
         // hacer validacion
@@ -115,7 +115,7 @@ const FirstHobbies = (props) => {
     }
     if (isSelected[0]) {
       const result = await axios.put(
-        port + USER + '/' + props.user._id,
+        PORT + USER + '/' + props.user._id,
         body,
         auth
       )
@@ -132,19 +132,19 @@ const FirstHobbies = (props) => {
   }
 
   return (
-    <div className='firstHobbiesComponent'>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='hobbiesTitle'>
+    <div className="firstHobbiesComponent">
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="hobbiesTitle">
         <h2>SELECT UP TO 3 HOBBIES</h2>
       </div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='selectedHobbies'>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="selectedHobbies">
         {isSelected?.map((hobby) => {
           return (
             <div
-              className='selected'
+              className="selected"
               key={hobby?._id}
               onClick={() => selectTag(hobby)}
             >
@@ -153,12 +153,12 @@ const FirstHobbies = (props) => {
           )
         })}
       </div>
-      <div className='hobbiesContainer'>
-        <div className='hobbyGrid'>
+      <div className="hobbiesContainer">
+        <div className="hobbyGrid">
           {hobbies.map((hobby) => {
             return (
               <div
-                className='hobby'
+                className="hobby"
                 key={hobby._id}
                 onClick={() => selectTag(hobby)}
               >
@@ -168,26 +168,26 @@ const FirstHobbies = (props) => {
           })}
         </div>
       </div>
-      <div className='searchNewHobby'>
+      <div className="searchNewHobby">
         <p>You can&apos;t find your Hobby?</p>
         <InputForm
-          type='text'
-          name='newHobby'
+          type="text"
+          name="newHobby"
           onChange={handleState}
-          title='Add hobby & PRESS ENTER'
+          title="Add hobby & PRESS ENTER"
         />
       </div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='spacer'></div>
-      <div className='hobbyButton'>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="spacer"></div>
+      <div className="hobbyButton">
         <Button onClick={() => toggle()}>
           <p>Enjoy!</p>
         </Button>
       </div>
-      <div className='message'>
+      <div className="message">
         <p>{message}</p>
       </div>
     </div>

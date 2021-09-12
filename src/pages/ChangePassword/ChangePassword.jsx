@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react"
-import Footer from "../../components/Footer/Footer"
-import axios from "axios"
-import { connect } from "react-redux"
-import validate from "../../helper/validate"
-import Button from "../../components/Button/Button"
-import InputForm from "../../components/InputForm/InputForm"
-import { USER, port } from "../../helper/apiPaths"
-import { UPDATE } from "../../redux/types/userType"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheckCircle } from "@fortawesome/free-regular-svg-icons"
-import { useHistory } from "react-router"
+import React, { useEffect, useState } from 'react'
+import Footer from '../../components/Footer/Footer'
+import axios from 'axios'
+import { connect } from 'react-redux'
+import validate from '../../helper/validate'
+import Button from '../../components/Button/Button'
+import InputForm from '../../components/InputForm/InputForm'
+import { USER, PORT } from '../../helper/apiPaths'
+import { UPDATE } from '../../redux/types/userType'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
+import { useHistory } from 'react-router'
 
 const ChangePassword = (props) => {
   const history = useHistory()
@@ -25,9 +25,9 @@ const ChangePassword = (props) => {
 
   // HOOKS
   const [password, setPassword] = useState({
-    oldPassword: "",
-    password: "",
-    repeatPassword: "",
+    oldPassword: '',
+    password: '',
+    repeatPassword: '',
   })
   const [errors, setErrors] = useState({})
   const [message, setMessage] = useState([])
@@ -40,7 +40,7 @@ const ChangePassword = (props) => {
       [e.target.name]: e.target.value,
       [e.target.name]: e.target.value,
     })
-    setMessage("")
+    setMessage('')
     if (Object.keys(errors).length > 0) {
       setErrors(
         validate(
@@ -49,7 +49,7 @@ const ChangePassword = (props) => {
             [e.target.name]: e.target.value,
             [e.target.name]: e.target.value,
           },
-          "register"
+          'register'
         )
       )
     }
@@ -59,16 +59,16 @@ const ChangePassword = (props) => {
   useEffect(() => {
     const listener = (event) => {
       if (
-        event.code === "Enter" ||
-        event.code === "NumpadEnter" ||
+        event.code === 'Enter' ||
+        event.code === 'NumpadEnter' ||
         event.keyCode === 13
       ) {
         toggle()
       }
     }
-    document.addEventListener("keydown", listener)
+    document.addEventListener('keydown', listener)
     return () => {
-      document.removeEventListener("keydown", listener)
+      document.removeEventListener('keydown', listener)
     }
     // eslint-disable-next-line
   }, [password])
@@ -76,14 +76,14 @@ const ChangePassword = (props) => {
   // Validate that no one can get inside the app without login or registering
   useEffect(() => {
     if (!props.user?._id) {
-      history.push("/")
+      history.push('/')
     }
     // eslint-disable-next-line
   }, [])
 
   // FUNCTIONS
   const toggle = async () => {
-    const errs = validate(password, "register")
+    const errs = validate(password, 'register')
     setErrors(errs)
 
     if (Object.keys(errs).length > 0) return
@@ -95,7 +95,7 @@ const ChangePassword = (props) => {
 
     try {
       const result = await axios.put(
-        port + USER + "/change_password/" + props.user._id,
+        PORT + USER + '/change_password/' + props.user._id,
         body,
         auth
       )
@@ -108,10 +108,10 @@ const ChangePassword = (props) => {
           setActive(false)
         }, 2500)
       } else {
-        setMessage("Incorrect Password")
+        setMessage('Incorrect Password')
       }
     } catch (error) {
-      setMessage("Incorrect Password")
+      setMessage('Incorrect Password')
     }
   }
 
