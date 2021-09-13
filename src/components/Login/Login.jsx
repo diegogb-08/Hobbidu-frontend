@@ -1,6 +1,6 @@
 // React dependencies
 import { useHistory } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // State Managements
 import { connect } from 'react-redux'
@@ -10,22 +10,25 @@ import { LOGIN, SETACTIVE } from '../../redux/types/userType'
 import validate from '../../helper/validate'
 
 // Components
-// import { ADD } from '../../redux/types/hobbyType'
 import Button from '../Button/Button'
 import InputForm from '../InputForm/InputForm'
 
 // Custom Hooks
 import useForm from '../../hooks/useForm'
-import { useQuery } from 'react-query'
-import { fetchLogin } from '../../services/fetch'
+import useQueryLogin from '../../hooks/useQueryLogin'
 
 const INITIAL_STATE = {
   email: '',
   password: '',
 }
-// Style variable error
 
-const styles = {
+export const INITIAL_PASSWORD_STATE = {
+  type: 'password',
+  icon: 'SHOW',
+}
+
+// Style variable error
+export const styles = {
   error: {
     borderColor: '#c92432',
     color: '#c92432',
@@ -34,56 +37,49 @@ const styles = {
   correct: {},
 }
 
-const Login = (props) => {
+const Login = ({ dispatch }) => {
   const history = useHistory()
 
   const [credentials, errors, message, handleState, setErrors, setMessage] =
     useForm(INITIAL_STATE, 'login')
-  const { data, isLoading, isError, isSuccess, refetch } = useQuery(
-    ['Login', credentials.email],
-    fetchLogin(credentials),
-    {
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchOnReconnect: false,
-      refetchInterval: false,
-      enabled: false,
-    }
-  )
+  const { data, isLoading, isError, isIdle, isSuccess, refetch } =
+    useQueryLogin(credentials)
 
-  const [password, setPassword] = useState({
-    hideShow: 'password',
-    showHide: 'SHOW',
-  })
+  const [password, setPassword] = useState(INITIAL_PASSWORD_STATE)
+
+  useEffect(() => {
+    let isMounted = true
+
+    if (isMounted && isSuccess) {
+      dispatch({ type: LOGIN, payload: data })
+      dispatch({ type: SETACTIVE })
+      history.push('/home')
+    }
+    if (isError) setMessage('Email or password not found')
+
+    return () => {
+      isMounted = false
+    }
+  }, [isSuccess, isError])
 
   // FUNCTIONS
 
   const showPassord = () => {
-    if (password.hideShow === 'password') {
-      return setPassword({ ...password, hideShow: 'text', showHide: 'HIDE' })
+    if (password.type === 'password') {
+      return setPassword({ ...password, type: 'text', icon: 'HIDE' })
     } else {
-      return setPassword({
-        ...password,
-        hideShow: 'password',
-        showHide: 'SHOW',
-      })
+      return setPassword(INITIAL_PASSWORD_STATE)
     }
   }
 
-  const toggle = async () => {
+  const handleSubmit = async (ev) => {
+    ev.preventDefault()
+
     const errs = validate(credentials, 'login')
     setErrors(errs)
 
     if (Object.keys(errs).length === 0) {
-      if (isSuccess) {
-        refetch()
-        props.dispatch({ type: LOGIN, payload: data })
-        props.dispatch({ type: SETACTIVE })
-        history.push('/home')
-      }
-      if (isError) {
-        setMessage('Email or password not found')
-      }
+      if (isIdle) refetch()
     }
   }
 
@@ -94,7 +90,7 @@ const Login = (props) => {
           <span>SIGN IN!</span>
         </h2>
       </div>
-      <div className="loginContainer">
+      <form onSubmit={handleSubmit} className="loginContainer">
         <div className="loginInput">
           <InputForm
             type="text"
@@ -107,12 +103,12 @@ const Login = (props) => {
         </div>
         <div className="loginInput">
           <InputForm
-            type={password.hideShow}
+            type={password.type}
             name="password"
             onChange={handleState}
             title="Password"
             error={errors.password?.help}
-            showHide={password.showHide}
+            icon={password.icon}
             onClick={() => showPassord()}
             style={errors.password?.status ? styles.error : styles.correct}
           />
@@ -120,10 +116,10 @@ const Login = (props) => {
         <div className="errorMessage">
           <p>{message}</p>
         </div>
-        <Button onClick={() => toggle()} isLoading={isLoading}>
+        <Button type="submit" isLoading={isLoading}>
           <p>Enjoy!</p>
         </Button>
-      </div>
+      </form>
     </div>
   )
 }

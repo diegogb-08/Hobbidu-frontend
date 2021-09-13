@@ -24,5 +24,6 @@ module.exports = {
     'react/react-in-jsx-scope': RULES.OFF,
     'react/no-unescaped-entities': RULES.OFF,
     'no-unused-vars': RULES.OFF,
+    'no-useless-catch': RULES.OFF,
   },
 }

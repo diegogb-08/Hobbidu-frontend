@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import InputForm from '../InputForm/InputForm'
 import validate from '../../helper/validate'
 import { connect } from 'react-redux'
-// import { LOGIN } from '../../redux/types/userType'
 import axios from 'axios'
 import { PORT, USER, LOGIN } from '../../helper/apiPaths'
 import Button from '../Button/Button'
 import { SHOWHOBBIES } from '../../redux/types/hobbyType'
 import useForm from '../../hooks/useForm'
+import { INITIAL_PASSWORD_STATE, styles } from '../Login/Login'
+import useMutationRegister from '../../hooks/useMutationRegister'
 
 const INITIAL_STATE = {
   full_name: '',
@@ -15,43 +16,43 @@ const INITIAL_STATE = {
   email: '',
   password: '',
 }
-// Style variable error
 
-const styles = {
-  error: {
-    borderColor: '#c92432',
-    color: '#c92432',
-    background: '#fffafa',
-  },
-  correct: {},
-}
-
-const Register = (props) => {
+const Register = ({ dispatch }) => {
   const [user, errors, message, handleState, setErrors, setMessage] = useForm(
     INITIAL_STATE,
     'register'
   )
+  const { data, mutate, isError, isSuccess } = useMutationRegister()
 
-  const [password, setPassword] = useState({
-    hideShow: 'password',
-    showHide: 'SHOW',
-  })
+  const [password, setPassword] = useState(INITIAL_PASSWORD_STATE)
 
   // FUNCTIONS
 
   const showPassord = () => {
-    if (password.hideShow === 'password') {
-      return setPassword({ ...password, hideShow: 'text', showHide: 'HIDE' })
+    if (password.type === 'password') {
+      return setPassword({ ...password, type: 'text', icon: 'HIDE' })
     } else {
-      return setPassword({
-        ...password,
-        hideShow: 'password',
-        showHide: 'SHOW',
-      })
+      return setPassword(INITIAL_PASSWORD_STATE)
     }
   }
 
-  const toggle = async () => {
+  useEffect(() => {
+    let isMounted = true
+
+    if (isMounted && isSuccess) {
+      dispatch({ type: LOGIN, payload: data })
+      dispatch({ type: SHOWHOBBIES })
+    }
+    if (isError) setMessage('Email or password not found')
+
+    return () => {
+      isMounted = false
+    }
+  }, [isSuccess, isError])
+
+  const handleSubmit = async (ev) => {
+    ev.preventDefault()
+
     const errs = validate(user, 'register')
     setErrors(errs)
 
@@ -63,25 +64,7 @@ const Register = (props) => {
       email: user.email,
       password: user.password,
     }
-
-    try {
-      const result = await axios.post(PORT + USER, body)
-      if (result) {
-        const dataLogin = {
-          email: result.data.email,
-          password: user.password,
-        }
-
-        const resultLogin = await axios.post(PORT + USER + LOGIN, dataLogin)
-
-        if (resultLogin) {
-          props.dispatch({ type: LOGIN, payload: resultLogin.data })
-          props.dispatch({ type: SHOWHOBBIES })
-        }
-      }
-    } catch (error) {
-      setMessage('User already exist! Try with different email or User name')
-    }
+    mutate(body)
   }
 
   return (
@@ -91,7 +74,7 @@ const Register = (props) => {
           <span>REGISTER!</span>
         </h2>
       </div>
-      <div className="registerContainer">
+      <form onSubmit={handleSubmit} className="registerContainer">
         <div className="registerInput">
           <InputForm
             type="text"
@@ -124,23 +107,23 @@ const Register = (props) => {
         </div>
         <div className="registerInput">
           <InputForm
-            type={password.hideShow}
+            type={password.type}
             name="password"
             onChange={handleState}
             title="Password"
             error={errors.password?.help}
             style={errors.password?.status ? styles.error : styles.correct}
-            showHide={password.showHide}
+            icon={password.icon}
             onClick={() => showPassord()}
           />
         </div>
         <div className="errorMessage">
           <p>{message}</p>
         </div>
-        <Button onClick={() => toggle()}>
+        <Button type="submit">
           <p>Continue</p>
         </Button>
-      </div>
+      </form>
     </div>
   )
 }

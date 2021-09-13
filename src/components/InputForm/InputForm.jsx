@@ -9,7 +9,7 @@ function InputForm({
   value,
   style,
   title,
-  showHide,
+  icon,
   onClick,
   error,
 }) {
@@ -27,12 +27,12 @@ function InputForm({
         required
       ></input>
       <span className="floating-label">{title}</span>
-      {showHide && (
+      {icon && (
         <div className="iconInput" onClick={onClick}>
-          {showHide}
+          {icon}
         </div>
       )}
-      {!showHide && <div className="spacerCorrector"></div>}
+      {!icon && <div className="spacerCorrector"></div>}
       <span className="error">{error}</span>
     </div>
   )
